@@ -32,6 +32,15 @@ git checkout -b feature/criacao-de-trilhas
 Após a aprovação ✅, o autor do PR realiza o **merge** para a branch principal (`main`).
 
 ---
+## 🔄  Regras:
+
+✅ Ninguém faz merge direto na main.
+✅ Pull Requests para a main só podem vir da develop.
+✅ Pull Requests para a develop só podem vir de feature branches (ex: feature/*).
+✅ Proibido fazer PR de main → develop.
+✅ Proibido fazer PR de develop → feature.
+
+---
 
 ## 📝 Boas Práticas de Commit
 
@@ -54,3 +63,4 @@ Antes de aprovar um PR, verifique:
 3. ✅ **Divisão de responsabilidades** bem definida (nenhuma função fazendo "tudo").
 4. ✅ **Cumprimento dos requisitos da issue relacionada**.
 5. ✅ **Presença de testes**, se aplicável.
+6. ✅ Só aprova PR se "base branch" correta (ex: feature/ para develop ou develop para main)
