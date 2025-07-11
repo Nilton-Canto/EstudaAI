@@ -64,4 +64,3 @@ Antes de aprovar um PR, verifique:
 4. ✅ **Cumprimento dos requisitos da issue relacionada**.
 5. ✅ **Presença de testes**, se aplicável.
 6. ✅ Só aprova PR se "base branch" correta (ex: feature/ para develop ou develop para main)
-
