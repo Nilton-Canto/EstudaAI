@@ -38,7 +38,7 @@ Após a aprovação ✅, o autor do PR realiza o **merge** para a branch princip
 - ✅ Pull Requests para a main só podem vir da develop.
 - ✅ Pull Requests para a develop só podem vir de feature branches (ex: feature/*).
 - ✅ Proibido fazer PR de main → develop.
-✅ Proibido fazer PR de develop → feature.
+- ✅ Proibido fazer PR de develop → feature.
 
 ---
 
