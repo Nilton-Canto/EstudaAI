@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'logins'
 ]
 
+# LOGIN_REDIRECT_URL = '/' #Use esta linha para redirecionar após o login quando uma pagina for criada
+
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
