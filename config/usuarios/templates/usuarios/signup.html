@@ -1,0 +1,34 @@
+{% load static %}
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <title>Cadastro</title>
+  </head>
+  <body>
+    <h1>Cadastro</h1>
+
+    <!-- Formulário de cadastro de usuário -->
+    <!-- O atributo method="post" indica que os dados serão enviados via POST -->
+    <form method="post">
+      {% csrf_token %}
+      <!-- Protege o formulário contra ataques CSRF (Cross-Site Request Forgery) -->
+      
+      {{ form.as_p }}
+      <!-- Renderiza automaticamente todos os campos do formulário "form" 
+           passado pela view, organizados dentro de tags <p> -->
+
+      <button type="submit">Criar conta</button>
+      <!-- Botão que envia o formulário -->
+    </form>
+
+    <!-- Exibe mensagens do Django (messages framework), como sucesso ou erro -->
+    {% if messages %}
+      <ul>
+        {% for message in messages %}
+          <li>{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+  </body>
+</html>
