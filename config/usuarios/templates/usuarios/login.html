@@ -2,15 +2,13 @@
 {% block content %}
 <h2>Login</h2>
     {% if form.errors %}
-        <p>Seu nome de usuário ou senha não correspondem a nosso banco de dados. Por favor, tente novamente.</p>
+        <p style="color: red;">Usuário ou senha inválidos. Tente novamente.</p>
     {% endif %}
         <form action ="{% url 'login' %}" method= "post">
             {% csrf_token %}
             {{ form.as_p }}
             
             <button name="submit">Entrar</button>
-
-            <input type="Hidden" name="next" value="{% url 'login' %}"/>
 
         </form>
 {% endblock %}
