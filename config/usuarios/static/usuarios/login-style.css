@@ -1,0 +1,144 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Corpo */
+body {
+    background-color: #f3f4f6; /* cinza claro */
+    color: #1f2937; /* cinza escuro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+/* Container central */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Caixa de login */
+.login-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+/* Títulos */
+.login-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #4f46e5; /* Indigo-600 */
+    margin-bottom: 0.5rem;
+}
+
+.login-subtitle {
+    color: #6b7280; /* Gray-600 */
+    margin-bottom: 1.5rem;
+}
+
+/* Formulário */
+.login-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Inputs */
+.input-field {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    border-radius: 0.75rem;
+    border: 1px solid #d1d5db;
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+}
+
+.input-field:focus {
+    border-color: #6366f1; /* Indigo */
+    box-shadow: 0 0 0 2px rgba(99, 102, 241, 0.4);
+}
+
+/* Botão principal */
+.btn-primary {
+    width: 100%;
+    padding: 0.75rem;
+    border-radius: 0.75rem;
+    background: #4f46e5; /* Indigo */
+    color: white;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #4338ca; /* Indigo mais escuro */
+}
+
+/* Texto alternativo */
+.login-alt-text {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #6b7280;
+}
+
+/* Social login */
+.login-social {
+    display: flex;
+    justify-content: center;
+    margin-top: 0.5rem;
+}
+
+.social-button {
+    padding: 0.75rem;
+    border-radius: 50%;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.social-button.google {
+    background: #ef4444; /* Vermelho */
+    color: white;
+}
+
+.social-button.google:hover {
+    background: #dc2626; /* Vermelho mais escuro */
+}
+
+.social-icon {
+    width: 20px;
+    height: 20px;
+    fill: currentColor;
+}
+
+/* Cadastro */
+.login-register {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+}
+
+.register-link {
+    color: #4f46e5;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-link:hover {
+    text-decoration: underline;
+}
