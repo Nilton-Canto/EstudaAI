@@ -9,6 +9,8 @@ env/
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
+.Python
 
 # Configurações do VS Code
 .vscode/
@@ -16,3 +18,16 @@ __pycache__/
 # Arquivos de sistema operacional
 .DS_Store
 Thumbs.db
+
+# CI/CD
+.github/workflows/.env
+bandit-report.json
+*.log
+
+# Banco de dados
+*.sqlite3
+*.db
+
+# Arquivos temporários
+*.tmp
+*.temp
