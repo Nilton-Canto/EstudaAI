@@ -1,6 +1,9 @@
 from django.shortcuts import render, redirect #render serve para gerar e retornar uma página HTML para o usuário.
 #já o redirect é para redirecionar o usuário para algum lugar após alguma ação, como por exemplo, salvar no banco de dados.
 
+from django.contrib.auth import authenticate, login
+from django.contrib.auth.forms import AuthenticationForm
+
 from .forms import UsuarioForm #importamos diretamente da mesma pasta, portanto, pode-se usar o "."
 
 from django.contrib import messages #utilizado para menssagens 
@@ -20,3 +23,19 @@ def signup(request): #criando uma função do botão signup. O objeto resquest q
         form = UsuarioForm()#formulário vazo
     return render(request, 'usuarios/signup.html', {'form': form})#mostra a página de cadastro com o formulário(vazio ou preenchido)
 
+def login_view(request): #criação da função de login
+    if request.method == 'POST':## verificação do método
+
+        form = AuthenticationForm(request, data=request.POST) #identifica a requisição atual e os dados do formulario de login
+
+        if form.is_valid(): #verifica se o formulário é válido e se o usuario existe
+            usuario = form.get_user()
+            login(request, usuario) #função de login do django, cria a sessão.
+
+            return redirect('home')  # redirecione para a futura página principal
+        else:
+            messages.error(request, 'Usuário ou senha inválidos.')
+
+    else:
+        form = AuthenticationForm()
+    return render(request, 'usuarios/login.html', {'form': form})#mostra a página de login com o formulário(vazio ou preenchido)

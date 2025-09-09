@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudaAI - Criar Trilha</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Barra de Navegação -->
+    <header class="navbar">
+        <nav class="nav-container">
+            <a href="#" class="logo">EstudaAI</a>
+            <ul class="menu">
+                <li><a href="#">Dashboard</a></li>
+                <li><a href="#">Minhas Trilhas</a></li>
+                <li><a href="#" class="active">Criar Trilha</a></li>
+            </ul>
+            <div class="user-info">
+                <span>Olá, Aluno!</span>
+                <div class="avatar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal - Criar Trilha -->
+    <main class="container">
+        <h2>Crie sua Trilha com a IA</h2>
+        <div class="card">
+            <p>
+                Descreva o que você deseja aprender e a nossa IA irá gerar uma trilha de estudo personalizada para você.
+            </p>
+            <textarea id="ai-prompt" rows="6" placeholder="Ex: 'Quero aprender sobre Marketing Digital, com foco em SEO e conteúdo para redes sociais. Preciso de um cronograma de 4 semanas.'"></textarea>
+            <button id="generate-btn">Gerar Trilha de Estudo</button>
+            
+            <div id="ai-output" class="output hidden">
+                <p>A trilha gerada pela IA aparecerá aqui...</p>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

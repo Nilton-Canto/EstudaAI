@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudaAI - Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header class="navbar">
+        <nav class="navbar-container">
+            <a href="#" class="logo">EstudaAI</a>
+            <ul class="nav-links">
+                <li><a href="#" class="nav-link active">Dashboard</a></li>
+                <li><a href="#" class="nav-link">Minhas Trilhas</a></li>
+                <li><a href="#" class="nav-link">Criar Trilha</a></li>
+            </ul>
+            <div class="user-info">
+                <span class="user-text">Olá, Aluno!</span>
+                <div class="user-avatar"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal - Dashboard -->
+    <main class="container">
+        <!-- Resumo do progresso -->
+        <section class="card">
+            <h2 class="section-title">Seu Progresso de Estudo</h2>
+            <div class="stats-grid">
+                <div class="stat-card indigo">
+                    <p class="stat-value">3</p>
+                    <p class="stat-label">Trilhas Ativas</p>
+                </div>
+                <div class="stat-card green">
+                    <p class="stat-value">75%</p>
+                    <p class="stat-label">Trilha de Python</p>
+                </div>
+                <div class="stat-card yellow">
+                    <p class="stat-value">12h</p>
+                    <p class="stat-label">Tempo de Estudo</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trilhas ativas -->
+        <section class="card">
+            <h2 class="section-title dark">Trilhas Ativas</h2>
+            <div class="trails-grid">
+                <!-- Card de exemplo -->
+                <div class="trail-card">
+                    <h3 class="trail-title">Análise de Dados com Python</h3>
+                    <p class="trail-info">4 módulos · Nível Intermediário</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill blue" style="width: 75%"></div>
+                    </div>
+                    <p class="progress-text">75% Concluído</p>
+                    <button class="btn-primary">Continuar</button>
+                </div>
+
+                <div class="trail-card">
+                    <h3 class="trail-title">Introdução à UX/UI Design</h3>
+                    <p class="trail-info">5 módulos · Nível Básico</p>
+                    <div class="progress-bar">
+                        <div class="progress-fill yellow" style="width: 40%"></div>
+                    </div>
+                    <p class="progress-text">40% Concluído</p>
+                    <button class="btn-primary">Continuar</button>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
