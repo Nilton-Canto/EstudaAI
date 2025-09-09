@@ -13,7 +13,22 @@ def test_gemini_key():
     print("🔑 Testando chave da API do Gemini...")
     
     # Carregar variáveis de ambiente
-    load_dotenv(Path('.') / '.env')
+    # Procura o .env na pasta config primeiro, depois na raiz
+    env_paths = [
+        Path('config') / '.env',
+        Path('.') / '.env'
+    ]
+    
+    env_loaded = False
+    for env_path in env_paths:
+        if env_path.exists():
+            load_dotenv(env_path)
+            print(f"📁 Arquivo .env carregado de: {env_path}")
+            env_loaded = True
+            break
+    
+    if not env_loaded:
+        print("❌ Nenhum arquivo .env encontrado")
     
     # Obter chave
     api_key = os.getenv('GEMINI_API_KEY')

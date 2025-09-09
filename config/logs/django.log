@@ -1,0 +1,804 @@
+INFO 2025-09-09 14:42:37,777 views 18680 27528 API do Gemini configurada com sucesso
+INFO 2025-09-09 14:42:37,954 views 18680 27528 Health check solicitado
+INFO 2025-09-09 14:42:37,955 views 18680 27528 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 14:42:37,955 views 18680 27528 Processando mensagem: teste...
+ERROR 2025-09-09 14:42:38,260 views 18680 27528 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 14:42:38,261 log 18680 27528 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 14:42:38,263 views 18680 27528 Health check solicitado
+INFO 2025-09-09 14:42:38,264 views 18680 27528 Health check solicitado
+INFO 2025-09-09 14:42:38,266 views 18680 27528 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 14:42:38,266 views 18680 27528 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 14:42:38,266 log 18680 27528 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 14:42:38,268 views 18680 27528 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 14:42:38,268 views 18680 27528 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 14:42:38,268 views 18680 27528 Resposta gerada com sucesso
+INFO 2025-09-09 14:42:38,269 views 18680 27528 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 14:42:38,269 views 18680 27528 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 14:42:38,269 views 18680 27528 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 14:42:38,269 log 18680 27528 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 14:42:38,270 views 18680 27528 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 14:42:38,270 views 18680 27528 Requisição sem mensagem
+WARNING 2025-09-09 14:42:38,271 log 18680 27528 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 14:42:38,271 views 18680 27528 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 14:42:38,271 views 18680 27528 Chave da API do Gemini não configurada
+ERROR 2025-09-09 14:42:38,272 log 18680 27528 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 14:42:38,272 views 18680 27528 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 14:42:38,273 views 18680 27528 Requisição sem mensagem
+WARNING 2025-09-09 14:42:38,273 log 18680 27528 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 14:42:38,274 views 18680 27528 Health check solicitado
+INFO 2025-09-09 14:42:38,274 views 18680 27528 Health check solicitado
+INFO 2025-09-09 14:42:38,275 views 18680 27528 Health check solicitado
+INFO 2025-09-09 14:42:54,454 views 24336 12912 API do Gemini configurada com sucesso
+INFO 2025-09-09 14:42:54,478 views 24336 12912 Health check solicitado
+INFO 2025-09-09 14:42:54,478 views 24336 12912 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 14:42:54,479 views 24336 12912 Processando mensagem: teste...
+ERROR 2025-09-09 14:42:54,725 views 24336 12912 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 14:42:54,726 log 24336 12912 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 14:42:54,728 views 24336 12912 Health check solicitado
+INFO 2025-09-09 14:42:54,729 views 24336 12912 Health check solicitado
+INFO 2025-09-09 14:42:54,730 views 24336 12912 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 14:42:54,730 views 24336 12912 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 14:42:54,730 log 24336 12912 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 14:42:54,732 views 24336 12912 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 14:42:54,732 views 24336 12912 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 14:42:54,732 views 24336 12912 Resposta gerada com sucesso
+INFO 2025-09-09 14:42:54,734 views 24336 12912 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 14:42:54,734 views 24336 12912 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 14:42:54,734 views 24336 12912 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 14:42:54,734 log 24336 12912 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 14:42:54,735 views 24336 12912 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 14:42:54,735 views 24336 12912 Requisição sem mensagem
+WARNING 2025-09-09 14:42:54,735 log 24336 12912 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 14:42:54,736 views 24336 12912 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 14:42:54,736 views 24336 12912 Chave da API do Gemini não configurada
+ERROR 2025-09-09 14:42:54,736 log 24336 12912 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 14:42:54,738 views 24336 12912 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 14:42:54,738 views 24336 12912 Requisição sem mensagem
+WARNING 2025-09-09 14:42:54,738 log 24336 12912 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 14:42:54,739 views 24336 12912 Health check solicitado
+INFO 2025-09-09 14:42:54,740 views 24336 12912 Health check solicitado
+INFO 2025-09-09 14:42:54,741 views 24336 12912 Health check solicitado
+INFO 2025-09-09 14:59:17,035 autoreload 17660 28200 Watching for file changes with StatReloader
+INFO 2025-09-09 14:59:59,805 autoreload 10708 27056 Watching for file changes with StatReloader
+INFO 2025-09-09 15:00:02,356 views 10708 27056 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:01:06,024 autoreload 27492 24644 Watching for file changes with StatReloader
+INFO 2025-09-09 15:01:06,310 views 27492 24644 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:01:57,981 views 24236 14624 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:01:58,056 views 24236 14624 Health check solicitado
+INFO 2025-09-09 15:01:58,057 views 24236 14624 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:01:58,057 views 24236 14624 Processando mensagem: teste...
+INFO 2025-09-09 15:01:58,843 views 24236 14624 Resposta gerada com sucesso
+INFO 2025-09-09 15:01:58,844 views 24236 14624 Health check solicitado
+INFO 2025-09-09 15:01:58,845 views 24236 14624 Health check solicitado
+INFO 2025-09-09 15:01:58,846 views 24236 14624 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:01:58,846 views 24236 14624 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:01:58,847 log 24236 14624 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:01:58,848 views 24236 14624 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:01:58,848 views 24236 14624 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:01:58,849 views 24236 14624 Resposta gerada com sucesso
+INFO 2025-09-09 15:01:58,850 views 24236 14624 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:01:58,850 views 24236 14624 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:01:58,850 views 24236 14624 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:01:58,851 log 24236 14624 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:01:58,852 views 24236 14624 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:01:58,852 views 24236 14624 Requisição sem mensagem
+WARNING 2025-09-09 15:01:58,852 log 24236 14624 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:01:58,853 views 24236 14624 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:01:58,853 views 24236 14624 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:01:58,854 log 24236 14624 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:01:58,855 views 24236 14624 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:01:58,855 views 24236 14624 Requisição sem mensagem
+WARNING 2025-09-09 15:01:58,855 log 24236 14624 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:01:58,856 views 24236 14624 Health check solicitado
+INFO 2025-09-09 15:01:58,857 views 24236 14624 Health check solicitado
+INFO 2025-09-09 15:01:58,858 views 24236 14624 Health check solicitado
+INFO 2025-09-09 15:02:24,094 autoreload 20388 22872 Watching for file changes with StatReloader
+INFO 2025-09-09 15:02:24,387 views 20388 22872 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:02:36,196 views 20388 384 Health check solicitado
+INFO 2025-09-09 15:02:36,196 basehttp 20388 384 "GET /api/gemini/health/?id=dd1fb193-3e51-4ba1-82ae-9cab4bf620c1&vscodeBrowserReqId=1757440956186 HTTP/1.1" 200 122
+INFO 2025-09-09 15:05:06,930 views 25208 13876 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:05:06,971 views 25208 13876 Health check solicitado
+INFO 2025-09-09 15:05:06,972 views 25208 13876 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:05:06,972 views 25208 13876 Processando mensagem: teste...
+INFO 2025-09-09 15:05:07,759 views 25208 13876 Resposta gerada com sucesso
+INFO 2025-09-09 15:05:07,761 views 25208 13876 Health check solicitado
+INFO 2025-09-09 15:05:07,762 views 25208 13876 Health check solicitado
+INFO 2025-09-09 15:05:07,763 views 25208 13876 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:05:07,763 views 25208 13876 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:05:07,764 log 25208 13876 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:05:07,765 views 25208 13876 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:05:07,765 views 25208 13876 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:05:07,766 views 25208 13876 Resposta gerada com sucesso
+INFO 2025-09-09 15:05:07,768 views 25208 13876 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:05:07,768 views 25208 13876 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:05:07,768 views 25208 13876 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:05:07,769 log 25208 13876 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:05:07,770 views 25208 13876 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:05:07,770 views 25208 13876 Requisição sem mensagem
+WARNING 2025-09-09 15:05:07,770 log 25208 13876 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:05:07,771 views 25208 13876 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:05:07,771 views 25208 13876 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:05:07,771 log 25208 13876 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:05:07,772 views 25208 13876 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:05:07,773 views 25208 13876 Requisição sem mensagem
+WARNING 2025-09-09 15:05:07,773 log 25208 13876 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:05:07,774 views 25208 13876 Health check solicitado
+INFO 2025-09-09 15:05:07,774 views 25208 13876 Health check solicitado
+INFO 2025-09-09 15:05:07,775 views 25208 13876 Health check solicitado
+INFO 2025-09-09 15:20:01,164 views 23388 4656 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:20:01,206 views 23388 4656 Health check solicitado
+INFO 2025-09-09 15:20:01,207 views 23388 4656 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:20:01,207 views 23388 4656 Processando mensagem: teste...
+INFO 2025-09-09 15:20:01,925 views 23388 4656 Resposta gerada com sucesso
+INFO 2025-09-09 15:20:01,927 views 23388 4656 Health check solicitado
+INFO 2025-09-09 15:20:01,928 views 23388 4656 Health check solicitado
+INFO 2025-09-09 15:20:01,930 views 23388 4656 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:20:01,930 views 23388 4656 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:20:01,930 log 23388 4656 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:20:01,932 views 23388 4656 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:20:01,932 views 23388 4656 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:20:01,932 views 23388 4656 Resposta gerada com sucesso
+INFO 2025-09-09 15:20:01,934 views 23388 4656 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:20:01,935 views 23388 4656 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:20:01,936 views 23388 4656 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:20:01,936 log 23388 4656 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:20:01,937 views 23388 4656 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:20:01,937 views 23388 4656 Requisição sem mensagem
+WARNING 2025-09-09 15:20:01,938 log 23388 4656 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:20:01,939 views 23388 4656 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:20:01,940 views 23388 4656 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:20:01,941 log 23388 4656 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:20:01,942 views 23388 4656 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:20:01,943 views 23388 4656 Requisição sem mensagem
+WARNING 2025-09-09 15:20:01,943 log 23388 4656 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:20:01,944 views 23388 4656 Health check solicitado
+INFO 2025-09-09 15:20:01,946 views 23388 4656 Health check solicitado
+INFO 2025-09-09 15:20:01,947 views 23388 4656 Health check solicitado
+INFO 2025-09-09 15:23:48,453 views 12668 12188 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:23:48,463 views 12668 12188 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:23:48,463 views 12668 12188 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:23:48,463 log 12668 12188 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:23:48,466 views 12668 12188 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:23:48,467 views 12668 12188 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:23:48,467 views 12668 12188 Resposta gerada com sucesso
+INFO 2025-09-09 15:23:48,469 views 12668 12188 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:23:48,469 views 12668 12188 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:23:48,470 views 12668 12188 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:23:48,470 log 12668 12188 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:23:48,472 views 12668 12188 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:23:48,472 views 12668 12188 Requisição sem mensagem
+WARNING 2025-09-09 15:23:48,472 log 12668 12188 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:23:48,474 views 12668 12188 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:23:48,475 views 12668 12188 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:23:48,475 log 12668 12188 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:23:48,478 views 12668 12188 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:23:48,478 views 12668 12188 Requisição sem mensagem
+WARNING 2025-09-09 15:23:48,479 log 12668 12188 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:23:48,481 views 12668 12188 Health check solicitado
+INFO 2025-09-09 15:23:48,483 views 12668 12188 Health check solicitado
+INFO 2025-09-09 15:23:48,484 views 12668 12188 Health check solicitado
+INFO 2025-09-09 15:23:48,486 views 12668 12188 Health check solicitado
+INFO 2025-09-09 15:23:48,487 views 12668 12188 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:23:48,487 views 12668 12188 Processando mensagem: teste...
+INFO 2025-09-09 15:23:49,215 views 12668 12188 Resposta gerada com sucesso
+INFO 2025-09-09 15:23:49,218 views 12668 12188 Health check solicitado
+INFO 2025-09-09 15:23:49,220 views 12668 12188 Health check solicitado
+INFO 2025-09-09 15:37:06,380 autoreload 26928 28324 Watching for file changes with StatReloader
+INFO 2025-09-09 15:37:06,668 views 26928 28324 API do Gemini configurada com sucesso
+WARNING 2025-09-09 15:37:10,522 log 26928 11492 Not Found: /
+WARNING 2025-09-09 15:37:10,522 basehttp 26928 11492 "GET / HTTP/1.1" 404 2463
+WARNING 2025-09-09 15:37:10,588 log 26928 11492 Not Found: /favicon.ico
+WARNING 2025-09-09 15:37:10,588 basehttp 26928 11492 "GET /favicon.ico HTTP/1.1" 404 2514
+INFO 2025-09-09 15:40:29,293 views 21892 5356 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:40:29,304 views 21892 5356 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:40:29,304 views 21892 5356 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:40:29,304 log 21892 5356 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:40:29,308 views 21892 5356 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:40:29,308 views 21892 5356 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:40:29,308 views 21892 5356 Resposta gerada com sucesso
+INFO 2025-09-09 15:40:29,312 views 21892 5356 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:40:29,312 views 21892 5356 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:40:29,312 views 21892 5356 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:40:29,312 log 21892 5356 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:40:29,315 views 21892 5356 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:40:29,315 views 21892 5356 Requisição sem mensagem
+WARNING 2025-09-09 15:40:29,315 log 21892 5356 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:40:29,318 views 21892 5356 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:40:29,318 views 21892 5356 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:40:29,318 log 21892 5356 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:40:29,320 views 21892 5356 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:40:29,320 views 21892 5356 Requisição sem mensagem
+WARNING 2025-09-09 15:40:29,320 log 21892 5356 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:40:29,322 views 21892 5356 Health check solicitado
+INFO 2025-09-09 15:40:29,324 views 21892 5356 Health check solicitado
+INFO 2025-09-09 15:40:29,326 views 21892 5356 Health check solicitado
+INFO 2025-09-09 15:40:29,328 views 21892 5356 Health check solicitado
+INFO 2025-09-09 15:40:29,328 views 21892 5356 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:40:29,328 views 21892 5356 Processando mensagem: teste...
+INFO 2025-09-09 15:40:30,021 views 21892 5356 Resposta gerada com sucesso
+INFO 2025-09-09 15:40:30,024 views 21892 5356 Health check solicitado
+INFO 2025-09-09 15:40:30,026 views 21892 5356 Health check solicitado
+INFO 2025-09-09 15:40:56,077 views 10440 21792 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:40:56,087 views 10440 21792 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:40:56,087 views 10440 21792 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:40:56,088 log 10440 21792 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:40:56,091 views 10440 21792 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:40:56,091 views 10440 21792 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:40:56,091 views 10440 21792 Resposta gerada com sucesso
+INFO 2025-09-09 15:40:56,094 views 10440 21792 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:40:56,094 views 10440 21792 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:40:56,094 views 10440 21792 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:40:56,095 log 10440 21792 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:40:56,097 views 10440 21792 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:40:56,097 views 10440 21792 Requisição sem mensagem
+WARNING 2025-09-09 15:40:56,097 log 10440 21792 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:40:56,099 views 10440 21792 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:40:56,099 views 10440 21792 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:40:56,099 log 10440 21792 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:40:56,101 views 10440 21792 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:40:56,101 views 10440 21792 Requisição sem mensagem
+WARNING 2025-09-09 15:40:56,102 log 10440 21792 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:40:56,103 views 10440 21792 Health check solicitado
+INFO 2025-09-09 15:40:56,105 views 10440 21792 Health check solicitado
+INFO 2025-09-09 15:40:56,107 views 10440 21792 Health check solicitado
+INFO 2025-09-09 15:40:56,109 views 10440 21792 Health check solicitado
+INFO 2025-09-09 15:40:56,110 views 10440 21792 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:40:56,110 views 10440 21792 Processando mensagem: teste...
+INFO 2025-09-09 15:40:57,473 views 10440 21792 Resposta gerada com sucesso
+INFO 2025-09-09 15:40:57,477 views 10440 21792 Health check solicitado
+INFO 2025-09-09 15:40:57,480 views 10440 21792 Health check solicitado
+INFO 2025-09-09 15:48:47,529 autoreload 24720 13532 Watching for file changes with StatReloader
+INFO 2025-09-09 15:48:47,809 views 24720 13532 API do Gemini configurada com sucesso
+WARNING 2025-09-09 15:48:51,426 log 24720 13548 Not Found: /
+WARNING 2025-09-09 15:48:51,426 basehttp 24720 13548 "GET / HTTP/1.1" 404 2463
+INFO 2025-09-09 15:49:04,923 views 10940 9304 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:49:04,932 views 10940 9304 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:49:04,932 views 10940 9304 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:49:04,933 log 10940 9304 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:49:04,936 views 10940 9304 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:49:04,936 views 10940 9304 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:49:04,936 views 10940 9304 Resposta gerada com sucesso
+INFO 2025-09-09 15:49:04,939 views 10940 9304 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:49:04,939 views 10940 9304 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:49:04,939 views 10940 9304 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:49:04,939 log 10940 9304 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:49:04,942 views 10940 9304 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:49:04,942 views 10940 9304 Requisição sem mensagem
+WARNING 2025-09-09 15:49:04,942 log 10940 9304 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:49:04,944 views 10940 9304 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:49:04,944 views 10940 9304 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:49:04,945 log 10940 9304 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:49:04,947 views 10940 9304 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:49:04,947 views 10940 9304 Requisição sem mensagem
+WARNING 2025-09-09 15:49:04,947 log 10940 9304 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:49:04,949 views 10940 9304 Health check solicitado
+INFO 2025-09-09 15:49:04,952 views 10940 9304 Health check solicitado
+INFO 2025-09-09 15:49:04,960 views 10940 9304 Health check solicitado
+INFO 2025-09-09 15:49:04,962 views 10940 9304 Health check solicitado
+INFO 2025-09-09 15:49:04,963 views 10940 9304 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:49:04,963 views 10940 9304 Processando mensagem: teste...
+INFO 2025-09-09 15:49:06,275 views 10940 9304 Resposta gerada com sucesso
+INFO 2025-09-09 15:49:06,278 views 10940 9304 Health check solicitado
+INFO 2025-09-09 15:49:06,280 views 10940 9304 Health check solicitado
+INFO 2025-09-09 15:49:41,731 basehttp 24720 13548 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-09 15:49:41,876 basehttp 24720 13548 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+INFO 2025-09-09 15:49:42,006 basehttp 24720 13548 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-09-09 15:49:42,063 basehttp 24720 16596 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-09-09 15:49:42,075 basehttp 24720 26324 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-09-09 15:49:42,078 basehttp 24720 27164 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-09-09 15:49:42,086 basehttp 24720 18172 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-09-09 15:49:42,086 basehttp 24720 5048 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-09-09 15:49:42,100 basehttp 24720 18172 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-09-09 15:50:02,430 basehttp 24720 18172 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4403
+WARNING 2025-09-09 15:50:17,362 log 24720 18172 Not Found: /api/gemini/
+WARNING 2025-09-09 15:50:17,362 basehttp 24720 18172 "GET /api/gemini/ HTTP/1.1" 404 2906
+INFO 2025-09-09 15:50:28,311 basehttp 24720 18172 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-09 15:50:28,316 basehttp 24720 18172 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+INFO 2025-09-09 15:56:51,756 views 28152 16404 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:56:51,766 views 28152 16404 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:56:51,767 views 28152 16404 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:56:51,767 log 28152 16404 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:56:51,770 views 28152 16404 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:56:51,770 views 28152 16404 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:56:51,771 views 28152 16404 Resposta gerada com sucesso
+INFO 2025-09-09 15:56:51,774 views 28152 16404 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:56:51,774 views 28152 16404 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:56:51,774 views 28152 16404 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:56:51,774 log 28152 16404 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:56:51,778 views 28152 16404 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:56:51,778 views 28152 16404 Requisição sem mensagem
+WARNING 2025-09-09 15:56:51,778 log 28152 16404 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:56:51,780 views 28152 16404 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:56:51,781 views 28152 16404 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:56:51,781 log 28152 16404 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:56:51,783 views 28152 16404 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:56:51,783 views 28152 16404 Requisição sem mensagem
+WARNING 2025-09-09 15:56:51,784 log 28152 16404 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:56:51,787 views 28152 16404 Health check solicitado
+INFO 2025-09-09 15:56:51,789 views 28152 16404 Health check solicitado
+INFO 2025-09-09 15:56:51,791 views 28152 16404 Health check solicitado
+INFO 2025-09-09 15:56:51,794 views 28152 16404 Health check solicitado
+INFO 2025-09-09 15:56:51,795 views 28152 16404 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:56:51,795 views 28152 16404 Processando mensagem: teste...
+INFO 2025-09-09 15:56:52,618 views 28152 16404 Resposta gerada com sucesso
+INFO 2025-09-09 15:56:52,622 views 28152 16404 Health check solicitado
+INFO 2025-09-09 15:56:52,624 views 28152 16404 Health check solicitado
+INFO 2025-09-09 15:57:18,831 views 13940 8720 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:57:18,840 views 13940 8720 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:57:18,840 views 13940 8720 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:57:18,841 log 13940 8720 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:57:18,844 views 13940 8720 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:57:18,844 views 13940 8720 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:57:18,844 views 13940 8720 Resposta gerada com sucesso
+INFO 2025-09-09 15:57:18,847 views 13940 8720 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:57:18,847 views 13940 8720 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:57:18,847 views 13940 8720 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:57:18,848 log 13940 8720 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:57:18,850 views 13940 8720 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:57:18,850 views 13940 8720 Requisição sem mensagem
+WARNING 2025-09-09 15:57:18,850 log 13940 8720 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:57:18,852 views 13940 8720 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:57:18,852 views 13940 8720 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:57:18,852 log 13940 8720 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:57:18,854 views 13940 8720 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:57:18,854 views 13940 8720 Requisição sem mensagem
+WARNING 2025-09-09 15:57:18,855 log 13940 8720 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:57:18,856 views 13940 8720 Health check solicitado
+INFO 2025-09-09 15:57:18,858 views 13940 8720 Health check solicitado
+INFO 2025-09-09 15:57:18,860 views 13940 8720 Health check solicitado
+INFO 2025-09-09 15:57:18,862 views 13940 8720 Health check solicitado
+INFO 2025-09-09 15:57:18,862 views 13940 8720 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:57:18,862 views 13940 8720 Processando mensagem: teste...
+ERROR 2025-09-09 15:57:19,096 views 13940 8720 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 15:57:19,096 log 13940 8720 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:57:19,098 views 13940 8720 Health check solicitado
+INFO 2025-09-09 15:57:19,100 views 13940 8720 Health check solicitado
+INFO 2025-09-09 15:59:59,956 views 26200 10652 API do Gemini configurada com sucesso
+INFO 2025-09-09 15:59:59,966 views 26200 10652 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:59:59,966 views 26200 10652 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 15:59:59,966 log 26200 10652 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:59:59,970 views 26200 10652 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:59:59,970 views 26200 10652 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 15:59:59,970 views 26200 10652 Resposta gerada com sucesso
+INFO 2025-09-09 15:59:59,973 views 26200 10652 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:59:59,973 views 26200 10652 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 15:59:59,973 views 26200 10652 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 15:59:59,973 log 26200 10652 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:59:59,976 views 26200 10652 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:59:59,976 views 26200 10652 Requisição sem mensagem
+WARNING 2025-09-09 15:59:59,976 log 26200 10652 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:59:59,978 views 26200 10652 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 15:59:59,978 views 26200 10652 Chave da API do Gemini não configurada
+ERROR 2025-09-09 15:59:59,978 log 26200 10652 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 15:59:59,981 views 26200 10652 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 15:59:59,981 views 26200 10652 Requisição sem mensagem
+WARNING 2025-09-09 15:59:59,981 log 26200 10652 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 15:59:59,982 views 26200 10652 Health check solicitado
+INFO 2025-09-09 15:59:59,985 views 26200 10652 Health check solicitado
+INFO 2025-09-09 15:59:59,987 views 26200 10652 Health check solicitado
+INFO 2025-09-09 15:59:59,988 views 26200 10652 Health check solicitado
+INFO 2025-09-09 15:59:59,989 views 26200 10652 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 15:59:59,989 views 26200 10652 Processando mensagem: teste...
+ERROR 2025-09-09 16:00:00,236 views 26200 10652 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 16:00:00,236 log 26200 10652 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:00:00,239 views 26200 10652 Health check solicitado
+INFO 2025-09-09 16:00:00,241 views 26200 10652 Health check solicitado
+INFO 2025-09-09 16:02:48,353 views 12840 25996 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:02:48,378 views 12840 25996 Health check solicitado
+INFO 2025-09-09 16:02:48,379 views 12840 25996 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:02:48,379 views 12840 25996 Processando mensagem: teste...
+ERROR 2025-09-09 16:02:48,748 views 12840 25996 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 16:02:48,748 log 12840 25996 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:02:48,749 views 12840 25996 Health check solicitado
+INFO 2025-09-09 16:02:48,751 views 12840 25996 Health check solicitado
+INFO 2025-09-09 16:02:48,752 views 12840 25996 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:02:48,752 views 12840 25996 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:02:48,752 log 12840 25996 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:02:48,754 views 12840 25996 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:02:48,754 views 12840 25996 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:02:48,754 views 12840 25996 Resposta gerada com sucesso
+INFO 2025-09-09 16:02:48,756 views 12840 25996 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:02:48,756 views 12840 25996 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:02:48,756 views 12840 25996 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:02:48,756 log 12840 25996 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:02:48,758 views 12840 25996 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:02:48,758 views 12840 25996 Requisição sem mensagem
+WARNING 2025-09-09 16:02:48,758 log 12840 25996 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:02:48,759 views 12840 25996 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:02:48,759 views 12840 25996 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:02:48,760 log 12840 25996 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:02:48,761 views 12840 25996 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:02:48,761 views 12840 25996 Requisição sem mensagem
+WARNING 2025-09-09 16:02:48,761 log 12840 25996 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:02:48,762 views 12840 25996 Health check solicitado
+INFO 2025-09-09 16:02:48,763 views 12840 25996 Health check solicitado
+INFO 2025-09-09 16:02:48,764 views 12840 25996 Health check solicitado
+INFO 2025-09-09 16:05:59,292 views 2900 5772 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:05:59,330 views 2900 5772 Health check solicitado
+INFO 2025-09-09 16:05:59,331 views 2900 5772 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:05:59,331 views 2900 5772 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:05:59,331 log 2900 5772 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:05:59,332 views 2900 5772 Health check solicitado
+INFO 2025-09-09 16:05:59,334 views 2900 5772 Health check solicitado
+INFO 2025-09-09 16:05:59,335 views 2900 5772 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:05:59,335 views 2900 5772 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:05:59,335 log 2900 5772 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:05:59,338 views 2900 5772 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:05:59,338 views 2900 5772 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:05:59,338 views 2900 5772 Resposta gerada com sucesso
+INFO 2025-09-09 16:05:59,341 views 2900 5772 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:05:59,341 views 2900 5772 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:05:59,341 views 2900 5772 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:05:59,341 log 2900 5772 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:05:59,342 views 2900 5772 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:05:59,343 views 2900 5772 Requisição sem mensagem
+WARNING 2025-09-09 16:05:59,343 log 2900 5772 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:05:59,344 views 2900 5772 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:05:59,344 views 2900 5772 Processando mensagem: teste com chave inválida...
+ERROR 2025-09-09 16:05:59,591 views 2900 5772 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 16:05:59,592 log 2900 5772 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:05:59,592 views 2900 5772 Health check solicitado
+INFO 2025-09-09 16:05:59,594 views 2900 5772 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:05:59,594 views 2900 5772 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:05:59,594 log 2900 5772 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:05:59,595 views 2900 5772 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:05:59,596 views 2900 5772 Requisição sem mensagem
+WARNING 2025-09-09 16:05:59,596 log 2900 5772 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:05:59,597 views 2900 5772 Health check solicitado
+INFO 2025-09-09 16:05:59,598 views 2900 5772 Health check solicitado
+INFO 2025-09-09 16:05:59,599 views 2900 5772 Health check solicitado
+INFO 2025-09-09 16:06:49,453 views 10848 25508 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:06:49,476 views 10848 25508 Health check solicitado
+INFO 2025-09-09 16:06:49,477 views 10848 25508 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:06:49,477 views 10848 25508 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:06:49,477 log 10848 25508 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:06:49,479 views 10848 25508 Health check solicitado
+INFO 2025-09-09 16:06:49,480 views 10848 25508 Health check solicitado
+INFO 2025-09-09 16:06:49,481 views 10848 25508 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:06:49,482 views 10848 25508 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:06:49,482 log 10848 25508 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:06:49,484 views 10848 25508 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:06:49,484 views 10848 25508 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:06:49,485 views 10848 25508 Resposta gerada com sucesso
+INFO 2025-09-09 16:06:49,486 views 10848 25508 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:06:49,486 views 10848 25508 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:06:49,486 views 10848 25508 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:06:49,486 log 10848 25508 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:06:49,488 views 10848 25508 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:06:49,488 views 10848 25508 Requisição sem mensagem
+WARNING 2025-09-09 16:06:49,488 log 10848 25508 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:06:49,489 views 10848 25508 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:06:49,489 views 10848 25508 Processando mensagem: teste com chave inválida...
+ERROR 2025-09-09 16:06:50,396 views 10848 25508 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 16:06:50,397 log 10848 25508 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:06:50,397 views 10848 25508 Health check solicitado
+INFO 2025-09-09 16:06:50,399 views 10848 25508 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:06:50,399 views 10848 25508 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:06:50,399 log 10848 25508 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:06:50,400 views 10848 25508 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:06:50,400 views 10848 25508 Requisição sem mensagem
+WARNING 2025-09-09 16:06:50,400 log 10848 25508 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:06:50,401 views 10848 25508 Health check solicitado
+INFO 2025-09-09 16:06:50,401 views 10848 25508 Health check solicitado
+INFO 2025-09-09 16:06:50,402 views 10848 25508 Health check solicitado
+INFO 2025-09-09 16:09:00,440 views 15260 5744 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:09:00,469 views 15260 5744 Health check solicitado
+INFO 2025-09-09 16:09:00,470 views 15260 5744 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:09:00,470 views 15260 5744 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:09:00,470 log 15260 5744 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:00,472 views 15260 5744 Health check solicitado
+INFO 2025-09-09 16:09:00,474 views 15260 5744 Health check solicitado
+INFO 2025-09-09 16:09:00,475 views 15260 5744 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:09:00,475 views 15260 5744 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:09:00,475 log 15260 5744 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:00,477 views 15260 5744 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:09:00,478 views 15260 5744 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:09:00,478 views 15260 5744 Resposta gerada com sucesso
+INFO 2025-09-09 16:09:00,491 views 15260 5744 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:09:00,491 views 15260 5744 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:09:00,491 views 15260 5744 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:09:00,491 log 15260 5744 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:00,492 views 15260 5744 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:09:00,493 views 15260 5744 Requisição sem mensagem
+WARNING 2025-09-09 16:09:00,493 log 15260 5744 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:09:00,494 views 15260 5744 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:09:00,494 views 15260 5744 Processando mensagem: teste com chave inválida...
+ERROR 2025-09-09 16:09:00,868 views 15260 5744 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 16:09:00,869 log 15260 5744 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:00,869 views 15260 5744 Health check solicitado
+INFO 2025-09-09 16:09:00,871 views 15260 5744 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:09:00,871 views 15260 5744 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:09:00,871 log 15260 5744 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:00,872 views 15260 5744 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:09:00,873 views 15260 5744 Requisição sem mensagem
+WARNING 2025-09-09 16:09:00,873 log 15260 5744 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:09:00,874 views 15260 5744 Health check solicitado
+INFO 2025-09-09 16:09:00,876 views 15260 5744 Health check solicitado
+INFO 2025-09-09 16:09:00,877 views 15260 5744 Health check solicitado
+INFO 2025-09-09 16:09:47,736 views 8776 1856 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:09:47,760 views 8776 1856 Health check solicitado
+INFO 2025-09-09 16:09:47,761 views 8776 1856 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:09:47,761 views 8776 1856 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:09:47,761 log 8776 1856 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:47,763 views 8776 1856 Health check solicitado
+INFO 2025-09-09 16:09:47,765 views 8776 1856 Health check solicitado
+INFO 2025-09-09 16:09:47,766 views 8776 1856 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:09:47,766 views 8776 1856 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:09:47,766 log 8776 1856 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:47,768 views 8776 1856 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:09:47,768 views 8776 1856 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:09:47,769 views 8776 1856 Resposta gerada com sucesso
+INFO 2025-09-09 16:09:47,770 views 8776 1856 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:09:47,771 views 8776 1856 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:09:47,771 views 8776 1856 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:09:47,771 log 8776 1856 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:47,773 views 8776 1856 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:09:47,773 views 8776 1856 Requisição sem mensagem
+WARNING 2025-09-09 16:09:47,773 log 8776 1856 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:09:47,774 views 8776 1856 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:09:47,775 views 8776 1856 Processando mensagem: teste com chave inválida...
+ERROR 2025-09-09 16:09:48,022 views 8776 1856 Erro ao processar requisição: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+ERROR 2025-09-09 16:09:48,023 log 8776 1856 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:48,023 views 8776 1856 Health check solicitado
+INFO 2025-09-09 16:09:48,025 views 8776 1856 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:09:48,025 views 8776 1856 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:09:48,026 log 8776 1856 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:09:48,027 views 8776 1856 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:09:48,027 views 8776 1856 Requisição sem mensagem
+WARNING 2025-09-09 16:09:48,027 log 8776 1856 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:09:48,028 views 8776 1856 Health check solicitado
+INFO 2025-09-09 16:09:48,030 views 8776 1856 Health check solicitado
+INFO 2025-09-09 16:09:48,031 views 8776 1856 Health check solicitado
+INFO 2025-09-09 16:10:45,455 views 18784 9804 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:10:45,467 views 18784 9804 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:10:45,467 views 18784 9804 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:10:45,468 log 18784 9804 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:10:45,471 views 18784 9804 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:10:45,472 views 18784 9804 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:10:45,472 views 18784 9804 Resposta gerada com sucesso
+INFO 2025-09-09 16:10:45,474 views 18784 9804 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:10:45,475 views 18784 9804 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:10:45,475 views 18784 9804 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:10:45,475 log 18784 9804 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:10:45,477 views 18784 9804 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:10:45,477 views 18784 9804 Requisição sem mensagem
+WARNING 2025-09-09 16:10:45,477 log 18784 9804 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:10:45,479 views 18784 9804 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:10:45,480 views 18784 9804 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:10:45,480 log 18784 9804 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:10:45,482 views 18784 9804 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:10:45,482 views 18784 9804 Requisição sem mensagem
+WARNING 2025-09-09 16:10:45,482 log 18784 9804 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:10:45,484 views 18784 9804 Health check solicitado
+INFO 2025-09-09 16:10:45,486 views 18784 9804 Health check solicitado
+INFO 2025-09-09 16:10:45,488 views 18784 9804 Health check solicitado
+INFO 2025-09-09 16:10:45,490 views 18784 9804 Health check solicitado
+INFO 2025-09-09 16:10:45,491 views 18784 9804 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:10:45,491 views 18784 9804 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:10:45,491 log 18784 9804 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:10:45,493 views 18784 9804 Health check solicitado
+INFO 2025-09-09 16:10:45,495 views 18784 9804 Health check solicitado
+INFO 2025-09-09 16:25:03,286 autoreload 27384 12608 Watching for file changes with StatReloader
+INFO 2025-09-09 16:25:03,915 views 27384 12608 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:25:19,145 autoreload 25136 24064 Watching for file changes with StatReloader
+INFO 2025-09-09 16:25:19,770 views 25136 24064 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:30:37,926 autoreload 28448 22672 Watching for file changes with StatReloader
+INFO 2025-09-09 16:30:38,229 views 28448 22672 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:32:23,423 autoreload 11716 24288 Watching for file changes with StatReloader
+INFO 2025-09-09 16:32:23,719 views 11716 24288 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:39:49,022 views 24264 4964 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:39:49,033 views 24264 4964 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:39:49,034 views 24264 4964 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:39:49,034 log 24264 4964 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:39:49,038 views 24264 4964 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:39:49,038 views 24264 4964 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:39:49,038 views 24264 4964 Resposta gerada com sucesso
+INFO 2025-09-09 16:39:49,041 views 24264 4964 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:39:49,041 views 24264 4964 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:39:49,041 views 24264 4964 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:39:49,041 log 24264 4964 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:39:49,043 views 24264 4964 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:39:49,043 views 24264 4964 Requisição sem mensagem
+WARNING 2025-09-09 16:39:49,043 log 24264 4964 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:39:49,045 views 24264 4964 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:39:49,045 views 24264 4964 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:39:49,045 log 24264 4964 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:39:49,047 views 24264 4964 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:39:49,047 views 24264 4964 Requisição sem mensagem
+WARNING 2025-09-09 16:39:49,048 log 24264 4964 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:39:49,050 views 24264 4964 Health check solicitado
+INFO 2025-09-09 16:39:49,052 views 24264 4964 Health check solicitado
+INFO 2025-09-09 16:39:49,054 views 24264 4964 Health check solicitado
+INFO 2025-09-09 16:39:49,056 views 24264 4964 Health check solicitado
+INFO 2025-09-09 16:39:49,057 views 24264 4964 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:39:49,057 views 24264 4964 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:39:49,057 log 24264 4964 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:39:49,059 views 24264 4964 Health check solicitado
+INFO 2025-09-09 16:39:49,061 views 24264 4964 Health check solicitado
+INFO 2025-09-09 16:40:17,381 views 11964 24168 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:40:17,392 views 11964 24168 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:40:17,392 views 11964 24168 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:40:17,392 log 11964 24168 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:40:17,396 views 11964 24168 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:40:17,397 views 11964 24168 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:40:17,397 views 11964 24168 Resposta gerada com sucesso
+INFO 2025-09-09 16:40:17,400 views 11964 24168 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:40:17,400 views 11964 24168 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:40:17,400 views 11964 24168 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:40:17,400 log 11964 24168 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:40:17,403 views 11964 24168 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:40:17,403 views 11964 24168 Requisição sem mensagem
+WARNING 2025-09-09 16:40:17,403 log 11964 24168 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:40:17,405 views 11964 24168 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:40:17,406 views 11964 24168 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:40:17,406 log 11964 24168 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:40:17,408 views 11964 24168 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:40:17,408 views 11964 24168 Requisição sem mensagem
+WARNING 2025-09-09 16:40:17,408 log 11964 24168 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:40:17,635 views 11964 24168 Health check solicitado
+INFO 2025-09-09 16:40:17,637 views 11964 24168 Health check solicitado
+INFO 2025-09-09 16:40:17,640 views 11964 24168 Health check solicitado
+INFO 2025-09-09 16:40:17,641 views 11964 24168 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:40:17,641 views 11964 24168 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:40:17,641 log 11964 24168 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:40:17,643 views 11964 24168 Health check solicitado
+INFO 2025-09-09 16:40:17,644 views 11964 24168 Health check solicitado
+INFO 2025-09-09 16:40:25,803 views 24124 23876 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:40:25,814 views 24124 23876 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:40:25,814 views 24124 23876 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:40:25,814 log 24124 23876 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:40:25,817 views 24124 23876 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:40:25,818 views 24124 23876 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:40:25,818 views 24124 23876 Resposta gerada com sucesso
+INFO 2025-09-09 16:40:25,821 views 24124 23876 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:40:25,821 views 24124 23876 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:40:25,821 views 24124 23876 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:40:25,821 log 24124 23876 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:40:25,823 views 24124 23876 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:40:25,824 views 24124 23876 Requisição sem mensagem
+WARNING 2025-09-09 16:40:25,824 log 24124 23876 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:40:25,826 views 24124 23876 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:40:25,827 views 24124 23876 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:40:25,827 log 24124 23876 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:40:25,829 views 24124 23876 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:40:25,829 views 24124 23876 Requisição sem mensagem
+WARNING 2025-09-09 16:40:25,829 log 24124 23876 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:40:25,831 views 24124 23876 Health check solicitado
+INFO 2025-09-09 16:40:25,834 views 24124 23876 Health check solicitado
+INFO 2025-09-09 16:40:25,836 views 24124 23876 Health check solicitado
+INFO 2025-09-09 16:40:25,839 views 24124 23876 Health check solicitado
+INFO 2025-09-09 16:40:25,839 views 24124 23876 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:40:25,839 views 24124 23876 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:40:25,839 log 24124 23876 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:40:25,841 views 24124 23876 Health check solicitado
+INFO 2025-09-09 16:40:25,843 views 24124 23876 Health check solicitado
+INFO 2025-09-09 16:46:59,026 views 12404 11112 API do Gemini configurada com sucesso
+INFO 2025-09-09 16:46:59,036 views 12404 11112 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:46:59,036 views 12404 11112 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 16:46:59,037 log 12404 11112 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:46:59,041 views 12404 11112 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:46:59,041 views 12404 11112 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 16:46:59,041 views 12404 11112 Resposta gerada com sucesso
+INFO 2025-09-09 16:46:59,045 views 12404 11112 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 16:46:59,045 views 12404 11112 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 16:46:59,045 views 12404 11112 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 16:46:59,046 log 12404 11112 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:46:59,048 views 12404 11112 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:46:59,048 views 12404 11112 Requisição sem mensagem
+WARNING 2025-09-09 16:46:59,048 log 12404 11112 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:46:59,051 views 12404 11112 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:46:59,051 views 12404 11112 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:46:59,051 log 12404 11112 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:46:59,053 views 12404 11112 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 16:46:59,053 views 12404 11112 Requisição sem mensagem
+WARNING 2025-09-09 16:46:59,053 log 12404 11112 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 16:46:59,055 views 12404 11112 Health check solicitado
+INFO 2025-09-09 16:46:59,056 views 12404 11112 Health check solicitado
+INFO 2025-09-09 16:46:59,058 views 12404 11112 Health check solicitado
+INFO 2025-09-09 16:46:59,061 views 12404 11112 Health check solicitado
+INFO 2025-09-09 16:46:59,061 views 12404 11112 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 16:46:59,061 views 12404 11112 Chave da API do Gemini não configurada
+ERROR 2025-09-09 16:46:59,062 log 12404 11112 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 16:46:59,063 views 12404 11112 Health check solicitado
+INFO 2025-09-09 16:46:59,065 views 12404 11112 Health check solicitado
+INFO 2025-09-09 17:15:19,991 views 15588 27000 API do Gemini configurada com sucesso
+INFO 2025-09-09 17:15:20,004 views 15588 27000 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 17:15:20,004 views 15588 27000 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-09-09 17:15:20,005 log 15588 27000 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 17:15:20,010 views 15588 27000 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 17:15:20,010 views 15588 27000 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-09-09 17:15:20,010 views 15588 27000 Resposta gerada com sucesso
+INFO 2025-09-09 17:15:20,014 views 15588 27000 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-09-09 17:15:20,014 views 15588 27000 Processando mensagem: Conteúdo inapropriado...
+ERROR 2025-09-09 17:15:20,015 views 15588 27000 Erro ao processar requisição: Blocked content
+ERROR 2025-09-09 17:15:20,015 log 15588 27000 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 17:15:20,018 views 15588 27000 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 17:15:20,018 views 15588 27000 Requisição sem mensagem
+WARNING 2025-09-09 17:15:20,019 log 15588 27000 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 17:15:20,022 views 15588 27000 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 17:15:20,022 views 15588 27000 Chave da API do Gemini não configurada
+ERROR 2025-09-09 17:15:20,023 log 15588 27000 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 17:15:20,025 views 15588 27000 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-09-09 17:15:20,025 views 15588 27000 Requisição sem mensagem
+WARNING 2025-09-09 17:15:20,025 log 15588 27000 Bad Request: /api/gemini/chat/
+INFO 2025-09-09 17:15:20,028 views 15588 27000 Health check solicitado
+INFO 2025-09-09 17:15:20,031 views 15588 27000 Health check solicitado
+INFO 2025-09-09 17:15:20,033 views 15588 27000 Health check solicitado
+INFO 2025-09-09 17:15:20,036 views 15588 27000 Health check solicitado
+INFO 2025-09-09 17:15:20,036 views 15588 27000 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-09-09 17:15:20,036 views 15588 27000 Chave da API do Gemini não configurada
+ERROR 2025-09-09 17:15:20,036 log 15588 27000 Internal Server Error: /api/gemini/chat/
+INFO 2025-09-09 17:15:20,038 views 15588 27000 Health check solicitado
+INFO 2025-09-09 17:15:20,040 views 15588 27000 Health check solicitado
