@@ -22,6 +22,8 @@ from .forms import UsuarioForm
 from django.contrib import messages
 # messages: permite exibir mensagens de sucesso, erro, aviso, etc. para o usuário
 
+from django.contrib.auth.decorators import login_required
+
 
 # ===== VIEW DE CADASTRO =====
 def signup(request):
@@ -113,7 +115,7 @@ def login_view(request):
             # Isso permite que o usuário seja reconhecido em outras páginas
             
             # Redireciona para a página principal após login bem-sucedido
-            return redirect('home')
+            return redirect('dashboard')
             
         else:
             # Se as credenciais são inválidas, exibe mensagem de erro
@@ -126,3 +128,21 @@ def login_view(request):
     # Renderiza a página de login passando o formulário como contexto
     # O formulário pode estar vazio (GET) ou com erros (POST inválido)
     return render(request, 'usuarios/login.html', {'form': form})
+
+
+@login_required(login_url='login')   
+def dashboard(request):
+    
+    """
+    View para a página inicial após o login.
+    Apenas usuários autenticados podem acessar esta página.
+    
+    Args:
+        request: objeto HttpRequest contendo dados da requisição
+        
+    Returns:
+        HttpResponse: página de dashboard renderizada
+    """
+    
+    # Renderiza a página de dashboard
+    return render(request, 'usuarios/dashboard.html')
