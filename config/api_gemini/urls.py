@@ -4,6 +4,7 @@ from . import views
 app_name = 'api_gemini'
 
 urlpatterns = [
+    path('', views.test_api_page, name='test_api_page'),  # Página de teste
     path('chat/', views.chat_with_gemini, name='chat_with_gemini'),
     path('health/', views.health_check, name='health_check'),
     path('trilha/', views.gerar_trilha_curso, name='gerar_trilha_curso'),

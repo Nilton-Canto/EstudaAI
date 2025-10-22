@@ -7,6 +7,7 @@ import json
 import logging
 from .models import TrilhaCurso
 from django.contrib.auth import get_user_model
+from django.shortcuts import render
 
 User = get_user_model()
 
@@ -349,3 +350,9 @@ def health_check(request):
         'model': settings.GEMINI_MODEL,
         'version': '1.0.0'
     })
+
+def test_api_page(request):
+    """
+    Renderiza a página de teste da API
+    """
+    return render(request, 'api_gemini/test_api.html')
