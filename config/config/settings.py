@@ -32,18 +32,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = []
 
-
 # Application definition
-
-INSTALLED_APPS = [
-    'django.contrib.admin',
-    'django.contrib.auth',
-    'django.contrib.contenttypes',
-    'django.contrib.sessions',
-    'django.contrib.messages',
-    'django.contrib.staticfiles',
-    'usuarios' #adcionado para utilização de models e templates específicos para os usuários.
-]
 
 INSTALLED_APPS = [
     'django.contrib.admin',
@@ -54,7 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'rest_framework',
     'corsheaders',
-    'usuarios',  # <- nome correto do app
+    'usuarios',
     'api_gemini',
 ]
 
