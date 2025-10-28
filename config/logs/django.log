@@ -1,0 +1,837 @@
+INFO 2025-09-22 18:28:31,080 autoreload 31248 28596 Watching for file changes with StatReloader
+INFO 2025-09-22 18:28:31,420 views 31248 28596 API do Gemini configurada com sucesso
+WARNING 2025-09-22 18:28:47,610 log 31248 23492 Not Found: /
+WARNING 2025-09-22 18:28:47,610 basehttp 31248 23492 "GET / HTTP/1.1" 404 2463
+INFO 2025-09-22 18:28:54,635 basehttp 31248 23492 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-22 18:28:54,656 basehttp 31248 23492 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+WARNING 2025-09-22 18:28:57,779 log 31248 23492 Not Found: /usuarios
+WARNING 2025-09-22 18:28:57,779 basehttp 31248 23492 "GET /usuarios HTTP/1.1" 404 2505
+INFO 2025-09-22 18:29:05,747 basehttp 31248 23492 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-22 18:29:05,753 basehttp 31248 23492 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+WARNING 2025-09-22 18:29:17,087 log 31248 23492 Not Found: /gemini
+WARNING 2025-09-22 18:29:17,087 basehttp 31248 23492 "GET /gemini HTTP/1.1" 404 2499
+INFO 2025-09-22 18:42:17,728 views 23724 13408 API do Gemini configurada com sucesso
+INFO 2025-09-22 18:44:32,121 autoreload 32364 23376 Watching for file changes with StatReloader
+INFO 2025-09-22 18:44:32,467 views 32364 23376 API do Gemini configurada com sucesso
+WARNING 2025-09-22 18:44:33,874 log 32364 13140 Not Found: /
+WARNING 2025-09-22 18:44:33,875 basehttp 32364 13140 "GET / HTTP/1.1" 404 2463
+INFO 2025-09-22 18:44:37,361 basehttp 32364 13140 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-09-22 18:44:37,382 basehttp 32364 13140 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+INFO 2025-09-22 18:44:45,636 basehttp 32364 13140 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-09-22 18:44:45,667 basehttp 32364 13140 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-09-22 18:44:45,790 basehttp 32364 13140 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-09-22 18:44:45,810 basehttp 32364 11068 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-09-22 18:44:45,816 basehttp 32364 17616 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-09-22 18:44:55,496 basehttp 32364 17616 "GET /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17098
+INFO 2025-09-22 18:44:55,524 basehttp 32364 17616 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-09-22 18:44:55,532 basehttp 32364 10544 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-09-22 18:44:55,540 basehttp 32364 26340 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-09-22 18:44:55,541 basehttp 32364 29444 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-09-22 18:44:55,551 basehttp 32364 26340 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-09-22 18:44:55,553 basehttp 32364 10544 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-09-22 18:44:55,555 basehttp 32364 11068 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:44:55,555 basehttp 32364 17616 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-09-22 18:44:55,570 basehttp 32364 29444 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-09-22 18:44:55,571 basehttp 32364 17616 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-09-22 18:44:55,575 basehttp 32364 13140 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-09-22 18:44:55,588 basehttp 32364 13140 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-09-22 18:44:55,603 basehttp 32364 13140 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-09-22 18:44:55,628 basehttp 32364 26340 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-09-22 18:49:46,375 autoreload 33944 7100 Watching for file changes with StatReloader
+INFO 2025-09-22 18:49:47,108 views 33944 7100 API do Gemini configurada com sucesso
+WARNING 2025-09-22 18:49:48,817 log 33944 10372 Not Found: /
+WARNING 2025-09-22 18:49:48,818 basehttp 33944 10372 "GET / HTTP/1.1" 404 2463
+INFO 2025-09-22 18:49:51,833 basehttp 33944 10372 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-09-22 18:50:00,066 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 11686
+INFO 2025-09-22 18:50:00,104 basehttp 33944 9980 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:50:00,183 basehttp 33944 22200 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-09-22 18:50:00,189 basehttp 33944 10372 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-09-22 18:50:00,199 basehttp 33944 22200 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-09-22 18:50:00,210 basehttp 33944 22200 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-09-22 18:50:02,218 basehttp 33944 22200 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-09-22 18:50:03,748 basehttp 33944 22200 "GET /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17098
+INFO 2025-09-22 18:50:03,771 basehttp 33944 22200 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:50:19,826 basehttp 33944 22200 "POST /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17587
+INFO 2025-09-22 18:50:19,850 basehttp 33944 22200 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:50:48,139 basehttp 33944 22200 "POST /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17297
+INFO 2025-09-22 18:50:48,158 basehttp 33944 22200 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:51:07,439 basehttp 33944 22200 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 11686
+INFO 2025-09-22 18:51:07,462 basehttp 33944 22200 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:51:09,735 basehttp 33944 22200 "GET /admin/api_gemini/ HTTP/1.1" 200 5637
+INFO 2025-09-22 18:51:11,256 basehttp 33944 22200 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-09-22 18:51:13,255 basehttp 33944 22200 "GET /admin/api_gemini/ HTTP/1.1" 200 5637
+INFO 2025-09-22 18:51:15,439 basehttp 33944 22200 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-09-22 18:51:34,007 basehttp 33944 22200 "GET /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17098
+INFO 2025-09-22 18:51:34,038 basehttp 33944 22200 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:52:45,559 basehttp 33944 22200 "POST /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17754
+INFO 2025-09-22 18:52:45,581 basehttp 33944 22200 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:53:09,987 basehttp 33944 22200 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-09-22 18:53:15,837 basehttp 33944 22200 "GET /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17098
+INFO 2025-09-22 18:53:15,859 basehttp 33944 22200 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+WARNING 2025-09-22 18:53:26,610 log 33944 22200 Not Found: /
+WARNING 2025-09-22 18:53:26,611 basehttp 33944 22200 "GET / HTTP/1.1" 404 2463
+INFO 2025-09-22 18:53:28,425 basehttp 33944 22200 "GET /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17098
+INFO 2025-09-22 18:54:53,796 basehttp 33944 22200 "POST /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 302 0
+INFO 2025-09-22 18:54:53,820 basehttp 33944 22200 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 14169
+INFO 2025-09-22 18:54:53,879 basehttp 33944 22200 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:54:53,893 basehttp 33944 22200 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-09-22 18:54:53,902 basehttp 33944 10372 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-09-22 18:54:59,572 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/1/change/ HTTP/1.1" 200 19543
+INFO 2025-09-22 18:54:59,593 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:55:02,349 basehttp 33944 10372 "GET /admin/ HTTP/1.1" 200 8291
+INFO 2025-09-22 18:55:07,905 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/1/change/ HTTP/1.1" 200 19543
+INFO 2025-09-22 18:55:07,941 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:55:25,804 basehttp 33944 10372 "GET /admin/ HTTP/1.1" 200 8291
+INFO 2025-09-22 18:55:28,080 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 13927
+INFO 2025-09-22 18:55:28,118 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:55:32,795 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/1/change/ HTTP/1.1" 200 19543
+INFO 2025-09-22 18:55:32,811 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:55:37,072 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/1/history/ HTTP/1.1" 200 8373
+INFO 2025-09-22 18:55:39,929 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/1/change/ HTTP/1.1" 200 19543
+INFO 2025-09-22 18:56:40,816 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/1/delete/ HTTP/1.1" 200 9069
+INFO 2025-09-22 18:56:40,849 basehttp 33944 10372 "GET /static/admin/js/cancel.js HTTP/1.1" 200 884
+INFO 2025-09-22 18:56:44,843 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 13927
+INFO 2025-09-22 18:56:44,869 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:56:56,237 basehttp 33944 10372 "GET /admin/api_gemini/ HTTP/1.1" 200 5637
+INFO 2025-09-22 18:56:58,070 basehttp 33944 10372 "GET /admin/ HTTP/1.1" 200 8291
+INFO 2025-09-22 18:57:00,570 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 13927
+INFO 2025-09-22 18:57:00,592 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:57:02,079 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/1/change/ HTTP/1.1" 200 19543
+INFO 2025-09-22 18:57:02,102 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:57:09,068 basehttp 33944 10372 "GET /admin/ HTTP/1.1" 200 8291
+INFO 2025-09-22 18:57:10,056 basehttp 33944 10372 "GET /admin/usuarios/usuario/ HTTP/1.1" 200 13402
+INFO 2025-09-22 18:57:10,094 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:57:27,901 basehttp 33944 10372 "GET /admin/usuarios/usuario/2/change/ HTTP/1.1" 200 26957
+INFO 2025-09-22 18:57:27,924 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:57:27,940 basehttp 33944 22200 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-09-22 18:57:27,941 basehttp 33944 12448 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-09-22 18:57:27,952 basehttp 33944 10372 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-09-22 18:57:27,953 basehttp 33944 21008 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-09-22 18:57:27,983 basehttp 33944 21008 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-09-22 18:57:27,983 basehttp 33944 22200 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-09-22 18:57:27,983 basehttp 33944 10372 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-09-22 18:57:44,012 basehttp 33944 10372 "POST /admin/usuarios/usuario/2/change/ HTTP/1.1" 302 0
+INFO 2025-09-22 18:57:44,023 basehttp 33944 10372 "GET /admin/usuarios/usuario/ HTTP/1.1" 200 13600
+INFO 2025-09-22 18:57:44,098 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:57:53,879 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 13924
+INFO 2025-09-22 18:57:53,913 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-09-22 18:57:56,418 basehttp 33944 10372 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 13924
+INFO 2025-09-22 18:57:56,435 basehttp 33944 10372 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:22:52,812 autoreload 13596 4116 Watching for file changes with StatReloader
+INFO 2025-10-22 15:23:31,746 views 23168 4248 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:23:44,363 autoreload 2492 4612 Watching for file changes with StatReloader
+INFO 2025-10-22 15:23:44,743 views 2492 4612 API do Gemini configurada com sucesso
+WARNING 2025-10-22 15:24:03,544 log 2492 20520 Not Found: /
+WARNING 2025-10-22 15:24:03,544 basehttp 2492 20520 "GET / HTTP/1.1" 404 2463
+WARNING 2025-10-22 15:24:03,671 log 2492 20520 Not Found: /favicon.ico
+WARNING 2025-10-22 15:24:03,673 basehttp 2492 20520 "GET /favicon.ico HTTP/1.1" 404 2514
+WARNING 2025-10-22 15:24:18,921 log 2492 20520 Not Found: /
+WARNING 2025-10-22 15:24:18,922 basehttp 2492 20520 "GET / HTTP/1.1" 404 2463
+INFO 2025-10-22 15:24:24,621 basehttp 2492 20520 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-22 15:24:25,170 basehttp 2492 20520 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+INFO 2025-10-22 15:24:25,669 basehttp 2492 20520 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-10-22 15:24:25,705 basehttp 2492 19476 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-10-22 15:24:25,719 basehttp 2492 12168 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-10-22 15:24:25,748 basehttp 2492 22076 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-10-22 15:24:25,761 basehttp 2492 12492 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-10-22 15:24:25,786 basehttp 2492 11000 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-10-22 15:24:25,793 basehttp 2492 12492 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-10-22 15:24:35,164 basehttp 2492 12492 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4402
+INFO 2025-10-22 15:27:39,380 views 8020 23520 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:27:52,237 views 20080 22804 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:28:22,700 autoreload 19604 13712 Watching for file changes with StatReloader
+INFO 2025-10-22 15:28:23,021 views 19604 13712 API do Gemini configurada com sucesso
+WARNING 2025-10-22 15:28:24,374 log 19604 2964 Not Found: /
+WARNING 2025-10-22 15:28:24,376 basehttp 19604 2964 "GET / HTTP/1.1" 404 2463
+INFO 2025-10-22 15:28:28,557 basehttp 19604 2964 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-22 15:28:28,615 basehttp 19604 2964 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+INFO 2025-10-22 15:28:28,649 basehttp 19604 2964 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:28:28,654 basehttp 19604 14572 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:28:28,656 basehttp 19604 20884 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:28:28,656 basehttp 19604 2964 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:28:28,657 basehttp 19604 3836 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:28:28,657 basehttp 19604 13136 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:28:28,682 basehttp 19604 13136 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:28:48,446 basehttp 19604 13136 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-22 15:28:48,532 basehttp 19604 13136 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-10-22 15:28:48,725 basehttp 19604 13136 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-10-22 15:28:48,742 basehttp 19604 13136 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-10-22 15:28:48,743 basehttp 19604 3836 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-10-22 15:28:55,131 basehttp 19604 3836 "GET /admin/usuarios/usuario/ HTTP/1.1" 200 13823
+INFO 2025-10-22 15:28:55,188 basehttp 19604 3836 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-10-22 15:28:55,203 basehttp 19604 20884 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-10-22 15:28:55,214 basehttp 19604 14572 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-10-22 15:28:55,225 basehttp 19604 3836 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-10-22 15:28:55,229 basehttp 19604 20884 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-10-22 15:28:55,234 basehttp 19604 14572 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-10-22 15:28:55,234 basehttp 19604 24264 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-10-22 15:28:55,246 basehttp 19604 20884 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-10-22 15:28:55,280 basehttp 19604 13136 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:28:55,312 basehttp 19604 3836 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-10-22 15:28:55,328 basehttp 19604 2964 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-10-22 15:28:55,331 basehttp 19604 3836 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-10-22 15:28:55,375 basehttp 19604 2964 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-10-22 15:28:55,375 basehttp 19604 3836 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-10-22 15:28:55,379 basehttp 19604 13136 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-10-22 15:29:11,797 basehttp 19604 13136 "POST /admin/logout/ HTTP/1.1" 200 3636
+INFO 2025-10-22 15:29:11,847 basehttp 19604 13136 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:29:11,855 basehttp 19604 20884 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:29:11,856 basehttp 19604 2964 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:29:11,856 basehttp 19604 13136 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:29:11,857 basehttp 19604 3836 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:29:11,864 basehttp 19604 13136 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:29:13,943 basehttp 19604 13136 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-22 15:29:13,953 basehttp 19604 13136 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+INFO 2025-10-22 15:29:13,981 basehttp 19604 13136 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:29:19,561 basehttp 19604 13136 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4402
+INFO 2025-10-22 15:29:25,741 basehttp 19604 13136 "POST /admin/login/?next=/admin/ HTTP/1.1" 200 4402
+INFO 2025-10-22 15:30:22,997 autoreload 21344 20012 Watching for file changes with StatReloader
+INFO 2025-10-22 15:30:23,260 views 21344 20012 API do Gemini configurada com sucesso
+WARNING 2025-10-22 15:30:25,055 log 21344 6716 Not Found: /
+WARNING 2025-10-22 15:30:25,057 basehttp 21344 6716 "GET / HTTP/1.1" 404 2463
+INFO 2025-10-22 15:30:31,372 basehttp 21344 6716 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-22 15:30:31,441 basehttp 21344 6716 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+INFO 2025-10-22 15:30:31,463 basehttp 21344 2780 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:31,465 basehttp 21344 6716 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:31,468 basehttp 21344 12856 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:31,470 basehttp 21344 23220 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:31,472 basehttp 21344 23880 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:31,473 basehttp 21344 12948 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:31,475 basehttp 21344 12948 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:36,489 basehttp 21344 12948 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-22 15:30:36,530 basehttp 21344 12948 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 15:30:36,575 basehttp 21344 12948 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:36,577 basehttp 21344 23880 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:36,577 basehttp 21344 23220 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,661 basehttp 21344 23220 "GET /admin/api_gemini/trilhacurso/1/change/ HTTP/1.1" 200 19538
+INFO 2025-10-22 15:30:40,721 basehttp 21344 12948 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,721 basehttp 21344 12856 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,723 basehttp 21344 6716 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,732 basehttp 21344 12948 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,736 basehttp 21344 12856 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,739 basehttp 21344 6716 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,743 basehttp 21344 12948 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,746 basehttp 21344 12856 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:40,749 basehttp 21344 23880 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:30:40,961 basehttp 21344 2780 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-10-22 15:30:40,984 basehttp 21344 2780 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-10-22 15:30:40,990 basehttp 21344 23220 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-10-22 15:30:41,018 basehttp 21344 23220 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-10-22 15:30:48,878 basehttp 21344 23220 "GET /admin/api_gemini/ HTTP/1.1" 200 5636
+INFO 2025-10-22 15:30:52,088 basehttp 21344 23220 "GET /admin/api_gemini/trilhacurso/add/ HTTP/1.1" 200 17132
+INFO 2025-10-22 15:30:52,137 basehttp 21344 2780 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:30:52,145 basehttp 21344 23220 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:31:01,732 basehttp 21344 23220 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 13924
+INFO 2025-10-22 15:31:01,773 basehttp 21344 23880 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:01,773 basehttp 21344 23220 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:01,782 basehttp 21344 2780 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:31:01,789 basehttp 21344 2780 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:01,792 basehttp 21344 12856 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-10-22 15:31:01,801 basehttp 21344 12856 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:01,801 basehttp 21344 2780 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:04,060 basehttp 21344 2780 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 15:31:12,744 basehttp 21344 2780 "GET /admin/usuarios/usuario/2/change/ HTTP/1.1" 200 26952
+INFO 2025-10-22 15:31:12,794 basehttp 21344 2780 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:31:12,823 basehttp 21344 23220 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 200 19319
+INFO 2025-10-22 15:31:12,823 basehttp 21344 12948 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 200 15845
+INFO 2025-10-22 15:31:12,823 basehttp 21344 23880 "GET /static/admin/js/SelectBox.js HTTP/1.1" 200 4530
+INFO 2025-10-22 15:31:12,830 basehttp 21344 12856 "GET /static/admin/js/calendar.js HTTP/1.1" 200 9141
+INFO 2025-10-22 15:31:12,879 basehttp 21344 12856 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 200 3291
+INFO 2025-10-22 15:31:12,879 basehttp 21344 12948 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 200 677
+INFO 2025-10-22 15:31:12,880 basehttp 21344 23880 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 200 1086
+INFO 2025-10-22 15:31:22,733 basehttp 21344 23880 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 15:31:25,816 basehttp 21344 23880 "GET /admin/usuarios/usuario/ HTTP/1.1" 200 13822
+INFO 2025-10-22 15:31:25,870 basehttp 21344 23880 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:25,880 basehttp 21344 23220 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:25,880 basehttp 21344 6716 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:25,881 basehttp 21344 12856 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:25,882 basehttp 21344 12948 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:25,894 basehttp 21344 12948 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:25,894 basehttp 21344 2780 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:31:32,728 basehttp 21344 2780 "GET /admin/usuarios/usuario/3/change/ HTTP/1.1" 200 26895
+INFO 2025-10-22 15:31:32,769 basehttp 21344 6716 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,769 basehttp 21344 2780 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,772 basehttp 21344 12856 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,773 basehttp 21344 23880 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,775 basehttp 21344 23220 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,780 basehttp 21344 2780 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,781 basehttp 21344 6716 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,781 basehttp 21344 12856 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,783 basehttp 21344 23880 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,785 basehttp 21344 23220 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,786 basehttp 21344 2780 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,787 basehttp 21344 12948 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:31:32,789 basehttp 21344 2780 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:32,789 basehttp 21344 2780 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:31:35,293 basehttp 21344 2780 "GET /admin/usuarios/usuario/3/password/ HTTP/1.1" 200 10500
+INFO 2025-10-22 15:31:35,329 basehttp 21344 2780 "GET /static/admin/css/unusable_password_field.css HTTP/1.1" 200 663
+INFO 2025-10-22 15:31:35,331 basehttp 21344 23220 "GET /static/admin/img/icon-alert.svg HTTP/1.1" 200 504
+INFO 2025-10-22 15:31:35,339 basehttp 21344 12948 "GET /static/admin/js/unusable_password_field.js HTTP/1.1" 200 1480
+INFO 2025-10-22 15:31:37,111 basehttp 21344 12948 "GET /admin/usuarios/usuario/3/change/ HTTP/1.1" 200 26895
+INFO 2025-10-22 15:31:38,386 basehttp 21344 12948 "GET /admin/usuarios/usuario/ HTTP/1.1" 200 13822
+INFO 2025-10-22 15:31:39,582 basehttp 21344 12948 "GET /admin/usuarios/usuario/1/change/ HTTP/1.1" 200 26935
+INFO 2025-10-22 15:31:39,641 basehttp 21344 12948 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:31:40,860 basehttp 21344 12948 "GET /admin/usuarios/usuario/ HTTP/1.1" 200 13822
+INFO 2025-10-22 15:34:21,966 autoreload 20308 22040 Watching for file changes with StatReloader
+INFO 2025-10-22 15:34:22,243 views 20308 22040 API do Gemini configurada com sucesso
+WARNING 2025-10-22 15:34:24,703 log 20308 7404 Not Found: /
+WARNING 2025-10-22 15:34:24,704 basehttp 20308 7404 "GET / HTTP/1.1" 404 2463
+INFO 2025-10-22 15:34:29,568 basehttp 20308 7404 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 15:34:29,587 basehttp 20308 7404 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:29,587 basehttp 20308 20900 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:29,587 basehttp 20308 24028 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:29,634 basehttp 20308 24028 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:29,635 basehttp 20308 20900 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:29,635 basehttp 20308 7404 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:29,641 basehttp 20308 20900 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:29,648 basehttp 20308 20900 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:29,652 basehttp 20308 7404 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:34:52,901 basehttp 20308 20900 "GET /api/gemini/chat HTTP/1.1" 301 0
+WARNING 2025-10-22 15:34:52,908 log 20308 7404 Method Not Allowed: /api/gemini/chat/
+WARNING 2025-10-22 15:34:52,908 basehttp 20308 7404 "GET /api/gemini/chat/ HTTP/1.1" 405 47
+WARNING 2025-10-22 15:35:07,293 log 20308 7404 Not Found: /api/gemini/
+WARNING 2025-10-22 15:35:07,295 basehttp 20308 7404 "GET /api/gemini/ HTTP/1.1" 404 3487
+WARNING 2025-10-22 15:35:26,324 log 20308 7404 Method Not Allowed: /api/gemini/trilha/
+WARNING 2025-10-22 15:35:26,325 basehttp 20308 7404 "GET /api/gemini/trilha/ HTTP/1.1" 405 47
+WARNING 2025-10-22 15:35:50,886 log 20308 7404 Not Found: /admin/api/gemini/trilha/
+WARNING 2025-10-22 15:35:50,886 basehttp 20308 7404 "GET /admin/api/gemini/trilha/ HTTP/1.1" 404 5738
+INFO 2025-10-22 15:35:55,252 basehttp 20308 7404 "GET /admin HTTP/1.1" 301 0
+INFO 2025-10-22 15:35:55,274 basehttp 20308 24028 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 15:35:55,317 basehttp 20308 24028 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:55,324 basehttp 20308 16864 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:55,324 basehttp 20308 24028 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:55,330 basehttp 20308 20744 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:55,330 basehttp 20308 8484 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:55,332 basehttp 20308 5924 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:55,343 basehttp 20308 5924 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:55,351 basehttp 20308 8484 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:55,352 basehttp 20308 5924 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,586 basehttp 20308 5924 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 13924
+INFO 2025-10-22 15:35:57,622 basehttp 20308 5924 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,622 basehttp 20308 20744 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,624 basehttp 20308 16864 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,625 basehttp 20308 1156 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,626 basehttp 20308 24028 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,629 basehttp 20308 20744 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,630 basehttp 20308 5924 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,631 basehttp 20308 16864 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,632 basehttp 20308 24028 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,634 basehttp 20308 1156 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,635 basehttp 20308 16864 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,637 basehttp 20308 8484 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 15:35:57,637 basehttp 20308 16864 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,659 basehttp 20308 8484 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,659 basehttp 20308 16864 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:35:57,659 basehttp 20308 1156 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:36:34,796 autoreload 20308 22040 C:\Users\cauek\Desktop\EstudaAI\config\api_gemini\views.py changed, reloading.
+INFO 2025-10-22 15:36:35,388 autoreload 18448 18212 Watching for file changes with StatReloader
+INFO 2025-10-22 15:36:35,761 views 18448 18212 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:36:43,523 autoreload 18448 18212 C:\Users\cauek\Desktop\EstudaAI\config\api_gemini\views.py changed, reloading.
+INFO 2025-10-22 15:36:44,049 autoreload 22272 11660 Watching for file changes with StatReloader
+INFO 2025-10-22 15:36:44,349 views 22272 11660 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:36:50,974 autoreload 22272 11660 C:\Users\cauek\Desktop\EstudaAI\config\api_gemini\urls.py changed, reloading.
+INFO 2025-10-22 15:36:51,555 autoreload 16264 16976 Watching for file changes with StatReloader
+INFO 2025-10-22 15:36:51,853 views 16264 16976 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:37:04,037 autoreload 24456 22068 Watching for file changes with StatReloader
+INFO 2025-10-22 15:37:04,329 views 24456 22068 API do Gemini configurada com sucesso
+WARNING 2025-10-22 15:37:24,440 log 16264 15016 Not Found: /
+WARNING 2025-10-22 15:37:24,441 basehttp 16264 15016 "GET / HTTP/1.1" 404 2463
+INFO 2025-10-22 15:37:27,277 basehttp 16264 15016 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 15:37:27,305 basehttp 16264 15016 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:27,305 basehttp 16264 11420 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:27,305 basehttp 16264 22552 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:27,336 basehttp 16264 15016 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:27,336 basehttp 16264 22552 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:27,336 basehttp 16264 11420 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:27,336 basehttp 16264 11420 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:27,356 basehttp 16264 11420 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:27,356 basehttp 16264 15016 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:37:39,496 basehttp 16264 15016 "GET /api/gemini HTTP/1.1" 301 0
+INFO 2025-10-22 15:37:39,539 basehttp 16264 11420 "GET /api/gemini/ HTTP/1.1" 200 13493
+INFO 2025-10-22 15:37:43,162 views 16264 11420 Health check solicitado
+INFO 2025-10-22 15:37:43,163 basehttp 16264 11420 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-10-22 15:37:50,864 views 16264 11420 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:37:50,864 views 16264 11420 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:37:50,864 log 16264 11420 Internal Server Error: /api/gemini/chat/
+ERROR 2025-10-22 15:37:50,864 basehttp 16264 11420 "POST /api/gemini/chat/ HTTP/1.1" 500 51
+INFO 2025-10-22 15:38:12,451 views 16264 11420 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+ERROR 2025-10-22 15:38:12,451 views 16264 11420 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:38:12,451 log 16264 11420 Internal Server Error: /api/gemini/trilha/
+ERROR 2025-10-22 15:38:12,451 basehttp 16264 11420 "POST /api/gemini/trilha/ HTTP/1.1" 500 51
+INFO 2025-10-22 15:42:04,055 autoreload 19924 17032 Watching for file changes with StatReloader
+INFO 2025-10-22 15:42:04,521 views 19924 17032 API do Gemini configurada com sucesso
+WARNING 2025-10-22 15:42:06,273 log 16264 11420 Not Found: /
+WARNING 2025-10-22 15:42:06,274 basehttp 16264 11420 "GET / HTTP/1.1" 404 2463
+INFO 2025-10-22 15:42:09,379 basehttp 16264 11420 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 15:42:09,379 basehttp 16264 11420 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:09,395 basehttp 16264 22552 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:09,396 basehttp 16264 18520 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:09,436 basehttp 16264 18520 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:09,436 basehttp 16264 22552 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:09,436 basehttp 16264 18520 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:09,436 basehttp 16264 11420 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:09,452 basehttp 16264 11420 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:09,453 basehttp 16264 18520 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 15:42:18,303 basehttp 16264 18520 "GET /api/gemini/ HTTP/1.1" 200 15719
+INFO 2025-10-22 15:42:18,358 views 16264 18520 Health check solicitado
+INFO 2025-10-22 15:42:18,366 basehttp 16264 18520 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-10-22 15:42:25,016 views 16264 18520 Health check solicitado
+INFO 2025-10-22 15:42:25,023 basehttp 16264 18520 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-10-22 15:42:27,309 views 16264 18520 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:42:27,309 views 16264 18520 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:42:27,309 log 16264 18520 Internal Server Error: /api/gemini/chat/
+ERROR 2025-10-22 15:42:27,309 basehttp 16264 18520 "POST /api/gemini/chat/ HTTP/1.1" 500 51
+INFO 2025-10-22 15:42:35,061 views 16264 18520 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:42:35,067 views 16264 18520 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:42:35,068 log 16264 18520 Internal Server Error: /api/gemini/chat/
+ERROR 2025-10-22 15:42:35,068 basehttp 16264 18520 "POST /api/gemini/chat/ HTTP/1.1" 500 51
+INFO 2025-10-22 15:42:36,627 views 16264 18520 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+ERROR 2025-10-22 15:42:36,627 views 16264 18520 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:42:36,627 log 16264 18520 Internal Server Error: /api/gemini/trilha/
+ERROR 2025-10-22 15:42:36,627 basehttp 16264 18520 "POST /api/gemini/trilha/ HTTP/1.1" 500 51
+INFO 2025-10-22 15:43:53,332 autoreload 12844 18256 Watching for file changes with StatReloader
+INFO 2025-10-22 15:43:53,625 views 12844 18256 API do Gemini configurada com sucesso
+WARNING 2025-10-22 15:43:55,377 log 16264 18520 Not Found: /
+WARNING 2025-10-22 15:43:55,377 basehttp 16264 18520 "GET / HTTP/1.1" 404 2463
+WARNING 2025-10-22 15:43:56,166 log 16264 18520 Not Found: /
+WARNING 2025-10-22 15:43:56,168 basehttp 16264 18520 "GET / HTTP/1.1" 404 2463
+INFO 2025-10-22 15:44:01,463 basehttp 16264 18520 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 15:44:06,585 basehttp 16264 18520 "GET /api/gemini/ HTTP/1.1" 200 15719
+INFO 2025-10-22 15:44:06,617 views 16264 18520 Health check solicitado
+INFO 2025-10-22 15:44:06,618 basehttp 16264 18520 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-10-22 15:44:08,443 views 16264 18520 Health check solicitado
+INFO 2025-10-22 15:44:08,443 basehttp 16264 18520 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-10-22 15:44:09,568 views 16264 18520 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:44:09,568 views 16264 18520 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:44:09,568 log 16264 18520 Internal Server Error: /api/gemini/chat/
+ERROR 2025-10-22 15:44:09,568 basehttp 16264 18520 "POST /api/gemini/chat/ HTTP/1.1" 500 51
+INFO 2025-10-22 15:45:12,896 autoreload 22384 17648 Watching for file changes with StatReloader
+INFO 2025-10-22 15:45:13,255 views 22384 17648 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:49:31,855 views 20704 15812 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:49:32,072 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+ERROR 2025-10-22 15:49:32,072 views 20704 15812 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:49:32,072 log 20704 15812 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,081 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,081 views 20704 15812 Processando solicitação de trilha: Quero aprender Python para meu curso...
+INFO 2025-10-22 15:49:32,082 views 20704 15812 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:49:32,082 views 20704 15812 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:49:32,082 views 20704 15812 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:49:32,084 views 20704 15812 Trilha salva no banco com ID 1
+INFO 2025-10-22 15:49:32,084 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,084 views 20704 15812 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:49:32,088 views 20704 15812 Dados do usuário testuser carregados para personalização
+ERROR 2025-10-22 15:49:32,088 views 20704 15812 Erro ao processar requisição de trilha: Erro na API do Gemini
+ERROR 2025-10-22 15:49:32,089 log 20704 15812 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,092 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,093 views 20704 15812 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:49:32,094 views 20704 15812 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:49:32,094 views 20704 15812 Trilha gerada com sucesso pelo LLM
+ERROR 2025-10-22 15:49:32,094 views 20704 15812 Erro ao parsear JSON da resposta: Expecting value: line 1 column 1 (char 0)
+ERROR 2025-10-22 15:49:32,094 log 20704 15812 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,097 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+WARNING 2025-10-22 15:49:32,097 views 20704 15812 Requisição sem solicitação de curso
+WARNING 2025-10-22 15:49:32,098 log 20704 15812 Bad Request: /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,100 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,100 views 20704 15812 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:49:32,100 views 20704 15812 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:49:32,100 views 20704 15812 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:49:32,102 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,102 views 20704 15812 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:49:32,103 views 20704 15812 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:49:32,103 views 20704 15812 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:49:32,103 views 20704 15812 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:49:32,103 views 20704 15812 Trilha salva no banco com ID 1
+INFO 2025-10-22 15:49:32,106 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,106 views 20704 15812 Processando solicitação de trilha: Quero aprender Python...
+WARNING 2025-10-22 15:49:32,107 views 20704 15812 Usuário com ID 99999 não encontrado
+INFO 2025-10-22 15:49:32,107 views 20704 15812 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:49:32,107 views 20704 15812 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:49:32,110 views 20704 15812 Listando trilhas do usuário 1
+INFO 2025-10-22 15:49:32,113 views 20704 15812 Listando trilhas do usuário 1
+INFO 2025-10-22 15:49:32,115 views 20704 15812 Listando trilhas do usuário 99999
+WARNING 2025-10-22 15:49:32,116 log 20704 15812 Not Found: /api/gemini/trilhas/99999/
+INFO 2025-10-22 15:49:32,117 views 20704 15812 Listando trilhas do usuário 1
+INFO 2025-10-22 15:49:32,122 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:49:32,123 views 20704 15812 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:49:32,123 log 20704 15812 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:49:32,126 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:49:32,126 views 20704 15812 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-10-22 15:49:32,126 views 20704 15812 Resposta gerada com sucesso
+INFO 2025-10-22 15:49:32,127 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:49:32,128 views 20704 15812 Processando mensagem: Teste...
+ERROR 2025-10-22 15:49:32,128 views 20704 15812 Erro ao processar requisição: Erro na API do Gemini
+ERROR 2025-10-22 15:49:32,128 log 20704 15812 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:49:32,128 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:49:32,130 views 20704 15812 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-10-22 15:49:32,130 log 20704 15812 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:49:32,131 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:49:32,131 views 20704 15812 Processando mensagem: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...
+INFO 2025-10-22 15:49:32,131 views 20704 15812 Resposta gerada com sucesso
+INFO 2025-10-22 15:49:32,133 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-10-22 15:49:32,133 views 20704 15812 Requisição sem mensagem
+WARNING 2025-10-22 15:49:32,133 log 20704 15812 Bad Request: /api/gemini/chat/
+INFO 2025-10-22 15:49:32,134 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:49:32,135 views 20704 15812 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:49:32,135 log 20704 15812 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:49:32,136 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:49:32,137 views 20704 15812 Processando mensagem: Olá, como você está?...
+INFO 2025-10-22 15:49:32,137 views 20704 15812 Resposta gerada com sucesso
+INFO 2025-10-22 15:49:32,139 views 20704 15812 Health check solicitado
+INFO 2025-10-22 15:49:32,140 views 20704 15812 Health check solicitado
+INFO 2025-10-22 15:49:32,140 views 20704 15812 Health check solicitado
+INFO 2025-10-22 15:49:32,144 views 20704 15812 Health check solicitado
+INFO 2025-10-22 15:49:32,145 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:49:32,145 views 20704 15812 Processando solicitação de trilha: teste...
+INFO 2025-10-22 15:49:45,341 views 20704 15812 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:49:45,341 views 20704 15812 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:49:45,341 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:49:45,349 views 20704 15812 Processando mensagem: teste...
+INFO 2025-10-22 15:49:45,922 views 20704 15812 Resposta gerada com sucesso
+INFO 2025-10-22 15:49:45,929 views 20704 15812 Health check solicitado
+INFO 2025-10-22 15:49:45,933 views 20704 15812 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+WARNING 2025-10-22 15:49:45,933 views 20704 15812 Requisição sem solicitação de curso
+WARNING 2025-10-22 15:49:45,934 log 20704 15812 Bad Request: /api/gemini/trilha/
+INFO 2025-10-22 15:49:45,935 views 20704 15812 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-10-22 15:49:45,935 views 20704 15812 Requisição sem mensagem
+WARNING 2025-10-22 15:49:45,935 log 20704 15812 Bad Request: /api/gemini/chat/
+INFO 2025-10-22 15:50:40,239 views 14684 17432 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:50:53,957 views 7584 13112 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:50:54,109 views 7584 13112 Health check solicitado
+INFO 2025-10-22 15:50:54,116 views 7584 13112 Health check solicitado
+INFO 2025-10-22 15:50:54,119 views 7584 13112 Health check solicitado
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+ERROR 2025-10-22 15:50:54,125 views 7584 13112 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:50:54,125 log 7584 13112 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Processando solicitação de trilha: Quero aprender Python para meu curso...
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:50:54,125 views 7584 13112 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Trilha salva no banco com ID 1
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:50:54,125 views 7584 13112 Dados do usuário testuser carregados para personalização
+ERROR 2025-10-22 15:50:54,125 views 7584 13112 Erro ao processar requisição de trilha: Erro na API do Gemini
+ERROR 2025-10-22 15:50:54,125 log 7584 13112 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,146 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,146 views 7584 13112 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:50:54,146 views 7584 13112 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:50:54,149 views 7584 13112 Trilha gerada com sucesso pelo LLM
+ERROR 2025-10-22 15:50:54,149 views 7584 13112 Erro ao parsear JSON da resposta: Expecting value: line 1 column 1 (char 0)
+ERROR 2025-10-22 15:50:54,150 log 7584 13112 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,155 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+WARNING 2025-10-22 15:50:54,155 views 7584 13112 Requisição sem solicitação de curso
+WARNING 2025-10-22 15:50:54,155 log 7584 13112 Bad Request: /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,159 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,159 views 7584 13112 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:50:54,159 views 7584 13112 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:50:54,159 views 7584 13112 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:50:54,159 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,159 views 7584 13112 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:50:54,159 views 7584 13112 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:50:54,159 views 7584 13112 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:50:54,159 views 7584 13112 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:50:54,165 views 7584 13112 Trilha salva no banco com ID 1
+INFO 2025-10-22 15:50:54,170 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,170 views 7584 13112 Processando solicitação de trilha: Quero aprender Python...
+WARNING 2025-10-22 15:50:54,171 views 7584 13112 Usuário com ID 99999 não encontrado
+INFO 2025-10-22 15:50:54,171 views 7584 13112 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:50:54,171 views 7584 13112 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:50:54,176 views 7584 13112 Listando trilhas do usuário 1
+INFO 2025-10-22 15:50:54,182 views 7584 13112 Listando trilhas do usuário 1
+INFO 2025-10-22 15:50:54,186 views 7584 13112 Listando trilhas do usuário 99999
+WARNING 2025-10-22 15:50:54,187 log 7584 13112 Not Found: /api/gemini/trilhas/99999/
+INFO 2025-10-22 15:50:54,189 views 7584 13112 Listando trilhas do usuário 1
+INFO 2025-10-22 15:50:54,191 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:50:54,192 views 7584 13112 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:50:54,192 log 7584 13112 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:50:54,194 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:50:54,195 views 7584 13112 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-10-22 15:50:54,195 views 7584 13112 Resposta gerada com sucesso
+INFO 2025-10-22 15:50:54,196 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:50:54,196 views 7584 13112 Processando mensagem: Teste...
+ERROR 2025-10-22 15:50:54,196 views 7584 13112 Erro ao processar requisição: Erro na API do Gemini
+ERROR 2025-10-22 15:50:54,196 log 7584 13112 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:50:54,196 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:50:54,196 views 7584 13112 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-10-22 15:50:54,196 log 7584 13112 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:50:54,196 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:50:54,196 views 7584 13112 Processando mensagem: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...
+INFO 2025-10-22 15:50:54,196 views 7584 13112 Resposta gerada com sucesso
+INFO 2025-10-22 15:50:54,207 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-10-22 15:50:54,207 views 7584 13112 Requisição sem mensagem
+WARNING 2025-10-22 15:50:54,207 log 7584 13112 Bad Request: /api/gemini/chat/
+INFO 2025-10-22 15:50:54,209 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:50:54,209 views 7584 13112 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:50:54,209 log 7584 13112 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:50:54,212 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:50:54,213 views 7584 13112 Processando mensagem: Olá, como você está?...
+INFO 2025-10-22 15:50:54,213 views 7584 13112 Resposta gerada com sucesso
+INFO 2025-10-22 15:50:54,216 views 7584 13112 Health check solicitado
+INFO 2025-10-22 15:50:54,217 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:50:54,217 views 7584 13112 Processando solicitação de trilha: teste...
+INFO 2025-10-22 15:51:06,186 views 7584 13112 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:51:06,193 views 7584 13112 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:51:06,193 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:51:06,195 views 7584 13112 Processando mensagem: teste...
+INFO 2025-10-22 15:51:06,697 views 7584 13112 Resposta gerada com sucesso
+INFO 2025-10-22 15:51:06,697 views 7584 13112 Health check solicitado
+INFO 2025-10-22 15:51:06,713 views 7584 13112 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+WARNING 2025-10-22 15:51:06,713 views 7584 13112 Requisição sem solicitação de curso
+WARNING 2025-10-22 15:51:06,714 log 7584 13112 Bad Request: /api/gemini/trilha/
+INFO 2025-10-22 15:51:06,715 views 7584 13112 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-10-22 15:51:06,715 views 7584 13112 Requisição sem mensagem
+WARNING 2025-10-22 15:51:06,715 log 7584 13112 Bad Request: /api/gemini/chat/
+INFO 2025-10-22 15:52:48,964 views 17672 22592 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:52:49,112 views 17672 22592 Health check solicitado
+INFO 2025-10-22 15:52:49,117 views 17672 22592 Health check solicitado
+INFO 2025-10-22 15:52:49,120 views 17672 22592 Health check solicitado
+INFO 2025-10-22 15:52:49,129 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+ERROR 2025-10-22 15:52:49,129 views 17672 22592 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:52:49,129 log 17672 22592 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,135 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,135 views 17672 22592 Processando solicitação de trilha: Quero aprender Python para meu curso...
+INFO 2025-10-22 15:52:49,135 views 17672 22592 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:52:49,135 views 17672 22592 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:52:49,136 views 17672 22592 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:52:49,136 views 17672 22592 Trilha salva no banco com ID 1
+INFO 2025-10-22 15:52:49,140 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,140 views 17672 22592 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:52:49,141 views 17672 22592 Dados do usuário testuser carregados para personalização
+ERROR 2025-10-22 15:52:49,141 views 17672 22592 Erro ao processar requisição de trilha: Erro na API do Gemini
+ERROR 2025-10-22 15:52:49,141 log 17672 22592 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,144 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,144 views 17672 22592 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:52:49,145 views 17672 22592 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:52:49,145 views 17672 22592 Trilha gerada com sucesso pelo LLM
+ERROR 2025-10-22 15:52:49,145 views 17672 22592 Erro ao parsear JSON da resposta: Expecting value: line 1 column 1 (char 0)
+ERROR 2025-10-22 15:52:49,145 log 17672 22592 Internal Server Error: /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,147 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+WARNING 2025-10-22 15:52:49,147 views 17672 22592 Requisição sem solicitação de curso
+WARNING 2025-10-22 15:52:49,147 log 17672 22592 Bad Request: /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,147 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,153 views 17672 22592 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:52:49,153 views 17672 22592 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:52:49,153 views 17672 22592 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:52:49,156 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,156 views 17672 22592 Processando solicitação de trilha: Quero aprender Python...
+INFO 2025-10-22 15:52:49,156 views 17672 22592 Dados do usuário testuser carregados para personalização
+INFO 2025-10-22 15:52:49,156 views 17672 22592 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:52:49,156 views 17672 22592 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:52:49,156 views 17672 22592 Trilha salva no banco com ID 1
+INFO 2025-10-22 15:52:49,163 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,163 views 17672 22592 Processando solicitação de trilha: Quero aprender Python...
+WARNING 2025-10-22 15:52:49,163 views 17672 22592 Usuário com ID 99999 não encontrado
+INFO 2025-10-22 15:52:49,163 views 17672 22592 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:52:49,163 views 17672 22592 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:52:49,167 views 17672 22592 Listando trilhas do usuário 1
+INFO 2025-10-22 15:52:49,172 views 17672 22592 Listando trilhas do usuário 1
+INFO 2025-10-22 15:52:49,175 views 17672 22592 Listando trilhas do usuário 99999
+WARNING 2025-10-22 15:52:49,176 log 17672 22592 Not Found: /api/gemini/trilhas/99999/
+INFO 2025-10-22 15:52:49,178 views 17672 22592 Listando trilhas do usuário 1
+INFO 2025-10-22 15:52:49,182 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:52:49,182 views 17672 22592 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:52:49,182 log 17672 22592 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:52:49,184 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:52:49,186 views 17672 22592 Processando mensagem: Olá, como você pode me ajudar?...
+INFO 2025-10-22 15:52:49,186 views 17672 22592 Resposta gerada com sucesso
+INFO 2025-10-22 15:52:49,188 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:52:49,188 views 17672 22592 Processando mensagem: Teste...
+ERROR 2025-10-22 15:52:49,188 views 17672 22592 Erro ao processar requisição: Erro na API do Gemini
+ERROR 2025-10-22 15:52:49,190 log 17672 22592 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:52:49,192 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:52:49,192 views 17672 22592 Erro ao processar requisição: JSON parse error - Expecting value: line 1 column 1 (char 0)
+ERROR 2025-10-22 15:52:49,192 log 17672 22592 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:52:49,195 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:52:49,196 views 17672 22592 Processando mensagem: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...
+INFO 2025-10-22 15:52:49,196 views 17672 22592 Resposta gerada com sucesso
+INFO 2025-10-22 15:52:49,199 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-10-22 15:52:49,199 views 17672 22592 Requisição sem mensagem
+WARNING 2025-10-22 15:52:49,199 log 17672 22592 Bad Request: /api/gemini/chat/
+INFO 2025-10-22 15:52:49,201 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-10-22 15:52:49,201 views 17672 22592 Chave da API do Gemini não configurada
+ERROR 2025-10-22 15:52:49,201 log 17672 22592 Internal Server Error: /api/gemini/chat/
+INFO 2025-10-22 15:52:49,205 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:52:49,205 views 17672 22592 Processando mensagem: Olá, como você está?...
+INFO 2025-10-22 15:52:49,205 views 17672 22592 Resposta gerada com sucesso
+INFO 2025-10-22 15:52:49,208 views 17672 22592 Health check solicitado
+INFO 2025-10-22 15:52:49,208 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 15:52:49,209 views 17672 22592 Processando solicitação de trilha: teste...
+INFO 2025-10-22 15:53:00,295 views 17672 22592 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 15:53:00,311 views 17672 22592 JSON da trilha parseado com sucesso
+INFO 2025-10-22 15:53:00,311 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 15:53:00,311 views 17672 22592 Processando mensagem: teste...
+INFO 2025-10-22 15:53:02,837 views 17672 22592 Resposta gerada com sucesso
+INFO 2025-10-22 15:53:02,837 views 17672 22592 Health check solicitado
+INFO 2025-10-22 15:53:02,855 views 17672 22592 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+WARNING 2025-10-22 15:53:02,856 views 17672 22592 Requisição sem solicitação de curso
+WARNING 2025-10-22 15:53:02,856 log 17672 22592 Bad Request: /api/gemini/trilha/
+INFO 2025-10-22 15:53:02,857 views 17672 22592 Requisição recebida: POST /api/gemini/chat/
+WARNING 2025-10-22 15:53:02,857 views 17672 22592 Requisição sem mensagem
+WARNING 2025-10-22 15:53:02,858 log 17672 22592 Bad Request: /api/gemini/chat/
+INFO 2025-10-22 15:57:04,336 views 13012 13596 API do Gemini configurada com sucesso
+INFO 2025-10-22 15:59:34,286 views 1008 21868 API do Gemini configurada com sucesso
+INFO 2025-10-22 16:03:16,368 autoreload 14024 13792 Watching for file changes with StatReloader
+INFO 2025-10-22 16:03:16,735 views 14024 13792 API do Gemini configurada com sucesso
+WARNING 2025-10-22 16:03:19,518 log 14024 23236 Not Found: /
+WARNING 2025-10-22 16:03:19,518 basehttp 14024 23236 "GET / HTTP/1.1" 404 2463
+WARNING 2025-10-22 16:03:21,236 log 14024 23236 Not Found: /
+WARNING 2025-10-22 16:03:21,237 basehttp 14024 23236 "GET / HTTP/1.1" 404 2463
+INFO 2025-10-22 16:03:25,000 basehttp 14024 23236 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 16:03:25,037 basehttp 14024 23236 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:25,037 basehttp 14024 13684 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:25,037 basehttp 14024 14972 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:25,092 basehttp 14024 14972 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:25,093 basehttp 14024 13684 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:25,094 basehttp 14024 23236 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:25,099 basehttp 14024 23236 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:25,108 basehttp 14024 13684 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:25,110 basehttp 14024 23236 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:03:27,818 basehttp 14024 23236 "GET /api/gemini/ HTTP/1.1" 200 15719
+INFO 2025-10-22 16:03:27,872 views 14024 23236 Health check solicitado
+INFO 2025-10-22 16:03:27,874 basehttp 14024 23236 "GET /api/gemini/health/ HTTP/1.1" 200 122
+INFO 2025-10-22 16:03:29,309 views 14024 23236 Health check solicitado
+INFO 2025-10-22 16:03:29,309 basehttp 14024 23236 "GET /api/gemini/health/ HTTP/1.1" 200 122
+INFO 2025-10-22 16:03:30,826 views 14024 23236 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-10-22 16:03:30,826 views 14024 23236 Processando mensagem: Olá! Explique em poucas palavras o que é inteligên...
+INFO 2025-10-22 16:03:31,775 views 14024 23236 Resposta gerada com sucesso
+INFO 2025-10-22 16:03:31,783 basehttp 14024 23236 "POST /api/gemini/chat/ HTTP/1.1" 200 312
+INFO 2025-10-22 16:03:38,667 views 14024 23236 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 16:03:38,668 views 14024 23236 Processando solicitação de trilha: Quero aprender Python para análise de dados...
+INFO 2025-10-22 16:04:02,252 views 14024 23236 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 16:04:02,252 views 14024 23236 JSON da trilha parseado com sucesso
+INFO 2025-10-22 16:04:02,252 basehttp 14024 23236 "POST /api/gemini/trilha/ HTTP/1.1" 200 6415
+INFO 2025-10-22 16:04:32,914 views 14024 23236 Listando trilhas do usuário 1
+INFO 2025-10-22 16:04:32,916 basehttp 14024 23236 "GET /api/gemini/trilhas/1/ HTTP/1.1" 200 48
+INFO 2025-10-22 16:04:39,522 views 14024 23236 Listando trilhas do usuário 2
+INFO 2025-10-22 16:04:39,527 basehttp 14024 23236 "GET /api/gemini/trilhas/2/ HTTP/1.1" 200 2215
+INFO 2025-10-22 16:04:58,661 views 14024 23236 Listando trilhas do usuário 3
+INFO 2025-10-22 16:04:58,662 basehttp 14024 23236 "GET /api/gemini/trilhas/3/ HTTP/1.1" 200 50
+INFO 2025-10-22 16:05:09,610 views 14024 23236 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 16:05:09,610 views 14024 23236 Processando solicitação de trilha: Quero aprender Python para análise de dados...
+INFO 2025-10-22 16:05:09,610 views 14024 23236 Dados do usuário admin carregados para personalização
+INFO 2025-10-22 16:05:29,023 views 14024 23236 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 16:05:29,024 views 14024 23236 JSON da trilha parseado com sucesso
+INFO 2025-10-22 16:05:29,046 views 14024 23236 Trilha salva no banco com ID 2
+INFO 2025-10-22 16:05:29,047 basehttp 14024 23236 "POST /api/gemini/trilha/ HTTP/1.1" 200 8186
+INFO 2025-10-22 16:05:39,992 basehttp 14024 23236 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 16:05:43,482 basehttp 14024 23236 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 14494
+INFO 2025-10-22 16:05:43,520 basehttp 14024 23236 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,531 basehttp 14024 14972 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,533 basehttp 14024 23236 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,535 basehttp 14024 22324 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,545 basehttp 14024 14972 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,546 basehttp 14024 23580 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,554 basehttp 14024 22256 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,555 basehttp 14024 23236 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,555 basehttp 14024 22324 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,558 basehttp 14024 14972 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,560 basehttp 14024 23580 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,569 basehttp 14024 13684 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:05:43,577 basehttp 14024 13684 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,602 basehttp 14024 13684 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,602 basehttp 14024 23580 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:43,602 basehttp 14024 14972 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:47,223 basehttp 14024 14972 "GET /admin/api_gemini/trilhacurso/2/change/ HTTP/1.1" 200 27529
+INFO 2025-10-22 16:05:47,261 basehttp 14024 14972 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:47,269 basehttp 14024 14972 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:47,270 basehttp 14024 13684 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:47,277 basehttp 14024 13684 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:05:47,278 basehttp 14024 23580 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:09:02,474 views 14024 23580 Listando trilhas do usuário 3
+INFO 2025-10-22 16:09:02,482 basehttp 14024 23580 "GET /api/gemini/trilhas/3/ HTTP/1.1" 200 8541
+INFO 2025-10-22 16:09:23,801 views 14024 23580 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 16:09:23,801 views 14024 23580 Processando solicitação de trilha: Quero fazer um bolo de chocolate...
+INFO 2025-10-22 16:09:23,801 views 14024 23580 Dados do usuário admin carregados para personalização
+INFO 2025-10-22 16:09:39,073 views 14024 23580 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 16:09:39,073 views 14024 23580 JSON da trilha parseado com sucesso
+INFO 2025-10-22 16:09:39,090 views 14024 23580 Trilha salva no banco com ID 3
+INFO 2025-10-22 16:09:39,098 basehttp 14024 23580 "POST /api/gemini/trilha/ HTTP/1.1" 200 5718
+INFO 2025-10-22 16:09:44,663 basehttp 14024 23580 "GET /admin/api_gemini/trilhacurso/2/change/ HTTP/1.1" 200 27529
+INFO 2025-10-22 16:09:44,719 basehttp 14024 22324 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:09:44,719 basehttp 14024 23236 "GET /static/admin/css/responsive.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:09:44,719 basehttp 14024 14972 "GET /static/admin/js/theme.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:09:44,721 basehttp 14024 23580 "GET /static/admin/css/base.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:09:44,722 basehttp 14024 13684 "GET /static/admin/css/dark_mode.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:09:44,737 basehttp 14024 22256 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:09:44,737 basehttp 14024 13684 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:09:44,758 basehttp 14024 22256 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:09:46,206 basehttp 14024 22256 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15091
+INFO 2025-10-22 16:09:46,260 basehttp 14024 22256 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:09:54,489 basehttp 14024 22256 "GET /admin/api_gemini/trilhacurso/3/change/ HTTP/1.1" 200 23856
+INFO 2025-10-22 16:09:54,546 basehttp 14024 22256 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:09:57,946 basehttp 14024 22256 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15091
+INFO 2025-10-22 16:09:57,991 basehttp 14024 22256 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:10:12,735 basehttp 14024 22256 "GET /admin/usuarios/usuario/ HTTP/1.1" 200 13822
+INFO 2025-10-22 16:10:12,783 basehttp 14024 23580 "GET /static/admin/js/jquery.init.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,784 basehttp 14024 22256 "GET /static/admin/css/changelists.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,785 basehttp 14024 14972 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,785 basehttp 14024 22324 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,790 basehttp 14024 23236 "GET /static/admin/js/core.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,799 basehttp 14024 23580 "GET /static/admin/js/actions.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,802 basehttp 14024 22256 "GET /static/admin/js/urlify.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,805 basehttp 14024 22324 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,810 basehttp 14024 14972 "GET /static/admin/js/prepopulate.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,811 basehttp 14024 13684 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:10:12,811 basehttp 14024 23236 "GET /static/admin/img/search.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:12,818 basehttp 14024 23236 "GET /static/admin/js/filters.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,432 basehttp 14024 23236 "GET /admin/usuarios/usuario/2/change/ HTTP/1.1" 200 26952
+INFO 2025-10-22 16:10:15,496 basehttp 14024 23580 "GET /static/admin/js/SelectFilter2.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,498 basehttp 14024 22256 "GET /static/admin/js/SelectBox.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,499 basehttp 14024 14972 "GET /static/admin/js/calendar.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,499 basehttp 14024 23236 "GET /static/admin/css/forms.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,499 basehttp 14024 22324 "GET /static/admin/js/admin/DateTimeShortcuts.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,510 basehttp 14024 23236 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,516 basehttp 14024 22324 "GET /static/admin/css/widgets.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,518 basehttp 14024 13684 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:10:15,526 basehttp 14024 13684 "GET /static/admin/js/change_form.js HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,566 basehttp 14024 13684 "GET /static/admin/img/selector-icons.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,566 basehttp 14024 23236 "GET /static/admin/img/icon-clock.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:15,566 basehttp 14024 22324 "GET /static/admin/img/icon-calendar.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:25,934 basehttp 14024 22324 "GET /admin/auth/group/ HTTP/1.1" 200 9331
+INFO 2025-10-22 16:10:25,982 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:10:26,821 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15091
+INFO 2025-10-22 16:10:26,884 basehttp 14024 13684 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:10:26,887 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:10:31,963 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/1/change/ HTTP/1.1" 200 19538
+INFO 2025-10-22 16:10:32,013 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:10:38,661 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15091
+INFO 2025-10-22 16:10:48,267 views 14024 22324 Health check solicitado
+INFO 2025-10-22 16:10:48,267 basehttp 14024 22324 "GET /api/gemini/health/ HTTP/1.1" 200 122
+INFO 2025-10-22 16:11:16,462 views 14024 22324 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-10-22 16:11:16,463 views 14024 22324 Processando solicitação de trilha: quero aprender a dar mortal sem cair 
+...
+INFO 2025-10-22 16:11:16,463 views 14024 22324 Dados do usuário Art carregados para personalização
+INFO 2025-10-22 16:11:32,534 views 14024 22324 Trilha gerada com sucesso pelo LLM
+INFO 2025-10-22 16:11:32,534 views 14024 22324 JSON da trilha parseado com sucesso
+INFO 2025-10-22 16:11:32,550 views 14024 22324 Trilha salva no banco com ID 4
+INFO 2025-10-22 16:11:32,558 basehttp 14024 22324 "POST /api/gemini/trilha/ HTTP/1.1" 200 8275
+INFO 2025-10-22 16:11:35,804 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15672
+INFO 2025-10-22 16:11:35,830 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:11:43,694 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/4/change/ HTTP/1.1" 200 26837
+INFO 2025-10-22 16:11:43,738 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:12:36,765 views 14024 22324 Health check solicitado
+INFO 2025-10-22 16:12:36,771 basehttp 14024 22324 "GET /api/gemini/health/ HTTP/1.1" 200 122
+INFO 2025-10-22 16:12:43,792 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15672
+INFO 2025-10-22 16:12:43,852 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:12:45,233 basehttp 14024 22324 "GET /admin/api_gemini/ HTTP/1.1" 200 5636
+INFO 2025-10-22 16:12:45,273 basehttp 14024 22324 "GET /static/admin/css/dashboard.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:12:45,280 basehttp 14024 22324 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 304 0
+INFO 2025-10-22 16:12:47,025 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15672
+INFO 2025-10-22 16:12:47,086 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:12:48,709 basehttp 14024 22324 "GET /admin/ HTTP/1.1" 200 8643
+INFO 2025-10-22 16:13:02,311 basehttp 14024 22324 "POST /admin/logout/ HTTP/1.1" 200 3636
+INFO 2025-10-22 16:13:04,051 basehttp 14024 22324 "GET /admin/ HTTP/1.1" 302 0
+INFO 2025-10-22 16:13:04,068 basehttp 14024 22324 "GET /admin/login/?next=/admin/ HTTP/1.1" 200 4209
+INFO 2025-10-22 16:13:04,101 basehttp 14024 22324 "GET /static/admin/css/login.css HTTP/1.1" 304 0
+INFO 2025-10-22 16:13:11,370 basehttp 14024 22324 "POST /admin/login/?next=/admin/ HTTP/1.1" 302 0
+INFO 2025-10-22 16:13:11,397 basehttp 14024 22324 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-10-22 16:13:18,035 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15673
+INFO 2025-10-22 16:13:18,088 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:13:23,256 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/2/change/ HTTP/1.1" 200 27530
+INFO 2025-10-22 16:13:23,312 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:13:27,077 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15673
+INFO 2025-10-22 16:13:28,469 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/1/change/ HTTP/1.1" 200 19539
+INFO 2025-10-22 16:13:28,520 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-10-22 16:13:33,193 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15673
+INFO 2025-10-22 16:13:34,875 basehttp 14024 22324 "GET /admin/ HTTP/1.1" 200 7871

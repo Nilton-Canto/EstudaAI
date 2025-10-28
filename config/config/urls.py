@@ -7,8 +7,9 @@ from usuarios import views
 
 # Configuração das rotas principais
 urlpatterns = [
-    path('admin/', admin.site.urls),  # Painel administrativo
-    path('', include('usuarios.urls')),  # Inclui URLs do app usuarios
+    path('admin/', admin.site.urls),
+    path('usuarios/', include('usuarios.urls')),  # URLs do app usuarios (signup, login, etc.)
+    path('api/gemini/', include('api_gemini.urls')),  # URLs da API do Gemini
 ]
 
 # Serve arquivos estáticos durante desenvolvimento
