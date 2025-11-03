@@ -835,3 +835,73 @@ INFO 2025-10-22 16:13:28,469 basehttp 14024 22324 "GET /admin/api_gemini/trilhac
 INFO 2025-10-22 16:13:28,520 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
 INFO 2025-10-22 16:13:33,193 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15673
 INFO 2025-10-22 16:13:34,875 basehttp 14024 22324 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-11-03 15:24:26,505 autoreload 7271 140663212699648 Watching for file changes with StatReloader
+INFO 2025-11-03 15:24:35,873 views 7271 140663212699648 API do Gemini configurada com sucesso
+WARNING 2025-11-03 15:24:58,289 log 7271 140662866441792 Not Found: /
+WARNING 2025-11-03 15:24:58,291 basehttp 7271 140662866441792 "GET / HTTP/1.1" 404 2633
+WARNING 2025-11-03 15:24:59,226 log 7271 140662866441792 Not Found: /favicon.ico
+WARNING 2025-11-03 15:24:59,227 basehttp 7271 140662866441792 "GET /favicon.ico HTTP/1.1" 404 2684
+WARNING 2025-11-03 15:25:05,771 log 7271 140662866441792 Not Found: /login/
+WARNING 2025-11-03 15:25:05,772 basehttp 7271 140662866441792 "GET /login/ HTTP/1.1" 404 2669
+WARNING 2025-11-03 15:25:23,166 log 7271 140662866441792 Not Found: /
+WARNING 2025-11-03 15:25:23,168 basehttp 7271 140662866441792 "GET / HTTP/1.1" 404 2633
+INFO 2025-11-03 15:33:29,410 autoreload 7271 140663212699648 /home/pehe/EstudaAI/config/config/urls.py changed, reloading.
+INFO 2025-11-03 15:33:41,350 autoreload 7789 140360260472832 Watching for file changes with StatReloader
+INFO 2025-11-03 15:33:57,603 views 7789 140360260472832 API do Gemini configurada com sucesso
+INFO 2025-11-03 15:38:36,966 autoreload 8030 140419930079232 Watching for file changes with StatReloader
+INFO 2025-11-03 15:38:38,389 views 8030 140419930079232 API do Gemini configurada com sucesso
+INFO 2025-11-03 15:39:31,510 basehttp 8030 140419583178304 "GET / HTTP/1.1" 302 0
+ERROR 2025-11-03 15:39:32,423 log 8030 140419583178304 Internal Server Error: /usuarios/login/
+Traceback (most recent call last):
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/core/handlers/exception.py", line 55, in inner
+    response = get_response(request)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/core/handlers/base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "/home/pehe/EstudaAI/config/usuarios/views.py", line 130, in login_view
+    return render(request, 'usuarios/login.html', {'form': form})
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/template/loader.py", line 62, in render_to_string
+    return template.render(context, request)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/template/backends/django.py", line 107, in render
+    return self.template.render(context)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/template/base.py", line 171, in render
+    return self._render(context)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/template/base.py", line 163, in _render
+    return self.nodelist.render(context)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/template/base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/template/base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/template/base.py", line 977, in render_annotated
+    return self.render(context)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/template/defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/urls/base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+  File "/home/pehe/.local/lib/python3.10/site-packages/django/urls/resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'login' not found. 'login' is not a valid view function or pattern name.
+ERROR 2025-11-03 15:39:32,480 basehttp 8030 140419583178304 "GET /usuarios/login/ HTTP/1.1" 500 125420
+INFO 2025-11-03 16:03:38,514 autoreload 6438 139836470771712 Watching for file changes with StatReloader
+INFO 2025-11-03 16:03:52,597 views 6438 139836470771712 API do Gemini configurada com sucesso
+INFO 2025-11-03 16:05:35,963 basehttp 6438 139836124034624 "GET / HTTP/1.1" 302 0
+INFO 2025-11-03 16:05:37,145 basehttp 6438 139836124034624 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-03 16:05:41,871 basehttp 6438 139836124034624 "GET /static/usuarios/login-style.css HTTP/1.1" 304 0
+WARNING 2025-11-03 16:05:49,477 log 6438 139836124034624 Not Found: /favicon.ico
+WARNING 2025-11-03 16:05:49,524 basehttp 6438 139836124034624 "GET /favicon.ico HTTP/1.1" 404 2840
+INFO 2025-11-03 16:06:51,448 basehttp 6438 139836124034624 "POST /usuarios/login/ HTTP/1.1" 200 1471
+INFO 2025-11-03 16:07:45,133 basehttp 6438 139836124034624 "GET /usuarios/signup/ HTTP/1.1" 200 2471
+INFO 2025-11-03 16:08:26,303 basehttp 6438 139836124034624 "POST /usuarios/signup/ HTTP/1.1" 302 0
+INFO 2025-11-03 16:08:26,323 basehttp 6438 139836124034624 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-03 16:08:37,604 basehttp 6438 139836124034624 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-03 16:08:37,691 basehttp 6438 139836124034624 "GET /usuarios/dashboard/ HTTP/1.1" 200 2985
+WARNING 2025-11-03 16:08:38,362 log 6438 139836124034624 Not Found: /usuarios/dashboard/style.css
+WARNING 2025-11-03 16:08:38,366 basehttp 6438 139836124034624 "GET /usuarios/dashboard/style.css HTTP/1.1" 404 3535
+INFO 2025-11-03 16:14:07,257 autoreload 7089 140403246878720 Watching for file changes with StatReloader
+INFO 2025-11-03 16:14:20,581 views 7089 140403246878720 API do Gemini configurada com sucesso
+INFO 2025-11-03 16:14:34,718 basehttp 7089 140402900334144 "GET / HTTP/1.1" 302 0
+INFO 2025-11-03 16:14:34,849 basehttp 7089 140402900334144 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-03 16:14:46,069 basehttp 7089 140402900334144 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-03 16:14:46,097 basehttp 7089 140402900334144 "GET /usuarios/dashboard/ HTTP/1.1" 200 3013
+INFO 2025-11-03 16:14:46,526 basehttp 7089 140402900334144 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 200 4150

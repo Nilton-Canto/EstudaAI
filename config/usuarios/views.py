@@ -65,7 +65,7 @@ def signup(request):
             messages.success(request, 'Cadastro realizado com sucesso. Faça login.')
             
             # Redireciona para a página de login após cadastro bem-sucedido
-            return redirect('login')
+            return redirect('usuarios:login')
             
         else:
             # Se o formulário tem erros, exibe mensagem de erro
@@ -115,7 +115,7 @@ def login_view(request):
             # Isso permite que o usuário seja reconhecido em outras páginas
             
             # Redireciona para a página principal após login bem-sucedido
-            return redirect('dashboard')
+            return redirect('usuarios:dashboard')
             
         else:
             # Se as credenciais são inválidas, exibe mensagem de erro
@@ -130,7 +130,7 @@ def login_view(request):
     return render(request, 'usuarios/login.html', {'form': form})
 
 
-@login_required(login_url='login')   
+@login_required(login_url='/usuarios/login/')   
 def dashboard(request):
     
     """

@@ -2,6 +2,8 @@
 from django.urls import path
 from . import views
 
+app_name = 'usuarios'
+
 # Configuração das rotas do app
 urlpatterns = [
     path('dashboard/', views.dashboard, name='dashboard'),  # Página inicial pós-login

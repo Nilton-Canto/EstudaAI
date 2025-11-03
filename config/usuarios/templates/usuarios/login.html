@@ -17,7 +17,7 @@
                 <p style="color: red; margin-bottom: 1rem;">Usuário ou senha inválidos. Tente novamente.</p>
             {% endif %}
             
-            <form action="{% url 'login' %}" method="post" class="login-form">
+            <form action="{% url 'usuarios:login' %}" method="post" class="login-form">
                 {% csrf_token %}
                 <div>
                     <input type="text" name="username" class="input-field" placeholder="Usuário" required>
@@ -30,7 +30,7 @@
             
             <div class="login-register">
                 <span>Não tem conta? </span>
-                <a href="{% url 'signup' %}" class="register-link">Cadastre-se</a>
+                <a href="{% url 'usuarios:signup' %}" class="register-link">Cadastre-se</a>
             </div>
         </div>
     </div>

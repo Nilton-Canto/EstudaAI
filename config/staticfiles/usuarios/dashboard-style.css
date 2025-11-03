@@ -1,0 +1,241 @@
+/* Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+/* Body */
+body {
+    background: #f3f4f6;
+    color: #1f2937;
+}
+
+/* Navbar */
+.navbar {
+    background: white;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 50;
+}
+
+.navbar-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo */
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+/* Links */
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+}
+
+.nav-link {
+    font-weight: 600;
+    color: #374151;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.nav-link:hover {
+    color: #4f46e5;
+}
+
+.nav-link.active {
+    color: #4f46e5;
+}
+
+/* Usuário */
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.user-text {
+    font-weight: 500;
+    color: #374151;
+}
+
+.user-avatar {
+    width: 40px;
+    height: 40px;
+    background: #d1d5db;
+    border-radius: 50%;
+}
+
+/* Container principal */
+.container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Card base */
+.card {
+    background: white;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+/* Títulos */
+.section-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #4f46e5;
+    margin-bottom: 1rem;
+}
+
+.section-title.dark {
+    color: #1f2937;
+}
+
+/* Grid estatísticas */
+.stats-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.stat-card {
+    padding: 1.25rem;
+    border-radius: 0.75rem;
+    text-align: center;
+    font-weight: 500;
+    box-shadow: inset 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.stat-value {
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+}
+
+/* Cores estatísticas */
+.stat-card.indigo {
+    background: #e0e7ff;
+    color: #4f46e5;
+}
+
+.stat-card.green {
+    background: #dcfce7;
+    color: #16a34a;
+}
+
+.stat-card.yellow {
+    background: #fef9c3;
+    color: #ca8a04;
+}
+
+/* Trilhas */
+.trails-grid {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+    .trails-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .trails-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+.trail-card {
+    background: #f9fafb;
+    border: 1px solid #e5e7eb;
+    padding: 1.5rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.trail-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 0.25rem;
+}
+
+.trail-info {
+    font-size: 0.875rem;
+    color: #6b7280;
+    margin-bottom: 0.75rem;
+}
+
+/* Barra de progresso */
+.progress-bar {
+    width: 100%;
+    height: 10px;
+    background: #e5e7eb;
+    border-radius: 9999px;
+    overflow: hidden;
+    margin-bottom: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    border-radius: 9999px;
+}
+
+.progress-fill.blue {
+    background: #2563eb;
+}
+
+.progress-fill.yellow {
+    background: #facc15;
+}
+
+.progress-text {
+    font-size: 0.875rem;
+    color: #4b5563;
+    font-weight: 500;
+}
+
+/* Botão */
+.btn-primary {
+    margin-top: 1rem;
+    width: 100%;
+    padding: 0.5rem 0;
+    border: none;
+    border-radius: 0.5rem;
+    background: #3b82f6;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-primary:hover {
+    background: #2563eb;
+}
