@@ -835,3 +835,34 @@ INFO 2025-10-22 16:13:28,469 basehttp 14024 22324 "GET /admin/api_gemini/trilhac
 INFO 2025-10-22 16:13:28,520 basehttp 14024 22324 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
 INFO 2025-10-22 16:13:33,193 basehttp 14024 22324 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 15673
 INFO 2025-10-22 16:13:34,875 basehttp 14024 22324 "GET /admin/ HTTP/1.1" 200 7871
+INFO 2025-11-03 17:22:32,974 autoreload 6804 139771684208640 Watching for file changes with StatReloader
+INFO 2025-11-03 17:22:51,060 views 6804 139771684208640 API do Gemini configurada com sucesso
+WARNING 2025-11-03 17:24:04,163 log 6804 139771337766464 Not Found: /
+WARNING 2025-11-03 17:24:04,179 basehttp 6804 139771337766464 "GET / HTTP/1.1" 404 2633
+WARNING 2025-11-03 17:24:09,309 log 6804 139771337766464 Not Found: /favicon.ico
+WARNING 2025-11-03 17:24:09,311 basehttp 6804 139771337766464 "GET /favicon.ico HTTP/1.1" 404 2684
+INFO 2025-11-03 18:15:42,433 autoreload 6804 139771684208640 /home/pehe/EstudaAI/config/config/urls.py changed, reloading.
+INFO 2025-11-03 18:15:48,675 autoreload 8537 139684998053888 Watching for file changes with StatReloader
+INFO 2025-11-03 18:16:01,083 views 8537 139684998053888 API do Gemini configurada com sucesso
+INFO 2025-11-03 18:18:17,076 autoreload 8810 140154260692992 Watching for file changes with StatReloader
+INFO 2025-11-03 18:18:17,882 views 8810 140154260692992 API do Gemini configurada com sucesso
+INFO 2025-11-03 18:21:13,735 basehttp 8810 140153913865792 "GET / HTTP/1.1" 302 0
+INFO 2025-11-03 18:21:14,522 basehttp 8810 140153913865792 "GET /usuarios/login/ HTTP/1.1" 200 1347
+WARNING 2025-11-03 18:21:17,572 log 8810 140153913865792 Not Found: /favicon.ico
+WARNING 2025-11-03 18:21:17,573 basehttp 8810 140153913865792 "GET /favicon.ico HTTP/1.1" 404 2827
+INFO 2025-11-03 18:21:27,203 basehttp 8810 140153913865792 "POST /usuarios/login/ HTTP/1.1" 200 1471
+INFO 2025-11-03 18:21:30,810 basehttp 8810 140153913865792 "GET /usuarios/signup/ HTTP/1.1" 200 2471
+INFO 2025-11-03 18:22:07,551 basehttp 8810 140153913865792 "POST /usuarios/signup/ HTTP/1.1" 302 0
+INFO 2025-11-03 18:22:07,579 basehttp 8810 140153913865792 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-03 18:22:15,352 basehttp 8810 140153913865792 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-03 18:22:15,444 basehttp 8810 140153913865792 "GET /usuarios/dashboard/ HTTP/1.1" 200 2985
+WARNING 2025-11-03 18:22:15,694 log 8810 140153913865792 Not Found: /usuarios/dashboard/style.css
+WARNING 2025-11-03 18:22:15,695 basehttp 8810 140153913865792 "GET /usuarios/dashboard/style.css HTTP/1.1" 404 3522
+INFO 2025-11-03 18:32:10,202 autoreload 8810 140154260692992 /home/pehe/EstudaAI/config/config/settings.py changed, reloading.
+INFO 2025-11-03 18:32:17,367 autoreload 9674 140069115260928 Watching for file changes with StatReloader
+INFO 2025-11-03 18:32:30,441 views 9674 140069115260928 API do Gemini configurada com sucesso
+INFO 2025-11-03 18:35:04,598 basehttp 9674 140068768446016 "GET /usuarios/dashboard/ HTTP/1.1" 200 3013
+INFO 2025-11-03 18:35:05,149 basehttp 9674 140068768446016 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 200 3598
+WARNING 2025-11-03 18:35:05,175 basehttp 9674 140068768446016 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 404 2192
+INFO 2025-11-03 18:38:16,316 basehttp 9674 140068768446016 "GET /usuarios/dashboard/ HTTP/1.1" 200 3013
+WARNING 2025-11-03 18:38:16,520 basehttp 9674 140068768446016 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 404 2192
