@@ -15,7 +15,7 @@
             
             {% if messages %}
                 {% for message in messages %}
-                    <p style="color: {% if message.tags == 'success' %}green{% else %}red{% endif %}; margin-bottom: 1rem;">
+                    <p style="--msg-color: {% if message.tags == 'success' %}green{% else %}red{% endif %}; color: var(--msg-color); margin-bottom: 1rem">
                         {{ message }}
                     </p>
                 {% endfor %}
