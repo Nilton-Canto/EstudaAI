@@ -1,0 +1,193 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if area %}Editar{% else %}Nova{% endif %} Área - EstudaAI Admin</title>
+    <link rel="stylesheet" href="{% static 'usuarios/admin-style.css' %}">
+</head>
+<body>
+    <header class="admin-navbar">
+        <nav class="admin-nav-container">
+            <a href="{% url 'admin_dashboard' %}" class="admin-logo">EstudaAI Admin</a>
+            <ul class="admin-menu">
+                <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'admin_usuarios_list' %}">Usuários</a></li>
+                <li><a href="{% url 'admin_areas_list' %}" class="active">Áreas</a></li>
+                <li><a href="{% url 'admin_trilhas_list' %}">Trilhas</a></li>
+            </ul>
+            <div class="admin-user-info">
+                <span class="admin-badge">ADMIN</span>
+                <span>{{ user.username }}</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">{% if area %}Editar Área{% else %}Nova Área{% endif %}</h1>
+            <p class="admin-subtitle">Configure a área de conhecimento</p>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="admin-card">
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label class="form-label" for="id_nome">Nome da Área *</label>
+                        <input type="text" name="nome" id="id_nome" class="form-input" value="{{ area.nome|default:'' }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="id_icone">Ícone</label>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <input type="text" name="icone" id="id_icone" class="form-input" value="{{ area.icone|default:'📚' }}" readonly style="flex: 1; cursor: pointer; font-size: 1.5rem; text-align: center;">
+                            <button type="button" onclick="abrirSeletorIcone()" class="btn-secondary" style="white-space: nowrap;">🎨 Escolher Ícone</button>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="id_cor">Cor (Hexadecimal) *</label>
+                        <div style="display: flex; gap: 1rem; align-items: center;">
+                            <input type="color" name="cor" id="id_cor" value="{{ area.cor|default:'#4f46e5' }}" style="width: 60px; height: 40px; border: none; cursor: pointer;">
+                            <input type="text" name="cor_text" id="id_cor_text" class="form-input" value="{{ area.cor|default:'#4f46e5' }}" pattern="^#[0-9A-Fa-f]{6}$" style="flex: 1;">
+                        </div>
+                        <small style="color: #6b7280;">Formato: #RRGGBB</small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" for="id_descricao">Descrição *</label>
+                    <textarea name="descricao" id="id_descricao" class="form-textarea" required>{{ area.descricao|default:'' }}</textarea>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
+                        <input type="checkbox" name="ativa" {% if area.ativa or not area %}checked{% endif %} style="width: auto;">
+                        Área Ativa
+                    </label>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-success">💾 Salvar</button>
+                    <a href="{% url 'admin_areas_list' %}" class="btn-secondary">❌ Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <!-- Modal Seletor de Ícones -->
+    <div id="modalIcone" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 1000; align-items: center; justify-content: center;">
+        <div style="background: white; border-radius: 1rem; padding: 2rem; max-width: 600px; max-height: 80vh; overflow-y: auto; box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h3 style="margin: 0; color: #1f2937;">Escolha um Ícone</h3>
+                <button onclick="fecharSeletorIcone()" style="background: none; border: none; font-size: 1.5rem; cursor: pointer; color: #6b7280;">&times;</button>
+            </div>
+            
+            <div style="display: grid; grid-template-columns: repeat(8, 1fr); gap: 0.5rem;" id="gridIcones">
+                <!-- Ícones serão inseridos aqui via JavaScript -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Lista de ícones disponíveis por categoria
+        const icones = [
+            // Educação
+            '📚', '📖', '📝', '✏️', '📕', '📗', '📘', '📙',
+            '📓', '📔', '📒', '🎓', '🎯', '🏆', '💡', '🔍',
+            
+            // Tecnologia
+            '💻', '🖥️', '⌨️', '🖱️', '💾', '📱', '🔌', '🔋',
+            '📡', '🛰️', '🤖', '🦾', '🧠', '⚙️', '🔧', '🔩',
+            
+            // Ciências
+            '🔬', '🧪', '🧬', '🔭', '🌡️', '⚗️', '🧫', '🦠',
+            '🌍', '🌎', '🌏', '🪐', '⭐', '🌟', '✨', '💫',
+            
+            // Artes & Design
+            '🎨', '🖌️', '🖍️', '✂️', '📐', '📏', '🎭', '🎪',
+            '🎬', '🎥', '📷', '📸', '🎼', '🎵', '🎶', '🎤',
+            
+            // Negócios
+            '💼', '📊', '📈', '📉', '💰', '💵', '💳', '🏦',
+            '🏢', '🏭', '⚖️', '📜', '📋', '📌', '📍', '🎯',
+            
+            // Saúde & Esportes
+            '⚕️', '💊', '💉', '🩺', '🏥', '⚽', '🏀', '🏈',
+            '⚾', '🎾', '🏐', '🏉', '🎱', '🏓', '🏸', '🥊',
+            
+            // Natureza
+            '🌱', '🌿', '🍃', '🌾', '🌲', '🌳', '🌴', '🌵',
+            '🌺', '🌻', '🌼', '🌷', '🌹', '🦋', '🐝', '🌈',
+            
+            // Comida & Bebida
+            '🍎', '🍊', '🍋', '🍌', '🍉', '🍇', '🍓', '🫐',
+            '🍕', '🍔', '🍟', '🌭', '🥗', '🍜', '☕', '🥤'
+        ];
+
+        // Popular o grid de ícones
+        const gridIcones = document.getElementById('gridIcones');
+        icones.forEach(icone => {
+            const btn = document.createElement('button');
+            btn.type = 'button';
+            btn.textContent = icone;
+            btn.style.cssText = 'font-size: 2rem; padding: 0.75rem; border: 2px solid #e5e7eb; border-radius: 0.5rem; background: white; cursor: pointer; transition: all 0.2s;';
+            btn.onmouseover = function() {
+                this.style.background = '#f3f4f6';
+                this.style.borderColor = '#667eea';
+                this.style.transform = 'scale(1.1)';
+            };
+            btn.onmouseout = function() {
+                this.style.background = 'white';
+                this.style.borderColor = '#e5e7eb';
+                this.style.transform = 'scale(1)';
+            };
+            btn.onclick = function() {
+                document.getElementById('id_icone').value = icone;
+                fecharSeletorIcone();
+            };
+            gridIcones.appendChild(btn);
+        });
+
+        function abrirSeletorIcone() {
+            const modal = document.getElementById('modalIcone');
+            modal.style.display = 'flex';
+        }
+
+        function fecharSeletorIcone() {
+            const modal = document.getElementById('modalIcone');
+            modal.style.display = 'none';
+        }
+
+        // Fechar modal ao clicar fora
+        document.getElementById('modalIcone').addEventListener('click', function(e) {
+            if (e.target === this) {
+                fecharSeletorIcone();
+            }
+        });
+
+        // Sincroniza o color picker com o input de texto
+        const colorPicker = document.getElementById('id_cor');
+        const colorText = document.getElementById('id_cor_text');
+        
+        colorPicker.addEventListener('input', function() {
+            colorText.value = this.value;
+        });
+        
+        colorText.addEventListener('input', function() {
+            if (/^#[0-9A-Fa-f]{6}$/.test(this.value)) {
+                colorPicker.value = this.value;
+            }
+        });
+    </script>
+</body>
+</html>

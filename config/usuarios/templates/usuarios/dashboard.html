@@ -11,15 +11,18 @@
     <!-- Barra de Navegação -->
     <header class="navbar">
         <nav class="navbar-container">
-            <a href="#" class="logo">EstudaAI</a>
+            <a href="{% url 'dashboard' %}" class="logo">EstudaAI</a>
             <ul class="nav-links">
-                <li><a href="#" class="nav-link active">Dashboard</a></li>
+                <li><a href="{% url 'dashboard' %}" class="nav-link active">Dashboard</a></li>
                 <li><a href="#" class="nav-link">Minhas Trilhas</a></li>
                 <li><a href="#" class="nav-link">Criar Trilha</a></li>
+                <li><a href="{% url 'chat_ia' %}" class="nav-link">Chat IA</a></li>
             </ul>
             <div class="user-info">
-                <span class="user-text">Olá, Aluno!</span>
-                <div class="user-avatar"></div>
+                <span class="user-text">Olá, <strong>{{ user.nome|default:user.username }}</strong></span>
+                {% if user.is_staff %}
+                <a href="{% url 'admin_dashboard' %}" class="admin-btn">Painel Admin</a>
+                {% endif %}
             </div>
         </nav>
     </header>

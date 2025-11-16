@@ -1,0 +1,153 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard - EstudaAI</title>
+    <link rel="stylesheet" href="{% static 'usuarios/admin-style.css' %}">
+</head>
+<body>
+    <!-- Navbar Admin -->
+    <header class="admin-navbar">
+        <nav class="admin-nav-container">
+            <a href="{% url 'admin_dashboard' %}" class="admin-logo">EstudaAI Admin</a>
+            <ul class="admin-menu">
+                <li><a href="{% url 'admin_dashboard' %}" class="active">Dashboard</a></li>
+                <li><a href="{% url 'admin_usuarios_list' %}">Usuários</a></li>
+                <li><a href="{% url 'admin_areas_list' %}">Áreas</a></li>
+                <li><a href="{% url 'admin_trilhas_list' %}">Trilhas</a></li>
+            </ul>
+            <div class="admin-user-info">
+                <span class="admin-badge">ADMIN</span>
+                <span>{{ user.username }}</span>
+                <a href="{% url 'dashboard' %}" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; margin-left: 1rem; transition: transform 0.2s; display: inline-block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Painel Usuário</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">Painel Administrativo</h1>
+            <p class="admin-subtitle">Gerencie usuários, áreas e trilhas do sistema</p>
+        </div>
+
+        <!-- Estatísticas -->
+        <div class="stats-grid">
+            <div class="stat-card purple">
+                <div class="stat-label">Total de Usuários</div>
+                <div class="stat-value">{{ total_usuarios }}</div>
+            </div>
+            <div class="stat-card blue">
+                <div class="stat-label">Áreas Cadastradas</div>
+                <div class="stat-value">{{ total_areas }}</div>
+            </div>
+            <div class="stat-card green">
+                <div class="stat-label">Trilhas Ativas</div>
+                <div class="stat-value">{{ total_trilhas }}</div>
+            </div>
+            <div class="stat-card yellow">
+                <div class="stat-label">Usuários Ativos Hoje</div>
+                <div class="stat-value">{{ usuarios_ativos_hoje }}</div>
+            </div>
+        </div>
+
+        <!-- Ações Rápidas -->
+        <div class="admin-card">
+            <div class="card-header">
+                <h2 class="card-title">Ações Rápidas</h2>
+            </div>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1rem;">
+                <a href="{% url 'admin_usuario_create' %}" class="btn-primary" style="justify-content: center;">
+                    ➕ Novo Usuário
+                </a>
+                <a href="{% url 'admin_area_create' %}" class="btn-primary" style="justify-content: center;">
+                    ➕ Nova Área
+                </a>
+                <a href="{% url 'admin_trilha_create' %}" class="btn-primary" style="justify-content: center;">
+                    ➕ Nova Trilha
+                </a>
+            </div>
+        </div>
+
+        <!-- Últimos Usuários -->
+        <div class="admin-card">
+            <div class="card-header">
+                <h2 class="card-title">Últimos Usuários Cadastrados</h2>
+                <a href="{% url 'admin_usuarios_list' %}" class="btn-secondary">Ver Todos</a>
+            </div>
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Universidade</th>
+                            <th>Data Cadastro</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for usuario in ultimos_usuarios %}
+                        <tr>
+                            <td>{{ usuario.nome }}</td>
+                            <td>{{ usuario.email }}</td>
+                            <td>{{ usuario.universidade }}</td>
+                            <td>{{ usuario.date_joined|date:"d/m/Y" }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4" style="text-align: center; color: #6b7280;">
+                                Nenhum usuário cadastrado ainda
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Últimas Trilhas -->
+        <div class="admin-card">
+            <div class="card-header">
+                <h2 class="card-title">Trilhas Recentes</h2>
+                <a href="{% url 'admin_trilhas_list' %}" class="btn-secondary">Ver Todas</a>
+            </div>
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Título</th>
+                            <th>Usuário</th>
+                            <th>Status</th>
+                            <th>Data Criação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for trilha in ultimas_trilhas %}
+                        <tr>
+                            <td>{{ trilha.titulo }}</td>
+                            <td>{{ trilha.usuario.nome }}</td>
+                            <td>
+                                {% if trilha.ativa %}
+                                <span class="badge success">Ativa</span>
+                                {% else %}
+                                <span class="badge danger">Inativa</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ trilha.data_criacao|date:"d/m/Y H:i" }}</td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="4" style="text-align: center; color: #6b7280;">
+                                Nenhuma trilha cadastrada ainda
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

@@ -1,0 +1,115 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if usuario %}Editar{% else %}Novo{% endif %} Usuário - EstudaAI Admin</title>
+    <link rel="stylesheet" href="{% static 'usuarios/admin-style.css' %}">
+</head>
+<body>
+    <header class="admin-navbar">
+        <nav class="admin-nav-container">
+            <a href="{% url 'admin_dashboard' %}" class="admin-logo">EstudaAI Admin</a>
+            <ul class="admin-menu">
+                <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'admin_usuarios_list' %}" class="active">Usuários</a></li>
+                <li><a href="{% url 'admin_areas_list' %}">Áreas</a></li>
+                <li><a href="{% url 'admin_trilhas_list' %}">Trilhas</a></li>
+            </ul>
+            <div class="admin-user-info">
+                <span class="admin-badge">ADMIN</span>
+                <span>{{ user.username }}</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">{% if usuario %}Editar Usuário{% else %}Novo Usuário{% endif %}</h1>
+            <p class="admin-subtitle">Preencha os dados do usuário</p>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="admin-card">
+            <form method="POST">
+                {% csrf_token %}
+                
+                <div class="form-grid">
+                    <!-- Dados de Autenticação -->
+                    <div class="form-group">
+                        <label class="form-label" for="id_username">Nome de Usuário *</label>
+                        <input type="text" name="username" id="id_username" class="form-input" value="{{ usuario.username|default:'' }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="id_email">Email *</label>
+                        <input type="email" name="email" id="id_email" class="form-input" value="{{ usuario.email|default:'' }}" required>
+                    </div>
+
+                    {% if not usuario %}
+                    <div class="form-group">
+                        <label class="form-label" for="id_password">Senha *</label>
+                        <input type="password" name="password" id="id_password" class="form-input" required>
+                    </div>
+                    {% endif %}
+
+                    <!-- Dados Pessoais -->
+                    <div class="form-group">
+                        <label class="form-label" for="id_nome">Nome Completo *</label>
+                        <input type="text" name="nome" id="id_nome" class="form-input" value="{{ usuario.nome|default:'' }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="id_idade">Idade</label>
+                        <input type="number" name="idade" id="id_idade" class="form-input" value="{{ usuario.idade|default:'' }}" min="8" max="100">
+                    </div>
+
+                    <!-- Dados Acadêmicos -->
+                    <div class="form-group">
+                        <label class="form-label" for="id_universidade">Universidade *</label>
+                        <input type="text" name="universidade" id="id_universidade" class="form-input" value="{{ usuario.universidade|default:'' }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="id_curso">Curso *</label>
+                        <input type="text" name="curso" id="id_curso" class="form-input" value="{{ usuario.curso|default:'' }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="id_ano_formatura">Ano de Formatura</label>
+                        <input type="number" name="ano_formatura" id="id_ano_formatura" class="form-input" value="{{ usuario.ano_formatura|default:'' }}" min="2000" max="2060">
+                    </div>
+                </div>
+
+                <!-- Permissões (Grid separado para checkboxes) -->
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem; margin-top: 1.5rem;">
+                    <div class="form-group">
+                        <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" name="is_staff" {% if usuario.is_staff %}checked{% endif %} style="width: auto;">
+                            Administrador
+                        </label>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" style="display: flex; align-items: center; gap: 0.5rem;">
+                            <input type="checkbox" name="is_active" {% if usuario.is_active or not usuario %}checked{% endif %} style="width: auto;">
+                            Ativo
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-success">💾 Salvar</button>
+                    <a href="{% url 'admin_usuarios_list' %}" class="btn-secondary">❌ Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+</body>
+</html>
