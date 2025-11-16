@@ -866,3 +866,1275 @@ INFO 2025-11-03 18:35:05,149 basehttp 9674 140068768446016 "GET /static/usuarios
 WARNING 2025-11-03 18:35:05,175 basehttp 9674 140068768446016 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 404 2192
 INFO 2025-11-03 18:38:16,316 basehttp 9674 140068768446016 "GET /usuarios/dashboard/ HTTP/1.1" 200 3013
 WARNING 2025-11-03 18:38:16,520 basehttp 9674 140068768446016 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 404 2192
+INFO 2025-11-16 00:21:37,580 views 16604 18308 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:22:00,602 views 10012 12148 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:22:08,716 views 28028 20660 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:22:53,107 autoreload 16612 19412 Watching for file changes with StatReloader
+INFO 2025-11-16 00:22:53,814 views 16612 19412 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:22:56,481 basehttp 16612 3056 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:22:56,515 basehttp 16612 3056 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:22:56,593 basehttp 16612 3056 "GET /static/usuarios/login-style.css HTTP/1.1" 200 2686
+WARNING 2025-11-16 00:22:56,623 log 16612 3056 Not Found: /favicon.ico
+WARNING 2025-11-16 00:22:56,623 basehttp 16612 3056 "GET /favicon.ico HTTP/1.1" 404 2827
+INFO 2025-11-16 00:23:07,657 basehttp 16612 3056 "GET /admin/login/ HTTP/1.1" 200 4196
+INFO 2025-11-16 00:23:07,690 basehttp 16612 16800 "GET /static/admin/css/dark_mode.css HTTP/1.1" 200 2808
+INFO 2025-11-16 00:23:07,690 basehttp 16612 25352 "GET /static/admin/css/login.css HTTP/1.1" 200 951
+INFO 2025-11-16 00:23:07,690 basehttp 16612 19704 "GET /static/admin/css/nav_sidebar.css HTTP/1.1" 200 2810
+INFO 2025-11-16 00:23:07,690 basehttp 16612 3056 "GET /static/admin/css/base.css HTTP/1.1" 200 22120
+INFO 2025-11-16 00:23:07,691 basehttp 16612 27044 "GET /static/admin/css/responsive.css HTTP/1.1" 200 16565
+INFO 2025-11-16 00:23:07,695 basehttp 16612 27732 "GET /static/admin/js/theme.js HTTP/1.1" 200 1653
+INFO 2025-11-16 00:23:07,720 basehttp 16612 27044 "GET /static/admin/js/nav_sidebar.js HTTP/1.1" 200 3063
+INFO 2025-11-16 00:23:25,095 basehttp 16612 27044 "POST /admin/login/ HTTP/1.1" 200 4389
+INFO 2025-11-16 00:23:32,945 basehttp 16612 27044 "POST /admin/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:23:32,977 basehttp 16612 27044 "GET /admin/ HTTP/1.1" 200 10247
+INFO 2025-11-16 00:23:33,014 basehttp 16612 27044 "GET /static/admin/css/dashboard.css HTTP/1.1" 200 441
+INFO 2025-11-16 00:23:33,054 basehttp 16612 27044 "GET /static/admin/img/icon-addlink.svg HTTP/1.1" 200 331
+INFO 2025-11-16 00:23:33,054 basehttp 16612 27732 "GET /static/admin/img/icon-changelink.svg HTTP/1.1" 200 380
+INFO 2025-11-16 00:23:39,123 basehttp 16612 27732 "GET /admin/api/area/ HTTP/1.1" 200 12036
+INFO 2025-11-16 00:23:39,166 basehttp 16612 27732 "GET /static/admin/css/changelists.css HTTP/1.1" 200 6878
+INFO 2025-11-16 00:23:39,173 basehttp 16612 3056 "GET /static/admin/js/jquery.init.js HTTP/1.1" 200 347
+INFO 2025-11-16 00:23:39,178 basehttp 16612 16800 "GET /static/admin/js/admin/RelatedObjectLookups.js HTTP/1.1" 200 9777
+INFO 2025-11-16 00:23:39,178 basehttp 16612 25352 "GET /static/admin/js/core.js HTTP/1.1" 200 6208
+INFO 2025-11-16 00:23:39,195 basehttp 16612 16800 "GET /static/admin/js/prepopulate.js HTTP/1.1" 200 1531
+INFO 2025-11-16 00:23:39,196 basehttp 16612 27044 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-11-16 00:23:39,196 basehttp 16612 3056 "GET /static/admin/js/urlify.js HTTP/1.1" 200 7887
+INFO 2025-11-16 00:23:39,200 basehttp 16612 27732 "GET /static/admin/js/actions.js HTTP/1.1" 200 8076
+INFO 2025-11-16 00:23:39,205 basehttp 16612 16800 "GET /static/admin/img/search.svg HTTP/1.1" 200 458
+INFO 2025-11-16 00:23:39,208 basehttp 16612 19704 "GET /static/admin/js/vendor/jquery/jquery.js HTTP/1.1" 200 285314
+INFO 2025-11-16 00:23:39,224 basehttp 16612 19704 "GET /static/admin/js/filters.js HTTP/1.1" 200 978
+INFO 2025-11-16 00:23:39,248 basehttp 16612 25352 "GET /static/admin/js/vendor/xregexp/xregexp.js HTTP/1.1" 200 325171
+INFO 2025-11-16 00:23:39,268 basehttp 16612 19704 "GET /static/admin/img/icon-viewlink.svg HTTP/1.1" 200 581
+INFO 2025-11-16 00:23:39,268 basehttp 16612 25352 "GET /static/admin/img/tooltag-add.svg HTTP/1.1" 200 331
+INFO 2025-11-16 00:23:41,458 basehttp 16612 25352 "GET /admin/api/area/?q= HTTP/1.1" 200 12120
+INFO 2025-11-16 00:23:41,487 basehttp 16612 25352 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-11-16 00:23:43,571 basehttp 16612 25352 "GET /admin/api/trilha/ HTTP/1.1" 200 12045
+INFO 2025-11-16 00:23:43,597 basehttp 16612 25352 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-11-16 00:23:46,121 basehttp 16612 25352 "GET /admin/api_gemini/trilhacurso/ HTTP/1.1" 200 16944
+INFO 2025-11-16 00:23:46,147 basehttp 16612 25352 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-11-16 00:23:46,160 basehttp 16612 25352 "GET /static/admin/img/icon-yes.svg HTTP/1.1" 200 436
+INFO 2025-11-16 00:23:46,194 basehttp 16612 25352 "GET /static/admin/img/sorting-icons.svg HTTP/1.1" 200 1097
+INFO 2025-11-16 00:24:02,319 basehttp 16612 25352 "GET /admin/usuarios/usuario/ HTTP/1.1" 200 15557
+INFO 2025-11-16 00:24:02,346 basehttp 16612 25352 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-11-16 00:24:19,430 basehttp 16612 17472 "GET /admin/api/trilha/ HTTP/1.1" 200 12045
+INFO 2025-11-16 00:24:19,454 basehttp 16612 17472 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-11-16 00:24:20,901 basehttp 16612 17472 "GET /admin/api/ HTTP/1.1" 200 6059
+INFO 2025-11-16 00:24:22,281 basehttp 16612 17472 "GET /admin/ HTTP/1.1" 200 10247
+WARNING 2025-11-16 00:24:32,573 log 16612 17472 Not Found: /usurario/
+WARNING 2025-11-16 00:24:32,574 basehttp 16612 17472 "GET /usurario/ HTTP/1.1" 404 2821
+WARNING 2025-11-16 00:24:37,862 log 16612 17472 Not Found: /usurarios/
+WARNING 2025-11-16 00:24:37,862 basehttp 16612 17472 "GET /usurarios/ HTTP/1.1" 404 2824
+WARNING 2025-11-16 00:24:47,279 log 16612 17472 Not Found: /usurarios/login
+WARNING 2025-11-16 00:24:47,280 basehttp 16612 17472 "GET /usurarios/login HTTP/1.1" 404 2839
+INFO 2025-11-16 00:24:54,287 basehttp 16612 17472 "GET /api/gemini/ HTTP/1.1" 200 15719
+INFO 2025-11-16 00:24:54,316 views 16612 17472 Health check solicitado
+INFO 2025-11-16 00:24:54,316 basehttp 16612 17472 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-11-16 00:24:56,651 views 16612 17472 Health check solicitado
+INFO 2025-11-16 00:24:56,651 basehttp 16612 17472 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-11-16 00:24:57,356 views 16612 17472 Health check solicitado
+INFO 2025-11-16 00:24:57,356 basehttp 16612 17472 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-11-16 00:24:58,931 views 16612 17472 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-11-16 00:24:58,931 views 16612 17472 Chave da API do Gemini não configurada
+ERROR 2025-11-16 00:24:58,931 log 16612 17472 Internal Server Error: /api/gemini/chat/
+ERROR 2025-11-16 00:24:58,931 basehttp 16612 17472 "POST /api/gemini/chat/ HTTP/1.1" 500 51
+INFO 2025-11-16 00:30:20,269 autoreload 17980 28192 Watching for file changes with StatReloader
+INFO 2025-11-16 00:30:20,937 views 17980 28192 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:30:22,933 basehttp 17980 3620 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:30:22,940 basehttp 17980 3620 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:30:29,214 basehttp 17980 3620 "GET /api/gemini/ HTTP/1.1" 200 15719
+INFO 2025-11-16 00:30:29,234 views 17980 3620 Health check solicitado
+INFO 2025-11-16 00:30:29,234 basehttp 17980 3620 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-11-16 00:30:30,961 views 17980 3620 Health check solicitado
+INFO 2025-11-16 00:30:30,962 basehttp 17980 3620 "GET /api/gemini/health/ HTTP/1.1" 200 123
+INFO 2025-11-16 00:30:54,079 views 17980 3620 Requisição recebida: POST /api/gemini/chat/
+ERROR 2025-11-16 00:30:54,079 views 17980 3620 Chave da API do Gemini não configurada
+ERROR 2025-11-16 00:30:54,079 log 17980 3620 Internal Server Error: /api/gemini/chat/
+ERROR 2025-11-16 00:30:54,080 basehttp 17980 3620 "POST /api/gemini/chat/ HTTP/1.1" 500 51
+INFO 2025-11-16 00:31:13,168 autoreload 27972 26140 Watching for file changes with StatReloader
+INFO 2025-11-16 00:31:13,829 views 27972 26140 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:31:15,119 basehttp 27972 5576 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:31:15,125 basehttp 27972 5576 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:31:21,534 basehttp 27972 5576 "GET /api/gemini/ HTTP/1.1" 200 15719
+INFO 2025-11-16 00:31:21,561 views 27972 5576 Health check solicitado
+INFO 2025-11-16 00:31:21,562 basehttp 27972 5576 "GET /api/gemini/health/ HTTP/1.1" 200 122
+INFO 2025-11-16 00:31:22,983 views 27972 5576 Health check solicitado
+INFO 2025-11-16 00:31:22,984 basehttp 27972 5576 "GET /api/gemini/health/ HTTP/1.1" 200 122
+INFO 2025-11-16 00:31:25,404 views 27972 5576 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-11-16 00:31:25,405 views 27972 5576 Processando mensagem: Olá! Explique em poucas palavras o que é inteligên...
+INFO 2025-11-16 00:31:27,029 views 27972 5576 Resposta gerada com sucesso
+INFO 2025-11-16 00:31:27,031 basehttp 27972 5576 "POST /api/gemini/chat/ HTTP/1.1" 200 290
+INFO 2025-11-16 00:32:08,907 basehttp 27972 5576 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:32:08,928 basehttp 27972 5576 "GET /usuarios/dashboard/ HTTP/1.1" 200 3341
+INFO 2025-11-16 00:32:09,037 basehttp 27972 5576 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 200 3823
+ERROR 2025-11-16 00:32:09,084 basehttp 27972 5576 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:32:14,086 basehttp 27972 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:32:14,115 basehttp 27972 5576 "GET /static/usuarios/admin-style.css HTTP/1.1" 200 8317
+INFO 2025-11-16 00:32:29,388 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:32:30,624 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 2748
+INFO 2025-11-16 00:32:31,364 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:32:45,730 basehttp 27972 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:32:52,973 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:32:54,948 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 4543
+INFO 2025-11-16 00:33:08,748 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 2748
+INFO 2025-11-16 00:33:09,916 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:33:11,146 basehttp 27972 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:33:15,148 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:33:16,058 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 2748
+INFO 2025-11-16 00:33:16,899 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:33:17,885 basehttp 27972 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:33:19,028 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 2748
+INFO 2025-11-16 00:33:21,580 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/criar/ HTTP/1.1" 200 4253
+INFO 2025-11-16 00:33:54,221 basehttp 27972 5576 "POST /usuarios/admin-panel/areas/criar/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:33:54,228 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3729
+INFO 2025-11-16 00:33:54,306 basehttp 27972 5576 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 00:33:56,414 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:33:57,060 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:34:07,561 basehttp 27972 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:34:13,885 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/criar/ HTTP/1.1" 200 5131
+INFO 2025-11-16 00:34:53,624 basehttp 27972 5576 "POST /usuarios/admin-panel/usuarios/criar/ HTTP/1.1" 200 5282
+INFO 2025-11-16 00:35:00,042 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:35:06,047 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/4/editar/ HTTP/1.1" 200 4931
+INFO 2025-11-16 00:35:15,222 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:35:16,976 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/2/editar/ HTTP/1.1" 200 4916
+INFO 2025-11-16 00:35:23,937 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:35:25,758 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:35:26,539 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:35:27,091 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:35:27,363 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:35:31,024 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:35:31,888 basehttp 27972 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:35:39,883 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:35:39,906 basehttp 27972 5576 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 00:35:44,112 basehttp 27972 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:35:49,790 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:35:53,617 basehttp 27972 5576 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 4698
+INFO 2025-11-16 00:36:06,925 basehttp 27972 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:36:07,582 basehttp 27972 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:36:08,379 basehttp 27972 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:41:31,836 autoreload 12964 6764 Watching for file changes with StatReloader
+INFO 2025-11-16 00:41:32,549 views 12964 6764 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:41:35,087 basehttp 12964 7012 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:41:35,095 basehttp 12964 7012 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:41:43,582 basehttp 12964 7012 "POST /usuarios/login/ HTTP/1.1" 302 0
+ERROR 2025-11-16 00:41:43,718 log 12964 7012 Internal Server Error: /usuarios/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 169, in dashboard
+    return render(request, 'usuarios/dashboard.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile' not found. 'profile' is not a valid view function or pattern name.
+ERROR 2025-11-16 00:41:43,721 basehttp 12964 7012 "GET /usuarios/dashboard/ HTTP/1.1" 500 134134
+WARNING 2025-11-16 00:41:53,912 log 12964 7012 Not Found: /adin/dashboard/
+WARNING 2025-11-16 00:41:53,912 basehttp 12964 7012 "GET /adin/dashboard/ HTTP/1.1" 404 2839
+WARNING 2025-11-16 00:41:58,389 log 12964 7012 Not Found: /adimin/dashboard/
+WARNING 2025-11-16 00:41:58,389 basehttp 12964 7012 "GET /adimin/dashboard/ HTTP/1.1" 404 2845
+WARNING 2025-11-16 00:42:01,872 log 12964 7012 Not Found: /admin/dashboard/
+WARNING 2025-11-16 00:42:01,872 basehttp 12964 7012 "GET /admin/dashboard/ HTTP/1.1" 404 6359
+INFO 2025-11-16 00:42:04,843 basehttp 12964 7012 "GET /admin/ HTTP/1.1" 200 10247
+INFO 2025-11-16 00:42:09,191 basehttp 12964 7012 "GET /admin/api/area/add/ HTTP/1.1" 200 13825
+INFO 2025-11-16 00:42:09,218 basehttp 12964 6360 "GET /admin/jsi18n/ HTTP/1.1" 200 8158
+INFO 2025-11-16 00:42:09,302 basehttp 12964 7012 "GET /static/admin/css/forms.css HTTP/1.1" 200 8525
+INFO 2025-11-16 00:42:09,312 basehttp 12964 6360 "GET /static/admin/css/widgets.css HTTP/1.1" 200 11991
+INFO 2025-11-16 00:42:09,315 basehttp 12964 25904 "GET /static/admin/js/prepopulate_init.js HTTP/1.1" 200 586
+INFO 2025-11-16 00:42:09,315 basehttp 12964 7012 "GET /static/admin/js/change_form.js HTTP/1.1" 200 606
+INFO 2025-11-16 00:42:15,293 basehttp 12964 7012 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:42:15,297 basehttp 12964 7012 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:42:20,825 basehttp 12964 7012 "POST /usuarios/login/ HTTP/1.1" 302 0
+ERROR 2025-11-16 00:42:20,852 log 12964 7012 Internal Server Error: /usuarios/dashboard/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 169, in dashboard
+    return render(request, 'usuarios/dashboard.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile' not found. 'profile' is not a valid view function or pattern name.
+ERROR 2025-11-16 00:42:20,854 basehttp 12964 7012 "GET /usuarios/dashboard/ HTTP/1.1" 500 134134
+INFO 2025-11-16 00:43:12,807 autoreload 26528 19328 Watching for file changes with StatReloader
+INFO 2025-11-16 00:43:13,543 views 26528 19328 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:43:18,581 basehttp 26528 24200 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:43:18,591 basehttp 26528 24200 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:43:23,552 basehttp 26528 24200 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:43:23,573 basehttp 26528 24200 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 00:43:23,648 basehttp 26528 24200 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+ERROR 2025-11-16 00:43:23,672 basehttp 26528 24200 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:43:42,537 basehttp 26528 24200 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:43:42,554 basehttp 26528 24200 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 00:43:45,525 basehttp 26528 24200 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 13339
+INFO 2025-11-16 00:43:52,176 basehttp 26528 24200 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:43:53,645 basehttp 26528 24200 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:43:55,528 basehttp 26528 24200 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:43:58,392 basehttp 26528 24200 "GET /usuarios/admin-panel/areas/criar/ HTTP/1.1" 200 4253
+INFO 2025-11-16 00:44:00,930 basehttp 26528 24200 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:44:01,625 basehttp 26528 24200 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:44:02,929 basehttp 26528 24200 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:44:03,442 basehttp 26528 24200 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:44:04,084 basehttp 26528 24200 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 13339
+INFO 2025-11-16 00:44:23,810 views 26528 24200 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-11-16 00:44:23,810 views 26528 24200 Processando solicitação de trilha: quero aprender linguagem de programação ruby...
+INFO 2025-11-16 00:44:39,221 views 26528 24200 Trilha gerada com sucesso pelo LLM
+INFO 2025-11-16 00:44:39,222 views 26528 24200 JSON da trilha parseado com sucesso
+INFO 2025-11-16 00:44:39,223 basehttp 26528 24200 "POST /api/gemini/trilha/ HTTP/1.1" 200 7184
+INFO 2025-11-16 00:48:26,430 autoreload 11320 1280 Watching for file changes with StatReloader
+INFO 2025-11-16 00:48:27,160 views 11320 1280 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:48:34,143 autoreload 23636 8384 Watching for file changes with StatReloader
+INFO 2025-11-16 00:48:34,834 views 23636 8384 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:48:36,187 basehttp 23636 22808 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:48:36,193 basehttp 23636 22808 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:48:42,271 basehttp 23636 22808 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:48:42,279 basehttp 23636 22808 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 00:48:42,316 basehttp 23636 22808 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+ERROR 2025-11-16 00:48:42,365 basehttp 23636 22808 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:48:49,322 basehttp 23636 22808 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:48:49,343 basehttp 23636 22808 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 00:48:50,691 basehttp 23636 22808 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:48:51,517 basehttp 23636 22808 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3472
+INFO 2025-11-16 00:48:52,709 basehttp 23636 22808 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 16719
+INFO 2025-11-16 00:48:55,837 views 23636 22808 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-11-16 00:48:55,837 views 23636 22808 Processando solicitação de trilha: Quero aprender desenvolvimento web com Django...
+INFO 2025-11-16 00:49:09,198 views 23636 22808 Trilha gerada com sucesso pelo LLM
+INFO 2025-11-16 00:49:09,198 views 23636 22808 JSON da trilha parseado com sucesso
+INFO 2025-11-16 00:49:09,199 basehttp 23636 22808 "POST /api/gemini/trilha/ HTTP/1.1" 200 6233
+INFO 2025-11-16 00:49:32,642 basehttp 23636 22808 "POST /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 16719
+INFO 2025-11-16 00:49:36,159 basehttp 23636 22808 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 3621
+INFO 2025-11-16 00:52:50,969 autoreload 11880 11456 Watching for file changes with StatReloader
+INFO 2025-11-16 00:52:51,669 views 11880 11456 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:52:53,475 basehttp 11880 26888 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:52:53,482 basehttp 11880 26888 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:52:57,247 basehttp 11880 26888 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:52:57,253 basehttp 11880 26888 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:53:09,362 basehttp 11880 26888 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:53:09,369 basehttp 11880 26888 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:53:09,447 basehttp 11880 26888 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:53:15,809 basehttp 11880 26888 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:53:15,833 basehttp 11880 26888 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:53:18,160 basehttp 11880 26888 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:53:18,191 basehttp 11880 26888 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:53:20,113 basehttp 11880 26888 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6076
+INFO 2025-11-16 00:53:20,136 basehttp 11880 26888 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 00:53:22,577 basehttp 11880 26888 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20008
+INFO 2025-11-16 00:53:24,405 views 11880 26888 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-11-16 00:53:24,406 views 11880 26888 Processando solicitação de trilha: Quero aprender desenvolvimento web com Django...
+INFO 2025-11-16 00:53:38,522 views 11880 26888 Trilha gerada com sucesso pelo LLM
+INFO 2025-11-16 00:53:38,522 views 11880 26888 JSON da trilha parseado com sucesso
+INFO 2025-11-16 00:53:38,523 basehttp 11880 26888 "POST /api/gemini/trilha/ HTTP/1.1" 200 6049
+INFO 2025-11-16 00:53:51,867 basehttp 11880 26888 "POST /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:53:51,877 basehttp 11880 26888 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4561
+INFO 2025-11-16 00:54:00,424 basehttp 11880 26888 "GET /usuarios/admin-panel/trilhas/1/editar/ HTTP/1.1" 200 20008
+INFO 2025-11-16 00:54:03,074 basehttp 11880 26888 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:54:03,601 basehttp 11880 26888 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6282
+INFO 2025-11-16 00:54:18,780 basehttp 11880 26888 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:54:19,541 basehttp 11880 27048 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:54:20,316 basehttp 11880 27048 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6282
+INFO 2025-11-16 00:54:21,194 basehttp 11880 27048 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6282
+INFO 2025-11-16 00:54:21,978 basehttp 11880 27048 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6282
+INFO 2025-11-16 00:54:23,914 basehttp 11880 27048 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 00:54:23,934 basehttp 11880 27048 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+ERROR 2025-11-16 00:54:23,937 basehttp 11880 27048 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:54:25,623 basehttp 11880 27048 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:54:25,652 basehttp 11880 27048 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:54:28,688 basehttp 11880 27048 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:54:28,729 basehttp 11880 27048 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:55:29,776 autoreload 12952 18444 Watching for file changes with StatReloader
+INFO 2025-11-16 00:55:30,493 views 12952 18444 API do Gemini configurada com sucesso
+INFO 2025-11-16 00:55:31,861 basehttp 12952 18224 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 00:55:31,867 basehttp 12952 18224 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 00:55:35,725 basehttp 12952 18224 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:55:35,732 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:55:35,822 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:55:42,881 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6282
+INFO 2025-11-16 00:55:52,894 basehttp 12952 18224 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20008
+INFO 2025-11-16 00:56:11,427 views 12952 18224 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-11-16 00:56:11,427 views 12952 18224 Processando solicitação de trilha: quero aprender a trabalhar deitado...
+INFO 2025-11-16 00:56:24,002 views 12952 18224 Trilha gerada com sucesso pelo LLM
+INFO 2025-11-16 00:56:24,002 views 12952 18224 JSON da trilha parseado com sucesso
+INFO 2025-11-16 00:56:24,003 basehttp 12952 18224 "POST /api/gemini/trilha/ HTTP/1.1" 200 5902
+INFO 2025-11-16 00:56:48,856 basehttp 12952 18224 "POST /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 302 0
+INFO 2025-11-16 00:56:48,868 basehttp 12952 18224 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 6069
+INFO 2025-11-16 00:56:53,434 basehttp 12952 18224 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:56:54,847 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:56:55,985 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:56:56,007 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:56:58,203 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:56:58,224 basehttp 12952 18224 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 00:57:00,163 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:57:00,187 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:57:22,217 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:57:23,507 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:57:23,531 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:57:25,121 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:57:29,719 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:57:29,741 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:57:31,050 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:57:31,076 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:57:32,737 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:57:34,165 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:57:34,191 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:57:40,167 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:57:41,731 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:57:41,756 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:57:49,179 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:57:50,870 basehttp 12952 18224 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5904
+INFO 2025-11-16 00:58:50,729 basehttp 12952 18224 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5904
+INFO 2025-11-16 00:58:51,269 basehttp 12952 18224 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:58:51,712 basehttp 12952 18224 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:58:52,107 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:58:54,065 basehttp 12952 18224 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5904
+INFO 2025-11-16 00:58:55,415 basehttp 12952 18224 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:58:55,896 basehttp 12952 18224 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:58:56,255 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:59:04,121 basehttp 12952 18224 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:59:10,059 basehttp 12952 18224 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 00:59:10,856 basehttp 12952 18224 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 00:59:11,778 basehttp 12952 18224 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5904
+INFO 2025-11-16 00:59:12,735 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:59:13,792 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:59:13,846 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 00:59:15,035 basehttp 12952 18224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 00:59:21,312 basehttp 12952 18224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+ERROR 2025-11-16 00:59:21,339 basehttp 12952 18224 "GET /static/usuarios/[https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap](https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap) HTTP/1.1" 500 59
+INFO 2025-11-16 01:00:05,226 basehttp 12952 18224 "GET /admin/ HTTP/1.1" 200 10247
+INFO 2025-11-16 01:00:10,394 basehttp 12952 18224 "GET /admin/ HTTP/1.1" 200 10247
+INFO 2025-11-16 01:08:27,826 autoreload 3784 18700 Watching for file changes with StatReloader
+INFO 2025-11-16 01:08:28,536 views 3784 18700 API do Gemini configurada com sucesso
+INFO 2025-11-16 01:08:29,978 basehttp 3784 13744 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 01:08:29,985 basehttp 3784 13744 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 01:08:34,205 basehttp 3784 13744 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 01:08:34,211 basehttp 3784 13744 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:08:34,287 basehttp 3784 13744 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 200 3741
+INFO 2025-11-16 01:08:36,319 basehttp 3784 13744 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6772
+INFO 2025-11-16 01:08:36,340 basehttp 3784 13744 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:08:38,912 basehttp 3784 13744 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20008
+INFO 2025-11-16 01:08:40,922 basehttp 3784 13744 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3620
+INFO 2025-11-16 01:08:44,299 basehttp 3784 13744 "GET /usuarios/admin-panel/areas/1/editar/ HTTP/1.1" 200 4266
+INFO 2025-11-16 01:09:00,281 basehttp 3784 13744 "POST /usuarios/admin-panel/areas/1/editar/ HTTP/1.1" 302 0
+INFO 2025-11-16 01:09:00,289 basehttp 3784 13744 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3757
+INFO 2025-11-16 01:09:03,091 basehttp 3784 13744 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5916
+INFO 2025-11-16 01:09:10,986 basehttp 3784 13744 "GET /usuarios/admin-panel/trilhas/2/editar/ HTTP/1.1" 200 20020
+INFO 2025-11-16 01:09:23,351 basehttp 3784 13744 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5916
+INFO 2025-11-16 01:09:25,217 basehttp 3784 13744 "GET /usuarios/admin-panel/trilhas/2/editar/ HTTP/1.1" 200 20020
+INFO 2025-11-16 01:09:44,386 basehttp 3784 13744 "POST /usuarios/admin-panel/trilhas/1/excluir/ HTTP/1.1" 302 0
+INFO 2025-11-16 01:09:44,395 basehttp 3784 13744 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4622
+INFO 2025-11-16 01:09:45,922 basehttp 3784 13744 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 01:09:46,489 basehttp 3784 13744 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4458
+INFO 2025-11-16 01:10:46,242 basehttp 3784 13744 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 01:13:03,817 autoreload 12404 27924 Watching for file changes with StatReloader
+INFO 2025-11-16 01:13:04,475 views 12404 27924 API do Gemini configurada com sucesso
+INFO 2025-11-16 01:13:05,726 basehttp 12404 5576 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 01:13:05,735 basehttp 12404 5576 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 01:13:10,504 basehttp 12404 5576 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 01:13:10,510 basehttp 12404 5576 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:13:10,552 basehttp 12404 5576 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:13:12,299 basehttp 12404 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6295
+INFO 2025-11-16 01:13:13,564 basehttp 12404 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 01:13:15,408 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4458
+INFO 2025-11-16 01:13:16,682 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/2/editar/ HTTP/1.1" 200 28287
+INFO 2025-11-16 01:13:24,106 basehttp 12404 5576 "POST /usuarios/admin-panel/trilhas/2/editar/ HTTP/1.1" 302 0
+INFO 2025-11-16 01:13:24,114 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4634
+INFO 2025-11-16 01:13:31,546 basehttp 12404 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 01:13:32,066 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 01:13:33,347 basehttp 12404 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 01:13:34,135 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 01:13:35,863 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/2/editar/ HTTP/1.1" 200 28287
+INFO 2025-11-16 01:13:41,374 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 01:13:43,359 basehttp 12404 5576 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 01:13:44,851 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 01:13:44,877 basehttp 12404 5576 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:13:45,631 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 01:14:48,517 basehttp 12404 5576 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 01:14:49,886 basehttp 12404 5576 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 01:14:51,108 basehttp 12404 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:14:52,457 basehttp 12404 5576 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:14:52,478 basehttp 12404 5576 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:15:07,948 basehttp 12404 5576 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:15:08,899 basehttp 12404 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:15:21,779 basehttp 12404 5576 "GET /api/gemini/ HTTP/1.1" 200 15719
+INFO 2025-11-16 01:15:21,835 views 12404 5576 Health check solicitado
+INFO 2025-11-16 01:15:21,835 basehttp 12404 5576 "GET /api/gemini/health/ HTTP/1.1" 200 122
+INFO 2025-11-16 01:17:19,790 basehttp 12404 5576 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:17:19,808 basehttp 12404 5576 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:17:20,773 basehttp 12404 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:17:23,496 basehttp 12404 5576 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:17:26,297 basehttp 12404 5576 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:17:27,640 basehttp 12404 5576 "GET /usuarios/admin-panel/areas/criar/ HTTP/1.1" 200 4253
+INFO 2025-11-16 01:18:16,599 autoreload 10744 15824 Watching for file changes with StatReloader
+INFO 2025-11-16 01:18:17,299 views 10744 15824 API do Gemini configurada com sucesso
+INFO 2025-11-16 01:18:18,359 basehttp 10744 20920 "GET / HTTP/1.1" 302 0
+INFO 2025-11-16 01:18:18,366 basehttp 10744 20920 "GET /usuarios/login/ HTTP/1.1" 200 1347
+INFO 2025-11-16 01:18:29,595 basehttp 10744 20920 "POST /usuarios/login/ HTTP/1.1" 302 0
+INFO 2025-11-16 01:18:29,602 basehttp 10744 20920 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:18:29,626 basehttp 10744 20920 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:18:39,263 basehttp 10744 20920 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:18:40,428 basehttp 10744 20920 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+INFO 2025-11-16 01:18:42,862 basehttp 10744 20920 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:18:49,119 basehttp 10744 20920 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 01:19:20,760 basehttp 10744 20920 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 01:19:22,064 basehttp 10744 20920 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 01:19:23,070 basehttp 10744 20920 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:19:24,379 basehttp 10744 20920 "GET /usuarios/dashboard/ HTTP/1.1" 200 3379
+WARNING 2025-11-16 01:21:42,252 log 10744 20920 Not Found: /usuarios/dashboard/chat.ia
+WARNING 2025-11-16 01:21:42,252 basehttp 10744 20920 "GET /usuarios/dashboard/chat.ia HTTP/1.1" 404 7676
+ERROR 2025-11-16 01:21:54,034 log 10744 20920 Internal Server Error: /usuarios/chat-ia/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 554, in chat_ia
+    return render(request, 'usuarios/chat_ia.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'profile' not found. 'profile' is not a valid view function or pattern name.
+ERROR 2025-11-16 01:21:54,037 basehttp 10744 20920 "GET /usuarios/chat-ia/ HTTP/1.1" 500 132298
+INFO 2025-11-16 01:25:43,098 autoreload 5852 24132 Watching for file changes with StatReloader
+INFO 2025-11-16 01:25:43,785 views 5852 24132 API do Gemini configurada com sucesso
+ERROR 2025-11-16 01:25:48,006 log 5852 9612 Internal Server Error: /usuarios/chat-ia/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 554, in chat_ia
+    return render(request, 'usuarios/chat_ia.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' is not a valid view function or pattern name.
+ERROR 2025-11-16 01:25:48,011 basehttp 5852 9612 "GET /usuarios/chat-ia/ HTTP/1.1" 500 132472
+WARNING 2025-11-16 01:25:51,722 log 5852 9612 Not Found: /usuarios
+WARNING 2025-11-16 01:25:51,722 basehttp 5852 9612 "GET /usuarios HTTP/1.1" 404 2818
+INFO 2025-11-16 01:25:55,165 basehttp 5852 9612 "GET /usuarios/dashboard/ HTTP/1.1" 200 3362
+INFO 2025-11-16 01:25:55,184 basehttp 5852 9612 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:25:59,436 basehttp 5852 9612 "GET /usuarios/dashboard/ HTTP/1.1" 200 3362
+ERROR 2025-11-16 01:26:00,304 log 5852 9612 Internal Server Error: /usuarios/chat-ia/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 554, in chat_ia
+    return render(request, 'usuarios/chat_ia.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' is not a valid view function or pattern name.
+ERROR 2025-11-16 01:26:00,306 basehttp 5852 9612 "GET /usuarios/chat-ia/ HTTP/1.1" 500 132505
+INFO 2025-11-16 01:26:06,180 basehttp 5852 9612 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:26:06,202 basehttp 5852 9612 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:26:08,210 basehttp 5852 9612 "GET /usuarios/dashboard/ HTTP/1.1" 200 3362
+INFO 2025-11-16 01:26:15,383 basehttp 5852 9612 "GET /usuarios/dashboard/ HTTP/1.1" 200 3362
+INFO 2025-11-16 01:26:16,037 basehttp 5852 9612 "GET /usuarios/dashboard/ HTTP/1.1" 200 3362
+ERROR 2025-11-16 01:26:16,645 log 5852 9612 Internal Server Error: /usuarios/chat-ia/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 554, in chat_ia
+    return render(request, 'usuarios/chat_ia.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' is not a valid view function or pattern name.
+ERROR 2025-11-16 01:26:16,646 basehttp 5852 9612 "GET /usuarios/chat-ia/ HTTP/1.1" 500 132505
+INFO 2025-11-16 01:26:21,568 basehttp 5852 9612 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:26:23,453 basehttp 5852 9612 "GET /usuarios/dashboard/ HTTP/1.1" 200 3362
+ERROR 2025-11-16 01:26:24,140 log 5852 9612 Internal Server Error: /usuarios/chat-ia/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 554, in chat_ia
+    return render(request, 'usuarios/chat_ia.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' is not a valid view function or pattern name.
+ERROR 2025-11-16 01:26:24,141 basehttp 5852 9612 "GET /usuarios/chat-ia/ HTTP/1.1" 500 132505
+INFO 2025-11-16 01:27:50,234 autoreload 23976 22728 Watching for file changes with StatReloader
+INFO 2025-11-16 01:27:52,871 views 23976 22728 API do Gemini configurada com sucesso
+INFO 2025-11-16 01:27:54,669 basehttp 23976 21532 "GET /usuarios/dashboard/ HTTP/1.1" 200 3360
+INFO 2025-11-16 01:27:54,685 basehttp 23976 21532 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:28:01,195 basehttp 23976 21532 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:28:50,091 basehttp 23976 21532 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:28:51,903 basehttp 23976 21532 "GET /usuarios/dashboard/ HTTP/1.1" 200 3431
+ERROR 2025-11-16 01:28:53,905 log 23976 21532 Internal Server Error: /usuarios/chat-ia/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 554, in chat_ia
+    return render(request, 'usuarios/chat_ia.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' is not a valid view function or pattern name.
+ERROR 2025-11-16 01:28:53,908 basehttp 23976 21532 "GET /usuarios/chat-ia/ HTTP/1.1" 500 132505
+INFO 2025-11-16 01:31:38,171 basehttp 23976 21532 "GET /usuarios/dashboard/ HTTP/1.1" 200 3431
+INFO 2025-11-16 01:31:38,188 basehttp 23976 21532 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:32:08,627 basehttp 23976 21532 "GET /usuarios/dashboard/ HTTP/1.1" 200 3423
+INFO 2025-11-16 01:32:11,932 basehttp 23976 21532 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:32:13,905 basehttp 23976 21532 "GET /usuarios/dashboard/ HTTP/1.1" 200 3423
+INFO 2025-11-16 01:33:43,231 basehttp 23976 21532 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+ERROR 2025-11-16 01:33:44,002 log 23976 21532 Internal Server Error: /usuarios/chat-ia/
+Traceback (most recent call last):
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\contrib\auth\decorators.py", line 59, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py", line 554, in chat_ia
+    return render(request, 'usuarios/chat_ia.html')
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\shortcuts.py", line 25, in render
+    content = loader.render_to_string(template_name, context, request, using=using)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\loader.py", line 62, in render_to_string
+    return template.render(context, request)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\backends\django.py", line 107, in render
+    return self.template.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 171, in render
+    return self._render(context)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 163, in _render
+    return self.nodelist.render(context)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 1016, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\base.py", line 977, in render_annotated
+    return self.render(context)
+           ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\template\defaulttags.py", line 480, in render
+    url = reverse(view_name, args=args, kwargs=kwargs, current_app=current_app)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\base.py", line 98, in reverse
+    resolved_url = resolver._reverse_with_prefix(view, prefix, *args, **kwargs)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\cauek\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.11_qbz5n2kfra8p0\LocalCache\local-packages\Python311\site-packages\django\urls\resolvers.py", line 831, in _reverse_with_prefix
+    raise NoReverseMatch(msg)
+django.urls.exceptions.NoReverseMatch: Reverse for 'logout' not found. 'logout' is not a valid view function or pattern name.
+ERROR 2025-11-16 01:33:44,003 basehttp 23976 21532 "GET /usuarios/chat-ia/ HTTP/1.1" 500 132505
+INFO 2025-11-16 01:35:05,396 basehttp 23976 21532 "GET /usuarios/chat-ia/ HTTP/1.1" 200 13140
+WARNING 2025-11-16 01:35:05,418 basehttp 23976 21532 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:35:14,509 basehttp 23976 23392 "GET /usuarios/chat-ia/ HTTP/1.1" 200 13140
+WARNING 2025-11-16 01:35:14,547 basehttp 23976 23392 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:35:15,484 basehttp 23976 13792 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:35:15,505 basehttp 23976 13792 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:35:20,075 basehttp 23976 13792 "GET /usuarios/chat-ia/ HTTP/1.1" 200 13140
+WARNING 2025-11-16 01:35:20,099 basehttp 23976 13792 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:35:34,413 views 23976 10608 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-11-16 01:35:34,413 views 23976 10608 Processando mensagem: Dicas para estudar melhor...
+INFO 2025-11-16 01:35:44,398 views 23976 10608 Resposta gerada com sucesso
+INFO 2025-11-16 01:35:44,399 basehttp 23976 10608 "POST /api/gemini/chat/ HTTP/1.1" 200 5353
+INFO 2025-11-16 01:36:15,400 basehttp 23976 10608 "GET /usuarios/chat-ia/ HTTP/1.1" 200 13140
+WARNING 2025-11-16 01:36:15,425 basehttp 23976 10608 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:36:16,354 basehttp 23976 18688 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:36:18,182 basehttp 23976 18688 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:36:21,545 basehttp 23976 18688 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:36:21,564 basehttp 23976 18688 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:36:29,775 basehttp 23976 18688 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:36:30,842 basehttp 23976 18688 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:36:42,941 basehttp 23976 18688 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:36:49,636 basehttp 23976 18688 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:36:50,320 basehttp 23976 18688 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:37:58,668 basehttp 23976 18688 "GET /usuarios/chat-ia/ HTTP/1.1" 200 13140
+WARNING 2025-11-16 01:37:58,692 basehttp 23976 18688 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:38:06,316 views 23976 27660 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-11-16 01:38:06,316 views 23976 27660 Processando mensagem: Explique o que é algoritmo...
+INFO 2025-11-16 01:38:10,597 views 23976 27660 Resposta gerada com sucesso
+INFO 2025-11-16 01:38:10,597 basehttp 23976 27660 "POST /api/gemini/chat/ HTTP/1.1" 200 3067
+INFO 2025-11-16 01:40:18,840 basehttp 23976 27660 "GET /usuarios/chat-ia/ HTTP/1.1" 200 18859
+WARNING 2025-11-16 01:40:18,859 basehttp 23976 27660 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:40:33,846 views 23976 27464 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-11-16 01:40:33,847 views 23976 27464 Processando mensagem: Preciso criar novas trolhas...
+INFO 2025-11-16 01:40:34,676 views 23976 27464 Resposta gerada com sucesso
+INFO 2025-11-16 01:40:34,676 basehttp 23976 27464 "POST /api/gemini/chat/ HTTP/1.1" 200 309
+INFO 2025-11-16 01:40:54,082 views 23976 27464 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-11-16 01:40:54,082 views 23976 27464 Processando mensagem: preciso criar novas trilhas de aprendizados...
+INFO 2025-11-16 01:40:59,579 views 23976 27464 Resposta gerada com sucesso
+INFO 2025-11-16 01:40:59,580 basehttp 23976 27464 "POST /api/gemini/chat/ HTTP/1.1" 200 3994
+INFO 2025-11-16 01:41:13,462 basehttp 23976 27464 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:41:14,817 basehttp 23976 27464 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:41:14,837 basehttp 23976 27464 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:41:39,505 basehttp 23976 27464 "GET /usuarios/chat-ia/ HTTP/1.1" 200 18859
+WARNING 2025-11-16 01:41:39,520 basehttp 23976 27464 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:41:41,254 basehttp 23976 6224 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:41:42,262 basehttp 23976 6224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:44:25,190 basehttp 23976 6224 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:44:26,312 basehttp 23976 6224 "GET /usuarios/chat-ia/ HTTP/1.1" 200 23418
+WARNING 2025-11-16 01:44:26,335 basehttp 23976 6224 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:44:39,650 basehttp 23976 26596 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:44:39,670 basehttp 23976 26596 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:44:41,662 basehttp 23976 26596 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 01:44:42,980 basehttp 23976 26596 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:44:44,528 basehttp 23976 26596 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:44:44,548 basehttp 23976 26596 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:45:55,865 basehttp 23976 26596 "GET /usuarios/chat-ia/ HTTP/1.1" 200 23418
+WARNING 2025-11-16 01:45:55,884 basehttp 23976 26596 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:47:55,014 basehttp 23976 21040 "GET /usuarios/chat-ia/ HTTP/1.1" 200 23418
+WARNING 2025-11-16 01:47:55,033 basehttp 23976 21040 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:47:56,094 basehttp 23976 8412 "GET /usuarios/chat-ia/ HTTP/1.1" 200 23418
+WARNING 2025-11-16 01:47:56,154 basehttp 23976 8412 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:47:56,814 basehttp 23976 24280 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:47:58,254 basehttp 23976 24280 "GET /usuarios/chat-ia/ HTTP/1.1" 200 23418
+WARNING 2025-11-16 01:47:58,277 basehttp 23976 24280 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:47:59,790 views 23976 5096 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-11-16 01:47:59,791 views 23976 5096 Processando mensagem: Explique o que é algoritmo...
+INFO 2025-11-16 01:48:00,975 basehttp 23976 16680 "GET /usuarios/chat-ia/ HTTP/1.1" 200 23418
+WARNING 2025-11-16 01:48:01,000 basehttp 23976 16680 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:48:04,203 views 23976 5096 Resposta gerada com sucesso
+INFO 2025-11-16 01:48:04,204 basehttp 23976 5096 - Broken pipe from ('127.0.0.1', 49196)
+INFO 2025-11-16 01:49:15,839 basehttp 23976 19236 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:49:15,859 basehttp 23976 19236 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:49:23,071 basehttp 23976 3776 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:49:23,090 basehttp 23976 3776 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:49:24,613 basehttp 23976 3776 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:49:24,634 basehttp 23976 3776 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:49:26,415 basehttp 23976 22064 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:49:27,829 basehttp 23976 22064 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:49:27,853 basehttp 23976 22064 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:49:38,808 basehttp 23976 10472 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:49:40,657 basehttp 23976 10472 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:49:45,116 basehttp 23976 10472 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 01:49:47,502 basehttp 23976 10472 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 01:49:48,166 basehttp 23976 10472 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 01:49:48,805 basehttp 23976 10472 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:49:50,444 basehttp 23976 10472 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:49:52,049 basehttp 23976 10472 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:49:59,573 basehttp 23976 10472 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:49:59,599 basehttp 23976 10472 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:50:04,699 basehttp 23976 14932 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:50:06,585 basehttp 23976 14932 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:50:06,609 basehttp 23976 14932 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:50:10,886 basehttp 23976 8268 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:50:24,461 basehttp 23976 8268 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:50:24,486 basehttp 23976 8268 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:50:32,444 basehttp 23976 24500 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:51:21,172 basehttp 23976 24500 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:51:25,303 basehttp 23976 24500 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:51:26,444 basehttp 23976 24500 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:51:28,519 basehttp 23976 24500 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:51:31,302 basehttp 23976 24500 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:51:32,643 basehttp 23976 24500 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:51:35,561 basehttp 23976 24500 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:51:35,583 basehttp 23976 24500 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:52:12,489 views 23976 16340 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-11-16 01:52:12,489 views 23976 16340 Processando mensagem: Como faço soma de bits?...
+INFO 2025-11-16 01:52:19,192 views 23976 16340 Resposta gerada com sucesso
+INFO 2025-11-16 01:52:19,192 basehttp 23976 16340 "POST /api/gemini/chat/ HTTP/1.1" 200 3308
+INFO 2025-11-16 01:52:46,290 basehttp 23976 16340 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:52:47,611 basehttp 23976 16340 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 01:52:48,977 basehttp 23976 16340 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 01:52:49,427 basehttp 23976 16340 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 01:52:50,049 basehttp 23976 16340 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:52:52,101 basehttp 23976 16340 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:52:54,524 basehttp 23976 16340 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:52:54,550 basehttp 23976 16340 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:52:58,563 basehttp 23976 1292 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:52:58,589 basehttp 23976 1292 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:53:19,079 basehttp 23976 21464 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:53:26,523 basehttp 23976 21464 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:53:26,549 basehttp 23976 21464 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:53:28,069 basehttp 23976 21464 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:53:29,644 basehttp 23976 21464 "GET /usuarios/dashboard/ HTTP/1.1" 200 3445
+INFO 2025-11-16 01:54:11,499 basehttp 23976 21464 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:54:11,514 basehttp 23976 21464 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 01:54:15,956 basehttp 23976 21464 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:54:15,979 basehttp 23976 21464 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:54:20,570 basehttp 23976 20156 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:54:28,191 basehttp 23976 20156 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:54:28,217 basehttp 23976 20156 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:54:35,343 basehttp 23976 8068 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:54:36,924 basehttp 23976 8068 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:54:38,252 basehttp 23976 8068 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:54:38,275 basehttp 23976 8068 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:54:40,227 basehttp 23976 27760 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:54:41,683 basehttp 23976 27760 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:54:41,709 basehttp 23976 27760 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:54:47,672 basehttp 23976 25024 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:54:56,118 basehttp 23976 25024 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:54:57,785 basehttp 23976 25024 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:55:58,220 basehttp 23976 25024 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:00,093 basehttp 23976 25024 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:00,706 basehttp 23976 25024 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:05,225 basehttp 23976 25024 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:56:05,243 basehttp 23976 25024 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:56:06,971 basehttp 23976 10144 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:56:08,396 basehttp 23976 10144 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:10,431 basehttp 23976 10144 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:11,624 basehttp 23976 10144 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:26,683 basehttp 23976 10144 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:56:27,676 basehttp 23976 10144 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:43,487 basehttp 23976 10144 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:43,936 basehttp 23976 10144 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:50,490 basehttp 23976 10144 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:56:52,695 basehttp 23976 10144 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:56:55,345 basehttp 23976 10144 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:56:55,367 basehttp 23976 10144 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:57:27,284 basehttp 23976 20324 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24694
+WARNING 2025-11-16 01:57:27,305 basehttp 23976 20324 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 01:57:28,001 basehttp 23976 1876 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:57:28,779 basehttp 23976 1876 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:57:29,366 basehttp 23976 1876 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:57:29,945 basehttp 23976 1876 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:57:30,113 basehttp 23976 1876 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:57:30,277 basehttp 23976 1876 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 01:57:51,049 basehttp 23976 1876 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 01:57:52,420 basehttp 23976 1876 "GET /usuarios/dashboard/ HTTP/1.1" 200 3286
+INFO 2025-11-16 02:02:05,581 basehttp 23976 1876 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:02:05,657 basehttp 23976 1876 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 200 4293
+INFO 2025-11-16 02:02:09,949 basehttp 23976 1876 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24129
+WARNING 2025-11-16 02:02:09,968 basehttp 23976 1876 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:02:17,440 basehttp 23976 20584 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:02:17,465 basehttp 23976 20584 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:02:19,002 basehttp 23976 20584 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:02:21,372 basehttp 23976 20584 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:02:23,194 basehttp 23976 20584 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24130
+WARNING 2025-11-16 02:02:23,215 basehttp 23976 20584 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:02:26,641 basehttp 23976 27948 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:02:26,665 basehttp 23976 27948 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:02:30,127 basehttp 23976 27948 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:02:31,330 basehttp 23976 27948 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:02:32,708 basehttp 23976 27948 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24099
+WARNING 2025-11-16 02:02:32,731 basehttp 23976 27948 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:02:36,319 basehttp 23976 27032 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24079
+WARNING 2025-11-16 02:02:36,352 basehttp 23976 27032 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:02:37,286 basehttp 23976 25228 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:02:37,302 basehttp 23976 25228 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:02:39,522 basehttp 23976 25228 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:02:40,923 basehttp 23976 25228 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:02:52,809 basehttp 23976 25228 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:02:54,086 basehttp 23976 25228 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:02:59,907 basehttp 23976 25228 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:03:01,994 basehttp 23976 25228 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:03:02,457 basehttp 23976 25228 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:03:03,748 basehttp 23976 25228 "GET /usuarios/admin-panel/trilhas/2/editar/ HTTP/1.1" 200 28287
+INFO 2025-11-16 02:03:03,768 basehttp 23976 25228 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:03:06,320 basehttp 23976 25228 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:03:08,332 basehttp 23976 25228 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:03:09,141 basehttp 23976 25228 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:03:10,494 basehttp 23976 25228 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:03:10,515 basehttp 23976 25228 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:03:11,504 basehttp 23976 25228 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:03:26,621 basehttp 23976 25228 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:03:26,642 basehttp 23976 25228 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:04:10,371 basehttp 23976 25228 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24074
+WARNING 2025-11-16 02:04:10,392 basehttp 23976 25228 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:04:18,644 basehttp 23976 18656 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:06:27,827 basehttp 23976 18656 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:06:31,565 basehttp 23976 18656 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:06:31,586 basehttp 23976 18656 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:06:32,536 basehttp 23976 18656 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:06:33,147 basehttp 23976 18656 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:06:34,077 basehttp 23976 18656 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:06:34,626 basehttp 23976 18656 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:06:35,294 basehttp 23976 18656 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:06:36,660 basehttp 23976 18656 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:07:21,613 basehttp 23976 18656 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:07:33,401 basehttp 23976 18656 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:07:33,421 basehttp 23976 18656 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:07:34,602 basehttp 23976 18656 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:07:44,365 basehttp 23976 18656 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:07:46,526 basehttp 23976 18656 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:08:24,782 basehttp 23976 18656 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:08:24,798 basehttp 23976 18656 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:13:42,739 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:13:42,755 basehttp 23976 16284 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:13:43,765 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:13:43,794 basehttp 23976 16284 "GET /static/usuarios/admin-style.css HTTP/1.1" 200 8918
+INFO 2025-11-16 02:13:44,362 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:13:44,893 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:13:49,361 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:13:49,929 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:13:52,036 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:13:53,298 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:13:53,802 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:14:02,337 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:14:05,254 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:14:33,177 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:14:34,054 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:14:34,074 basehttp 23976 16284 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:14:34,863 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:14:36,787 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6509
+INFO 2025-11-16 02:14:46,113 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6298
+INFO 2025-11-16 02:14:47,420 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:14:48,156 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6298
+INFO 2025-11-16 02:14:48,674 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:14:49,258 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6298
+INFO 2025-11-16 02:15:07,557 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:15:07,578 basehttp 23976 16284 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:15:08,089 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:15:09,137 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:15:09,655 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:15:10,448 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:15:11,852 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:15:33,389 basehttp 23976 16284 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:15:33,412 basehttp 23976 16284 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:15:38,629 basehttp 23976 16284 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:15:39,770 basehttp 23976 16284 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:15:40,702 basehttp 23976 16284 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:15:41,382 basehttp 23976 16284 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:15:42,613 basehttp 23976 16284 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:15:46,518 basehttp 23976 16284 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24074
+WARNING 2025-11-16 02:15:46,541 basehttp 23976 16284 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:15:49,959 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:15:56,000 basehttp 23976 24960 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:15:56,731 basehttp 23976 24960 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:15:57,523 basehttp 23976 24960 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:15:57,911 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:15:58,605 basehttp 23976 24960 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:15:59,258 basehttp 23976 24960 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:15:59,796 basehttp 23976 24960 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:16:00,308 basehttp 23976 24960 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:16:00,823 basehttp 23976 24960 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:16:01,318 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:16:02,038 basehttp 23976 24960 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:16:02,642 basehttp 23976 24960 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:16:03,042 basehttp 23976 24960 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:16:04,018 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6286
+INFO 2025-11-16 02:16:37,934 basehttp 23976 24960 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:16:37,954 basehttp 23976 24960 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:17:19,706 basehttp 23976 24960 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:17:20,983 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:17:21,002 basehttp 23976 24960 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:17:25,194 basehttp 23976 24960 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:17:26,476 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:17:30,428 basehttp 23976 24960 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:17:31,368 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:17:31,934 basehttp 23976 24960 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:17:33,010 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:17:34,493 basehttp 23976 24960 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:17:35,819 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:17:40,605 basehttp 23976 24960 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:17:42,838 basehttp 23976 24960 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:17:45,576 basehttp 23976 24960 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:18:17,307 autoreload 23976 22728 C:\Users\cauek\Desktop\EstudaAI\config\usuarios\views.py changed, reloading.
+INFO 2025-11-16 02:18:19,841 autoreload 25116 16628 Watching for file changes with StatReloader
+INFO 2025-11-16 02:18:20,570 views 25116 16628 API do Gemini configurada com sucesso
+INFO 2025-11-16 02:19:32,191 basehttp 25116 25304 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24074
+WARNING 2025-11-16 02:19:32,210 basehttp 25116 25304 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:20:20,022 basehttp 25116 1292 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:20:20,092 basehttp 25116 1292 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 200 4293
+INFO 2025-11-16 02:20:20,712 basehttp 25116 1292 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:20:20,743 basehttp 25116 1292 "GET /static/usuarios/admin-style.css HTTP/1.1" 200 8317
+INFO 2025-11-16 02:20:22,472 basehttp 25116 1292 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:20:25,021 basehttp 25116 1292 "GET /usuarios/admin-panel/trilhas/2/editar/ HTTP/1.1" 200 28287
+INFO 2025-11-16 02:20:27,634 basehttp 25116 1292 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:20:29,086 basehttp 25116 1292 "GET /usuarios/admin-panel/areas/criar/ HTTP/1.1" 200 4253
+INFO 2025-11-16 02:20:37,571 basehttp 25116 1292 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:20:37,596 basehttp 25116 1292 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:20:39,126 basehttp 25116 1292 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:20:39,834 basehttp 25116 1292 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:20:40,287 basehttp 25116 1292 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:20:41,696 basehttp 25116 1292 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:20:41,722 basehttp 25116 1292 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:20:49,508 basehttp 25116 1292 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24074
+WARNING 2025-11-16 02:20:49,531 basehttp 25116 1292 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:20:50,600 basehttp 25116 16296 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:21:04,530 basehttp 25116 16296 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:21:04,550 basehttp 25116 16296 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:21:06,216 basehttp 25116 16296 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:21:06,239 basehttp 25116 16296 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:21:07,201 basehttp 25116 16296 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:21:12,873 basehttp 25116 16296 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:21:14,862 basehttp 25116 16296 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24074
+WARNING 2025-11-16 02:21:14,885 basehttp 25116 16296 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:21:32,898 basehttp 25116 18784 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:21:32,920 basehttp 25116 18784 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:21:34,344 basehttp 25116 18784 "GET /usuarios/admin-panel/ HTTP/1.1" 200 6595
+INFO 2025-11-16 02:21:34,363 basehttp 25116 18784 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:21:36,668 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:22:39,971 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:22:39,987 basehttp 25116 18784 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:22:41,972 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:22:42,710 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:22:42,947 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:22:43,142 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:22:44,088 basehttp 25116 18784 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:22:44,631 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 4449
+INFO 2025-11-16 02:22:46,217 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20551
+INFO 2025-11-16 02:22:53,286 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20506
+INFO 2025-11-16 02:23:30,900 views 25116 18784 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-11-16 02:23:30,900 views 25116 18784 Processando solicitação de trilha: Quero vender curso para otario ...
+INFO 2025-11-16 02:23:39,919 views 25116 18784 Trilha gerada com sucesso pelo LLM
+INFO 2025-11-16 02:23:39,920 views 25116 18784 JSON da trilha parseado com sucesso
+INFO 2025-11-16 02:23:39,920 basehttp 25116 18784 "POST /api/gemini/trilha/ HTTP/1.1" 200 4934
+INFO 2025-11-16 02:24:08,725 basehttp 25116 18784 "POST /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 302 0
+INFO 2025-11-16 02:24:08,736 basehttp 25116 18784 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 6139
+INFO 2025-11-16 02:24:08,791 basehttp 25116 18784 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:24:36,471 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/?q=trabalhando+&filtro=inativas HTTP/1.1" 200 3492
+INFO 2025-11-16 02:24:39,690 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/?q=trabalhando&filtro=inativas HTTP/1.1" 200 3491
+INFO 2025-11-16 02:24:42,989 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/?q=&filtro=inativas HTTP/1.1" 200 3480
+INFO 2025-11-16 02:24:44,550 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/?q=&filtro= HTTP/1.1" 200 5965
+INFO 2025-11-16 02:24:44,571 basehttp 25116 22132 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:24:47,307 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/?q=&filtro=ativas HTTP/1.1" 200 5973
+INFO 2025-11-16 02:24:49,293 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/?q=&filtro=inativas HTTP/1.1" 200 3480
+INFO 2025-11-16 02:24:50,905 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/?q=&filtro=ativas HTTP/1.1" 200 5973
+INFO 2025-11-16 02:24:54,405 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/?q=trabalhando+&filtro=ativas HTTP/1.1" 200 4469
+INFO 2025-11-16 02:25:01,386 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20506
+INFO 2025-11-16 02:25:03,466 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:25:05,482 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/criar/ HTTP/1.1" 200 4253
+INFO 2025-11-16 02:26:13,459 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5965
+INFO 2025-11-16 02:26:13,481 basehttp 25116 22132 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:26:16,064 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:28:38,586 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:28:38,604 basehttp 25116 22132 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:28:40,695 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:28:41,529 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5965
+INFO 2025-11-16 02:28:43,659 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/3/editar/ HTTP/1.1" 200 27179
+INFO 2025-11-16 02:28:46,161 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 3632
+INFO 2025-11-16 02:28:48,133 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/criar/ HTTP/1.1" 200 8786
+INFO 2025-11-16 02:29:41,486 basehttp 25116 22132 "POST /usuarios/admin-panel/areas/criar/ HTTP/1.1" 302 0
+INFO 2025-11-16 02:29:41,494 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 5138
+INFO 2025-11-16 02:29:41,561 basehttp 25116 22132 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:29:45,792 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 5965
+INFO 2025-11-16 02:29:47,068 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 200 20700
+INFO 2025-11-16 02:30:04,044 views 25116 22132 Requisição de trilha de curso recebida: POST /api/gemini/trilha/
+INFO 2025-11-16 02:30:04,044 views 25116 22132 Processando solicitação de trilha: quero aprender sobre fundamentos da eletronica...
+INFO 2025-11-16 02:30:17,788 views 25116 22132 Trilha gerada com sucesso pelo LLM
+INFO 2025-11-16 02:30:17,789 views 25116 22132 JSON da trilha parseado com sucesso
+INFO 2025-11-16 02:30:17,789 basehttp 25116 22132 "POST /api/gemini/trilha/ HTTP/1.1" 200 8128
+INFO 2025-11-16 02:31:02,618 basehttp 25116 22132 "POST /usuarios/admin-panel/trilhas/criar/ HTTP/1.1" 302 0
+INFO 2025-11-16 02:31:02,625 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 7601
+INFO 2025-11-16 02:31:02,712 basehttp 25116 22132 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:31:06,385 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/4/editar/ HTTP/1.1" 200 31613
+INFO 2025-11-16 02:31:08,237 basehttp 25116 22132 "POST /usuarios/admin-panel/trilhas/4/editar/ HTTP/1.1" 302 0
+INFO 2025-11-16 02:31:08,244 basehttp 25116 22132 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 7622
+INFO 2025-11-16 02:31:12,757 basehttp 25116 22132 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 5023
+INFO 2025-11-16 02:31:14,128 basehttp 25116 22132 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:31:15,450 basehttp 25116 22132 "GET /usuarios/admin-panel/ HTTP/1.1" 200 7552
+INFO 2025-11-16 02:31:18,430 basehttp 25116 22132 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:31:18,454 basehttp 25116 22132 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:31:19,720 basehttp 25116 22132 "GET /usuarios/admin-panel/ HTTP/1.1" 200 7552
+INFO 2025-11-16 02:31:20,308 basehttp 25116 22132 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:31:23,739 basehttp 25116 22132 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24074
+WARNING 2025-11-16 02:31:23,764 basehttp 25116 22132 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:31:27,785 views 25116 25772 Requisição recebida: POST /api/gemini/chat/
+INFO 2025-11-16 02:31:27,785 views 25116 25772 Processando mensagem: Explique o que é algoritmo...
+INFO 2025-11-16 02:31:33,598 views 25116 25772 Resposta gerada com sucesso
+INFO 2025-11-16 02:31:33,599 basehttp 25116 25772 "POST /api/gemini/chat/ HTTP/1.1" 200 4043
+INFO 2025-11-16 02:31:37,946 basehttp 25116 25772 "GET /usuarios/admin-panel/ HTTP/1.1" 200 7552
+INFO 2025-11-16 02:31:48,994 basehttp 25116 25772 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:31:49,818 basehttp 25116 25772 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 5023
+INFO 2025-11-16 02:31:50,709 basehttp 25116 25772 "GET /usuarios/admin-panel/ HTTP/1.1" 200 7552
+INFO 2025-11-16 02:35:30,083 basehttp 25116 25772 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 5077
+INFO 2025-11-16 02:35:30,103 basehttp 25116 25772 "GET /static/usuarios/admin-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:35:31,874 basehttp 25116 25772 "GET /usuarios/admin-panel/areas/2/editar/ HTTP/1.1" 200 8803
+INFO 2025-11-16 02:35:36,579 basehttp 25116 25772 "POST /usuarios/admin-panel/areas/2/editar/ HTTP/1.1" 302 0
+INFO 2025-11-16 02:35:36,588 basehttp 25116 25772 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 5196
+INFO 2025-11-16 02:35:42,622 basehttp 25116 25772 "GET /usuarios/admin-panel/trilhas/ HTTP/1.1" 200 7452
+INFO 2025-11-16 02:35:43,281 basehttp 25116 25772 "GET /usuarios/admin-panel/usuarios/ HTTP/1.1" 200 8615
+INFO 2025-11-16 02:35:43,645 basehttp 25116 25772 "GET /usuarios/admin-panel/areas/ HTTP/1.1" 200 5077
+INFO 2025-11-16 02:35:44,538 basehttp 25116 25772 "GET /usuarios/admin-panel/ HTTP/1.1" 200 7552
+INFO 2025-11-16 02:35:45,725 basehttp 25116 25772 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:35:45,745 basehttp 25116 25772 "GET /static/usuarios/dashboard-style.css HTTP/1.1" 304 0
+INFO 2025-11-16 02:35:46,573 basehttp 25116 25772 "GET /usuarios/admin-panel/ HTTP/1.1" 200 7552
+INFO 2025-11-16 02:35:47,838 basehttp 25116 25772 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:35:49,010 basehttp 25116 25772 "GET /usuarios/admin-panel/ HTTP/1.1" 200 7552
+INFO 2025-11-16 02:35:59,001 basehttp 25116 25772 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:36:01,609 basehttp 25116 25772 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24074
+WARNING 2025-11-16 02:36:01,629 basehttp 25116 25772 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:36:03,402 basehttp 25116 25948 "GET /usuarios/dashboard/ HTTP/1.1" 200 3219
+INFO 2025-11-16 02:36:03,986 basehttp 25116 25948 "GET /usuarios/chat-ia/ HTTP/1.1" 200 24074
+WARNING 2025-11-16 02:36:04,002 basehttp 25116 25948 "GET /static/usuarios/style.css HTTP/1.1" 404 1981
+INFO 2025-11-16 02:36:11,633 basehttp 25116 3056 "GET /usuarios/admin-panel/ HTTP/1.1" 200 7552

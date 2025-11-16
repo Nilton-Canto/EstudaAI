@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Trilhas - EstudaAI Admin</title>
+    <link rel="stylesheet" href="{% static 'usuarios/admin-style.css' %}">
+</head>
+<body>
+    <header class="admin-navbar">
+        <nav class="admin-nav-container">
+            <a href="{% url 'admin_dashboard' %}" class="admin-logo">EstudaAI Admin</a>
+            <ul class="admin-menu">
+                <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'admin_usuarios_list' %}">Usuários</a></li>
+                <li><a href="{% url 'admin_areas_list' %}">Áreas</a></li>
+                <li><a href="{% url 'admin_trilhas_list' %}" class="active">Trilhas</a></li>
+            </ul>
+            <div class="admin-user-info">
+                <span class="admin-badge">ADMIN</span>
+                <span>{{ user.username }}</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">Gerenciar Trilhas</h1>
+            <p class="admin-subtitle">Visualize e gerencie as trilhas de estudo dos usuários</p>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="admin-card">
+            <div class="card-header">
+                <h2 class="card-title">Trilhas Cadastradas ({{ page_obj.paginator.count }})</h2>
+                <a href="{% url 'admin_trilha_create' %}" class="btn-primary">➕ Nova Trilha</a>
+            </div>
+
+            <!-- Barra de Pesquisa -->
+            <form method="GET" class="search-bar">
+                <input 
+                    type="text" 
+                    name="q" 
+                    class="search-input" 
+                    placeholder="Buscar por título ou usuário..."
+                    value="{{ request.GET.q }}"
+                >
+                <select name="filtro" class="filter-select">
+                    <option value="">Todas</option>
+                    <option value="ativas" {% if request.GET.filtro == 'ativas' %}selected{% endif %}>Ativas</option>
+                    <option value="inativas" {% if request.GET.filtro == 'inativas' %}selected{% endif %}>Inativas</option>
+                </select>
+                <button type="submit" class="btn-primary">🔍 Buscar</button>
+            </form>
+
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Título</th>
+                            <th>Usuário</th>
+                            <th>Área</th>
+                            <th>Status</th>
+                            <th>Data Criação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for trilha in page_obj %}
+                        <tr>
+                            <td>{{ trilha.id }}</td>
+                            <td><strong>{{ trilha.titulo }}</strong></td>
+                            <td>{{ trilha.usuario.nome }}</td>
+                            <td>
+                                {% if trilha.area %}
+                                <span style="font-size: 1.2rem;">{{ trilha.area.icone|default:"📚" }}</span>
+                                {{ trilha.area.nome }}
+                                {% else %}
+                                <span style="color: #9ca3af;">Sem área</span>
+                                {% endif %}
+                            </td>
+                            <td>
+                                {% if trilha.ativa %}
+                                <span class="badge success">Ativa</span>
+                                {% else %}
+                                <span class="badge danger">Inativa</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ trilha.data_criacao|date:"d/m/Y H:i" }}</td>
+                            <td class="table-actions">
+                                <a href="{% url 'admin_trilha_edit' trilha.id %}" class="btn-secondary">✏️ Editar</a>
+                                <form method="POST" action="{% url 'admin_trilha_delete' trilha.id %}" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja excluir esta trilha?');">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-danger">🗑️ Excluir</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7">
+                                <div class="empty-state">
+                                    <div class="empty-state-icon">🎯</div>
+                                    <div class="empty-state-text">Nenhuma trilha encontrada</div>
+                                    <p>As trilhas criadas pelos usuários aparecerão aqui</p>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginação -->
+            {% if page_obj.has_other_pages %}
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page=1{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.filtro %}&filtro={{ request.GET.filtro }}{% endif %}">« Primeira</a>
+                <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.filtro %}&filtro={{ request.GET.filtro }}{% endif %}">‹ Anterior</a>
+                {% endif %}
+                
+                <span class="active">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+                
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.filtro %}&filtro={{ request.GET.filtro }}{% endif %}">Próxima ›</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.filtro %}&filtro={{ request.GET.filtro }}{% endif %}">Última »</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>

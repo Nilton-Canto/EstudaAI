@@ -1,0 +1,117 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Áreas - EstudaAI Admin</title>
+    <link rel="stylesheet" href="{% static 'usuarios/admin-style.css' %}">
+</head>
+<body>
+    <header class="admin-navbar">
+        <nav class="admin-nav-container">
+            <a href="{% url 'admin_dashboard' %}" class="admin-logo">EstudaAI Admin</a>
+            <ul class="admin-menu">
+                <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'admin_usuarios_list' %}">Usuários</a></li>
+                <li><a href="{% url 'admin_areas_list' %}" class="active">Áreas</a></li>
+                <li><a href="{% url 'admin_trilhas_list' %}">Trilhas</a></li>
+            </ul>
+            <div class="admin-user-info">
+                <span class="admin-badge">ADMIN</span>
+                <span>{{ user.username }}</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">Gerenciar Áreas</h1>
+            <p class="admin-subtitle">Organize as áreas de conhecimento disponíveis</p>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="admin-card">
+            <div class="card-header">
+                <h2 class="card-title">Áreas Cadastradas ({{ page_obj.paginator.count }})</h2>
+                <a href="{% url 'admin_area_create' %}" class="btn-primary">➕ Nova Área</a>
+            </div>
+
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>Cor</th>
+                            <th>Ícone</th>
+                            <th>Nome</th>
+                            <th>Descrição</th>
+                            <th>Status</th>
+                            <th>Data Criação</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for area in page_obj %}
+                        <tr>
+                            <td>
+                                <span class="color-preview" style="--bg-color: {{ area.cor }}; background-color: var(--bg-color)"></span>
+                            </td>
+                            <td style="font-size: 1.5rem">{{ area.icone|default:"📚" }}</td>
+                            <td><strong>{{ area.nome }}</strong></td>
+                            <td>{{ area.descricao|truncatewords:10 }}</td>
+                            <td>
+                                {% if area.ativa %}
+                                <span class="badge success">Ativa</span>
+                                {% else %}
+                                <span class="badge danger">Inativa</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ area.data_criacao|date:"d/m/Y" }}</td>
+                            <td class="table-actions">
+                                <a href="{% url 'admin_area_edit' area.id %}" class="btn-secondary">✏️ Editar</a>
+                                <form method="POST" action="{% url 'admin_area_delete' area.id %}" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja excluir esta área?');">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-danger">🗑️ Excluir</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="7">
+                                <div class="empty-state">
+                                    <div class="empty-state-icon">📚</div>
+                                    <div class="empty-state-text">Nenhuma área cadastrada</div>
+                                    <p>Crie a primeira área de conhecimento</p>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginação -->
+            {% if page_obj.has_other_pages %}
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page=1">« Primeira</a>
+                <a href="?page={{ page_obj.previous_page_number }}">‹ Anterior</a>
+                {% endif %}
+                
+                <span class="active">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+                
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}">Próxima ›</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}">Última »</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>
