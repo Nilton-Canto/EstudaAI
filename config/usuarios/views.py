@@ -4,6 +4,7 @@ from datetime import timedelta
 
 # Models
 from api.models import Area, Trilha
+from api_gemini.models import TrilhaCurso
 
 # Sistema de mensagens do Django
 from django.contrib import messages
@@ -180,8 +181,27 @@ def dashboard(request):
         HttpResponse: página de dashboard renderizada
     """
 
+    # Buscar trilhas personalizadas do usuário
+    trilhas_curso = TrilhaCurso.objects.filter(usuario=request.user, ativa=True).order_by(
+        "-data_criacao"
+    )
+
+    # Buscar trilhas pré-definidas do usuário (se houver lógica para isso)
+    trilhas_predefinidas = Trilha.objects.filter(usuario=request.user, ativa=True).order_by(
+        "-data_criacao"
+    )
+
+    # Combinar ou passar separadamente. Por enquanto, vamos focar nas trilhas de curso (personalizadas)
+    # pois é o foco da integração com LLM.
+
+    context = {
+        "trilhas_curso": trilhas_curso,
+        "trilhas_predefinidas": trilhas_predefinidas,
+        "total_trilhas": trilhas_curso.count() + trilhas_predefinidas.count(),
+    }
+
     # Renderiza a página de dashboard
-    return render(request, "usuarios/dashboard.html")
+    return render(request, "usuarios/dashboard.html", context)
 
 
 # ===== HELPERS =====

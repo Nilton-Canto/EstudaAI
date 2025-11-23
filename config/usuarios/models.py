@@ -8,23 +8,6 @@ from django.db import models  # Tipos de campos do banco de dados
 
 
 class Usuario(AbstractUser):  # criação de uma classe usuário
-    nome = models.CharField(
-        max_length=100
-    )  # Char pois é tudo caracter, o tamanho pode variar, sendo de caso a caso
-    email = models.EmailField(
-        unique=True
-    )  # modelo específico de email, pois email tem seus peculiaridades, ex: @
-    universidade = models.CharField(max_length=255)  # Char pois é tudo caracter
-    curso = models.CharField(max_length=255)  # Char pois é tudo caracter
-    ano_formatura = models.IntegerField(
-        null=True,
-        blank=True,
-        validators=[MinValueValidator(2000), MaxValueValidator(2060)],
-    )  # Intenger para números inteiros, null=True --> o Banco não dará erro se estiver vazio
-    idade = models.IntegerField(
-        null=True, blank=True, validators=[MinValueValidator(8), MaxValueValidator(100)]
-    )  # blank=True --> o django aceitará formulários com essa parte em branco, mine max value validator para validar e não ter número absurdoss
-
     # Campos básicos do perfil
     nome = models.CharField(max_length=100)  # Nome completo do usuário
     email = models.EmailField(unique=True)  # Email único no sistema
