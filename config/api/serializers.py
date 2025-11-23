@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Area, Trilha
 
+
 class AreaSerializer(serializers.ModelSerializer):
     class Meta:
         model = Area

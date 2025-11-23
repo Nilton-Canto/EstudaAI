@@ -58,10 +58,12 @@ class Trilha(models.Model):
     def __str__(self):
         return f"{self.titulo} - {self.usuario.nome}"
 
+
 class Progresso(models.Model):
     """
     Progresso do estudante dentro de uma trilha
     """
+
     trilha = models.ForeignKey(
         Trilha, on_delete=models.CASCADE, related_name="progresso"
     )

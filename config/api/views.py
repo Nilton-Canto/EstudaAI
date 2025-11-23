@@ -11,6 +11,7 @@ from .serializers import AreaSerializer, TrilhaSerializer
 #   ÁREAS
 # =============================
 
+
 class AreaListView(generics.ListAPIView):
     queryset = Area.objects.filter(ativa=True)
     serializer_class = AreaSerializer
@@ -20,6 +21,7 @@ class AreaListView(generics.ListAPIView):
 # =============================
 #   TRILHAS DO ESTUDANTE
 # =============================
+
 
 class TrilhaListCreateView(generics.ListCreateAPIView):
     serializer_class = TrilhaSerializer
@@ -38,4 +40,3 @@ class TrilhaDetailView(generics.RetrieveUpdateDestroyAPIView):
 
     def get_queryset(self):
         return Trilha.objects.filter(usuario=self.request.user)
-
