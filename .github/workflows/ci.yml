@@ -42,7 +42,15 @@ jobs:
 
     - name: Seed database
       run: |
-        sqlite3 config/db.sqlite3 < backend/db/seeds.sql
+        python3 -c "
+        import sqlite3
+        with open('backend/db/seeds.sql', 'r') as f:
+            sql = f.read()
+        conn = sqlite3.connect('config/db.sqlite3')
+        conn.executescript(sql)
+        conn.close()
+        print('✅ Database seeded successfully')
+        "
     
     - name: Run tests with coverage
       working-directory: ./config
