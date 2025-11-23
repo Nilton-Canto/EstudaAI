@@ -20,3 +20,15 @@ __pycache__/
 # Arquivos de sistema operacional
 .DS_Store
 Thumbs.db
+
+# Arquivos de log
+*.log
+logs/
+
+# Banco de dados
+*.sqlite3
+
+# Relatórios de cobertura de teste
+coverage.xml
+htmlcov/
+.pytest_cache/

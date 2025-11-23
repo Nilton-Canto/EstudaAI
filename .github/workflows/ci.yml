@@ -1,0 +1,157 @@
+name: CI - EstudaAI
+
+on:
+  push:
+    branches: [ main, develop ]
+  pull_request:
+    branches: [ main, develop ]
+
+env:
+  PYTHON_VERSION: '3.11'
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+    
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pytest pytest-cov pytest-django
+    
+    - name: Create .env file
+      working-directory: ./config
+      run: |
+        echo "GEMINI_API_KEY=test_key_for_ci" > .env
+        echo "DEBUG=True" >> .env
+        echo "SECRET_KEY=test-secret-key-for-ci-only-$(openssl rand -hex 32)" >> .env
+    
+    - name: Create logs directory
+      run: mkdir -p config/logs
+    
+    - name: Run migrations
+      working-directory: ./config
+      run: python manage.py migrate --noinput
+
+    - name: Seed database
+      run: |
+        python3 << 'PYTHON_SCRIPT'
+        import sqlite3
+        
+        # Lê o arquivo SQL
+        with open('backend/db/seeds.sql', 'r') as f:
+            sql_content = f.read()
+        
+        # Extrai apenas os comandos INSERT
+        lines = []
+        for line in sql_content.split('\n'):
+            if line.strip().startswith('INSERT INTO'):
+                lines.append(line)
+        
+        if lines:
+            conn = sqlite3.connect('config/db.sqlite3')
+            try:
+                for insert_line in lines:
+                    try:
+                        conn.execute(insert_line)
+                    except sqlite3.IntegrityError:
+                        # Ignora duplicatas
+                        pass
+                conn.commit()
+                print(f'✅ Database seeded successfully ({len(lines)} inserts)')
+            except Exception as e:
+                print(f'⚠️  Warning during seeding: {e}')
+            finally:
+                conn.close()
+        else:
+            print('⚠️  No INSERT statements found in seeds.sql')
+        PYTHON_SCRIPT
+    
+    - name: Run tests with coverage
+      working-directory: ./config
+      run: |
+        pytest --cov=. \
+               --cov-report=xml \
+               --cov-report=html \
+               --cov-report=term-missing \
+               --cov-fail-under=70 \
+               -v
+    
+    - name: Upload coverage reports
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: coverage-report
+        path: |
+          ./config/coverage.xml
+          ./config/htmlcov/
+
+  lint:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+    
+    - name: Install linting tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install flake8 black isort
+    
+    - name: Check code formatting with Black
+      run: black --check --diff config/
+    
+    - name: Check import sorting with isort
+      run: isort --check-only --diff config/
+    
+    - name: Lint with Flake8
+      run: |
+        flake8 config/usuarios config/api_gemini config/config \
+               --config=setup.cfg \
+               --count \
+               --statistics \
+               --exit-zero
+
+  security:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+    
+    - name: Set up Python ${{ env.PYTHON_VERSION }}
+      uses: actions/setup-python@v5
+      with:
+        python-version: ${{ env.PYTHON_VERSION }}
+        cache: 'pip'
+
+    - name: Install security tools
+      run: |
+        python -m pip install --upgrade pip
+        pip install bandit safety
+
+    - name: Run Bandit for security analysis
+      run: |
+        bandit -r config/ \
+               --skip B101,B608 \
+               --exclude config/migrations,config/venv,config/.venv \
+               || true
+
+    - name: Run Safety to check for vulnerable dependencies
+      run: safety check -r requirements.txt || true
