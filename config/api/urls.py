@@ -1,5 +1,6 @@
 from django.urls import path
-from .views import AreaListView, TrilhaListCreateView, TrilhaDetailView
+
+from .views import AreaListView, TrilhaDetailView, TrilhaListCreateView
 
 urlpatterns = [
     path("areas/", AreaListView.as_view(), name="lista-areas"),
