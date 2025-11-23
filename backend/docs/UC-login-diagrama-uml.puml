@@ -1,0 +1,54 @@
+@startuml
+left to right direction
+
+' ===========================
+' Atores
+' ===========================
+actor "Aluno" as Aluno
+actor "Administrador" as Admin
+
+' ===========================
+' Casos de uso principais
+' ===========================
+usecase "Realizar Login" as UC_Login
+usecase "Recuperar Senha" as UC_Reset
+
+' ===========================
+' Subcasos / detalhes do login
+' ===========================
+usecase "Informar credenciais\n(e-mail e senha)" as UC_Preencher
+usecase "Validar credenciais\nno servidor" as UC_Validar
+usecase "Exibir área do aluno" as UC_AreaAluno
+usecase "Exibir painel administrativo" as UC_AreaAdmin
+usecase "Exibir mensagem\nde erro de autenticação" as UC_Erro
+usecase "Bloquear conta após\nmúltiplas tentativas inválidas" as UC_Bloquear
+
+' ===========================
+' Relações ator ↔ caso de uso
+' ===========================
+Aluno -- UC_Login
+Admin -- UC_Login
+
+Aluno -- UC_Reset
+Admin -- UC_Reset
+
+' ===========================
+' Relações entre casos de uso
+' ===========================
+
+' Para fazer login SEMPRE precisa informar e validar credenciais
+UC_Login ..> UC_Preencher : <<include>>
+UC_Login ..> UC_Validar   : <<include>>
+
+' A validação pode disparar erros ou bloqueio
+UC_Validar ..> UC_Erro     : <<extend>>
+UC_Validar ..> UC_Bloquear : <<extend>>
+
+' A partir do login bem-sucedido, o sistema direciona
+UC_Login ..> UC_AreaAluno : <<extend>>  : se for Aluno
+UC_Login ..> UC_AreaAdmin : <<extend>>  : se for Admin
+
+' Recuperar senha é um fluxo opcional a partir da tela de login
+UC_Login ..> UC_Reset : <<extend>>
+
+@enduml
