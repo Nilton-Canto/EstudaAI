@@ -23,7 +23,7 @@ Thumbs.db
 
 # Arquivos de log
 *.log
-logs/
+logs/*.log
 
 # Banco de dados
 *.sqlite3
