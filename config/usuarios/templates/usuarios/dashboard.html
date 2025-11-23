@@ -34,15 +34,15 @@
             <h2 class="section-title">Seu Progresso de Estudo</h2>
             <div class="stats-grid">
                 <div class="stat-card indigo">
-                    <p class="stat-value">3</p>
+                    <p class="stat-value">{{ total_trilhas }}</p>
                     <p class="stat-label">Trilhas Ativas</p>
                 </div>
                 <div class="stat-card green">
-                    <p class="stat-value">75%</p>
-                    <p class="stat-label">Trilha de Python</p>
+                    <p class="stat-value">0%</p>
+                    <p class="stat-label">Média de Conclusão</p>
                 </div>
                 <div class="stat-card yellow">
-                    <p class="stat-value">12h</p>
+                    <p class="stat-value">0h</p>
                     <p class="stat-label">Tempo de Estudo</p>
                 </div>
             </div>
@@ -52,26 +52,22 @@
         <section class="card">
             <h2 class="section-title dark">Trilhas Ativas</h2>
             <div class="trails-grid">
-                <!-- Card de exemplo -->
+                {% for trilha in trilhas_curso %}
                 <div class="trail-card">
-                    <h3 class="trail-title">Análise de Dados com Python</h3>
-                    <p class="trail-info">4 módulos · Nível Intermediário</p>
+                    <h3 class="trail-title">{{ trilha.titulo }}</h3>
+                    <p class="trail-info">Personalizada · {{ trilha.data_criacao|date:"d/m/Y" }}</p>
                     <div class="progress-bar">
-                        <div class="progress-fill blue" style="width: 75%"></div>
+                        <div class="progress-fill blue" style="width: 0%"></div>
                     </div>
-                    <p class="progress-text">75% Concluído</p>
+                    <p class="progress-text">0% Concluído</p>
                     <button class="btn-primary">Continuar</button>
                 </div>
-
+                {% empty %}
                 <div class="trail-card">
-                    <h3 class="trail-title">Introdução à UX/UI Design</h3>
-                    <p class="trail-info">5 módulos · Nível Básico</p>
-                    <div class="progress-bar">
-                        <div class="progress-fill yellow" style="width: 40%"></div>
-                    </div>
-                    <p class="progress-text">40% Concluído</p>
-                    <button class="btn-primary">Continuar</button>
+                    <p>Você ainda não tem trilhas ativas.</p>
+                    <a href="{% url 'criar_trilha' %}" class="btn-primary" style="text-align: center; display: block; margin-top: 10px;">Criar Nova Trilha</a>
                 </div>
+                {% endfor %}
             </div>
         </section>
     </main>
