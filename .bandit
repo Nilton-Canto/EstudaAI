@@ -1,3 +1,0 @@
-exclude_dirs = ['tests', 'migrations', 'venv', '.venv', 'env', '.env']
-skips = ['B101', 'B601', 'B110', 'B311', 'B601', 'B602', 'B603', 'B604', 'B605', 'B606', 'B607', 'B608', 'B609', 'B610']
-targets = ['config', 'usuarios']
