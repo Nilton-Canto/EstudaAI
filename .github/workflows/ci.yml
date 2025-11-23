@@ -36,6 +36,9 @@ jobs:
         echo "DEBUG=True" >> .env
         echo "SECRET_KEY=test-secret-key-for-ci-only-$(openssl rand -hex 32)" >> .env
     
+    - name: Create logs directory
+      run: mkdir -p config/logs
+    
     - name: Run migrations
       working-directory: ./config
       run: python manage.py migrate --noinput
