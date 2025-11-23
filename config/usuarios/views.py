@@ -571,3 +571,37 @@ def admin_trilha_delete(request, pk):
 def chat_ia(request):
     """Página de chat com IA"""
     return render(request, "usuarios/chat_ia.html")
+
+
+@login_required
+def minhas_trilhas(request):
+    """Exibe as trilhas do usuário logado"""
+
+    trilhas = Trilha.objects.filter(usuario=request.user).order_by("-data_criacao")
+
+    return render(request, "usuarios/minhastrilhas.html", {"trilhas": trilhas})
+
+@login_required
+def criar_trilha(request):
+    """Permite ao usuário criar uma nova trilha"""
+
+    if request.method == "POST":
+        titulo = request.POST.get("titulo")
+        descricao = request.POST.get("descricao", "")
+        conteudo = request.POST.get("conteudo", "")
+        ativa = request.POST.get("ativa") == "on"
+
+        try:
+            trilha = Trilha.objects.create(
+                titulo=titulo,
+                descricao=descricao if descricao else "",
+                usuario=request.user,
+                conteudo=conteudo,
+                ativa=ativa,
+            )
+            messages.success(request, f"Trilha {trilha.titulo} criada com sucesso!")
+            return redirect("minhas_trilhas")
+        except Exception as e:
+            messages.error(request, f"Erro ao criar trilha: {str(e)}")
+
+    return render(request, "usuarios/criartrilha.html")
