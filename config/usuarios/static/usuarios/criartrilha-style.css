@@ -1,3 +1,7 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 /* Estilo geral */
 body {
     background-color: #f3f4f6;
@@ -96,6 +100,7 @@ body {
 
 /* Textarea */
 textarea {
+    /* Não precisa mais do box-sizing aqui, pois foi definido no topo globalmente */
     width: 100%;
     padding: 16px;
     border: 1px solid #d1d5db;
