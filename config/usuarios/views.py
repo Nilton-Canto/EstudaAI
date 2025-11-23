@@ -182,14 +182,14 @@ def dashboard(request):
     """
 
     # Buscar trilhas personalizadas do usuário
-    trilhas_curso = TrilhaCurso.objects.filter(usuario=request.user, ativa=True).order_by(
-        "-data_criacao"
-    )
+    trilhas_curso = TrilhaCurso.objects.filter(
+        usuario=request.user, ativa=True
+    ).order_by("-data_criacao")
 
     # Buscar trilhas pré-definidas do usuário (se houver lógica para isso)
-    trilhas_predefinidas = Trilha.objects.filter(usuario=request.user, ativa=True).order_by(
-        "-data_criacao"
-    )
+    trilhas_predefinidas = Trilha.objects.filter(
+        usuario=request.user, ativa=True
+    ).order_by("-data_criacao")
 
     # Combinar ou passar separadamente. Por enquanto, vamos focar nas trilhas de curso (personalizadas)
     # pois é o foco da integração com LLM.
