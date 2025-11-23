@@ -39,6 +39,10 @@ jobs:
     - name: Run migrations
       working-directory: ./config
       run: python manage.py migrate --noinput
+
+    - name: Seed database
+      run: |
+        sqlite3 config/db.sqlite3 < backend/db/seeds.sql
     
     - name: Run tests with coverage
       working-directory: ./config
@@ -101,28 +105,15 @@ jobs:
       uses: actions/setup-python@v5
       with:
         python-version: ${{ env.PYTHON_VERSION }}
-    
-    - name: Install Bandit
-      run: pip install bandit[toml]
-    
-    - name: Run Bandit security scan
+        cache: 'pip'
+
+    - name: Install security tools
       run: |
-        bandit -r config/usuarios config/api_gemini config/config \
-               --configfile .bandit \
-               -f json \
-               -o bandit-report.json
-      continue-on-error: true
-    
-    - name: Show Bandit results
-      if: always()
-      run: |
-        bandit -r config/usuarios config/api_gemini config/config \
-               --configfile .bandit \
-               --severity-level medium
-    
-    - name: Upload Bandit report
-      uses: actions/upload-artifact@v4
-      if: always()
-      with:
-        name: bandit-security-report
-        path: bandit-report.json
+        python -m pip install --upgrade pip
+        pip install bandit safety
+
+    - name: Run Bandit for security analysis
+      run: bandit -r . -c setup.cfg
+
+    - name: Run Safety to check for vulnerable dependencies
+      run: safety check -r requirements.txt
