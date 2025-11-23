@@ -64,7 +64,6 @@ urlpatterns = [
     ),
     # URLs de chat IA
     path("chat-ia/", views.chat_ia, name="chat_ia"),
-
     # URLs de trilhas do usuário
     path("minhastrilhas/", views.minhas_trilhas, name="minhas_trilhas"),
     path("criartrilha/", views.criar_trilha, name="criar_trilha"),
