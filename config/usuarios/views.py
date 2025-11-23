@@ -581,6 +581,7 @@ def minhas_trilhas(request):
 
     return render(request, "usuarios/minhastrilhas.html", {"trilhas": trilhas})
 
+
 @login_required
 def criar_trilha(request):
     """Permite ao usuário criar uma nova trilha"""
