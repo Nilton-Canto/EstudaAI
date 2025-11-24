@@ -1,8 +1,8 @@
 # config/api/gemini.py
-import os
 import json
 import logging
-from typing import Optional, Dict, Any
+import os
+from typing import Any, Dict, Optional
 
 import google.generativeai as genai
 from django.conf import settings
