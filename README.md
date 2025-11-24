@@ -1,232 +1,201 @@
 # 📚 EstudaAI
 
-O **EstudaAI** é uma aplicação web desenvolvida para ajudar estudantes no **planejamento de estudos**, através da **recomendação de trilhas de aprendizagem**. O sistema permite ao aluno escolher entre **trilhas pré-definidas** ou criar **trilhas personalizadas com o apoio de um agente LLM (IA)**.
+> **Sistema inteligente de planejamento de estudos com IA**
 
----
+O **EstudaAI** é uma aplicação web que ajuda estudantes a criar e acompanhar **trilhas de aprendizagem personalizadas**. Utilizando **Inteligência Artificial (Google Gemini)**, o sistema gera trilhas estruturadas baseadas nas necessidades específicas de cada estudante.
 
-## 🚀 Projeto GitHub – Fluxo de Branches
+## ✨ Funcionalidades
 
-👉 **Cada aluno deve criar uma branch própria para cada nova funcionalidade (feature branch).**
+- 🤖 **Geração de trilhas com IA** - Trilhas personalizadas via Google Gemini
+- 📋 **Trilhas pré-definidas** - Conteúdo curado por especialistas
+- 📊 **Acompanhamento de progresso** - Visualização do desenvolvimento
+- 👥 **Sistema de usuários** - Perfis acadêmicos personalizados
+- 🎯 **Categorização por áreas** - Organização por domínios de conhecimento
+- 📱 **Interface responsiva** - Funciona em desktop e mobile
 
-### Exemplo de criação de branch:
+## 🚀 Quick Start
+
+**Quer testar rapidamente?** Siga o [**Guia de 5 minutos**](QUICKSTART.md)
+
 ```bash
-git checkout -b feature/criacao-de-trilhas
+git clone https://github.com/Nilton-Canto/EstudaAI.git
+cd EstudaAI
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+cd config && cp .env.example .env
+# Configure GEMINI_API_KEY no .env
+python manage.py migrate && python manage.py runserver
 ```
 
----
+## 📋 Índice
 
-## 🔄 Fluxo de Trabalho (Pull Request Workflow)
+- [🛠️ Instalação Completa](#️-instalação-completa)
+- [🏗️ Arquitetura](#️-arquitetura)
+- [🤝 Contribuição](#-contribuição)
+- [🔄 Workflow Git](#-workflow-git)
+- [🧪 Testes e CI/CD](#-testes-e-cicd)
+- [📊 Diagramas UML](#-diagramas-uml)
+- [🔐 Segurança](#-segurança)
 
-1. ✅ **Criar a branch de feature** (exemplo: `feature/nome-da-feature`)
-2. ✅ **Realizar commits frequentes e com mensagens claras**
-3. ✅ **Enviar (push) sua branch para o GitHub**
-4. ✅ **Abrir um Pull Request (PR)**
-5. ✅ **Designar pelo menos 1 colega como revisor**
+## 🛠️ Instalação Completa
 
-### 🎯 O que o revisor deve fazer:
-- 👀 **Ler o código no GitHub**
-- 💬 **Fazer comentários linha a linha (inline comments)**
-- 🛠️ **Sugerir melhorias, correções ou ajustes**
-- ✅ **Aprovar o PR após validação**
+### Pré-requisitos
+- **Python 3.11+**
+- **Git**
+- **Chave API Google Gemini** ([obter aqui](https://makersuite.google.com/app/apikey))
 
-Após a aprovação ✅, o autor do PR realiza o **merge** para a branch principal (`main`).
-
----
-## 🔄  Regras:
-
-- ✅ Ninguém faz merge direto na main.
-- ✅ Pull Requests para a main só podem vir da develop.
-- ✅ Pull Requests para a develop só podem vir de feature branches (ex: feature/*).
-- ✅ Proibido fazer PR de main → develop.
-- ✅ Proibido fazer PR de develop → feature.
-
----
-
-## 📝 Boas Práticas de Commit
-
-- 🔁 **Commits pequenos e frequentes**
-- ✏️ **Mensagens de commit claras e objetivas**
-- ⚠️ **Antes de abrir o PR, sempre execute:**
-```bash
-git pull origin main
-```
-👉 Para garantir que sua branch está atualizada e evitar conflitos.
-
----
-
-## 👀 Checklist para Revisores (Code Review)
-
-Antes de aprovar um PR, verifique:
-
-1. ✅ **Nome de variáveis** é adequado e expressivo.
-2. ✅ **Clareza e legibilidade** do código.
-3. ✅ **Divisão de responsabilidades** bem definida (nenhuma função fazendo "tudo").
-4. ✅ **Cumprimento dos requisitos da issue relacionada**.
-5. ✅ **Presença de testes**, se aplicável.
-6. ✅ Só aprova PR se "base branch" correta (ex: feature/ para develop ou develop para main)
-
----
-
-## 🚀 Configuração do Ambiente de Desenvolvimento
-
-### 1. Clonar o Repositório
+### 1. Clone do Repositório
 ```bash
 git clone https://github.com/Nilton-Canto/EstudaAI.git
 cd EstudaAI
 ```
 
-### 2. Criar Ambiente Virtual
+### 2. Ambiente Virtual
 ```bash
-# Windows (PowerShell)
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+
+# Windows PowerShell
 python -m venv venv
 .\venv\Scripts\Activate.ps1
-
-# Linux/Mac
-python -m venv venv
-source venv/bin/activate
 ```
 
-### 3. Instalar Dependências
+### 3. Dependências
 ```bash
 pip install -r requirements.txt
 ```
 
-### 4. Configurar Variáveis de Ambiente
+### 4. Configuração
 ```bash
 cd config
 cp .env.example .env
 ```
 
-Edite o arquivo `.env` e configure:
-- **GEMINI_API_KEY**: Obtenha em [Google AI Studio](https://makersuite.google.com/app/apikey)
-- **SECRET_KEY**: Gere uma chave segura para o Django
-- **DEBUG**: `True` para desenvolvimento, `False` para produção
+**Configure o arquivo `.env`:**
+```env
+# Segurança
+SECRET_KEY=sua-chave-secreta-django
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
 
-### 5. Executar Migrações
+# Google Gemini IA
+GEMINI_API_KEY=sua-chave-gemini-aqui
+GEMINI_MODEL=gemini-2.0-flash
+
+# CORS
+CORS_ALLOW_ALL_ORIGINS=True
+```
+
+### 5. Banco de Dados
 ```bash
 python manage.py migrate
 ```
 
-### 6. Criar Superusuário (opcional)
+### 6. Superusuário (Opcional)
 ```bash
 python manage.py createsuperuser
 ```
 
-### 7. Executar o Servidor
+### 7. Executar
 ```bash
 python manage.py runserver
 ```
 
-Acesse: http://127.0.0.1:8000/
+**🎉 Acesse:** http://127.0.0.1:8000/
 
----
+## 🏗️ Arquitetura
 
-## 🔄 Pipeline CI/CD
+### Estrutura do Projeto
+```
+EstudaAI/
+├── config/                 # Configurações Django
+│   ├── api/               # API e integração IA
+│   ├── usuarios/          # Sistema de usuários
+│   ├── config/            # Settings Django
+│   └── manage.py
+├── docs/                  # Documentação
+│   ├── diagramas/         # UML e diagramas
+│   └── casos-de-uso/      # Especificações
+├── requirements.txt       # Dependências Python
+└── README.md
+```
 
-Este projeto utiliza **GitHub Actions** para automação de CI/CD com três jobs principais:
+### Tecnologias
+- **Backend**: Django 5.2 + Django REST Framework
+- **IA**: Google Gemini API
+- **Banco**: SQLite (dev) / PostgreSQL (prod)
+- **Frontend**: HTML, CSS, JavaScript
+- **CI/CD**: GitHub Actions
+- **Testes**: pytest + coverage
 
-### Triggers
-- **Push** nas branches `main` e `develop`
-- **Pull Requests** para `main` e `develop`
+## 🤝 Contribuição
 
-### Jobs Executados
+**Quer contribuir?** Leia o [**Guia de Contribuição**](CONTRIBUTING.md)
 
-#### 1. Test (Testes)
-- ✅ Instala dependências
-- ✅ Cria arquivo `.env` para testes
-- ✅ Roda migrações do Django
-- ✅ Executa pytest com cobertura mínima de 70%
-- ✅ Upload de relatórios de cobertura como artifacts
-
-#### 2. Lint (Qualidade de Código)
-- ✅ **Black**: Verifica formatação do código
-- ✅ **isort**: Verifica ordenação de imports
-- ✅ **Flake8**: Análise de linting usando `setup.cfg`
-
-#### 3. Security (Segurança)
-- ✅ **Bandit**: Detecta vulnerabilidades de segurança
-- ✅ Gera relatórios JSON
-- ✅ Upload de relatórios como artifacts
-
----
-
-## 🛠️ Testando CI/CD Localmente
-
-### Opção 1: Script Automatizado
+### Fluxo Rápido
 ```bash
-chmod +x run_ci_checks.sh
+# 1. Fork e clone seu fork
+git clone https://github.com/SEU-USUARIO/EstudaAI.git
+
+# 2. Criar branch feature
+git checkout -b feature/sua-funcionalidade
+
+# 3. Desenvolver e testar
 ./run_ci_checks.sh
+
+# 4. Commit e push
+git commit -m "feat: adiciona nova funcionalidade"
+git push origin feature/sua-funcionalidade
+
+# 5. Abrir Pull Request para develop
 ```
 
-### Opção 2: Comandos Individuais
+## 🔄 Workflow Git
 
-#### 1. Preparação
+### Branches
+- **`main`** - Produção (apenas via develop)
+- **`develop`** - Desenvolvimento (apenas via features)
+- **`feature/*`** - Novas funcionalidades
+
+### Regras
+- ✅ PRs para `main` só de `develop`
+- ✅ PRs para `develop` só de `feature/*`
+- ✅ Pelo menos 1 revisor por PR
+- ✅ CI deve passar (green)
+
+### Commits
 ```bash
-# Criar .env
-cd config
-cat > .env << EOF
-GEMINI_API_KEY=test_key
-DEBUG=True
-SECRET_KEY=test-secret-key
-EOF
-
-# Instalar dependências
-cd ..
-pip install -r requirements.txt
-
-# Migrações
-cd config
-python manage.py migrate
+feat(api): adiciona endpoint de trilhas
+fix(auth): corrige validação de login
+docs(readme): atualiza documentação
+style: aplica formatação black/isort
+test(users): adiciona testes unitários
 ```
 
-#### 2. Formatação
+## 🧪 Testes e CI/CD
+
+### Executar Testes Localmente
 ```bash
-# Verificar
-black --check --diff config/
+# Script automatizado
+./run_ci_checks.sh
 
-# Corrigir automaticamente
-black config/
+# Comandos individuais
+black config/                              # Formatação
+isort config/                              # Imports
+flake8 config/ --config=setup.cfg          # Linting
+bandit -r config/ --configfile .bandit     # Segurança
+cd config && pytest --cov=. -v             # Testes
 ```
 
-#### 3. Imports
-```bash
-# Verificar
-isort --check-only --diff config/
+### Pipeline CI/CD
+**Triggers:** Push/PR para `main` e `develop`
 
-# Corrigir automaticamente
-isort config/
-```
+- **🧪 Tests**: pytest com 70% cobertura mínima
+- **🎨 Lint**: Black, isort, Flake8
+- **🔒 Security**: Bandit para vulnerabilidades
 
-#### 4. Linting
-```bash
-flake8 config/usuarios config/api_gemini config/config --config=setup.cfg
-```
-
-#### 5. Segurança
-```bash
-bandit -r config/usuarios config/api_gemini config/config --configfile .bandit
-```
-
-#### 6. Testes
-```bash
-cd config
-pytest --cov=. --cov-report=html --cov-report=term-missing -v
-
-# Ver relatório HTML
-open htmlcov/index.html  # ou firefox/chrome htmlcov/index.html
-```
-
----
-
-## 📊 Cobertura de Testes
-
-### Requisitos
-- Cobertura mínima: **70%**
-- Relatórios gerados:
-  - `coverage.xml` - Para integrações
-  - `htmlcov/` - Visualização interativa
-
-### Visualizar Cobertura Local
+### Cobertura de Testes
 ```bash
 cd config
 pytest --cov=. --cov-report=html
@@ -234,141 +203,83 @@ python -m http.server 8000 --directory htmlcov
 # Acesse: http://localhost:8000
 ```
 
----
+## 📊 Diagramas UML
 
-## 🔧 Ferramentas Configuradas
+Documentação visual completa em [`docs/diagramas/`](docs/diagramas/):
 
-### Arquivos de Configuração
+- **Diagrama Conceitual** - Classes técnicas por domínios
+- **Modelo de Domínio** - Conceitos de negócio
+- **Casos de Uso** - Funcionalidades do sistema
 
-| Ferramenta | Arquivo | Descrição |
-|------------|---------|-----------|
-| **pytest** | `pyproject.toml` | Configuração de testes |
-| **coverage** | `pyproject.toml` | Relatórios de cobertura |
-| **Black** | `pyproject.toml` | Formatação de código |
-| **isort** | `pyproject.toml` | Ordenação de imports |
-| **Flake8** | `setup.cfg` | Linting e PEP8 |
-| **Bandit** | `.bandit` | Análise de segurança |
-
-### Comandos Rápidos
-```bash
-# Formatar tudo
-black config/ && isort config/
-
-# Rodar todos os checks
-flake8 config/usuarios config/api_gemini config/config --config=setup.cfg && \
-bandit -r config/usuarios config/api_gemini config/config --configfile .bandit && \
-cd config && pytest --cov=. -v
-
-# Verificar vulnerabilidades em dependências
-safety check
-```
-
----
-
-## 🐛 Troubleshooting
-
-### Erro: "No module named 'X'"
-```bash
-pip install -r requirements.txt
-```
-
-### Erro: "DJANGO_SETTINGS_MODULE not set"
-```bash
-cd config
-export DJANGO_SETTINGS_MODULE=config.settings
-```
-
-### Erro: "Database error"
-```bash
-cd config
-python manage.py migrate
-```
-
-### Erro: "Pasta logs não encontrada"
-A pasta `config/logs/` deve existir. Se não existir:
-```bash
-cd config
-mkdir logs
-```
-
-### CI falha mas local funciona
-- Certifique-se de estar usando Python 3.11
-- Verifique se todos os arquivos estão commitados
-- Rode `./run_ci_checks.sh` para simular o CI
-
-### Black/isort falham
-```bash
-# Auto-corrigir
-black config/
-isort config/
-git add .
-git commit -m "style: auto-format code"
-```
-
----
-
-## 📦 Artifacts do CI
-
-Após cada execução, os seguintes artifacts ficam disponíveis:
-
-1. **coverage-report** - Relatórios de cobertura (XML + HTML)
-2. **bandit-security-report** - Análise de segurança (JSON)
-
-**Download**: GitHub Actions → Workflow Run → Artifacts (disponível por 90 dias)
-
----
+**Visualizar:** https://www.plantuml.com/plantuml/uml/
 
 ## 🔐 Segurança
 
 ### Verificações Ativas
-- ✅ Análise estática com Bandit
-- ✅ Verificação de vulnerabilidades conhecidas
-- ✅ Sem secrets hardcoded
+- ✅ **Bandit** - Análise estática de segurança
+- ✅ **Safety** - Vulnerabilidades em dependências
+- ✅ **Secrets** - Sem credenciais hardcoded
 
-### Recomendações
-- Nunca commite `.env` (já está no `.gitignore`)
-- Use GitHub Secrets para informações sensíveis
-- Mantenha dependências atualizadas
+### Boas Práticas
+- 🔑 Use `.env` para configurações sensíveis
+- 🚫 Nunca commite `.env` (já no `.gitignore`)
+- 🔄 Mantenha dependências atualizadas
+- 🛡️ Use GitHub Secrets para CI/CD
 
----
+## 🐛 Troubleshooting
 
-## 📝 Adicionando Novos Testes
+### Problemas Comuns
 
-```python
-# config/app/tests.py
-import pytest
-from django.test import TestCase
-
-@pytest.mark.unit
-class TestExample(TestCase):
-    def test_something(self):
-        assert True
-
-@pytest.mark.integration
-def test_api_integration():
-    # Test code here
-    pass
-```
-
-Rode testes específicos:
+**"No module named django"**
 ```bash
-# Apenas testes unitários
-pytest -m unit
-
-# Apenas testes de integração
-pytest -m integration
-
-# Testes de uma app específica
-pytest config/usuarios/tests.py
+pip install -r requirements.txt
 ```
+
+**"Database error"**
+```bash
+cd config && python manage.py migrate
+```
+
+**"GEMINI_API_KEY not found"**
+- Verifique se `.env` existe em `config/`
+- Confirme se a chave está correta
+
+**CI falha mas local funciona**
+```bash
+# Simule o CI localmente
+./run_ci_checks.sh
+```
+
+### Logs e Debug
+```bash
+# Logs do Django
+tail -f config/logs/django.log
+
+# Debug mode
+# No .env: DEBUG=True
+```
+
+## 📚 Recursos
+
+### Documentação
+- 📖 [Django Docs](https://docs.djangoproject.com/)
+- 🤖 [Google Gemini API](https://ai.google.dev/)
+- 🧪 [pytest Docs](https://docs.pytest.org/)
+
+### Ferramentas
+- 🎨 [Black](https://black.readthedocs.io/) - Formatação
+- 📦 [isort](https://pycqa.github.io/isort/) - Imports
+- 🔍 [Flake8](https://flake8.pycqa.org/) - Linting
+- 🛡️ [Bandit](https://bandit.readthedocs.io/) - Segurança
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 👥 Equipe
+
+Desenvolvido com ❤️ pela equipe EstudaAI
 
 ---
 
-## 📚 Referências
-
-- [GitHub Actions Docs](https://docs.github.com/en/actions)
-- [pytest Documentation](https://docs.pytest.org/)
-- [Black](https://black.readthedocs.io/)
-- [Flake8](https://flake8.pycqa.org/)
-- [Bandit](https://bandit.readthedocs.io/)
-- [Django Documentation](https://docs.djangoproject.com/)
+**⭐ Se este projeto te ajudou, considere dar uma estrela!**

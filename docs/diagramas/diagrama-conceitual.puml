@@ -1,0 +1,122 @@
+@startuml Diagrama Conceitual - EstudaAI
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam classAttributeIconSize 0
+skinparam classFontSize 12
+skinparam packageStyle rectangle
+
+title Diagrama Conceitual - Sistema EstudaAI
+
+package "Domínio do Usuário" {
+    class Usuario {
+        +username: String
+        +nome: String
+        +email: String
+        +universidade: String
+        +curso: String
+        +ano_formatura: Integer
+        +idade: Integer
+        +password: String
+        +is_active: Boolean
+        +date_joined: DateTime
+        --
+        +criar_trilha()
+        +visualizar_progresso()
+        +marcar_etapa_concluida()
+    }
+}
+
+package "Domínio do Conhecimento" {
+    class Area {
+        +nome: String
+        +descricao: Text
+        +icone: String
+        +cor: String
+        +ativa: Boolean
+        +data_criacao: DateTime
+        +data_atualizacao: DateTime
+        --
+        +ativar()
+        +desativar()
+    }
+}
+
+package "Domínio da Aprendizagem" {
+    class Trilha {
+        +titulo: String
+        +descricao: Text
+        +conteudo: Text
+        +ativa: Boolean
+        +data_criacao: DateTime
+        +data_atualizacao: DateTime
+        --
+        +ativar()
+        +desativar()
+        +calcular_progresso()
+    }
+
+    class TrilhaCurso {
+        +titulo: String
+        +descricao: Text
+        +solicitacao_original: Text
+        +conteudo_json: JSON
+        +ativa: Boolean
+        +data_criacao: DateTime
+        +data_atualizacao: DateTime
+        --
+        +gerar_com_ia()
+        +estruturar_conteudo()
+        +calcular_progresso_total()
+    }
+
+    class Progresso {
+        +etapa: String
+        +concluida: Boolean
+        +data_conclusao: DateTime
+        --
+        +marcar_concluida()
+        +desmarcar_concluida()
+    }
+
+    class ProgressoTrilhaCurso {
+        +modulo_indice: Integer
+        +aula_indice: Integer
+        +identificador: String
+        +concluida: Boolean
+        +data_conclusao: DateTime
+        --
+        +marcar_concluida()
+        +calcular_percentual()
+    }
+}
+
+package "Domínio da IA" {
+    class ServicoGemini <<Service>> {
+        +api_key: String
+        +modelo: String
+        --
+        +gerar_trilha(solicitacao: String): JSON
+        +validar_conteudo(conteudo: JSON): Boolean
+        +processar_resposta(resposta: String): JSON
+    }
+}
+
+' Relacionamentos
+Usuario ||--o{ Trilha : "possui"
+Usuario ||--o{ TrilhaCurso : "possui"
+Area ||--o{ Trilha : "categoriza"
+Area ||--o{ TrilhaCurso : "categoriza"
+Trilha ||--o{ Progresso : "tem"
+TrilhaCurso ||--o{ ProgressoTrilhaCurso : "tem"
+TrilhaCurso ..> ServicoGemini : "usa"
+
+' Notas explicativas
+note right of Usuario : "Estudante que utiliza\no sistema para criar\ne acompanhar trilhas"
+
+note right of Area : "Categorização das\ntrilhas por área de\nconhecimento"
+
+note right of TrilhaCurso : "Trilhas geradas pela IA\ncom estrutura JSON\ncompleta"
+
+note right of ServicoGemini : "Integração com Google\nGemini para geração\nautomática de trilhas"
+
+@enduml
