@@ -201,7 +201,7 @@
                     value=""
                 >
                 <button type="button" class="btn-ai" onclick="gerarTrilhaIA()">
-                    🚀 Gerar com IA
+                    Gerar com IA
                 </button>
             </div>
             
@@ -211,10 +211,10 @@
             </div>
             
             <div class="ai-result" id="ai-result">
-                <h4 style="margin-bottom: 0.5rem;">✨ Trilha Gerada:</h4>
+                <h4 style="margin-bottom: 0.5rem;">Trilha Gerada:</h4>
                 <pre id="ai-content"></pre>
                 <button type="button" class="btn-use-ai" onclick="usarTrilhaIA()">
-                    ✅ Usar esta trilha
+                    Usar esta trilha
                 </button>
             </div>
         </div>
@@ -330,8 +330,8 @@
                 </div>
 
                 <div class="form-actions">
-                    <button type="submit" class="btn-success">💾 Salvar Trilha</button>
-                    <a href="{% url 'admin_trilhas_list' %}" class="btn-secondary">❌ Cancelar</a>
+                    <button type="submit" class="btn-success">Salvar Trilha</button>
+                    <a href="{% url 'admin_trilhas_list' %}" class="btn-secondary">Cancelar</a>
                 </div>
             </form>
         </div>
@@ -499,7 +499,7 @@
                 animation: slideIn 0.3s ease-out;
             `;
             successMsg.innerHTML = `
-                ✅ Trilha aplicada ao formulário!<br>
+                Trilha aplicada ao formulário!<br>
                 <small style="opacity: 0.9;">Não esqueça de selecionar o usuário</small>
             `;
             document.body.appendChild(successMsg);
@@ -542,7 +542,7 @@
                 font-weight: 600;
                 animation: slideIn 0.3s ease-out;
             `;
-            successMsg.textContent = '✅ Trilha aplicada ao formulário!';
+            successMsg.textContent = 'Trilha aplicada ao formulário!';
             document.body.appendChild(successMsg);
             
             setTimeout(() => {

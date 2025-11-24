@@ -228,21 +228,43 @@ def dashboard(request):
     
     # Calcular progresso para cada trilha
     trilhas_com_progresso = []
+    total_atividades_geral = 0
+    total_concluidas_geral = 0
+    tempo_estudo_total = 0  # em minutos
+    
     for trilha in trilhas:
         progressos = ProgressoTrilhaCurso.objects.filter(trilha=trilha)
         
         total_atividades = 0
         atividades_concluidas = 0
         
-        # Contar atividades no JSON
+        # Contar atividades no JSON e somar tempo
         if isinstance(trilha.conteudo_json, dict):
             modulos = trilha.conteudo_json.get('modulos', [])
             for modulo in modulos:
                 aulas = modulo.get('aulas', [])
                 total_atividades += len(aulas)
+                
+                # Somar tempo de estudo das aulas concluídas
+                for idx, aula in enumerate(aulas):
+                    # Verificar se aula está concluída
+                    modulo_idx = modulos.index(modulo)
+                    identificador = f"mod_{modulo_idx}_aula_{idx}"
+                    progresso = progressos.filter(identificador=identificador, concluida=True).first()
+                    
+                    if progresso:
+                        # Extrair tempo de duração (formato: "45 min", "1h", "1h 30min", etc)
+                        duracao = aula.get('duracao', '')
+                        if duracao:
+                            tempo_minutos = extrair_minutos_de_duracao(duracao)
+                            tempo_estudo_total += tempo_minutos
         
         # Contar concluídas
         atividades_concluidas = progressos.filter(concluida=True).count()
+        
+        # Acumular para média geral
+        total_atividades_geral += total_atividades
+        total_concluidas_geral += atividades_concluidas
         
         # Calcular percentual
         percentual = 0
@@ -253,14 +275,60 @@ def dashboard(request):
             'trilha': trilha,
             'percentual': percentual,
         })
+    
+    # Calcular média de conclusão geral
+    media_conclusao = 0
+    if total_atividades_geral > 0:
+        media_conclusao = int((total_concluidas_geral / total_atividades_geral) * 100)
+    
+    # Formatar tempo de estudo
+    if tempo_estudo_total >= 60:
+        horas = tempo_estudo_total // 60
+        minutos = tempo_estudo_total % 60
+        if minutos > 0:
+            tempo_estudo_formatado = f"{horas}h {minutos}min"
+        else:
+            tempo_estudo_formatado = f"{horas}h"
+    else:
+        tempo_estudo_formatado = f"{tempo_estudo_total}min"
 
     context = {
         "trilhas_com_progresso": trilhas_com_progresso,
         "total_trilhas": trilhas.count(),
+        "media_conclusao": media_conclusao,
+        "tempo_estudo": tempo_estudo_formatado,
     }
 
     # Renderiza a página de dashboard
     return render(request, "usuarios/dashboard.html", context)
+
+
+def extrair_minutos_de_duracao(duracao_str):
+    """
+    Extrai minutos de strings de duração como "45 min", "1h", "1h 30min", etc.
+    
+    Args:
+        duracao_str: String com a duração (ex: "45 min", "1h", "1h 30min")
+    
+    Returns:
+        int: Total de minutos
+    """
+    import re
+    
+    duracao_str = duracao_str.lower().strip()
+    total_minutos = 0
+    
+    # Extrair horas
+    horas_match = re.search(r'(\d+)\s*h', duracao_str)
+    if horas_match:
+        total_minutos += int(horas_match.group(1)) * 60
+    
+    # Extrair minutos
+    minutos_match = re.search(r'(\d+)\s*min', duracao_str)
+    if minutos_match:
+        total_minutos += int(minutos_match.group(1))
+    
+    return total_minutos
 
 
 # ===== HELPERS =====

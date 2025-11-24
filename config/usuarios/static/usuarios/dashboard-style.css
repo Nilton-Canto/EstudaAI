@@ -179,7 +179,7 @@ box-shadow: var(--shadow);
 
 .stat-card.indigo { background-color: #6366f1; }
 .stat-card.green { background-color: #10b981; }
-.stat-card.yellow { background-color: #facc15; color: #1f2937; }
+.stat-card.yellow { background-color: #f59e0b; color: #ffffff; }
 
 .stat-value {
 font-size: 1.75rem;

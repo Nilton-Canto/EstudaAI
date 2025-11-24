@@ -72,7 +72,7 @@
               href="{% url 'ver_trilha' trilha.id %}"
               style="background: #4f46e5; color: white; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; cursor: pointer; text-decoration: none; display: inline-block;"
             >
-              👁️ Ver Detalhes
+               Ver Detalhes
             </a>
             <form method="POST" action="{% url 'excluir_trilha' trilha.id %}" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja excluir esta trilha?');">
               {% csrf_token %}
