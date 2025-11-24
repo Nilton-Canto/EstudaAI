@@ -6,12 +6,12 @@ O **EstudaAI** é uma aplicação web que ajuda estudantes a criar e acompanhar 
 
 ## ✨ Funcionalidades
 
-- 🤖 **Geração de trilhas com IA** - Trilhas personalizadas via Google Gemini
-- 📋 **Trilhas pré-definidas** - Conteúdo curado por especialistas
-- 📊 **Acompanhamento de progresso** - Visualização do desenvolvimento
-- 👥 **Sistema de usuários** - Perfis acadêmicos personalizados
-- 🎯 **Categorização por áreas** - Organização por domínios de conhecimento
-- 📱 **Interface responsiva** - Funciona em desktop e mobile
+- **Geração de trilhas com IA** - Trilhas personalizadas via Google Gemini
+- **Trilhas pré-definidas** - Conteúdo curado por especialistas
+- **Acompanhamento de progresso** - Visualização do desenvolvimento
+- **Sistema de usuários** - Perfis acadêmicos personalizados
+- **Categorização por áreas** - Organização por domínios de conhecimento
+- **Interface responsiva** - Funciona em desktop e mobile
 
 ## 🚀 Quick Start
 
@@ -29,13 +29,13 @@ python manage.py migrate && python manage.py runserver
 
 ## 📋 Índice
 
-- [🛠️ Instalação Completa](#️-instalação-completa)
-- [🏗️ Arquitetura](#️-arquitetura)
-- [🤝 Contribuição](#-contribuição)
-- [🔄 Workflow Git](#-workflow-git)
-- [🧪 Testes e CI/CD](#-testes-e-cicd)
-- [📊 Diagramas UML](#-diagramas-uml)
-- [🔐 Segurança](#-segurança)
+- [Instalação Completa](#️-instalação-completa)
+- [Arquitetura](#️-arquitetura)
+- [Contribuição](#-contribuição)
+- [Workflow Git](#-workflow-git)
+- [Testes e CI/CD](#-testes-e-cicd)
+- [Diagramas UML](#-diagramas-uml)
+- [Segurança](#-segurança)
 
 ## 🛠️ Instalação Completa
 
