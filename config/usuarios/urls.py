@@ -69,4 +69,8 @@ urlpatterns = [
     path("trilha/<int:pk>/excluir/", views.excluir_trilha, name="excluir_trilha"),
     path("trilha/<int:pk>/marcar/", views.marcar_atividade, name="marcar_atividade"),
     path("trilha/<int:pk>/marcar-modulo/", views.marcar_modulo, name="marcar_modulo"),
+    # URLs de trilhas pré-definidas
+    path("trilhas/", views.trilhas_disponiveis, name="trilhas_disponiveis"),
+    path("trilhas/<int:pk>/", views.trilha_detalhes_predefinida, name="trilha_detalhes"),
+    path("trilhas/<int:pk>/iniciar/", views.iniciar_trilha_predefinida, name="iniciar_trilha"),
 ]

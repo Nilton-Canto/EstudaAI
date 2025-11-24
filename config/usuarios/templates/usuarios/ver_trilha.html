@@ -305,6 +305,7 @@
             <ul class="nav-links">
                 <li><a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a></li>
                 <li><a href="{% url 'minhas_trilhas' %}" class="nav-link active">Minhas Trilhas</a></li>
+                <li><a href="{% url 'trilhas_disponiveis' %}" class="nav-link">Explorar Trilhas</a></li>
                 <li><a href="{% url 'criar_trilha' %}" class="nav-link">Criar Trilha</a></li>
                 <li><a href="{% url 'chat_ia' %}" class="nav-link">Chat IA</a></li>
             </ul>
@@ -499,6 +500,23 @@
     </main>
 
     <script>
+        // Salvar posição de scroll antes do submit
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                // Salvar posição atual do scroll
+                sessionStorage.setItem('scrollPosition', window.scrollY);
+            });
+        });
+
+        // Restaurar posição de scroll após o carregamento da página
+        window.addEventListener('load', function() {
+            const scrollPosition = sessionStorage.getItem('scrollPosition');
+            if (scrollPosition !== null) {
+                window.scrollTo(0, parseInt(scrollPosition));
+                sessionStorage.removeItem('scrollPosition');
+            }
+        });
+
         // Animação suave ao marcar checkbox
         document.querySelectorAll('.checkbox-custom').forEach(checkbox => {
             checkbox.addEventListener('change', function() {
