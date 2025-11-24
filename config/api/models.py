@@ -57,3 +57,24 @@ class Trilha(models.Model):
 
     def __str__(self):
         return f"{self.titulo} - {self.usuario.nome}"
+
+
+class Progresso(models.Model):
+    """
+    Progresso do estudante dentro de uma trilha
+    """
+
+    trilha = models.ForeignKey(
+        Trilha, on_delete=models.CASCADE, related_name="progresso"
+    )
+    etapa = models.CharField(max_length=255)
+    concluida = models.BooleanField(default=False)
+    data_conclusao = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["id"]
+        verbose_name = "Progresso"
+        verbose_name_plural = "Progresso"
+
+    def __str__(self):
+        return f"{self.trilha.titulo} - {self.etapa}"
