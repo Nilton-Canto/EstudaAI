@@ -74,7 +74,9 @@ def clean_json_text(text: str) -> str:
 # ---------------------------------------------------------------------
 # 4. Função para chamar o LLM (auxiliar, não substitui nada existente)
 # ---------------------------------------------------------------------
-def generate_content(prompt: str, model_name: Optional[str] = None, **kwargs) -> Dict[str, Any]:
+def generate_content(
+    prompt: str, model_name: Optional[str] = None, **kwargs
+) -> Dict[str, Any]:
     """
     Gera conteúdo usando o Gemini.
     Não substitui implementações já existentes no projeto.
