@@ -264,12 +264,14 @@ Use essas informações para personalizar a trilha de acordo com o perfil do usu
             logger.error(f"Erro ao gerar trilha: {str(e)}")
             raise GeminiAPIException(f"Erro ao gerar trilha: {str(e)}")
 
-    def chat(self, mensagem):
+    def chat(self, mensagem, historico=None, nome_usuario=None):
         """
-        Interage com o Gemini em modo chat.
+        Interage com o Gemini em modo chat, mantendo contexto.
 
         Args:
             mensagem (str): Mensagem do usuário
+            historico (list): Lista de mensagens anteriores [{"role": "user", "parts": ["..."]}, ...]
+            nome_usuario (str): Nome do usuário para personalização
 
         Returns:
             str: Resposta do Gemini
@@ -279,9 +281,26 @@ Use essas informações para personalizar a trilha de acordo com o perfil do usu
         """
         logger.info(f"Chat: {mensagem[:50]}...")
 
-        # Guardrails e Persona
+        # Personalização com nome
+        saudacao = ""
+        if nome_usuario:
+            saudacao = f"O usuário se chama {nome_usuario}. "
+
+        # Guardrails e Persona (System Instruction simulado no início do chat ou a cada mensagem se stateless)
+        # Para chat com histórico, o ideal é usar start_chat do Gemini, mas aqui vamos adaptar para stateless com contexto
+        
+        contexto_historico = ""
+        if historico:
+            # Formata histórico simples para o prompt (limitado às últimas 5 trocas para economizar tokens)
+            ultimas_msgs = historico[-10:] 
+            contexto_historico = "\nHISTÓRICO DA CONVERSA:\n"
+            for msg in ultimas_msgs:
+                role = "Usuário" if msg.get("role") == "user" else "Assistente"
+                texto = msg.get("parts", [""])[0]
+                contexto_historico += f"{role}: {texto}\n"
+
         system_instruction = (
-            "Você é o assistente virtual do EstudaAI, uma plataforma de ensino inteligente. "
+            f"Você é o assistente virtual do EstudaAI, uma plataforma de ensino inteligente. {saudacao}"
             "Seu objetivo é ajudar estudantes com dúvidas sobre estudos, carreiras, tecnologia, "
             "programação e conteúdos educacionais.\n\n"
             "REGRAS (GUARDRAILS):\n"
@@ -289,8 +308,9 @@ Use essas informações para personalizar a trilha de acordo com o perfil do usu
             "2. Se o usuário perguntar sobre política, religião, fofocas, entretenimento não-educativo ou "
             "qualquer assunto fora do escopo educacional/profissional, recuse educadamente.\n"
             "3. Seja sempre didático, encorajador e objetivo.\n"
-            "4. Se a pergunta for ofensiva ou inapropriada, encerre o assunto educadamente.\n\n"
-            f"PERGUNTA DO USUÁRIO: {mensagem}"
+            "4. Se a pergunta for ofensiva ou inapropriada, encerre o assunto educadamente.\n"
+            f"{contexto_historico}\n"
+            f"PERGUNTA ATUAL DO USUÁRIO: {mensagem}"
         )
 
         try:
