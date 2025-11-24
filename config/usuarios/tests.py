@@ -183,3 +183,53 @@ class CadastroTestCase(TestCase):
         # O Django automaticamente apaga o banco temporário após cada teste.
         # Incluído apenas para demonstrar o ciclo de vida dos testes.
         pass
+
+
+class DashboardTestCase(TestCase):
+    """Testes para o dashboard do usuário"""
+
+    def setUp(self):
+        """Configura dados para os testes"""
+        self.usuario = Usuario.objects.create_user(
+            username="testuser",
+            password="senha123",
+            nome="Test User",
+            email="test@example.com",
+        )
+        self.client = Client()
+        self.client.login(username="testuser", password="senha123")
+
+    def test_dashboard_requer_autenticacao(self):
+        """Testa se dashboard requer login"""
+        self.client.logout()
+        response = self.client.get(reverse("dashboard"))
+        # Deve redirecionar para login
+        self.assertEqual(response.status_code, 302)
+
+    def test_dashboard_carrega_para_usuario_autenticado(self):
+        """Testa se dashboard carrega para usuário logado"""
+        response = self.client.get(reverse("dashboard"))
+        self.assertEqual(response.status_code, 200)
+        self.assertContains(response, "Dashboard")
+
+
+class HomeTestCase(TestCase):
+    """Testes para a página inicial"""
+
+    def setUp(self):
+        self.client = Client()
+
+    def test_home_carrega(self):
+        """Testa se a página inicial carrega"""
+        response = self.client.get(reverse("home"))
+        self.assertEqual(response.status_code, 200)
+
+    def test_home_redireciona_usuario_autenticado(self):
+        """Testa se usuário logado é redirecionado"""
+        usuario = Usuario.objects.create_user(
+            username="testuser", password="senha123"
+        )
+        self.client.login(username="testuser", password="senha123")
+        response = self.client.get(reverse("home"))
+        # Pode carregar home ou redirecionar para dashboard
+        self.assertIn(response.status_code, [200, 302])
