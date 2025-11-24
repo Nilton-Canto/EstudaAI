@@ -65,4 +65,8 @@ urlpatterns = [
     # URLs de trilhas do usuário
     path("minhastrilhas/", views.minhas_trilhas, name="minhas_trilhas"),
     path("criartrilha/", views.criar_trilha, name="criar_trilha"),
+    path("trilha/<int:pk>/", views.ver_trilha, name="ver_trilha"),
+    path("trilha/<int:pk>/excluir/", views.excluir_trilha, name="excluir_trilha"),
+    path("trilha/<int:pk>/marcar/", views.marcar_atividade, name="marcar_atividade"),
+    path("trilha/<int:pk>/marcar-modulo/", views.marcar_modulo, name="marcar_modulo"),
 ]

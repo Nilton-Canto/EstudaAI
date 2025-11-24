@@ -24,7 +24,7 @@ def gerar_trilha_curso(request):
     Gera uma trilha de curso personalizada usando IA do Gemini.
 
     Espera um JSON com o campo 'solicitacao' contendo o pedido do usuário.
-    Retorna a trilha gerada e salva no banco de dados.
+    Retorna a trilha gerada SEM salvar no banco (o salvamento é feito pelo formulário).
     """
     solicitacao = request.data.get("solicitacao", "").strip()
 
@@ -45,20 +45,12 @@ def gerar_trilha_curso(request):
             solicitacao, usuario=request.user
         )
 
-        # Salvar no banco
-        trilha = TrilhaCurso.objects.create(
-            usuario=request.user,
-            titulo=trilha_json.get("titulo", "Trilha de Aprendizado"),
-            descricao=trilha_json.get("descricao", ""),
-            solicitacao_original=solicitacao,
-            conteudo_json=trilha_json,
-        )
+        # NÃO salvar no banco - apenas retornar o JSON
+        # O salvamento será feito pelo formulário quando o usuário clicar em "Salvar Trilha"
+        logger.info(f"Trilha gerada com sucesso para {request.user.username}")
 
-        logger.info(f"Trilha criada com ID {trilha.id}")
-
-        # Serializar e retornar
-        serializer = TrilhaCursoSerializer(trilha)
-        return Response(serializer.data, status=status.HTTP_201_CREATED)
+        # Retornar o JSON diretamente
+        return Response(trilha_json, status=status.HTTP_200_OK)
 
     except Exception as e:
         logger.error(f"Erro ao gerar trilha: {str(e)}")

@@ -136,9 +136,10 @@ SOLICITAÇÃO DO USUÁRIO: {solicitacao}
 INSTRUÇÕES:
 1. Crie uma trilha de aprendizado estruturada e progressiva
 2. Divida o conteúdo em módulos lógicos e sequenciais
-3. Para cada módulo, inclua tópicos específicos e recursos de estudo
-4. Estime a duração de cada módulo
-5. Sugira recursos práticos como projetos, exercícios ou atividades
+3. Para cada módulo, crie aulas detalhadas com objetivos claros
+4. Estime a duração, tipo e dificuldade de cada aula
+5. Sugira recursos práticos (vídeos, artigos, exercícios, projetos)
+6. Defina objetivos de aprendizado específicos para cada aula
 
 FORMATO DE RESPOSTA (OBRIGATÓRIO JSON):
 {{
@@ -148,29 +149,54 @@ FORMATO DE RESPOSTA (OBRIGATÓRIO JSON):
     "duracao_total": "X semanas/meses",
     "modulos": [
         {{
-            "numero": 1,
             "titulo": "Nome do Módulo",
-            "descricao": "Descrição do que será aprendido",
-            "duracao": "X semanas",
-            "topicos": ["Tópico 1", "Tópico 2"],
-            "recursos": [
+            "descricao": "Descrição do que será aprendido neste módulo",
+            "duracao": "X horas",
+            "aulas": [
                 {{
-                    "tipo": "video/livro/curso/artigo",
-                    "titulo": "Nome do Recurso",
-                    "descricao": "Breve descrição"
+                    "titulo": "Nome da Aula",
+                    "descricao": "Descrição detalhada do conteúdo da aula",
+                    "duracao": "45 min",
+                    "tipo": "Teórico/Prático/Projeto/Exercício",
+                    "dificuldade": "Fácil/Médio/Difícil",
+                    "objetivos": [
+                        "Objetivo de aprendizado 1",
+                        "Objetivo de aprendizado 2",
+                        "Objetivo de aprendizado 3"
+                    ],
+                    "recursos": [
+                        {{
+                            "tipo": "video",
+                            "nome": "Nome do vídeo/artigo/exercício"
+                        }},
+                        {{
+                            "tipo": "artigo",
+                            "nome": "Nome do recurso"
+                        }},
+                        {{
+                            "tipo": "exercicio",
+                            "nome": "Nome do exercício prático"
+                        }}
+                    ]
                 }}
-            ],
-            "atividades_praticas": ["Atividade prática 1"]
+            ]
         }}
-    ],
-    "projeto_final": "Descrição de um projeto integrador",
-    "recursos_complementares": ["Recurso adicional 1"]
+    ]
 }}
+
+TIPOS DE RECURSOS:
+- "video": para vídeo-aulas
+- "artigo": para textos e documentação
+- "exercicio": para exercícios práticos
+- "projeto": para projetos hands-on
 
 IMPORTANTE:
 - Responda APENAS com o JSON válido, sem texto adicional
 - Certifique-se de que todos os campos estão preenchidos
-- A trilha deve ser prática e aplicável
+- Cada módulo deve ter pelo menos 3 aulas
+- Cada aula deve ter 2-4 objetivos de aprendizado
+- Cada aula deve ter 2-4 recursos variados
+- A trilha deve ser progressiva (fácil → difícil)
 """
 
         if usuario_data:

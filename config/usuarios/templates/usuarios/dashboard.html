@@ -53,15 +53,18 @@
         <section class="card">
             <h2 class="section-title dark">Trilhas Ativas</h2>
             <div class="trails-grid">
-                {% for trilha in trilhas_curso %}
+                {% for item in trilhas_com_progresso %}
                 <div class="trail-card">
-                    <h3 class="trail-title">{{ trilha.titulo }}</h3>
-                    <p class="trail-info">Personalizada · {{ trilha.data_criacao|date:"d/m/Y" }}</p>
+                    <h3 class="trail-title">{{ item.trilha.titulo }}</h3>
+                    <p class="trail-info">
+                        {% if item.trilha.area %}{{ item.trilha.area.nome }} · {% endif %}
+                        {{ item.trilha.data_criacao|date:"d/m/Y" }}
+                    </p>
                     <div class="progress-bar">
-                        <div class="progress-fill blue" style="width: 0%"></div>
+                        <div class="progress-fill blue" style="width: {{ item.percentual }}%"></div>
                     </div>
-                    <p class="progress-text">0% Concluído</p>
-                    <button class="btn-primary">Continuar</button>
+                    <p class="progress-text">{{ item.percentual }}% Concluído</p>
+                    <a href="{% url 'ver_trilha' item.trilha.id %}" class="btn-primary">Continuar</a>
                 </div>
                 {% empty %}
                 <div class="trail-card">

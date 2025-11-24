@@ -3,7 +3,7 @@
 from datetime import timedelta
 
 # Models
-from api.models import Area, Trilha, TrilhaCurso
+from api.models import Area, Trilha, TrilhaCurso, ProgressoTrilhaCurso
 
 # Sistema de mensagens do Django
 from django.contrib import messages
@@ -221,23 +221,42 @@ def dashboard(request):
     for message in storage:
         pass  # Apenas consome as mensagens sem fazer nada com elas
 
-    # Buscar trilhas personalizadas do usuário
-    trilhas_curso = TrilhaCurso.objects.filter(
+    # Buscar todas as trilhas do usuário (modelo unificado)
+    trilhas = TrilhaCurso.objects.filter(
         usuario=request.user, ativa=True
     ).order_by("-data_criacao")
-
-    # Buscar trilhas pré-definidas do usuário (se houver lógica para isso)
-    trilhas_predefinidas = Trilha.objects.filter(
-        usuario=request.user, ativa=True
-    ).order_by("-data_criacao")
-
-    # Combinar ou passar separadamente. Por enquanto, vamos focar nas trilhas de curso (personalizadas)
-    # pois é o foco da integração com LLM.
+    
+    # Calcular progresso para cada trilha
+    trilhas_com_progresso = []
+    for trilha in trilhas:
+        progressos = ProgressoTrilhaCurso.objects.filter(trilha=trilha)
+        
+        total_atividades = 0
+        atividades_concluidas = 0
+        
+        # Contar atividades no JSON
+        if isinstance(trilha.conteudo_json, dict):
+            modulos = trilha.conteudo_json.get('modulos', [])
+            for modulo in modulos:
+                aulas = modulo.get('aulas', [])
+                total_atividades += len(aulas)
+        
+        # Contar concluídas
+        atividades_concluidas = progressos.filter(concluida=True).count()
+        
+        # Calcular percentual
+        percentual = 0
+        if total_atividades > 0:
+            percentual = int((atividades_concluidas / total_atividades) * 100)
+        
+        trilhas_com_progresso.append({
+            'trilha': trilha,
+            'percentual': percentual,
+        })
 
     context = {
-        "trilhas_curso": trilhas_curso,
-        "trilhas_predefinidas": trilhas_predefinidas,
-        "total_trilhas": trilhas_curso.count() + trilhas_predefinidas.count(),
+        "trilhas_com_progresso": trilhas_com_progresso,
+        "total_trilhas": trilhas.count(),
     }
 
     # Renderiza a página de dashboard
@@ -261,7 +280,7 @@ def admin_dashboard(request):
     # Estatísticas gerais
     total_usuarios = Usuario.objects.count()
     total_areas = Area.objects.count()
-    total_trilhas = Trilha.objects.filter(ativa=True).count()
+    total_trilhas = TrilhaCurso.objects.filter(ativa=True).count()
 
     # Usuários ativos hoje (que fizeram login nas últimas 24h)
     hoje = timezone.now()
@@ -272,7 +291,7 @@ def admin_dashboard(request):
     ultimos_usuarios = Usuario.objects.order_by("-date_joined")[:5]
 
     # Últimas trilhas criadas
-    ultimas_trilhas = Trilha.objects.select_related("usuario", "area").order_by(
+    ultimas_trilhas = TrilhaCurso.objects.select_related("usuario", "area").order_by(
         "-data_criacao"
     )[:5]
 
@@ -497,7 +516,7 @@ def admin_area_delete(request, pk):
 def admin_trilhas_list(request):
     """Lista todas as trilhas"""
 
-    trilhas = Trilha.objects.select_related("usuario", "area").order_by("-data_criacao")
+    trilhas = TrilhaCurso.objects.select_related("usuario", "area").order_by("-data_criacao")
 
     # Filtro de busca
     query = request.GET.get("q")
@@ -535,12 +554,20 @@ def admin_trilha_create(request):
         ativa = request.POST.get("ativa") == "on"
 
         try:
-            trilha = Trilha.objects.create(
+            import json
+            # Tentar parsear como JSON, se falhar usar string vazia
+            try:
+                conteudo_json = json.loads(conteudo) if conteudo else {}
+            except json.JSONDecodeError:
+                conteudo_json = {"conteudo_texto": conteudo}
+            
+            trilha = TrilhaCurso.objects.create(
                 titulo=titulo,
-                descricao=descricao if descricao else "",  # Garantir string vazia
+                descricao=descricao if descricao else "",
                 usuario_id=usuario_id,
                 area_id=area_id,
-                conteudo=conteudo,
+                solicitacao_original="Criado pelo admin",
+                conteudo_json=conteudo_json,
                 ativa=ativa,
             )
             messages.success(request, f"Trilha {trilha.titulo} criada com sucesso!")
@@ -563,7 +590,7 @@ def admin_trilha_create(request):
 def admin_trilha_edit(request, pk):
     """Edita uma trilha existente"""
 
-    trilha = get_object_or_404(Trilha, pk=pk)
+    trilha = get_object_or_404(TrilhaCurso, pk=pk)
 
     if request.method == "POST":
         # Capturar valores do POST
@@ -583,12 +610,19 @@ def admin_trilha_edit(request, pk):
             messages.error(request, "O conteúdo é obrigatório!")
         else:
             try:
+                import json
+                # Tentar parsear como JSON
+                try:
+                    conteudo_json = json.loads(conteudo) if conteudo else {}
+                except json.JSONDecodeError:
+                    conteudo_json = {"conteudo_texto": conteudo}
+                
                 # Atualizar campos
                 trilha.titulo = titulo
                 trilha.descricao = descricao
                 trilha.usuario_id = usuario_id
                 trilha.area_id = area_id if area_id else None
-                trilha.conteudo = conteudo
+                trilha.conteudo_json = conteudo_json
                 trilha.ativa = ativa
 
                 # Salvar no banco
@@ -615,14 +649,16 @@ def admin_trilha_edit(request, pk):
 @login_required(login_url="login")
 @user_passes_test(user_is_staff, login_url="dashboard")
 def admin_trilha_delete(request, pk):
-    """Exclui uma trilha"""
+    """Desativa uma trilha (soft delete)"""
 
-    trilha = get_object_or_404(Trilha, pk=pk)
+    trilha = get_object_or_404(TrilhaCurso, pk=pk)
 
     if request.method == "POST":
         titulo = trilha.titulo
-        trilha.delete()
-        messages.success(request, f"Trilha {titulo} excluída com sucesso!")
+        # Soft delete: apenas marca como inativa ao invés de deletar
+        trilha.ativa = False
+        trilha.save()
+        messages.success(request, f"Trilha '{titulo}' desativada com sucesso!")
 
     return redirect("admin_trilhas_list")
 
@@ -635,34 +671,248 @@ def chat_ia(request):
 
 @login_required
 def minhas_trilhas(request):
-    """Exibe as trilhas do usuário logado"""
+    """Exibe as trilhas ativas do usuário logado"""
 
-    trilhas = Trilha.objects.filter(usuario=request.user).order_by("-data_criacao")
+    # Buscar apenas trilhas ATIVAS (modelo unificado)
+    trilhas = TrilhaCurso.objects.filter(
+        usuario=request.user, 
+        ativa=True
+    ).order_by("-data_criacao")
 
-    return render(request, "usuarios/minhastrilhas.html", {"trilhas": trilhas})
+    context = {
+        "trilhas": trilhas,
+    }
+
+    return render(request, "usuarios/minhastrilhas.html", context)
 
 
 @login_required
 def criar_trilha(request):
-    """Permite ao usuário criar uma nova trilha"""
+    """Permite ao usuário criar uma nova trilha com IA ou manualmente"""
 
     if request.method == "POST":
-        titulo = request.POST.get("titulo")
-        descricao = request.POST.get("descricao", "")
-        conteudo = request.POST.get("conteudo", "")
+        titulo = request.POST.get("titulo", "").strip()
+        descricao = request.POST.get("descricao", "").strip()
+        conteudo = request.POST.get("conteudo", "").strip()
         ativa = request.POST.get("ativa") == "on"
+        ai_prompt = request.POST.get("ai_prompt", "").strip()
+
+        # Validar campos obrigatórios
+        if not titulo:
+            messages.error(request, "O título é obrigatório!")
+            return render(request, "usuarios/criartrilha.html")
+
+        if not conteudo:
+            messages.error(request, "O conteúdo é obrigatório! Use a IA para gerar.")
+            return render(request, "usuarios/criartrilha.html")
 
         try:
-            trilha = Trilha.objects.create(
+            # Tentar parsear o conteúdo como JSON
+            import json
+            try:
+                conteudo_json = json.loads(conteudo)
+            except json.JSONDecodeError:
+                messages.error(request, "O conteúdo deve ser um JSON válido!")
+                return render(request, "usuarios/criartrilha.html")
+
+            # Criar trilha no modelo TrilhaCurso (para trilhas com IA)
+            trilha = TrilhaCurso.objects.create(
                 titulo=titulo,
                 descricao=descricao if descricao else "",
                 usuario=request.user,
-                conteudo=conteudo,
+                solicitacao_original=ai_prompt if ai_prompt else "Criação manual",
+                conteudo_json=conteudo_json,
                 ativa=ativa,
             )
-            messages.success(request, f"Trilha {trilha.titulo} criada com sucesso!")
+            messages.success(request, f"✅ Trilha '{trilha.titulo}' criada com sucesso!")
             return redirect("minhas_trilhas")
         except Exception as e:
             messages.error(request, f"Erro ao criar trilha: {str(e)}")
 
     return render(request, "usuarios/criartrilha.html")
+
+
+@login_required
+def excluir_trilha(request, pk):
+    """Permite ao usuário desativar (excluir) sua própria trilha"""
+    
+    if request.method == "POST":
+        try:
+            trilha = get_object_or_404(TrilhaCurso, pk=pk, usuario=request.user)
+            
+            titulo = trilha.titulo
+            trilha.ativa = False
+            trilha.save()
+            
+            messages.success(request, f"✅ Trilha '{titulo}' removida com sucesso!")
+        except Exception as e:
+            messages.error(request, f"❌ Erro ao remover trilha: {str(e)}")
+    
+    return redirect("minhas_trilhas")
+
+
+@login_required
+def ver_trilha(request, pk):
+    """Exibe os detalhes completos de uma trilha com progresso"""
+    
+    trilha = get_object_or_404(TrilhaCurso, pk=pk, usuario=request.user)
+    
+    # Buscar progresso existente
+    progressos = ProgressoTrilhaCurso.objects.filter(trilha=trilha)
+    progresso_dict = {p.identificador: p for p in progressos}
+    
+    # Calcular estatísticas
+    total_atividades = 0
+    atividades_concluidas = 0
+    
+    # Processar o conteúdo JSON da trilha e enriquecer com progresso
+    conteudo = trilha.conteudo_json
+    modulos_enriquecidos = []
+    
+    if isinstance(conteudo, dict):
+        modulos = conteudo.get('modulos', [])
+        
+        # Enriquecer cada módulo e aula com informações de progresso
+        for mod_idx, modulo in enumerate(modulos):
+            aulas_enriquecidas = []
+            aulas = modulo.get('aulas', [])
+            modulo_concluido = True  # Assume verdadeiro até encontrar aula não concluída
+            aulas_concluidas_modulo = 0
+            
+            for aula_idx, aula in enumerate(aulas):
+                total_atividades += 1
+                identificador = f"mod_{mod_idx}_aula_{aula_idx}"
+                progresso = progresso_dict.get(identificador)
+                concluida = progresso.concluida if progresso else False
+                
+                if concluida:
+                    atividades_concluidas += 1
+                    aulas_concluidas_modulo += 1
+                else:
+                    modulo_concluido = False  # Se alguma aula não está concluída, módulo não está
+                
+                # Criar cópia da aula com informações extras
+                aula_enriquecida = dict(aula)
+                aula_enriquecida['identificador'] = identificador
+                aula_enriquecida['concluida'] = concluida
+                aula_enriquecida['modulo_indice'] = mod_idx
+                aula_enriquecida['aula_indice'] = aula_idx
+                aulas_enriquecidas.append(aula_enriquecida)
+            
+            # Calcular progresso do módulo
+            percentual_modulo = 0
+            if len(aulas) > 0:
+                percentual_modulo = int((aulas_concluidas_modulo / len(aulas)) * 100)
+            
+            # Criar cópia do módulo com aulas enriquecidas
+            modulo_enriquecido = dict(modulo)
+            modulo_enriquecido['aulas'] = aulas_enriquecidas
+            modulo_enriquecido['modulo_indice'] = mod_idx
+            modulo_enriquecido['concluido'] = modulo_concluido
+            modulo_enriquecido['total_aulas'] = len(aulas)
+            modulo_enriquecido['aulas_concluidas'] = aulas_concluidas_modulo
+            modulo_enriquecido['percentual'] = percentual_modulo
+            modulos_enriquecidos.append(modulo_enriquecido)
+    
+    # Calcular percentual
+    percentual_conclusao = 0
+    if total_atividades > 0:
+        percentual_conclusao = int((atividades_concluidas / total_atividades) * 100)
+    
+    context = {
+        'trilha': trilha,
+        'modulos': modulos_enriquecidos,
+        'total_atividades': total_atividades,
+        'atividades_concluidas': atividades_concluidas,
+        'percentual_conclusao': percentual_conclusao,
+    }
+    
+    return render(request, 'usuarios/ver_trilha.html', context)
+
+
+@login_required
+def marcar_atividade(request, pk):
+    """Marca/desmarca uma atividade como concluída"""
+    
+    if request.method == "POST":
+        trilha = get_object_or_404(TrilhaCurso, pk=pk, usuario=request.user)
+        
+        modulo_indice = int(request.POST.get('modulo_indice', 0))
+        aula_indice = int(request.POST.get('aula_indice', 0))
+        identificador = request.POST.get('identificador', '')
+        concluida = request.POST.get('concluida', 'false') == 'true'
+        
+        # Buscar ou criar progresso
+        progresso, created = ProgressoTrilhaCurso.objects.get_or_create(
+            trilha=trilha,
+            identificador=identificador,
+            defaults={
+                'modulo_indice': modulo_indice,
+                'aula_indice': aula_indice,
+                'concluida': concluida,
+            }
+        )
+        
+        # Se já existe, atualizar
+        if not created:
+            progresso.concluida = concluida
+            if concluida:
+                progresso.data_conclusao = timezone.now()
+            else:
+                progresso.data_conclusao = None
+            progresso.save()
+        else:
+            if concluida:
+                progresso.data_conclusao = timezone.now()
+                progresso.save()
+        
+        return redirect('ver_trilha', pk=pk)
+    
+    return redirect('minhas_trilhas')
+
+
+@login_required
+def marcar_modulo(request, pk):
+    """Marca/desmarca todas as atividades de um módulo como concluídas"""
+    
+    if request.method == "POST":
+        trilha = get_object_or_404(TrilhaCurso, pk=pk, usuario=request.user)
+        
+        modulo_indice = int(request.POST.get('modulo_indice', 0))
+        marcar_como = request.POST.get('marcar_como', 'marcar')
+        concluir = (marcar_como == 'marcar')
+        
+        # Buscar todas as aulas do módulo no JSON
+        conteudo = trilha.conteudo_json
+        if isinstance(conteudo, dict):
+            modulos = conteudo.get('modulos', [])
+            if modulo_indice < len(modulos):
+                modulo = modulos[modulo_indice]
+                aulas = modulo.get('aulas', [])
+                
+                # Marcar/desmarcar todas as aulas do módulo
+                for aula_idx in range(len(aulas)):
+                    identificador = f"mod_{modulo_indice}_aula_{aula_idx}"
+                    
+                    progresso, created = ProgressoTrilhaCurso.objects.get_or_create(
+                        trilha=trilha,
+                        identificador=identificador,
+                        defaults={
+                            'modulo_indice': modulo_indice,
+                            'aula_indice': aula_idx,
+                            'concluida': concluir,
+                            'data_conclusao': timezone.now() if concluir else None,
+                        }
+                    )
+                    
+                    if not created:
+                        progresso.concluida = concluir
+                        if concluir:
+                            progresso.data_conclusao = timezone.now()
+                        else:
+                            progresso.data_conclusao = None
+                        progresso.save()
+        
+        return redirect('ver_trilha', pk=pk)
+    
+    return redirect('minhas_trilhas')
