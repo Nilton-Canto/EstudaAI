@@ -1,0 +1,54 @@
+@startuml
+
+actor Aluno
+participant "Dashboard\n(View)" as Dashboard
+participant "TrilhaService" as Service
+database "Trilha\n(Model)" as TrilhaDB
+database "Progresso\n(Model)" as ProgressoDB
+database "TrilhaCurso\n(Model)" as TrilhaCursoDB
+
+== Visualizar Trilhas ==
+Aluno -> Dashboard: Acessa dashboard
+activate Dashboard
+
+Dashboard -> TrilhaDB: Busca trilhas pré-definidas ativas
+activate TrilhaDB
+TrilhaDB --> Dashboard: Lista de trilhas
+deactivate TrilhaDB
+
+Dashboard -> TrilhaCursoDB: Busca trilhas personalizadas ativas
+activate TrilhaCursoDB
+TrilhaCursoDB --> Dashboard: Lista de trilhas personalizadas
+deactivate TrilhaCursoDB
+
+Dashboard --> Aluno: Exibe lista de trilhas ativas
+
+== Visualizar Detalhes da Trilha ==
+Aluno -> Dashboard: Clica em trilha específica
+Dashboard -> TrilhaDB: Busca detalhes da trilha
+activate TrilhaDB
+TrilhaDB --> Dashboard: Dados da trilha
+deactivate TrilhaDB
+
+Dashboard -> ProgressoDB: Busca progresso da trilha
+activate ProgressoDB
+ProgressoDB --> Dashboard: Lista de progresso
+deactivate ProgressoDB
+
+Dashboard --> Aluno: Exibe detalhes da trilha\n(título, descrição, módulos, progresso)
+
+== Visualizar Progresso ==
+Aluno -> Dashboard: Visualiza progresso das etapas
+
+Dashboard -> Service: Calcular percentual de conclusão
+activate Service
+Service -> ProgressoDB: Conta etapas concluídas vs total
+activate ProgressoDB
+ProgressoDB --> Service: Percentual calculado
+deactivate ProgressoDB
+Service --> Dashboard: Progresso calculado
+deactivate Service
+
+Dashboard --> Aluno: Exibe:\n- % de conclusão\n- Etapas concluídas\n- Tempo estimado\n- Próxima etapa
+
+@enduml
