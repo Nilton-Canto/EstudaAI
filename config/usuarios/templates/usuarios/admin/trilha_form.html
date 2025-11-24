@@ -292,11 +292,26 @@
                             class="form-textarea" 
                             style="min-height: 300px; font-family: 'Courier New', monospace;"
                             required
-                        >{% if trilha %}{{ trilha.conteudo }}{% endif %}</textarea>
+                        >{% if trilha %}{% load static %}{{ trilha.conteudo_json|default:"{}"|escapejs }}{% endif %}</textarea>
                         <small style="color: #6b7280;">
                             O conteúdo deve estar em formato JSON válido. Use a IA acima para gerar automaticamente.
                         </small>
                     </div>
+
+                    <script>
+                    {% if trilha and trilha.conteudo_json %}
+                    // Formatar JSON no textarea ao carregar a página
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const textarea = document.getElementById('id_conteudo');
+                        try {
+                            const obj = {{ trilha.conteudo_json|safe }};
+                            textarea.value = JSON.stringify(obj, null, 2);
+                        } catch(e) {
+                            console.error('Erro ao formatar JSON:', e);
+                        }
+                    });
+                    {% endif %}
+                    </script>
 
                     <div class="form-group">
                         <label class="form-label">

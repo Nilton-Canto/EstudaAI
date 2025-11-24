@@ -82,7 +82,7 @@ class Progresso(models.Model):
 
 class TrilhaCurso(models.Model):
     """
-    Modelo para trilhas de curso geradas pela IA (Gemini).
+    Modelo unificado para todas as trilhas (IA ou manual, admin ou usuário).
     Armazena trilhas completas com conteúdo estruturado em JSON.
     """
 
@@ -91,8 +91,12 @@ class TrilhaCurso(models.Model):
     )
     titulo = models.CharField(max_length=255)
     descricao = models.TextField(blank=True)
+    area = models.ForeignKey(
+        Area, on_delete=models.SET_NULL, null=True, blank=True, related_name="trilhas_curso"
+    )
     solicitacao_original = models.TextField(
-        help_text="Texto original enviado pelo usuário"
+        blank=True,
+        help_text="Texto original enviado pelo usuário (vazio para criação manual)"
     )
     conteudo_json = models.JSONField(
         help_text="Conteúdo completo da trilha em formato JSON"
@@ -108,3 +112,27 @@ class TrilhaCurso(models.Model):
 
     def __str__(self):
         return f"{self.titulo} - {self.usuario.username}"
+
+
+class ProgressoTrilhaCurso(models.Model):
+    """
+    Progresso do estudante dentro de uma trilha de curso
+    """
+
+    trilha = models.ForeignKey(
+        TrilhaCurso, on_delete=models.CASCADE, related_name="progresso"
+    )
+    modulo_indice = models.IntegerField(help_text="Índice do módulo")
+    aula_indice = models.IntegerField(help_text="Índice da aula dentro do módulo")
+    identificador = models.CharField(max_length=500, help_text="Identificador único da atividade")
+    concluida = models.BooleanField(default=False)
+    data_conclusao = models.DateTimeField(null=True, blank=True)
+
+    class Meta:
+        ordering = ["modulo_indice", "aula_indice"]
+        verbose_name = "Progresso de Trilha"
+        verbose_name_plural = "Progresso de Trilhas"
+        unique_together = ['trilha', 'identificador']
+
+    def __str__(self):
+        return f"{self.trilha.titulo} - Módulo {self.modulo_indice} - Aula {self.aula_indice}"
