@@ -1,0 +1,97 @@
+@startuml Modelo de Domínio - EstudaAI
+!theme plain
+skinparam backgroundColor #FFFFFF
+skinparam classAttributeIconSize 0
+skinparam classFontSize 12
+
+title Modelo de Domínio Conceitual - EstudaAI
+
+' Entidades do Domínio
+class Estudante {
+    nome
+    email
+    universidade
+    curso
+    ano_formatura
+    idade
+}
+
+class AreaConhecimento {
+    nome
+    descricao
+    icone
+    cor
+}
+
+class TrilhaAprendizagem {
+    titulo
+    descricao
+    conteudo_estruturado
+    data_criacao
+}
+
+class EtapaEstudo {
+    identificador
+    titulo
+    descricao
+    tipo
+    recursos
+}
+
+class ProgressoEstudo {
+    percentual_conclusao
+    data_inicio
+    data_conclusao
+    tempo_dedicado
+}
+
+class AgenteIA {
+    modelo_utilizado
+    prompt_sistema
+    configuracoes
+}
+
+class SolicitacaoTrilha {
+    texto_original
+    contexto_usuario
+    preferencias
+    data_solicitacao
+}
+
+' Relacionamentos conceituais
+Estudante ||--o{ TrilhaAprendizagem : "cria e segue"
+Estudante ||--o{ SolicitacaoTrilha : "faz"
+AreaConhecimento ||--o{ TrilhaAprendizagem : "categoriza"
+TrilhaAprendizagem ||--o{ EtapaEstudo : "contém"
+TrilhaAprendizagem ||--|| ProgressoEstudo : "possui"
+EtapaEstudo ||--|| ProgressoEstudo : "é acompanhada por"
+AgenteIA ||--o{ TrilhaAprendizagem : "gera"
+SolicitacaoTrilha ||--|| TrilhaAprendizagem : "resulta em"
+
+' Conceitos de valor
+class ConteudoJSON <<Value Object>> {
+    modulos[]
+    aulas[]
+    recursos[]
+    avaliacoes[]
+}
+
+class MetadadosProgresso <<Value Object>> {
+    etapas_concluidas
+    tempo_total
+    ultima_atividade
+}
+
+TrilhaAprendizagem *-- ConteudoJSON
+ProgressoEstudo *-- MetadadosProgresso
+
+' Notas do domínio
+note top of Estudante : "Ator principal do sistema\nque busca aprendizado\nestruturado"
+
+note top of AgenteIA : "Responsável por gerar\ntrilhas personalizadas\nbaseadas em IA"
+
+note bottom of TrilhaAprendizagem : "Núcleo do domínio:\nsequência estruturada\nde aprendizagem"
+
+note bottom of ProgressoEstudo : "Acompanha evolução\ndo estudante na trilha"
+
+@enduml
