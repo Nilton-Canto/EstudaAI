@@ -67,6 +67,7 @@ def chat_com_gemini(request):
     Endpoint para chat geral com o Gemini.
 
     Espera um JSON com o campo 'message'.
+    Mantém histórico na sessão do usuário.
     Retorna a resposta do Gemini.
     """
     mensagem = request.data.get("message", "").strip()
@@ -79,12 +80,26 @@ def chat_com_gemini(request):
 
     logger.info(f"Chat com Gemini - usuário {request.user.username}")
 
+    # Recuperar histórico da sessão
+    historico = request.session.get("chat_history", [])
+
     try:
         # Instanciar serviço
         gemini_service = GeminiService()
 
-        # Enviar mensagem e obter resposta
-        resposta = gemini_service.chat(mensagem)
+        # Enviar mensagem e obter resposta (passando histórico e nome)
+        nome_usuario = request.user.first_name or request.user.username
+        resposta = gemini_service.chat(mensagem, historico=historico, nome_usuario=nome_usuario)
+
+        # Atualizar histórico na sessão
+        historico.append({"role": "user", "parts": [mensagem]})
+        historico.append({"role": "model", "parts": [resposta]})
+        
+        # Limitar histórico para não estourar sessão (últimas 20 mensagens)
+        if len(historico) > 20:
+            historico = historico[-20:]
+            
+        request.session["chat_history"] = historico
 
         return Response({"response": resposta}, status=status.HTTP_200_OK)
 
