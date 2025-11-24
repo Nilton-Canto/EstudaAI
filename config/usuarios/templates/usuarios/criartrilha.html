@@ -19,8 +19,11 @@
                 <li><a href="#" class="active">Criar Trilha</a></li>
             </ul>
             <div class="user-info">
-                <span>Olá, Aluno!</span>
-                <div class="avatar"></div>
+                <span>Olá, <strong>{{ user.nome|default:user.username }}</strong></span>
+                {% if user.is_staff %}
+                <a href="{% url 'admin_dashboard' %}" style="margin-left: 1rem; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 0.5rem; text-decoration: none; color: white;">Admin</a>
+                {% endif %}
+                <a href="{% url 'logout' %}" style="margin-left: 0.5rem; padding: 0.5rem 1rem; background: rgba(239,68,68,0.9); border-radius: 0.5rem; text-decoration: none; color: white;">Sair</a>
             </div>
         </nav>
     </header>

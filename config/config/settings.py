@@ -15,41 +15,53 @@ from pathlib import Path
 
 from dotenv import load_dotenv
 
+# ==============================================================================
+# PATHS E CONFIGURAÇÕES BÁSICAS
+# ==============================================================================
+
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# Carregar variáveis de ambiente
+# Carregar variáveis de ambiente do arquivo .env
 load_dotenv(BASE_DIR / ".env")
 
-
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
+# ==============================================================================
+# SEGURANÇA
+# ==============================================================================
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = "8m4(p!!)(gf4p)45uas!m5yfzz!+86@@31z$xz=)ct#toic)ac"
+SECRET_KEY = os.getenv(
+    "SECRET_KEY", "8m4(p!!)(gf4p)45uas!m5yfzz!+86@@31z$xz=)ct#toic)ac"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = os.getenv("DEBUG", "True") == "True"
 
-ALLOWED_HOSTS = []
+# Hosts permitidos
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
-# Application definition
+# ==============================================================================
+# APLICAÇÕES
+# ==============================================================================
 
 INSTALLED_APPS = [
+    # Django apps
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
+    # Third-party apps
     "rest_framework",
     "corsheaders",
-    "usuarios",
-    "api",
-    "api_gemini",
+    # Local apps
+    "usuarios.apps.UsuariosConfig",
+    "api.apps.ApiConfig",
 ]
 
-AUTH_USER_MODEL = "usuarios.Usuario"  # Como a classe usuário herda AbstractUser ve-se necessário essa implemnetação.
+# Modelo de usuário customizado
+AUTH_USER_MODEL = "usuarios.Usuario"
 
 
 MIDDLEWARE = [
@@ -63,7 +75,17 @@ MIDDLEWARE = [
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
 ]
 
+# ==============================================================================
+# URLs E WSGI
+# ==============================================================================
+
 ROOT_URLCONF = "config.urls"
+
+WSGI_APPLICATION = "config.wsgi.application"
+
+# ==============================================================================
+# TEMPLATES
+# ==============================================================================
 
 TEMPLATES = [
     {
@@ -81,10 +103,9 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = "config.wsgi.application"
-
-
-# Database
+# ==============================================================================
+# BANCO DE DADOS
+# ==============================================================================
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
@@ -94,8 +115,9 @@ DATABASES = {
     }
 }
 
-
-# Password validation
+# ==============================================================================
+# AUTENTICAÇÃO E SENHAS
+# ==============================================================================
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
@@ -113,8 +135,9 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
-# Internationalization
+# ==============================================================================
+# INTERNACIONALIZAÇÃO
+# ==============================================================================
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
 LANGUAGE_CODE = "pt-br"
@@ -125,35 +148,68 @@ USE_I18N = True
 
 USE_TZ = True
 
-
-# Static files (CSS, JavaScript, Images)
+# ==============================================================================
+# ARQUIVOS ESTÁTICOS E MEDIA
+# ==============================================================================
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "/static/"
 STATIC_ROOT = BASE_DIR / "staticfiles"
 
-# Default primary key field type
-# https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
+# Diretórios adicionais de arquivos estáticos
+STATICFILES_DIRS = []
 
-DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+# Media files (uploads de usuários)
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+# ==============================================================================
+# DJANGO REST FRAMEWORK
+# ==============================================================================
 
 # Configurações do Django REST Framework
 REST_FRAMEWORK = {
     "DEFAULT_PERMISSION_CLASSES": [
-        "rest_framework.permissions.AllowAny",
+        "rest_framework.permissions.IsAuthenticatedOrReadOnly",
+    ],
+    "DEFAULT_AUTHENTICATION_CLASSES": [
+        "rest_framework.authentication.SessionAuthentication",
     ],
     "DEFAULT_RENDERER_CLASSES": [
         "rest_framework.renderers.JSONRenderer",
+        "rest_framework.renderers.BrowsableAPIRenderer",
+    ],
+    "DEFAULT_PAGINATION_CLASS": "rest_framework.pagination.PageNumberPagination",
+    "PAGE_SIZE": 20,
+    "DEFAULT_FILTER_BACKENDS": [
+        "rest_framework.filters.SearchFilter",
+        "rest_framework.filters.OrderingFilter",
     ],
 }
 
-# Configurações do CORS
-CORS_ALLOW_ALL_ORIGINS = True  # Apenas para desenvolvimento
+# ==============================================================================
+# CORS (Cross-Origin Resource Sharing)
+# ==============================================================================
+
+CORS_ALLOW_ALL_ORIGINS = os.getenv("CORS_ALLOW_ALL_ORIGINS", "True") == "True"
 CORS_ALLOW_CREDENTIALS = True
 
+if not CORS_ALLOW_ALL_ORIGINS:
+    CORS_ALLOWED_ORIGINS = os.getenv(
+        "CORS_ALLOWED_ORIGINS", "http://localhost:3000,http://127.0.0.1:3000"
+    ).split(",")
+
+# ==============================================================================
+# INTEGRAÇÕES EXTERNAS
+# ==============================================================================
+
 # Configurações da API do Gemini
-GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "test_key_for_verification")
-GEMINI_MODEL = "gemini-2.0-flash"
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY", "")
+GEMINI_MODEL = os.getenv("GEMINI_MODEL", "gemini-2.0-flash")
+
+# ==============================================================================
+# LOGGING
+# ==============================================================================
 
 # Configurações de Logging
 LOGGING = {
@@ -183,7 +239,7 @@ LOGGING = {
         },
     },
     "loggers": {
-        "api_gemini": {
+        "api": {
             "handlers": ["file", "console"],
             "level": "INFO",
             "propagate": True,
