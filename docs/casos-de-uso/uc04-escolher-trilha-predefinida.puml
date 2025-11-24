@@ -1,0 +1,136 @@
+@startuml uc04-escolher-trilha-predefinida
+!theme plain
+skinparam backgroundColor #FEFEFE
+skinparam handwritten false
+skinparam defaultFontName Arial
+
+actor "Aluno" as aluno
+participant "trilhas_disponiveis\n(View)" as view_list
+participant "trilha_detalhes\n(View)" as view_detail
+participant "iniciar_trilha\n(View)" as view_iniciar
+participant "TrilhaService" as trilha_service
+participant "AreaService" as area_service
+database "Trilha\n(Model)" as trilha_model
+database "Area\n(Model)" as area_model
+database "Progresso\n(Model)" as progresso_model
+
+== Visualizar Trilhas Disponíveis ==
+
+aluno -> view_list: Acessa "Explorar Trilhas"
+activate view_list
+
+view_list -> trilha_service: listar_trilhas_predefinidas()
+activate trilha_service
+
+trilha_service -> trilha_model: Trilha.objects.filter(ativa=True)
+activate trilha_model
+trilha_model --> trilha_service: trilhas ativas
+deactivate trilha_model
+
+trilha_service -> area_model: verificar áreas ativas
+activate area_model
+area_model --> trilha_service: filtrar por Area.ativa=True
+deactivate area_model
+
+trilha_service --> view_list: lista de trilhas válidas
+deactivate trilha_service
+
+view_list --> aluno: Exibe trilhas com filtros
+deactivate view_list
+
+== Filtrar por Área (Opcional) ==
+
+aluno -> view_list: Seleciona filtro de área
+activate view_list
+
+view_list -> area_service: listar_areas_ativas()
+activate area_service
+
+area_service -> area_model: Area.objects.filter(ativa=True)
+activate area_model
+area_model --> area_service: áreas ativas
+deactivate area_model
+
+area_service --> view_list: lista de áreas
+deactivate area_service
+
+view_list -> trilha_service: filtrar_por_area(area_id)
+activate trilha_service
+
+trilha_service -> trilha_model: Trilha.objects.filter(\nativa=True, area_id=area_id)
+activate trilha_model
+trilha_model --> trilha_service: trilhas filtradas
+deactivate trilha_model
+
+trilha_service --> view_list: trilhas da área
+deactivate trilha_service
+
+view_list --> aluno: Atualiza listagem filtrada
+deactivate view_list
+
+== Visualizar Detalhes da Trilha ==
+
+aluno -> view_detail: Clica em trilha específica
+activate view_detail
+
+view_detail -> trilha_service: get_trilha_detalhes(trilha_id)
+activate trilha_service
+
+trilha_service -> trilha_model: Trilha.objects.get(id=trilha_id)
+activate trilha_model
+trilha_model --> trilha_service: dados completos da trilha
+deactivate trilha_model
+
+trilha_service --> view_detail: detalhes (título, descrição,\nmódulos, área, etc.)
+deactivate trilha_service
+
+view_detail --> aluno: Exibe detalhes completos\ncom botão "Iniciar Trilha"
+deactivate view_detail
+
+== Iniciar Trilha ==
+
+aluno -> view_iniciar: Clica em "Iniciar Trilha"
+activate view_iniciar
+
+view_iniciar -> trilha_service: iniciar_trilha(usuario, trilha_id)
+activate trilha_service
+
+' Validação: Trilha já iniciada?
+trilha_service -> trilha_model: verificar se usuario já tem\nesta trilha vinculada
+activate trilha_model
+trilha_model --> trilha_service: resultado da verificação
+deactivate trilha_model
+
+alt trilha já iniciada
+    trilha_service --> view_iniciar: TrilhaJaIniciadaException
+    view_iniciar --> aluno: "Você já está seguindo\nesta trilha"
+    
+else trilha nova
+
+    ' Criar vínculo usuario-trilha
+    trilha_service -> trilha_model: criar vínculo\n(usuario, trilha, data_criacao)
+    activate trilha_model
+    trilha_model --> trilha_service: vínculo criado
+    deactivate trilha_model
+    
+    ' Criar progresso inicial
+    trilha_service -> progresso_model: criar registros para\ntodas as etapas\n(concluida=False)
+    activate progresso_model
+    
+    loop para cada etapa da trilha
+        progresso_model -> progresso_model: criar Progresso(\netapa, concluida=False)
+    end
+    
+    progresso_model --> trilha_service: progresso criado
+    deactivate progresso_model
+    
+    trilha_service --> view_iniciar: sucesso
+    deactivate trilha_service
+    
+    view_iniciar --> aluno: Mensagem de sucesso +\nRedireciona para dashboard
+    deactivate view_iniciar
+    
+    aluno -> aluno: Visualiza trilha em\n"Minhas Trilhas"
+end
+
+@enduml
