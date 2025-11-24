@@ -239,7 +239,7 @@ LOGGING = {
         },
     },
     "loggers": {
-        "api_gemini": {
+        "api": {
             "handlers": ["file", "console"],
             "level": "INFO",
             "propagate": True,
