@@ -1,0 +1,222 @@
+"""
+Módulo de integração com Google Gemini AI.
+
+Este módulo contém toda a lógica para geração de trilhas
+usando a API do Google Gemini.
+"""
+
+import json
+import logging
+
+import google.generativeai as genai
+from django.conf import settings
+from django.contrib.auth import get_user_model
+
+from .exceptions import GeminiAPIException, InvalidJSONResponseException
+
+Usuario = get_user_model()
+logger = logging.getLogger(__name__)
+
+
+# Configurar a API do Gemini
+try:
+    genai.configure(api_key=settings.GEMINI_API_KEY)
+    logger.info("API do Gemini configurada com sucesso")
+except Exception as e:
+    logger.error(f"Erro ao configurar API do Gemini: {e}")
+
+
+class GeminiService:
+    """Serviço para interação com a API do Gemini."""
+
+    def __init__(self):
+        """Inicializa o serviço do Gemini."""
+        if not settings.GEMINI_API_KEY or settings.GEMINI_API_KEY == "":
+            raise GeminiAPIException("Chave da API do Gemini não configurada")
+
+        self.model = genai.GenerativeModel(settings.GEMINI_MODEL)
+
+    def gerar_prompt_trilha(self, solicitacao, usuario_data=None):
+        """
+        Gera um prompt estruturado para criação de trilha de curso.
+
+        Args:
+            solicitacao (str): Solicitação do usuário
+            usuario_data (dict): Dados do usuário para personalização
+
+        Returns:
+            str: Prompt formatado para o LLM
+        """
+        prompt_base = f"""
+Você é um assistente especializado em educação que cria trilhas de aprendizado personalizadas.
+
+SOLICITAÇÃO DO USUÁRIO: {solicitacao}
+
+INSTRUÇÕES:
+1. Crie uma trilha de aprendizado estruturada e progressiva
+2. Divida o conteúdo em módulos lógicos e sequenciais
+3. Para cada módulo, inclua tópicos específicos e recursos de estudo
+4. Estime a duração de cada módulo
+5. Sugira recursos práticos como projetos, exercícios ou atividades
+
+FORMATO DE RESPOSTA (OBRIGATÓRIO JSON):
+{{
+    "titulo": "Título da Trilha de Aprendizado",
+    "descricao": "Descrição geral da trilha e objetivos",
+    "nivel": "Iniciante/Intermediário/Avançado",
+    "duracao_total": "X semanas/meses",
+    "modulos": [
+        {{
+            "numero": 1,
+            "titulo": "Nome do Módulo",
+            "descricao": "Descrição do que será aprendido",
+            "duracao": "X semanas",
+            "topicos": ["Tópico 1", "Tópico 2"],
+            "recursos": [
+                {{
+                    "tipo": "video/livro/curso/artigo",
+                    "titulo": "Nome do Recurso",
+                    "descricao": "Breve descrição"
+                }}
+            ],
+            "atividades_praticas": ["Atividade prática 1"]
+        }}
+    ],
+    "projeto_final": "Descrição de um projeto integrador",
+    "recursos_complementares": ["Recurso adicional 1"]
+}}
+
+IMPORTANTE: 
+- Responda APENAS com o JSON válido, sem texto adicional
+- Certifique-se de que todos os campos estão preenchidos
+- A trilha deve ser prática e aplicável
+"""
+
+        if usuario_data:
+            prompt_base += f"""
+
+DADOS DO USUÁRIO PARA PERSONALIZAÇÃO:
+- Curso: {usuario_data.get('curso', 'Não informado')}
+- Universidade: {usuario_data.get('universidade', 'Não informada')}
+- Ano de formatura: {usuario_data.get('ano_formatura', 'Não informado')}
+- Idade: {usuario_data.get('idade', 'Não informada')}
+
+Use essas informações para personalizar a trilha de acordo com o perfil do usuário.
+"""
+
+        return prompt_base
+
+    def gerar_trilha_com_ia(self, solicitacao, usuario=None):
+        """
+        Gera uma trilha usando IA do Gemini.
+
+        Args:
+            solicitacao (str): Solicitação do usuário
+            usuario (Usuario): Instância do usuário (opcional)
+
+        Returns:
+            dict: Trilha gerada em formato JSON
+
+        Raises:
+            GeminiAPIException: Se houver erro na API
+            InvalidJSONResponseException: Se resposta não for JSON válido
+        """
+        logger.info(f"Gerando trilha para solicitação: {solicitacao[:100]}...")
+
+        # Preparar dados do usuário
+        usuario_data = None
+        if usuario:
+            usuario_data = {
+                "curso": usuario.curso,
+                "universidade": usuario.universidade,
+                "ano_formatura": usuario.ano_formatura,
+                "idade": usuario.idade,
+            }
+            logger.info(f"Personalizando para usuário: {usuario.username}")
+
+        # Gerar prompt
+        prompt = self.gerar_prompt_trilha(solicitacao, usuario_data)
+
+        try:
+            # Gerar resposta
+            response = self.model.generate_content(prompt)
+            logger.info("Trilha gerada com sucesso")
+
+            # Parsear JSON
+            trilha_json = self._parsear_resposta(response.text)
+
+            return trilha_json
+
+        except genai.types.BlockedPromptException as e:
+            logger.error(f"Prompt bloqueado: {e}")
+            raise GeminiAPIException(
+                "Conteúdo bloqueado pelas políticas de segurança"
+            )
+        except genai.types.StopCandidateException as e:
+            logger.error(f"Geração interrompida: {e}")
+            raise GeminiAPIException("Geração de trilha foi interrompida")
+        except Exception as e:
+            logger.error(f"Erro ao gerar trilha: {str(e)}")
+            raise GeminiAPIException(f"Erro ao gerar trilha: {str(e)}")
+
+    def chat(self, mensagem):
+        """
+        Interage com o Gemini em modo chat.
+
+        Args:
+            mensagem (str): Mensagem do usuário
+
+        Returns:
+            str: Resposta do Gemini
+
+        Raises:
+            GeminiAPIException: Se houver erro na API
+        """
+        logger.info(f"Chat: {mensagem[:50]}...")
+
+        try:
+            response = self.model.generate_content(mensagem)
+            logger.info("Resposta gerada com sucesso")
+            return response.text
+
+        except genai.types.BlockedPromptException:
+            raise GeminiAPIException(
+                "Conteúdo bloqueado pelas políticas de segurança"
+            )
+        except genai.types.StopCandidateException:
+            raise GeminiAPIException("Geração de resposta foi interrompida")
+        except Exception as e:
+            raise GeminiAPIException(f"Erro no chat: {str(e)}")
+
+    def _parsear_resposta(self, texto):
+        """
+        Parseia a resposta do Gemini removendo marcadores de código.
+
+        Args:
+            texto (str): Texto da resposta
+
+        Returns:
+            dict: JSON parseado
+
+        Raises:
+            InvalidJSONResponseException: Se JSON for inválido
+        """
+        try:
+            # Limpar marcadores de código
+            texto = texto.strip()
+            if texto.startswith("```json"):
+                texto = texto[7:]
+            if texto.startswith("```"):
+                texto = texto[3:]
+            if texto.endswith("```"):
+                texto = texto[:-3]
+            texto = texto.strip()
+
+            # Parsear JSON
+            return json.loads(texto)
+
+        except json.JSONDecodeError as e:
+            logger.error(f"Erro ao parsear JSON: {e}")
+            raise InvalidJSONResponseException(
+                f"Resposta não é um JSON válido: {str(e)}"
+            )

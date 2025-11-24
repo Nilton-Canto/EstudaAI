@@ -105,6 +105,16 @@
             transform: translateY(-1px);
         }
         
+        .logout-link {
+            background: rgba(239, 68, 68, 0.9) !important;
+            margin-left: 0.5rem;
+        }
+        
+        .logout-link:hover {
+            background: rgba(220, 38, 38, 1) !important;
+            box-shadow: 0 4px 8px rgba(239, 68, 68, 0.3);
+        }
+        
         .chat-container {
             max-width: 1000px;
             margin: 0 auto;

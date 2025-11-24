@@ -21,6 +21,7 @@
                     {% if user.is_staff %}
                     <a href="{% url 'admin_dashboard' %}">Painel Admin</a>
                     {% endif %}
+                    <a href="{% url 'logout' %}" class="logout-link">Sair</a>
                 </div>
             </div>
         </nav>

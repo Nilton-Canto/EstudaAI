@@ -3,14 +3,13 @@
 from datetime import timedelta
 
 # Models
-from api.models import Area, Trilha
-from api_gemini.models import TrilhaCurso
+from api.models import Area, Trilha, TrilhaCurso
 
 # Sistema de mensagens do Django
 from django.contrib import messages
 
 # Importações para autenticação de usuários
-from django.contrib.auth import authenticate, get_user_model, login
+from django.contrib.auth import authenticate, get_user_model, login, logout
 
 # Decorators para proteção de views
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -168,6 +167,24 @@ def login_view(request):
     return render(request, "usuarios/login.html", {"form": form})
 
 
+# ===== VIEW DE LOGOUT =====
+def logout_view(request):
+    """
+    View responsável por deslogar o usuário.
+
+    Destrói a sessão do usuário e redireciona para a página de login.
+
+    Args:
+        request: objeto HttpRequest contendo dados da requisição
+
+    Returns:
+        HttpResponse: redirecionamento para página de login
+    """
+    logout(request)
+    messages.success(request, "Você saiu da sua conta com sucesso.")
+    return redirect("login")
+
+
 @login_required(login_url="login")
 def dashboard(request):
     """
@@ -180,6 +197,12 @@ def dashboard(request):
     Returns:
         HttpResponse: página de dashboard renderizada
     """
+    
+    # Consumir e limpar mensagens de autenticação para que não apareçam em outras páginas
+    from django.contrib.messages import get_messages
+    storage = get_messages(request)
+    for message in storage:
+        pass  # Apenas consome as mensagens sem fazer nada com elas
 
     # Buscar trilhas personalizadas do usuário
     trilhas_curso = TrilhaCurso.objects.filter(

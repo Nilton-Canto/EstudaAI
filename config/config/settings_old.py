@@ -38,7 +38,7 @@ SECRET_KEY = os.getenv(
 DEBUG = os.getenv("DEBUG", "True") == "True"
 
 # Hosts permitidos
-ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
+ALLOWED_HOSTS = os.getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",").getenv("ALLOWED_HOSTS", "localhost,127.0.0.1").split(",")
 
 # ==============================================================================
 # APLICAÇÕES
@@ -58,6 +58,7 @@ INSTALLED_APPS = [
     # Local apps
     "usuarios.apps.UsuariosConfig",
     "api.apps.ApiConfig",
+    "api_gemini.apps.ApiGeminiConfig",
 ]
 
 # Modelo de usuário customizado

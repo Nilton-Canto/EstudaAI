@@ -15,8 +15,7 @@ urlpatterns = [
     path(
         "usuarios/", include("usuarios.urls")
     ),  # URLs do app usuarios (signup, login, etc.)
-    path("api/gemini/", include("api_gemini.urls")),  # URLs da API do Gemini
-    path("api/", include("api.urls")),
+    path("api/", include("api.urls")),  # URLs da API (incluindo Gemini)
 ]
 
 # Serve arquivos estáticos durante desenvolvimento

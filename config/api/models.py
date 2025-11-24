@@ -78,3 +78,33 @@ class Progresso(models.Model):
 
     def __str__(self):
         return f"{self.trilha.titulo} - {self.etapa}"
+
+
+class TrilhaCurso(models.Model):
+    """
+    Modelo para trilhas de curso geradas pela IA (Gemini).
+    Armazena trilhas completas com conteúdo estruturado em JSON.
+    """
+
+    usuario = models.ForeignKey(
+        Usuario, on_delete=models.CASCADE, related_name="trilhas_curso"
+    )
+    titulo = models.CharField(max_length=255)
+    descricao = models.TextField(blank=True)
+    solicitacao_original = models.TextField(
+        help_text="Texto original enviado pelo usuário"
+    )
+    conteudo_json = models.JSONField(
+        help_text="Conteúdo completo da trilha em formato JSON"
+    )
+    ativa = models.BooleanField(default=True)
+    data_criacao = models.DateTimeField(auto_now_add=True)
+    data_atualizacao = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ["-data_criacao"]
+        verbose_name = "Trilha de Curso (IA)"
+        verbose_name_plural = "Trilhas de Curso (IA)"
+
+    def __str__(self):
+        return f"{self.titulo} - {self.usuario.username}"

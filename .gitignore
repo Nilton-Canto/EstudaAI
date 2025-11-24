@@ -1,34 +1,203 @@
+# ==============================================================================
+# PYTHON
+# ==============================================================================
+
 # Ambiente virtual Python
 venv/
 .env/
 ENV/
 env/
 .venv/
-
-# Arquivos de configuração sensíveis
-.env
-*.env
+virtualenv/
 
 # Arquivos de cache do Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
-# Configurações do VS Code
-.vscode/
+# Distribuição / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
 
-# Arquivos de sistema operacional
-.DS_Store
-Thumbs.db
+# ==============================================================================
+# DJANGO
+# ==============================================================================
+
+# Banco de dados SQLite
+# O db.sqlite3 principal é versionado para facilitar setup
+# Ignoramos apenas arquivos temporários e backups
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*_backup.sqlite3
+*_old.sqlite3
+*.db-journal
+
+# Arquivos estáticos coletados
+staticfiles/
+static_root/
+
+# Media files (uploads)
+media/
+
+# Arquivos de migração compilados
+*.pyc
+
+# ==============================================================================
+# CONFIGURAÇÕES E SEGURANÇA
+# ==============================================================================
+
+# Arquivos de configuração sensíveis
+.env
+*.env
+!.env.example
+!config/.env.example
+
+# Arquivos de secrets
+secrets.json
+*.pem
+*.key
+
+# ==============================================================================
+# LOGS
+# ==============================================================================
 
 # Arquivos de log
 *.log
 logs/*.log
+logs/
+*.log.*
 
-# Banco de dados
-*.sqlite3
+# ==============================================================================
+# TESTES E QUALIDADE
+# ==============================================================================
 
 # Relatórios de cobertura de teste
 coverage.xml
 htmlcov/
 .pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage/
+*.cover
+
+# Relatórios de testes
+.tox/
+.hypothesis/
+test-results/
+
+# ==============================================================================
+# IDEs E EDITORES
+# ==============================================================================
+
+# VS Code
+.vscode/
+*.code-workspace
+
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# ==============================================================================
+# SISTEMA OPERACIONAL
+# ==============================================================================
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+
+# ==============================================================================
+# DOCKER E CI/CD
+# ==============================================================================
+
+# Docker
+mysql_data/
+postgres_data/
+*.pid
+docker-compose.override.yml
+
+# CI/CD
+.github/workflows/local_test_results/
+
+# ==============================================================================
+# DOCUMENTAÇÃO
+# ==============================================================================
+
+# Sphinx documentation
+docs/_build/
+site/
+
+# ==============================================================================
+# OUTROS
+# ==============================================================================
+
+# Backup files
+*.bak
+*.tmp
+*.temp
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env.local
+.env.development
+.env.test
+.env.production

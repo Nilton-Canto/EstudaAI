@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste da API EstudaAI</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2em;
+            margin-bottom: 10px;
+        }
+        
+        .content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 20px;
+            background: #f9f9f9;
+        }
+        
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #333;
+            font-weight: 600;
+        }
+        
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 14px;
+            min-height: 100px;
+            resize: vertical;
+            font-family: inherit;
+        }
+        
+        textarea:focus {
+            outline: none;
+            border-color: #667eea;
+        }
+        
+        button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+        }
+        
+        .response {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 8px;
+            background: white;
+            border: 2px solid #e0e0e0;
+            display: none;
+        }
+        
+        .response.success {
+            border-color: #4caf50;
+        }
+        
+        .response.error {
+            border-color: #f44336;
+        }
+        
+        .response pre {
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            font-size: 12px;
+        }
+        
+        .loading {
+            display: none;
+            text-align: center;
+            color: #667eea;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 Teste da API EstudaAI</h1>
+            <p>Interface para testar os endpoints da API Gemini</p>
+        </div>
+        
+        <div class="content">
+            <div class="section">
+                <h2>✅ Health Check</h2>
+                <button onclick="testHealthCheck()">Verificar Status</button>
+                <div class="loading" id="loading-health">Verificando...</div>
+                <div class="response" id="response-health"></div>
+            </div>
+            
+            <div class="section">
+                <h2>💬 Chat com Gemini</h2>
+                <div class="form-group">
+                    <label for="chat-message">Mensagem:</label>
+                    <textarea id="chat-message" placeholder="Digite sua mensagem...">Olá! Explique o que é inteligência artificial.</textarea>
+                </div>
+                <button onclick="testChat()">Enviar</button>
+                <div class="loading" id="loading-chat">Processando...</div>
+                <div class="response" id="response-chat"></div>
+            </div>
+            
+            <div class="section">
+                <h2>🎓 Gerar Trilha</h2>
+                <div class="form-group">
+                    <label for="trilha-solicitacao">Solicitação:</label>
+                    <textarea id="trilha-solicitacao" placeholder="Descreva o que quer aprender...">Quero aprender Python para análise de dados</textarea>
+                </div>
+                <button onclick="testTrilha()">Gerar Trilha</button>
+                <div class="loading" id="loading-trilha">Gerando...</div>
+                <div class="response" id="response-trilha"></div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        
+        const csrftoken = getCookie('csrftoken');
+        
+        function showLoading(id) {
+            document.getElementById(`loading-${id}`).style.display = 'block';
+            document.getElementById(`response-${id}`).style.display = 'none';
+        }
+        
+        function hideLoading(id) {
+            document.getElementById(`loading-${id}`).style.display = 'none';
+        }
+        
+        function showResponse(id, data, isError = false) {
+            const responseDiv = document.getElementById(`response-${id}`);
+            responseDiv.className = 'response ' + (isError ? 'error' : 'success');
+            responseDiv.innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
+            responseDiv.style.display = 'block';
+        }
+        
+        async function testHealthCheck() {
+            showLoading('health');
+            try {
+                const response = await fetch('/api/gemini/health/');
+                const data = await response.json();
+                hideLoading('health');
+                showResponse('health', data, !response.ok);
+            } catch (error) {
+                hideLoading('health');
+                showResponse('health', { error: error.message }, true);
+            }
+        }
+        
+        async function testChat() {
+            const mensagem = document.getElementById('chat-message').value;
+            if (!mensagem.trim()) {
+                alert('Digite uma mensagem');
+                return;
+            }
+            
+            showLoading('chat');
+            try {
+                const response = await fetch('/api/gemini/chat/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken
+                    },
+                    body: JSON.stringify({ mensagem })
+                });
+                const data = await response.json();
+                hideLoading('chat');
+                showResponse('chat', data, !response.ok);
+            } catch (error) {
+                hideLoading('chat');
+                showResponse('chat', { error: error.message }, true);
+            }
+        }
+        
+        async function testTrilha() {
+            const solicitacao = document.getElementById('trilha-solicitacao').value;
+            if (!solicitacao.trim()) {
+                alert('Descreva o que você quer aprender');
+                return;
+            }
+            
+            showLoading('trilha');
+            try {
+                const response = await fetch('/api/gemini/gerar-trilha/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken
+                    },
+                    body: JSON.stringify({ solicitacao })
+                });
+                const data = await response.json();
+                hideLoading('trilha');
+                showResponse('trilha', data, !response.ok);
+            } catch (error) {
+                hideLoading('trilha');
+                showResponse('trilha', { error: error.message }, true);
+            }
+        }
+        
+        window.addEventListener('DOMContentLoaded', testHealthCheck);
+    </script>
+</body>
+</html>

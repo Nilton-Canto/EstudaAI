@@ -22,6 +22,7 @@
                 <span class="admin-badge">ADMIN</span>
                 <span>{{ user.username }}</span>
                 <a href="{% url 'dashboard' %}" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; margin-left: 1rem; transition: transform 0.2s; display: inline-block;" onmouseover="this.style.transform='translateY(-2px)'" onmouseout="this.style.transform='translateY(0)'">Painel Usuário</a>
+                <a href="{% url 'logout' %}" style="background: rgba(239, 68, 68, 0.9); color: white; padding: 0.5rem 1rem; border-radius: 0.5rem; font-weight: 600; text-decoration: none; margin-left: 0.5rem; transition: all 0.2s; display: inline-block;" onmouseover="this.style.background='rgba(220, 38, 38, 1)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.background='rgba(239, 68, 68, 0.9)'; this.style.transform='translateY(0)'">Sair</a>
             </div>
         </nav>
     </header>
