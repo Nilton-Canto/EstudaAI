@@ -191,9 +191,9 @@ cd config && pytest --cov=. -v             # Testes
 ### Pipeline CI/CD
 **Triggers:** Push/PR para `main` e `develop`
 
-- **🧪 Tests**: pytest com 70% cobertura mínima
-- **🎨 Lint**: Black, isort, Flake8
-- **🔒 Security**: Bandit para vulnerabilidades
+- **Tests**: pytest com 70% cobertura mínima
+- **Lint**: Black, isort, Flake8
+- **Security**: Bandit para vulnerabilidades
 
 ### Cobertura de Testes
 ```bash
@@ -216,15 +216,15 @@ Documentação visual completa em [`docs/diagramas/`](docs/diagramas/):
 ## 🔐 Segurança
 
 ### Verificações Ativas
-- ✅ **Bandit** - Análise estática de segurança
-- ✅ **Safety** - Vulnerabilidades em dependências
-- ✅ **Secrets** - Sem credenciais hardcoded
+- **Bandit** - Análise estática de segurança
+- **Safety** - Vulnerabilidades em dependências
+- **Secrets** - Sem credenciais hardcoded
 
 ### Boas Práticas
-- 🔑 Use `.env` para configurações sensíveis
-- 🚫 Nunca commite `.env` (já no `.gitignore`)
-- 🔄 Mantenha dependências atualizadas
-- 🛡️ Use GitHub Secrets para CI/CD
+- Use `.env` para configurações sensíveis
+- Nunca commite `.env` (já no `.gitignore`)
+- Mantenha dependências atualizadas
+- Use GitHub Secrets para CI/CD
 
 ## 🐛 Troubleshooting
 
@@ -262,15 +262,15 @@ tail -f config/logs/django.log
 ## 📚 Recursos
 
 ### Documentação
-- 📖 [Django Docs](https://docs.djangoproject.com/)
-- 🤖 [Google Gemini API](https://ai.google.dev/)
-- 🧪 [pytest Docs](https://docs.pytest.org/)
+- [Django Docs](https://docs.djangoproject.com/)
+- [Google Gemini API](https://ai.google.dev/)
+- [pytest Docs](https://docs.pytest.org/)
 
 ### Ferramentas
-- 🎨 [Black](https://black.readthedocs.io/) - Formatação
-- 📦 [isort](https://pycqa.github.io/isort/) - Imports
-- 🔍 [Flake8](https://flake8.pycqa.org/) - Linting
-- 🛡️ [Bandit](https://bandit.readthedocs.io/) - Segurança
+- [Black](https://black.readthedocs.io/) - Formatação
+- [isort](https://pycqa.github.io/isort/) - Imports
+- [Flake8](https://flake8.pycqa.org/) - Linting
+- [Bandit](https://bandit.readthedocs.io/) - Segurança
 
 ## 📄 Licença
 
