@@ -984,3 +984,160 @@ def marcar_modulo(request, pk):
         return redirect('ver_trilha', pk=pk)
     
     return redirect('minhas_trilhas')
+
+
+# ===== VIEWS PARA TRILHAS PRÉ-DEFINIDAS =====
+
+@login_required
+def trilhas_disponiveis(request):
+    """
+    Exibe trilhas pré-definidas disponíveis para o aluno escolher.
+    
+    Funcionalidades:
+    - Lista trilhas criadas por admin
+    - Filtra por área de conhecimento
+    - Mostra apenas trilhas ativas
+    - Exclui trilhas já iniciadas pelo aluno
+    """
+    # Buscar usuário admin que criou as trilhas pré-definidas
+    try:
+        admin_user = Usuario.objects.get(username="admin_trilhas")
+    except Usuario.DoesNotExist:
+        admin_user = None
+        messages.warning(
+            request,
+            "Nenhuma trilha pré-definida disponível. Execute: python manage.py populate_trilhas"
+        )
+    
+    # Buscar todas as trilhas pré-definidas (criadas pelo admin)
+    trilhas = TrilhaCurso.objects.filter(
+        ativa=True
+    ).select_related('area')
+    
+    if admin_user:
+        trilhas = trilhas.filter(usuario=admin_user)
+    
+    # Filtrar por área se solicitado
+    area_id = request.GET.get('area')
+    if area_id:
+        trilhas = trilhas.filter(area_id=area_id)
+    
+    # Buscar trilhas já iniciadas pelo usuário atual
+    trilhas_iniciadas_ids = TrilhaCurso.objects.filter(
+        usuario=request.user
+    ).values_list('id', flat=True)
+    
+    # Marcar quais trilhas já foram iniciadas
+    for trilha in trilhas:
+        trilha.ja_iniciada = trilha.id in trilhas_iniciadas_ids
+    
+    # Buscar áreas ativas para filtro
+    areas = Area.objects.filter(ativa=True).order_by('nome')
+    
+    contexto = {
+        'trilhas': trilhas,
+        'areas': areas,
+        'area_selecionada': area_id,
+    }
+    
+    return render(request, 'usuarios/trilhas_disponiveis.html', contexto)
+
+
+@login_required
+def trilha_detalhes_predefinida(request, pk):
+    """
+    Exibe detalhes completos de uma trilha pré-definida.
+    """
+    trilha = get_object_or_404(TrilhaCurso, pk=pk, ativa=True)
+    
+    # Verificar se usuário já iniciou esta trilha
+    ja_iniciada = TrilhaCurso.objects.filter(
+        usuario=request.user,
+        titulo=trilha.titulo  # Mesma trilha baseada no título
+    ).exists()
+    
+    # Calcular total de etapas (suporta 'aulas' e 'etapas')
+    total_etapas = 0
+    conteudo = trilha.conteudo_json
+    if isinstance(conteudo, dict) and 'modulos' in conteudo:
+        for modulo in conteudo['modulos']:
+            aulas = modulo.get('aulas', modulo.get('etapas', []))
+            total_etapas += len(aulas)
+    
+    contexto = {
+        'trilha': trilha,
+        'ja_iniciada': ja_iniciada,
+        'total_etapas': total_etapas,
+    }
+    
+    return render(request, 'usuarios/trilha_detalhes.html', contexto)
+
+
+@login_required
+def iniciar_trilha_predefinida(request, pk):
+    """
+    Copia uma trilha pré-definida para o aluno e cria registros de progresso.
+    
+    Validações:
+    - Verifica se trilha existe e está ativa
+    - Impede duplicação (aluno já tem esta trilha)
+    - Cria cópia da trilha vinculada ao aluno
+    - Cria registros de progresso para todas as etapas
+    """
+    if request.method != 'POST':
+        messages.error(request, "Método inválido.")
+        return redirect('trilhas_disponiveis')
+    
+    # Buscar trilha pré-definida (template)
+    trilha_template = get_object_or_404(TrilhaCurso, pk=pk, ativa=True)
+    
+    # Verificar se aluno já possui esta trilha
+    trilha_existente = TrilhaCurso.objects.filter(
+        usuario=request.user,
+        titulo=trilha_template.titulo
+    ).first()
+    
+    if trilha_existente:
+        messages.warning(
+            request,
+            f'Você já está seguindo a trilha "{trilha_template.titulo}". '
+            f'Acesse "Minhas Trilhas" para continuar.'
+        )
+        return redirect('minhas_trilhas')
+    
+    # Criar cópia da trilha para o aluno
+    nova_trilha = TrilhaCurso.objects.create(
+        usuario=request.user,
+        titulo=trilha_template.titulo,
+        descricao=trilha_template.descricao,
+        area=trilha_template.area,
+        conteudo_json=trilha_template.conteudo_json,
+        solicitacao_original="",  # Trilha pré-definida, não veio de IA
+        ativa=True,
+    )
+    
+    # Criar registros de progresso para todas as etapas
+    conteudo = trilha_template.conteudo_json
+    if isinstance(conteudo, dict) and 'modulos' in conteudo:
+        for modulo_idx, modulo in enumerate(conteudo['modulos']):
+            # Suporta tanto 'aulas' quanto 'etapas' para compatibilidade
+            aulas = modulo.get('aulas', modulo.get('etapas', []))
+            for aula_idx, aula in enumerate(aulas):
+                # Criar identificador único seguindo o padrão do sistema
+                identificador = f"mod_{modulo_idx}_aula_{aula_idx}"
+                
+                ProgressoTrilhaCurso.objects.create(
+                    trilha=nova_trilha,
+                    modulo_indice=modulo_idx,
+                    aula_indice=aula_idx,
+                    identificador=identificador,
+                    concluida=False,
+                )
+    
+    messages.success(
+        request,
+        f'Trilha "{nova_trilha.titulo}" adicionada com sucesso! Comece seus estudos agora.'
+    )
+    
+    return redirect('ver_trilha', pk=nova_trilha.id)
+
