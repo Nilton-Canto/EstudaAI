@@ -20,17 +20,89 @@ Usuario = get_user_model()
 logger = logging.getLogger(__name__)
 
 
-# Configurar a API do Gemini
-try:
-    # Tenta configurar usando settings ou variável de ambiente (abordagem híbrida)
+# ---------------------------------------------------------------------
+# 1. Configuração do Gemini
+# ---------------------------------------------------------------------
+def configure_gemini() -> bool:
+    """
+    Configura o cliente da API Gemini usando a chave do settings ou ENV.
+    """
     api_key = getattr(settings, "GEMINI_API_KEY", os.getenv("GEMINI_API_KEY"))
-    if api_key:
+
+    if not api_key:
+        logger.warning("GEMINI_API_KEY não encontrada.")
+        return False
+
+    try:
         genai.configure(api_key=api_key)
-        logger.info("API do Gemini configurada com sucesso")
-    else:
-        logger.warning("Chave da API do Gemini não encontrada")
-except Exception as e:
-    logger.error(f"Erro ao configurar API do Gemini: {e}")
+        logger.info("Gemini API configurada com sucesso.")
+        return True
+    except Exception as e:
+        logger.exception(f"Erro ao configurar Gemini: {e}")
+        return False
+
+
+# Chama configuração ao importar
+CONFIGURED = configure_gemini()
+
+
+def is_configured() -> bool:
+    """Retorna True se a API estiver configurada."""
+    return CONFIGURED
+
+
+def get_model(model_name: Optional[str] = None):
+    """
+    Retorna o modelo configurado.
+    """
+    model = model_name or getattr(settings, "GEMINI_MODEL", None)
+
+    if not model:
+        raise RuntimeError("O GEMINI_MODEL não foi configurado no settings.")
+
+    return genai.GenerativeModel(model)
+
+
+def clean_json_text(text: str) -> str:
+    """Remove fences ```json para permitir o parse."""
+    text = text.strip()
+    if text.startswith("```"):
+        parts = text.split("```")
+        if len(parts) >= 2:
+            return parts[1].strip()
+    return text
+
+
+def generate_content(
+    prompt: str, model_name: Optional[str] = None, **kwargs
+) -> Dict[str, Any]:
+    """
+    Gera conteúdo usando o Gemini.
+    """
+    if not is_configured():
+        raise RuntimeError("Gemini não configurado. Verifique GEMINI_API_KEY.")
+
+    model = get_model(model_name)
+
+    try:
+        response = model.generate_content(prompt, **kwargs)
+        text = getattr(response, "text", str(response))
+
+        parsed_json = None
+        try:
+            parsed_json = json.loads(clean_json_text(text))
+        except Exception:
+            parsed_json = None
+
+        return {
+            "text": text,
+            "json": parsed_json,
+            "raw": response,
+        }
+
+    except Exception as e:
+        logger.exception(f"Erro ao gerar conteúdo: {e}")
+        raise
 
 
 class GeminiService:
@@ -38,13 +110,12 @@ class GeminiService:
 
     def __init__(self):
         """Inicializa o serviço do Gemini."""
-        # Verifica se a chave está configurada (pode ter sido via env var no configure acima)
-        # Mas aqui verificamos settings.GEMINI_API_KEY explicitamente como no código original do HEAD
-        # Ajustando para ser compatível com a configuração global
-        if not getattr(settings, "GEMINI_API_KEY", None) and not os.getenv("GEMINI_API_KEY"):
-             raise GeminiAPIException("Chave da API do Gemini não configurada")
+        if not is_configured():
+            # Tenta configurar novamente caso tenha falhado na importação
+            if not configure_gemini():
+                raise GeminiAPIException("Chave da API do Gemini não configurada")
 
-        self.model = genai.GenerativeModel(settings.GEMINI_MODEL)
+        self.model = get_model(settings.GEMINI_MODEL)
 
     def gerar_prompt_trilha(self, solicitacao, usuario_data=None):
         """
@@ -96,7 +167,7 @@ FORMATO DE RESPOSTA (OBRIGATÓRIO JSON):
     "recursos_complementares": ["Recurso adicional 1"]
 }}
 
-IMPORTANTE: 
+IMPORTANTE:
 - Responda APENAS com o JSON válido, sem texto adicional
 - Certifique-se de que todos os campos estão preenchidos
 - A trilha deve ser prática e aplicável
@@ -159,9 +230,7 @@ Use essas informações para personalizar a trilha de acordo com o perfil do usu
 
         except genai.types.BlockedPromptException as e:
             logger.error(f"Prompt bloqueado: {e}")
-            raise GeminiAPIException(
-                "Conteúdo bloqueado pelas políticas de segurança"
-            )
+            raise GeminiAPIException("Conteúdo bloqueado pelas políticas de segurança")
         except genai.types.StopCandidateException as e:
             logger.error(f"Geração interrompida: {e}")
             raise GeminiAPIException("Geração de trilha foi interrompida")
@@ -190,9 +259,7 @@ Use essas informações para personalizar a trilha de acordo com o perfil do usu
             return response.text
 
         except genai.types.BlockedPromptException:
-            raise GeminiAPIException(
-                "Conteúdo bloqueado pelas políticas de segurança"
-            )
+            raise GeminiAPIException("Conteúdo bloqueado pelas políticas de segurança")
         except genai.types.StopCandidateException:
             raise GeminiAPIException("Geração de resposta foi interrompida")
         except Exception as e:
@@ -230,88 +297,3 @@ Use essas informações para personalizar a trilha de acordo com o perfil do usu
             raise InvalidJSONResponseException(
                 f"Resposta não é um JSON válido: {str(e)}"
             )
-
-# ---------------------------------------------------------------------
-# Funções auxiliares vindas da branch develop
-# ---------------------------------------------------------------------
-
-def configure_gemini() -> bool:
-    """
-    Configura o cliente da API Gemini usando a chave do settings ou ENV.
-    """
-    api_key = getattr(settings, "GEMINI_API_KEY", os.getenv("GEMINI_API_KEY"))
-
-    if not api_key:
-        logger.warning("GEMINI_API_KEY não encontrada.")
-        return False
-
-    try:
-        genai.configure(api_key=api_key)
-        logger.info("Gemini API configurada com sucesso.")
-        return True
-    except Exception as e:
-        logger.exception(f"Erro ao configurar Gemini: {e}")
-        return False
-
-
-# Chama configuração ao importar (mantendo comportamento do develop)
-CONFIGURED = configure_gemini()
-
-
-def is_configured() -> bool:
-    """Retorna True se a API estiver configurada."""
-    return CONFIGURED
-
-
-def get_model(model_name: Optional[str] = None):
-    """
-    Retorna o modelo configurado.
-    """
-    model = model_name or getattr(settings, "GEMINI_MODEL", None)
-
-    if not model:
-        raise RuntimeError("O GEMINI_MODEL não foi configurado no settings.")
-
-    return genai.GenerativeModel(model)
-
-
-def clean_json_text(text: str) -> str:
-    """Remove fences ```json para permitir o parse."""
-    text = text.strip()
-    if text.startswith("```"):
-        parts = text.split("```")
-        if len(parts) >= 2:
-            return parts[1].strip()
-    return text
-
-
-def generate_content(
-    prompt: str, model_name: Optional[str] = None, **kwargs
-) -> Dict[str, Any]:
-    """
-    Gera conteúdo usando o Gemini.
-    """
-    if not is_configured():
-        raise RuntimeError("Gemini não configurado. Verifique GEMINI_API_KEY.")
-
-    model = get_model(model_name)
-
-    try:
-        response = model.generate_content(prompt, **kwargs)
-        text = getattr(response, "text", str(response))
-
-        parsed_json = None
-        try:
-            parsed_json = json.loads(clean_json_text(text))
-        except Exception:
-            parsed_json = None
-
-        return {
-            "text": text,
-            "json": parsed_json,
-            "raw": response,
-        }
-
-    except Exception as e:
-        logger.exception(f"Erro ao gerar conteúdo: {e}")
-        raise

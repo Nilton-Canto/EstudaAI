@@ -39,14 +39,19 @@ wheels/
 # ==============================================================================
 
 # Banco de dados SQLite
-# O db.sqlite3 principal é versionado para facilitar setup
-# Ignoramos apenas arquivos temporários e backups
+# IMPORTANTE: O db.sqlite3 é VERSIONADO para facilitar o trabalho em equipe
+# - Todos os desenvolvedores compartilham o mesmo banco de dados inicial
+# - Não é necessário rodar migrations/seed em cada clone
+# - Mudanças no schema são versionadas junto com as migrations
+# Ignoramos apenas arquivos temporários, backups e bancos de teste
 *.sqlite3-journal
 *.sqlite3-wal
 *.sqlite3-shm
 *_backup.sqlite3
 *_old.sqlite3
 *.db-journal
+test_*.sqlite3
+*test*.sqlite3
 
 # Arquivos estáticos coletados
 staticfiles/

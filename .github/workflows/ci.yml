@@ -93,7 +93,7 @@ jobs:
     
     - name: Lint with Flake8
       run: |
-        flake8 config/usuarios config/api_gemini config/api config/config \
+        flake8 config/usuarios config/api config/config \
                --config=setup.cfg \
                --count \
                --statistics \
@@ -121,8 +121,17 @@ jobs:
       run: |
         bandit -r config/ \
                --skip B101,B608,B105,B106 \
-               --exclude config/migrations,config/venv,config/.venv \
+               --exclude config/migrations,config/venv,config/.venv,config/__pycache__ \
+               --format json \
+               --output bandit-report.json \
                || true
+    
+    - name: Upload Bandit report
+      uses: actions/upload-artifact@v4
+      if: always()
+      with:
+        name: bandit-security-report
+        path: bandit-report.json
 
     - name: Run Safety to check for vulnerable dependencies
       run: safety check --file requirements.txt --continue-on-error || true

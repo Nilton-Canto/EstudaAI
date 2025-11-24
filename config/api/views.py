@@ -2,15 +2,12 @@
 Views da API de trilhas e áreas.
 """
 
-from rest_framework import generics, permissions, status
-from rest_framework.response import Response
-from rest_framework.views import APIView
+from rest_framework import generics, permissions
 
 from .exceptions import AreaInativaException, TrilhaLimitExceededException
-from .models import Area, Trilha
+from .models import Trilha
 from .serializers import AreaSerializer, TrilhaSerializer
 from .services import AreaService, TrilhaService
-
 
 # ==============================================================================
 # ÁREAS
@@ -63,9 +60,11 @@ class TrilhaListCreateView(generics.ListCreateAPIView):
                 usuario=self.request.user,
                 titulo=serializer.validated_data.get("titulo"),
                 descricao=serializer.validated_data.get("descricao", ""),
-                area_id=serializer.validated_data.get("area").id
-                if serializer.validated_data.get("area")
-                else None,
+                area_id=(
+                    serializer.validated_data.get("area").id
+                    if serializer.validated_data.get("area")
+                    else None
+                ),
                 conteudo=serializer.validated_data.get("conteudo", ""),
             )
             serializer.instance = trilha

@@ -1,4 +1,4 @@
-# ===== IMPORTAÇÕES =====
+# ==== IMPORTAÇÕES =====
 # Importações do Django para renderização de páginas e redirecionamentos
 from datetime import timedelta
 
@@ -9,7 +9,7 @@ from api.models import Area, Trilha, TrilhaCurso
 from django.contrib import messages
 
 # Importações para autenticação de usuários
-from django.contrib.auth import authenticate, get_user_model, login, logout
+from django.contrib.auth import get_user_model, login, logout
 
 # Decorators para proteção de views
 from django.contrib.auth.decorators import login_required, user_passes_test
@@ -21,7 +21,7 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.core.paginator import Paginator
 
 # Database
-from django.db.models import Count, Q
+from django.db.models import Q
 from django.shortcuts import get_object_or_404, redirect, render
 from django.utils import timezone
 
@@ -197,9 +197,9 @@ def dashboard(request):
     Returns:
         HttpResponse: página de dashboard renderizada
     """
-    
     # Consumir e limpar mensagens de autenticação para que não apareçam em outras páginas
     from django.contrib.messages import get_messages
+
     storage = get_messages(request)
     for message in storage:
         pass  # Apenas consome as mensagens sem fazer nada com elas

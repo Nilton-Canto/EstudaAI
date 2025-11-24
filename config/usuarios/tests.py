@@ -1,4 +1,3 @@
-from django.contrib.auth import get_user_model
 from django.test import Client, TestCase
 from django.urls import reverse
 
@@ -53,7 +52,7 @@ class LoginTestCase(TestCase):
         self.assertTrue(login_success)
 
         # Verifica se usuário está na sessão
-        response = self.client.get(self.login_url)
+        self.client.get(self.login_url)
         self.assertTrue("_auth_user_id" in self.client.session)
 
     def test_login_com_credenciais_invalidas(self):
@@ -167,7 +166,7 @@ class CadastroTestCase(TestCase):
 
     def test_senha_criptografada(self):
         """Testa se a senha é criptografada corretamente"""
-        response = self.client.post(self.signup_url, self.dados_validos)
+        self.client.post(self.signup_url, self.dados_validos)
 
         # Busca usuário criado
         usuario = Usuario.objects.get(username="novo_usuario")

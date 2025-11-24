@@ -18,11 +18,11 @@ urlpatterns = [
     path("trilhas/<int:pk>/", TrilhaDetailView.as_view(), name="detalhe-trilha"),
     # Endpoints Gemini AI
     path("gemini/gerar-trilha/", gerar_trilha_curso, name="gerar-trilha-curso"),
-    path("gemini/trilha/", gerar_trilha_curso, name="gerar-trilha-curso-alias"),  # Alias para compatibilidade
-    path("gemini/chat/", chat_com_gemini, name="chat-gemini"),
     path(
-        "gemini/trilhas/", listar_trilhas_usuario, name="listar-trilhas-curso"
-    ),
+        "gemini/trilha/", gerar_trilha_curso, name="gerar-trilha-curso-alias"
+    ),  # Alias para compatibilidade
+    path("gemini/chat/", chat_com_gemini, name="chat-gemini"),
+    path("gemini/trilhas/", listar_trilhas_usuario, name="listar-trilhas-curso"),
     path(
         "gemini/trilhas/<int:trilha_id>/",
         detalhe_trilha_curso,

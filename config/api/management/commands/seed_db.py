@@ -1,6 +1,6 @@
-from django.core.management.base import BaseCommand
-from django.contrib.auth import get_user_model
 from api.models import Area
+from django.contrib.auth import get_user_model
+from django.core.management.base import BaseCommand
 
 Usuario = get_user_model()
 
@@ -49,17 +49,13 @@ class Command(BaseCommand):
                 },
             )
             if created:
-                self.stdout.write(
-                    self.style.SUCCESS(f"✅ Área criada: {area.nome}")
-                )
+                self.stdout.write(self.style.SUCCESS(f"✅ Área criada: {area.nome}"))
             else:
-                self.stdout.write(
-                    self.style.WARNING(f"⚠️  Área já existe: {area.nome}")
-                )
+                self.stdout.write(self.style.WARNING(f"⚠️  Área já existe: {area.nome}"))
 
         # Criar usuário de teste (se não existir)
         if not Usuario.objects.filter(username="demo").exists():
-            usuario = Usuario.objects.create_user(
+            Usuario.objects.create_user(
                 username="demo",
                 email="demo@estudaai.com",
                 password="demo123",
@@ -71,14 +67,10 @@ class Command(BaseCommand):
             )
             self.stdout.write(
                 self.style.SUCCESS(
-                    f"✅ Usuário demo criado (username: demo, senha: demo123)"
+                    "✅ Usuário demo criado (username: demo, senha: demo123)"
                 )
             )
         else:
-            self.stdout.write(
-                self.style.WARNING("⚠️  Usuário demo já existe")
-            )
+            self.stdout.write(self.style.WARNING("⚠️  Usuário demo já existe"))
 
-        self.stdout.write(
-            self.style.SUCCESS("\n🎉 Seed concluído com sucesso!")
-        )
+        self.stdout.write(self.style.SUCCESS("\n🎉 Seed concluído com sucesso!"))

@@ -47,9 +47,7 @@ class TrilhaService:
                 if not area.ativa:
                     raise AreaInativaException()
             except Area.DoesNotExist:
-                raise AreaInativaException(
-                    detail="Área não encontrada."
-                )
+                raise AreaInativaException(detail="Área não encontrada.")
 
         # Criar trilha
         with transaction.atomic():
