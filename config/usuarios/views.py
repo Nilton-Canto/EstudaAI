@@ -62,6 +62,23 @@ from .forms import UsuarioForm
 Usuario = get_user_model()
 
 
+# ===== VIEW DA LANDING PAGE =====
+def home(request):
+    """
+    View responsável pela página inicial (landing page) do sistema.
+    
+    Esta é a primeira página que o usuário vê ao acessar o site.
+    Apresenta o sistema e oferece opções de login/cadastro.
+    
+    Args:
+        request: objeto HttpRequest contendo dados da requisição
+    
+    Returns:
+        HttpResponse: página inicial renderizada
+    """
+    return render(request, "usuarios/home.html")
+
+
 # ===== VIEW DE CADASTRO =====
 def signup(request):
     """

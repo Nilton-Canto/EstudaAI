@@ -7,9 +7,6 @@ from . import views
 urlpatterns = [
     # URLs públicas
     path("dashboard/", views.dashboard, name="dashboard"),  # Página inicial pós-login
-    path("login/", views.login_view, name="login"),  # Página de login
-    path("logout/", views.logout_view, name="logout"),  # Logout
-    path("signup/", views.signup, name="signup"),  # Página de cadastro
     # URLs administrativas
     path(
         "admin-panel/", views.admin_dashboard, name="admin_dashboard"
