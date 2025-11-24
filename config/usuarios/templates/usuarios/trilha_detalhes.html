@@ -1,0 +1,390 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ trilha.titulo }} - EstudaAI</title>
+    <link rel="stylesheet" href="{% static 'usuarios/dashboard-style.css' %}?v=2">
+    <style>
+        /* Estilos específicos para detalhes da trilha */
+        .trilha-header {
+            background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 0.75rem;
+            margin-bottom: 2rem;
+        }
+
+        .trilha-header-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .area-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+        }
+
+        .trilha-titulo {
+            font-size: 2rem;
+            font-weight: 700;
+            margin: 1rem 0 0.5rem 0;
+        }
+
+        .trilha-descricao {
+            font-size: 1.125rem;
+            opacity: 0.95;
+            line-height: 1.6;
+        }
+
+        .modulos-section {
+            margin-top: 2rem;
+        }
+
+        .modulo-card {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border-left: 4px solid #4f46e5;
+        }
+
+        .modulo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .modulo-titulo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0;
+        }
+
+        .modulo-numero {
+            background: #4f46e5;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 1rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+
+        .etapas-lista {
+            list-style: none;
+            padding: 0;
+            margin: 1rem 0 0 0;
+        }
+
+        .etapa-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 0.75rem;
+            padding: 0.75rem;
+            margin-bottom: 0.5rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            transition: background 0.3s ease;
+        }
+
+        .etapa-item:hover {
+            background: #f3f4f6;
+        }
+
+        .etapa-icone {
+            font-size: 1.25rem;
+            margin-top: 0.125rem;
+        }
+
+        .etapa-conteudo {
+            flex: 1;
+        }
+
+        .etapa-titulo {
+            font-weight: 600;
+            color: #374151;
+            margin: 0 0 0.25rem 0;
+        }
+
+        .etapa-descricao {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+
+        .acoes-trilha {
+            background: white;
+            border-radius: 0.75rem;
+            padding: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 1rem;
+        }
+
+        .acoes-titulo {
+            font-size: 1.125rem;
+            font-weight: 600;
+            margin: 0 0 1rem 0;
+            color: #1f2937;
+        }
+
+        .btn-iniciar {
+            width: 100%;
+            padding: 0.875rem;
+            background: #4f46e5;
+            color: white;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            margin-bottom: 1rem;
+        }
+
+        .btn-iniciar:hover {
+            background: #4338ca;
+        }
+
+        .btn-voltar {
+            width: 100%;
+            padding: 0.875rem;
+            background: white;
+            color: #4f46e5;
+            border: 2px solid #4f46e5;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+        }
+
+        .btn-voltar:hover {
+            background: #eef2ff;
+        }
+
+        .trilha-stats-box {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .stat-box {
+            padding: 1rem;
+            background: #f9fafb;
+            border-radius: 0.5rem;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #4f46e5;
+            margin: 0;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            color: #6b7280;
+            margin: 0.25rem 0 0 0;
+        }
+
+        .info-box {
+            background: #fef3c7;
+            border-left: 4px solid #f59e0b;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .info-box p {
+            margin: 0;
+            color: #92400e;
+            font-size: 0.875rem;
+        }
+
+        .content-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 320px;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .content-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .acoes-trilha {
+                position: static;
+            }
+
+            .trilha-header-top {
+                flex-direction: column;
+            }
+
+            .trilha-titulo {
+                font-size: 1.5rem;
+            }
+        }
+
+        .ja-iniciada-badge {
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header class="navbar">
+        <nav class="navbar-container">
+            <a href="{% url 'dashboard' %}" class="logo">EstudaAI</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a></li>
+                <li><a href="{% url 'minhas_trilhas' %}" class="nav-link">Minhas Trilhas</a></li>
+                <li><a href="{% url 'trilhas_disponiveis' %}" class="nav-link active">Explorar Trilhas</a></li>
+                <li><a href="{% url 'criar_trilha' %}" class="nav-link">Criar Trilha</a></li>
+                <li><a href="{% url 'chat_ia' %}" class="nav-link">Chat IA</a></li>
+            </ul>
+            <div class="user-info">
+                <span class="user-text">Olá, <strong>{{ user.nome|default:user.username }}</strong></span>
+                {% if user.is_staff %}
+                <a href="{% url 'admin_dashboard' %}" class="admin-btn">Painel Admin</a>
+                {% endif %}
+                <a href="{% url 'logout' %}" class="logout-btn" title="Sair da conta">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal -->
+    <main class="container">
+        <!-- Cabeçalho da Trilha -->
+        <div class="trilha-header">
+            <div class="trilha-header-top">
+                <span class="area-badge">
+                    {{ trilha.area.icone|default:'📚' }} {{ trilha.area.nome|default:'Geral' }}
+                </span>
+            </div>
+            <h1 class="trilha-titulo">{{ trilha.titulo }}</h1>
+            <p class="trilha-descricao">{{ trilha.descricao }}</p>
+        </div>
+
+        <!-- Wrapper de Conteúdo -->
+        <div class="content-wrapper">
+            <!-- Módulos e Etapas -->
+            <div class="modulos-section">
+                <h2 class="section-title">Conteúdo da Trilha</h2>
+
+                {% if trilha.conteudo_json.modulos %}
+                    {% for modulo in trilha.conteudo_json.modulos %}
+                    <div class="modulo-card">
+                        <div class="modulo-header">
+                            <h3 class="modulo-titulo">{{ modulo.titulo }}</h3>
+                            <span class="modulo-numero">Módulo {{ forloop.counter }}</span>
+                        </div>
+
+                        {% if modulo.aulas %}
+                        <ul class="etapas-lista">
+                            {% for aula in modulo.aulas %}
+                            <li class="etapa-item">
+                                <span class="etapa-icone">
+                                    {% if aula.tipo == 'video' %}📹
+                                    {% elif aula.tipo == 'artigo' %}📄
+                                    {% elif aula.tipo == 'exercicio' %}✏️
+                                    {% elif aula.tipo == 'projeto' %}🚀
+                                    {% else %}📖{% endif %}
+                                </span>
+                                <div class="etapa-conteudo">
+                                    <p class="etapa-titulo">{{ aula.titulo }}</p>
+                                    {% if aula.descricao %}
+                                    <p class="etapa-descricao">{{ aula.descricao }}</p>
+                                    {% endif %}
+                                    {% if aula.duracao %}
+                                    <p class="etapa-descricao" style="color: #9ca3af; font-size: 0.8125rem;">⏱️ {{ aula.duracao }}</p>
+                                    {% endif %}
+                                </div>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                    {% endfor %}
+                {% else %}
+                    <div class="info-box">
+                        <p>Esta trilha ainda não possui módulos definidos.</p>
+                    </div>
+                {% endif %}
+            </div>
+
+            <!-- Barra Lateral de Ações -->
+            <aside>
+                <div class="acoes-trilha">
+                    <h3 class="acoes-titulo">Iniciar Aprendizado</h3>
+
+                    {% if ja_iniciada %}
+                        <div class="ja-iniciada-badge">
+                            ✓ Trilha já iniciada
+                        </div>
+                        <p style="color: #6b7280; font-size: 0.875rem; margin-bottom: 1rem;">
+                            Você já iniciou esta trilha. Acesse "Minhas Trilhas" para continuar.
+                        </p>
+                        <a href="{% url 'minhas_trilhas' %}" class="btn-iniciar">
+                            Ver Minhas Trilhas
+                        </a>
+                    {% else %}
+                        <div class="trilha-stats-box">
+                            <div class="stat-box">
+                                <p class="stat-value">{{ trilha.conteudo_json.modulos|length|default:0 }}</p>
+                                <p class="stat-label">Módulos</p>
+                            </div>
+                            <div class="stat-box">
+                                <p class="stat-value">
+                                    {% widthratio total_etapas 1 1 %}
+                                </p>
+                                <p class="stat-label">Etapas</p>
+                            </div>
+                        </div>
+
+                        <form method="POST" action="{% url 'iniciar_trilha' trilha.id %}">
+                            {% csrf_token %}
+                            <button type="submit" class="btn-iniciar">
+                                🚀 Iniciar Trilha
+                            </button>
+                        </form>
+
+                        <div class="info-box">
+                            <p>Ao iniciar esta trilha, você terá acesso a todos os módulos e poderá acompanhar seu progresso.</p>
+                        </div>
+                    {% endif %}
+
+                    <a href="{% url 'trilhas_disponiveis' %}" class="btn-voltar">
+                        ← Voltar
+                    </a>
+                </div>
+            </aside>
+        </div>
+    </main>
+</body>
+</html>

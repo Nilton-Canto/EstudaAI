@@ -1,0 +1,419 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudaAI - Criar Trilha</title>
+    <link rel="stylesheet" href="{% static 'usuarios/criartrilha-style.css' %}">
+    <style>
+        .ai-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        
+        .ai-section h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .ai-loading {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .ai-spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .ai-result {
+            display: none;
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .ai-result pre {
+            background: white;
+            color: #333;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            max-height: 300px;
+            font-size: 0.875rem;
+        }
+        
+        .btn-use-ai {
+            background: #10b981;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+        
+        .btn-use-ai:hover {
+            background: #059669;
+        }
+        
+        .success-message {
+            background: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .error-message {
+            background: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .btn-ai {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-size: 1rem;
+        }
+        
+        .btn-ai:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-ai:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: #374151;
+        }
+        
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem;
+            border: 1px solid #d1d5db;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+            font-family: inherit;
+        }
+        
+        .form-group textarea {
+            font-family: 'Courier New', monospace;
+            resize: vertical;
+        }
+        
+        .form-group small {
+            color: #6b7280;
+            font-size: 0.875rem;
+            display: block;
+            margin-top: 0.25rem;
+        }
+        
+        .form-check {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-submit {
+            width: 100%;
+            background: #4f46e5;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+        
+        .btn-submit:hover {
+            background: #4338ca;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav class="nav-container">
+            <a href="{% url 'dashboard' %}" class="logo">EstudaAI</a>
+            <ul class="menu">
+                <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'minhas_trilhas' %}">Minhas Trilhas</a></li>
+                <li><a href="{% url 'criar_trilha' %}" class="active">Criar Trilha</a></li>
+            </ul>
+            <div class="user-info">
+                <span>Olá, <strong>{{ user.nome|default:user.username }}</strong></span>
+                {% if user.is_staff %}
+                <a href="{% url 'admin_dashboard' %}" style="margin-left: 1rem; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 0.5rem; text-decoration: none; color: white;">Admin</a>
+                {% endif %}
+                <a href="{% url 'logout' %}" style="margin-left: 0.5rem; padding: 0.5rem 1rem; background: rgba(239,68,68,0.9); border-radius: 0.5rem; text-decoration: none; color: white;">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Crie sua Trilha com a IA</h2>
+        
+        {% if messages %}
+            {% for message in messages %}
+            <div class="{% if message.tags %}{{ message.tags }}-message{% else %}success-message{% endif %}">
+                {{ message }}
+            </div>
+            {% endfor %}
+        {% endif %}
+
+        <!-- Seção de IA -->
+        <div class="ai-section">
+            <h3>🤖 Assistente IA - Gerar Trilha Automaticamente</h3>
+            <p style="opacity: 0.9; margin-bottom: 1rem;">
+                Descreva o que você deseja aprender e a IA criará uma trilha personalizada completa para você!
+            </p>
+            
+            <textarea 
+                id="ai-prompt" 
+                rows="4" 
+                placeholder="Ex: 'Quero aprender Python para análise de dados, com foco em pandas e visualização. Tenho conhecimento básico de programação.'"
+                style="width: 100%; padding: 1rem; border-radius: 0.5rem; border: none; font-size: 1rem;"
+            ></textarea>
+            
+            <button type="button" class="btn-ai" onclick="gerarTrilhaIA()" style="margin-top: 1rem;">
+                Gerar com IA
+            </button>
+            
+            <div class="ai-loading" id="ai-loading">
+                <div class="ai-spinner"></div>
+                <p>Gerando trilha personalizada com Gemini AI...</p>
+            </div>
+            
+            <div class="ai-result" id="ai-result">
+                <h4 style="margin-bottom: 0.5rem;">Trilha Gerada:</h4>
+                <pre id="ai-content"></pre>
+                <button type="button" class="btn-use-ai" onclick="salvarTrilhaIA()">
+                    Salvar esta trilha
+                </button>
+            </div>
+        </div>
+
+        <!-- Formulário Manual (Opcional) -->
+        <div class="card">
+            <h3 style="margin-bottom: 1rem;">Ou crie manualmente</h3>
+            <p style="color: #6b7280; margin-bottom: 1.5rem;">
+                Se preferir, você pode criar uma trilha manualmente preenchendo os campos abaixo.
+            </p>
+            
+            <form method="POST" id="trilha-form">
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="id_titulo">Título da Trilha *</label>
+                    <input 
+                        type="text" 
+                        name="titulo" 
+                        id="id_titulo"
+                        required
+                        placeholder="Ex: Trilha de Python para Análise de Dados"
+                    >
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_descricao">Descrição</label>
+                    <textarea 
+                        name="descricao" 
+                        id="id_descricao"
+                        rows="3"
+                        placeholder="Descreva brevemente o conteúdo da trilha..."
+                    ></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="id_conteudo">Conteúdo (JSON) *</label>
+                    <textarea 
+                        name="conteudo" 
+                        id="id_conteudo"
+                        rows="10"
+                        required
+                        placeholder='{"modulos": [], "duracao_total": "X semanas"}'
+                    ></textarea>
+                    <small>Use a IA acima para gerar o conteúdo automaticamente</small>
+                </div>
+                
+                <div class="form-group">
+                    <div class="form-check">
+                        <input type="checkbox" name="ativa" id="id_ativa" checked>
+                        <label for="id_ativa" style="margin: 0; font-weight: 400;">Trilha ativa</label>
+                    </div>
+                </div>
+                
+                <input type="hidden" name="ai_prompt" id="id_ai_prompt" value="">
+                
+                <button type="submit" class="btn-submit">
+                    Salvar Trilha
+                </button>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        
+        const csrftoken = getCookie('csrftoken');
+        let trilhaGerada = null;
+        
+        async function gerarTrilhaIA() {
+            const prompt = document.getElementById('ai-prompt').value;
+            
+            if (!prompt.trim()) {
+                alert('Por favor, descreva o que você deseja aprender');
+                return;
+            }
+            
+            // Mostrar loading
+            document.getElementById('ai-loading').style.display = 'block';
+            document.getElementById('ai-result').style.display = 'none';
+            document.querySelector('.btn-ai').disabled = true;
+            
+            try {
+                const response = await fetch('/api/gemini/trilha/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken
+                    },
+                    body: JSON.stringify({ 
+                        solicitacao: prompt
+                    })
+                });
+                
+                const data = await response.json();
+                
+                // Esconder loading
+                document.getElementById('ai-loading').style.display = 'none';
+                document.querySelector('.btn-ai').disabled = false;
+                
+                if (response.ok) {
+                    trilhaGerada = data;
+                    console.log('Trilha gerada:', data);
+                    
+                    // Mostrar resposta formatada
+                    document.getElementById('ai-content').textContent = JSON.stringify(data.conteudo_json || data, null, 2);
+                    document.getElementById('ai-result').style.display = 'block';
+                    
+                    // Scroll para o resultado
+                    document.getElementById('ai-result').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+                } else {
+                    alert('Erro ao gerar trilha: ' + (data.erro || 'Erro desconhecido'));
+                }
+            } catch (error) {
+                document.getElementById('ai-loading').style.display = 'none';
+                document.querySelector('.btn-ai').disabled = false;
+                alert('Erro ao conectar com a API: ' + error.message);
+            }
+        }
+        
+        function salvarTrilhaIA() {
+            if (!trilhaGerada) {
+                alert('Nenhuma trilha foi gerada ainda!');
+                return;
+            }
+            
+            // Preencher campos do formulário
+            const titulo = trilhaGerada.titulo || 'Trilha Personalizada';
+            const descricao = trilhaGerada.descricao || '';
+            const conteudo = JSON.stringify(trilhaGerada.conteudo_json || trilhaGerada, null, 2);
+            const promptOriginal = document.getElementById('ai-prompt').value;
+            
+            document.getElementById('id_titulo').value = titulo;
+            document.getElementById('id_descricao').value = descricao;
+            document.getElementById('id_conteudo').value = conteudo;
+            document.getElementById('id_ai_prompt').value = promptOriginal;
+            
+            // Destacar os campos preenchidos
+            document.getElementById('id_titulo').style.backgroundColor = '#d1fae5';
+            document.getElementById('id_descricao').style.backgroundColor = '#d1fae5';
+            document.getElementById('id_conteudo').style.backgroundColor = '#d1fae5';
+            
+            // Scroll para o formulário
+            document.getElementById('trilha-form').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Remover destaque após 3 segundos
+            setTimeout(() => {
+                document.getElementById('id_titulo').style.backgroundColor = '';
+                document.getElementById('id_descricao').style.backgroundColor = '';
+                document.getElementById('id_conteudo').style.backgroundColor = '';
+            }, 3000);
+            
+            // Mostrar mensagem
+            alert('Trilha aplicada ao formulário! Revise os dados e clique em "Salvar Trilha" para confirmar.');
+        }
+        
+        // Permitir Enter para gerar (mas não em shift+enter para quebra de linha)
+        document.getElementById('ai-prompt')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter' && !e.shiftKey) {
+                e.preventDefault();
+                gerarTrilhaIA();
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudaAI - Dashboard</title>
+    <link rel="stylesheet" href="{% static 'usuarios/dashboard-style.css' %}?v=3">
+</head>
+<body>
+    <!-- Barra de Navegação -->
+    <header class="navbar">
+        <nav class="navbar-container">
+            <a href="{% url 'dashboard' %}" class="logo">EstudaAI</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'dashboard' %}" class="nav-link active">Dashboard</a></li>
+                <li><a href="{% url 'minhas_trilhas' %}" class="nav-link">Minhas Trilhas</a></li>
+                <li><a href="{% url 'trilhas_disponiveis' %}" class="nav-link">Explorar Trilhas</a></li>
+                <li><a href="{% url 'criar_trilha' %}" class="nav-link">Criar Trilha</a></li>
+                <li><a href="{% url 'chat_ia' %}" class="nav-link">Chat IA</a></li>
+            </ul>
+            <div class="user-info">
+                <span class="user-text">Olá, <strong>{{ user.nome|default:user.username }}</strong></span>
+                {% if user.is_staff %}
+                <a href="{% url 'admin_dashboard' %}" class="admin-btn">Painel Admin</a>
+                {% endif %}
+                <a href="{% url 'logout' %}" class="logout-btn" title="Sair da conta">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Conteúdo Principal - Dashboard -->
+    <main class="container">
+        <!-- Resumo do progresso -->
+        <section class="card">
+            <h2 class="section-title">Seu Progresso de Estudo</h2>
+            <div class="stats-grid">
+                <div class="stat-card indigo">
+                    <p class="stat-value">{{ total_trilhas }}</p>
+                    <p class="stat-label">Trilhas Ativas</p>
+                </div>
+                <div class="stat-card green">
+                    <p class="stat-value">{{ media_conclusao }}%</p>
+                    <p class="stat-label">Média de Conclusão</p>
+                </div>
+                <div class="stat-card yellow">
+                    <p class="stat-value">{{ tempo_estudo }}</p>
+                    <p class="stat-label">Tempo de Estudo</p>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Trilhas ativas -->
+        <section class="card">
+            <h2 class="section-title dark">Trilhas Ativas</h2>
+            <div class="trails-grid">
+                {% for item in trilhas_com_progresso %}
+                <div class="trail-card">
+                    <h3 class="trail-title">{{ item.trilha.titulo }}</h3>
+                    <p class="trail-info">
+                        {% if item.trilha.area %}{{ item.trilha.area.nome }} · {% endif %}
+                        {{ item.trilha.data_criacao|date:"d/m/Y" }}
+                    </p>
+                    <div class="progress-bar">
+                        <div class="progress-fill blue" style="width: {{ item.percentual }}%"></div>
+                    </div>
+                    <p class="progress-text">{{ item.percentual }}% Concluído</p>
+                    <a href="{% url 'ver_trilha' item.trilha.id %}" class="btn-primary">Continuar</a>
+                </div>
+                {% empty %}
+                <div class="trail-card">
+                    <p>Você ainda não tem trilhas ativas.</p>
+                    <a href="{% url 'criar_trilha' %}" class="btn-primary" style="text-align: center; display: block; margin-top: 10px;">Criar Nova Trilha</a>
+                </div>
+                {% endfor %}
+            </div>
+        </section>
+    </main>
+</body>
+</html>

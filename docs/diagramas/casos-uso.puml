@@ -1,0 +1,56 @@
+@startuml Casos de Uso - EstudaAI
+!theme plain
+skinparam backgroundColor #FFFFFF
+
+title Diagrama de Casos de Uso - EstudaAI
+
+left to right direction
+
+actor Estudante as student
+actor Administrador as admin
+actor "Sistema IA" as ai <<system>>
+
+rectangle "Sistema EstudaAI" {
+    usecase (Fazer Login) as UC01
+    usecase (Criar Conta) as UC02
+    usecase (Escolher Trilha Pré-definida) as UC03
+    usecase (Solicitar Trilha Personalizada) as UC04
+    usecase (Visualizar Progresso) as UC05
+    usecase (Marcar Etapa Concluída) as UC06
+    usecase (Gerenciar Áreas) as UC07
+    usecase (Gerenciar Trilhas) as UC08
+    usecase (Gerar Trilha com IA) as UC09
+    usecase (Validar Conteúdo) as UC10
+}
+
+' Relacionamentos Estudante
+student --> UC01
+student --> UC02
+student --> UC03
+student --> UC04
+student --> UC05
+student --> UC06
+
+' Relacionamentos Administrador
+admin --> UC01
+admin --> UC07
+admin --> UC08
+
+' Relacionamentos Sistema IA
+ai --> UC09
+ai --> UC10
+
+' Extensões e Inclusões
+UC04 .> UC09 : <<include>>
+UC09 .> UC10 : <<include>>
+UC03 .> UC05 : <<extend>>
+UC04 .> UC05 : <<extend>>
+
+' Notas
+note right of UC04 : "Estudante descreve\no que quer aprender\ne a IA gera trilha"
+
+note right of UC09 : "Integração com\nGoogle Gemini para\ngeração automática"
+
+note left of UC07 : "Admin pode criar\ncategorias de\nconhecimento"
+
+@enduml

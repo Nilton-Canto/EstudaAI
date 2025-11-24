@@ -1,18 +1,208 @@
+# ==============================================================================
+# PYTHON
+# ==============================================================================
+
 # Ambiente virtual Python
 venv/
 .env/
 ENV/
 env/
 .venv/
+virtualenv/
 
 # Arquivos de cache do Python
 __pycache__/
 *.py[cod]
 *$py.class
+*.so
 
-# Configurações do VS Code
+# Distribuição / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ==============================================================================
+# DJANGO
+# ==============================================================================
+
+# Banco de dados SQLite
+# IMPORTANTE: O db.sqlite3 é VERSIONADO para facilitar o trabalho em equipe
+# - Todos os desenvolvedores compartilham o mesmo banco de dados inicial
+# - Não é necessário rodar migrations/seed em cada clone
+# - Mudanças no schema são versionadas junto com as migrations
+# Ignoramos apenas arquivos temporários, backups e bancos de teste
+*.sqlite3-journal
+*.sqlite3-wal
+*.sqlite3-shm
+*_backup.sqlite3
+*_old.sqlite3
+*.db-journal
+test_*.sqlite3
+*test*.sqlite3
+
+# Arquivos estáticos coletados
+staticfiles/
+static_root/
+
+# Media files (uploads)
+media/
+
+# Arquivos de migração compilados
+*.pyc
+
+# ==============================================================================
+# CONFIGURAÇÕES E SEGURANÇA
+# ==============================================================================
+
+# Arquivos de configuração sensíveis
+.env
+*.env
+!.env.example
+!config/.env.example
+
+# Arquivos de secrets
+secrets.json
+*.pem
+*.key
+
+# ==============================================================================
+# LOGS
+# ==============================================================================
+
+# Arquivos de log
+*.log
+logs/*.log
+logs/
+*.log.*
+
+# ==============================================================================
+# TESTES E QUALIDADE
+# ==============================================================================
+
+# Relatórios de cobertura de teste
+coverage.xml
+htmlcov/
+.pytest_cache/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage/
+*.cover
+
+# Relatórios de testes
+.tox/
+.hypothesis/
+test-results/
+
+# ==============================================================================
+# IDEs E EDITORES
+# ==============================================================================
+
+# VS Code
 .vscode/
+*.code-workspace
 
-# Arquivos de sistema operacional
+# PyCharm
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim
+*.swp
+*.swo
+*~
+.vim/
+
+# Emacs
+*~
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+
+# ==============================================================================
+# SISTEMA OPERACIONAL
+# ==============================================================================
+
+# macOS
 .DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
+
+# Windows
 Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+*.lnk
+
+# Linux
+*~
+.directory
+
+# ==============================================================================
+# DOCKER E CI/CD
+# ==============================================================================
+
+# Docker
+mysql_data/
+postgres_data/
+*.pid
+docker-compose.override.yml
+
+# CI/CD
+.github/workflows/local_test_results/
+
+# ==============================================================================
+# DOCUMENTAÇÃO
+# ==============================================================================
+
+# Sphinx documentation
+docs/_build/
+site/
+
+# ==============================================================================
+# OUTROS
+# ==============================================================================
+
+# Backup files
+*.bak
+*.tmp
+*.temp
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Celery
+celerybeat-schedule
+celerybeat.pid
+
+# SageMath parsed files
+*.sage.py
+
+# Environments
+.env.local
+.env.development
+.env.test
+.env.production

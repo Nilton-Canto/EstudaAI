@@ -1,0 +1,535 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ trilha.titulo }} - EstudaAI</title>
+    <link rel="stylesheet" href="{% static 'usuarios/dashboard-style.css' %}">
+    <style>
+        .trilha-header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .trilha-header h1 {
+            margin: 0 0 0.5rem 0;
+            font-size: 2rem;
+        }
+        
+        .trilha-header p {
+            margin: 0;
+            opacity: 0.9;
+        }
+        
+        .stats-mini {
+            display: flex;
+            gap: 2rem;
+            margin-top: 1rem;
+        }
+        
+        .stat-mini {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .stat-mini-value {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .modulo-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .modulo-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 2px solid #e5e7eb;
+        }
+        
+        .modulo-titulo {
+            font-size: 1.5rem;
+            color: #1f2937;
+            margin: 0;
+        }
+        
+        .modulo-badge {
+            background: #4f46e5;
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 0.5rem;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .aula-item {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 0.5rem;
+            transition: all 0.2s;
+        }
+        
+        .aula-item:hover {
+            background: #f9fafb;
+        }
+        
+        .aula-item.concluida {
+            background: #d1fae5;
+        }
+        
+        .checkbox-container {
+            display: flex;
+            align-items: center;
+            padding-top: 0.25rem;
+        }
+        
+        .checkbox-custom {
+            width: 24px;
+            height: 24px;
+            cursor: pointer;
+            accent-color: #10b981;
+        }
+        
+        .aula-content {
+            flex: 1;
+        }
+        
+        .aula-titulo {
+            font-weight: 600;
+            color: #1f2937;
+            margin: 0 0 0.25rem 0;
+        }
+        
+        .aula-descricao {
+            color: #6b7280;
+            font-size: 0.875rem;
+            margin: 0;
+        }
+        
+        .aula-duracao {
+            color: #9ca3af;
+            font-size: 0.75rem;
+            margin-top: 0.25rem;
+        }
+        
+        .btn-voltar {
+            display: inline-block;
+            background: #6b7280;
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.5rem;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background 0.2s;
+        }
+        
+        .btn-voltar:hover {
+            background: #4b5563;
+        }
+        
+        .progress-section {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .cronograma-header {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+        
+        .cronograma-header h2 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.75rem;
+        }
+        
+        .modulo-progress {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .modulo-progress-bar {
+            flex: 1;
+            height: 8px;
+            background: #e5e7eb;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .modulo-progress-fill {
+            height: 100%;
+            background: #10b981;
+            transition: width 0.3s;
+        }
+        
+        .aula-meta {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .aula-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.75rem;
+            background: #f3f4f6;
+            border-radius: 0.375rem;
+            font-size: 0.75rem;
+            color: #4b5563;
+        }
+        
+        .aula-recursos {
+            margin-top: 0.5rem;
+            padding-top: 0.5rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .recurso-item {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-right: 1rem;
+            font-size: 0.75rem;
+            color: #6b7280;
+        }
+        
+        .aula-objetivos {
+            margin-top: 0.5rem;
+            padding: 0.75rem;
+            background: #eff6ff;
+            border-left: 3px solid #3b82f6;
+            border-radius: 0.25rem;
+        }
+        
+        .aula-objetivos-title {
+            font-weight: 600;
+            color: #1e40af;
+            font-size: 0.75rem;
+            margin-bottom: 0.25rem;
+        }
+        
+        .aula-objetivos-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .aula-objetivos-list li {
+            font-size: 0.75rem;
+            color: #1e40af;
+            padding-left: 1rem;
+            position: relative;
+        }
+        
+        .aula-objetivos-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+        
+        .modulo-stats {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #e5e7eb;
+        }
+        
+        .modulo-stat {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.875rem;
+            color: #6b7280;
+        }
+        
+        .modulo-stat-value {
+            font-weight: 600;
+            color: #1f2937;
+        }
+        
+        .progress-bar-large {
+            width: 100%;
+            height: 30px;
+            background: #e5e7eb;
+            border-radius: 1rem;
+            overflow: hidden;
+            margin: 1rem 0;
+        }
+        
+        .progress-fill-large {
+            height: 100%;
+            background: linear-gradient(90deg, #10b981 0%, #059669 100%);
+            transition: width 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.875rem;
+        }
+    </style>
+</head>
+<body>
+    <header class="navbar">
+        <nav class="navbar-container">
+            <a href="{% url 'dashboard' %}" class="logo">EstudaAI</a>
+            <ul class="nav-links">
+                <li><a href="{% url 'dashboard' %}" class="nav-link">Dashboard</a></li>
+                <li><a href="{% url 'minhas_trilhas' %}" class="nav-link active">Minhas Trilhas</a></li>
+                <li><a href="{% url 'trilhas_disponiveis' %}" class="nav-link">Explorar Trilhas</a></li>
+                <li><a href="{% url 'criar_trilha' %}" class="nav-link">Criar Trilha</a></li>
+                <li><a href="{% url 'chat_ia' %}" class="nav-link">Chat IA</a></li>
+            </ul>
+            <div class="user-info">
+                <span class="user-text">Olá, <strong>{{ user.nome|default:user.username }}</strong></span>
+                {% if user.is_staff %}
+                <a href="{% url 'admin_dashboard' %}" class="admin-btn">Painel Admin</a>
+                {% endif %}
+                <a href="{% url 'logout' %}" class="logout-btn">Sair</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- Cabeçalho da Trilha -->
+        <div class="trilha-header">
+            <h1>{{ trilha.titulo }}</h1>
+            {% if trilha.descricao %}
+            <p>{{ trilha.descricao }}</p>
+            {% endif %}
+            <div class="stats-mini">
+                <div class="stat-mini">
+                    <span class="stat-mini-value">{{ percentual_conclusao }}%</span>
+                    <span>Concluído</span>
+                </div>
+                <div class="stat-mini">
+                    <span class="stat-mini-value">{{ atividades_concluidas }}/{{ total_atividades }}</span>
+                    <span>Atividades</span>
+                </div>
+                {% if trilha.area %}
+                <div class="stat-mini">
+                    <span>📚</span>
+                    <span>{{ trilha.area.nome }}</span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- Progresso Geral -->
+        <div class="progress-section">
+            <h3 style="margin: 0 0 0.5rem 0; color: #1f2937;">Seu Progresso</h3>
+            <div class="progress-bar-large">
+                <div class="progress-fill-large" style="width: {{ percentual_conclusao }}%">
+                    {% if percentual_conclusao > 0 %}{{ percentual_conclusao }}%{% endif %}
+                </div>
+            </div>
+            <p style="color: #6b7280; margin: 0;">
+                Você completou {{ atividades_concluidas }} de {{ total_atividades }} atividades
+            </p>
+        </div>
+
+        <!-- Cronograma de Aprendizado -->
+        <div class="cronograma-header">
+            <h2>📚 Seu Cronograma de Aprendizado</h2>
+            <p>Siga este plano personalizado para dominar {{ trilha.titulo }}</p>
+        </div>
+
+        <!-- Módulos -->
+        {% for modulo in modulos %}
+        <div class="modulo-card">
+            <div class="modulo-header" style="display: flex; align-items: center; gap: 1rem; border-bottom: 2px solid #e5e7eb; padding-bottom: 1rem;">
+                <form method="POST" action="{% url 'marcar_modulo' trilha.id %}" style="margin: 0;">
+                    {% csrf_token %}
+                    <input type="hidden" name="modulo_indice" value="{{ modulo.modulo_indice }}">
+                    <input type="hidden" name="marcar_como" value="{% if modulo.concluido %}desmarcar{% else %}marcar{% endif %}">
+                    <input 
+                        type="checkbox" 
+                        class="checkbox-custom" 
+                        {% if modulo.concluido %}checked{% endif %}
+                        onchange="this.form.submit()"
+                        style="width: 22px; height: 22px; cursor: pointer;"
+                        title="Marcar módulo completo"
+                    >
+                </form>
+                <div style="flex: 1;">
+                    <h2 class="modulo-titulo">📖 {{ modulo.titulo }}</h2>
+                    <div class="modulo-progress">
+                        <div class="modulo-progress-bar">
+                            <div class="modulo-progress-fill" style="width: {{ modulo.percentual }}%"></div>
+                        </div>
+                        <span>{{ modulo.aulas_concluidas }}/{{ modulo.total_aulas }} aulas</span>
+                    </div>
+                </div>
+                <span class="modulo-badge">Módulo {{ forloop.counter }}</span>
+            </div>
+            
+            {% if modulo.descricao %}
+            <p style="color: #6b7280; margin: 1rem 0;">{{ modulo.descricao }}</p>
+            {% endif %}
+            
+            <!-- Estatísticas do Módulo -->
+            <div class="modulo-stats">
+                <div class="modulo-stat">
+                    <span>📊 Progresso:</span>
+                    <span class="modulo-stat-value">{{ modulo.percentual }}%</span>
+                </div>
+                <div class="modulo-stat">
+                    <span>📝 Aulas:</span>
+                    <span class="modulo-stat-value">{{ modulo.total_aulas }}</span>
+                </div>
+                <div class="modulo-stat">
+                    <span>✅ Concluídas:</span>
+                    <span class="modulo-stat-value">{{ modulo.aulas_concluidas }}</span>
+                </div>
+            </div>
+
+            <!-- Aulas do Módulo -->
+            <div style="margin-top: 1.5rem;">
+                {% for aula in modulo.aulas %}
+                <div class="aula-item {% if aula.concluida %}concluida{% endif %}">
+                    <div class="checkbox-container">
+                        <form method="POST" action="{% url 'marcar_atividade' trilha.id %}" style="margin: 0;">
+                            {% csrf_token %}
+                            <input type="hidden" name="modulo_indice" value="{{ aula.modulo_indice }}">
+                            <input type="hidden" name="aula_indice" value="{{ aula.aula_indice }}">
+                            <input type="hidden" name="identificador" value="{{ aula.identificador }}">
+                            <input type="hidden" name="concluida" value="{% if aula.concluida %}false{% else %}true{% endif %}">
+                            <input 
+                                type="checkbox" 
+                                class="checkbox-custom" 
+                                {% if aula.concluida %}checked{% endif %}
+                                onchange="this.form.submit()"
+                            >
+                        </form>
+                    </div>
+                    <div class="aula-content">
+                        <h4 class="aula-titulo">
+                            {{ aula.titulo }}
+                        </h4>
+                        {% if aula.descricao %}
+                        <p class="aula-descricao">{{ aula.descricao }}</p>
+                        {% endif %}
+                        
+                        <!-- Meta informações da aula -->
+                        <div class="aula-meta">
+                            {% if aula.duracao %}
+                            <span class="aula-tag">⏱️ {{ aula.duracao }}</span>
+                            {% endif %}
+                            {% if aula.tipo %}
+                            <span class="aula-tag">📚 {{ aula.tipo }}</span>
+                            {% endif %}
+                            {% if aula.dificuldade %}
+                            <span class="aula-tag">
+                                {% if aula.dificuldade == "Fácil" %}🟢
+                                {% elif aula.dificuldade == "Médio" %}🟡
+                                {% elif aula.dificuldade == "Difícil" %}🔴
+                                {% endif %}
+                                {{ aula.dificuldade }}
+                            </span>
+                            {% endif %}
+                        </div>
+                        
+                        <!-- Recursos da aula -->
+                        {% if aula.recursos %}
+                        <div class="aula-recursos">
+                            {% for recurso in aula.recursos %}
+                            <span class="recurso-item">
+                                {% if recurso.tipo == "video" %}🎥
+                                {% elif recurso.tipo == "artigo" %}📄
+                                {% elif recurso.tipo == "exercicio" %}💪
+                                {% elif recurso.tipo == "projeto" %}🚀
+                                {% else %}📎
+                                {% endif %}
+                                {{ recurso.nome|default:recurso.tipo }}
+                            </span>
+                            {% endfor %}
+                        </div>
+                        {% endif %}
+                        
+                        <!-- Objetivos da aula -->
+                        {% if aula.objetivos %}
+                        <div class="aula-objetivos">
+                            <div class="aula-objetivos-title">🎯 Objetivos de Aprendizado:</div>
+                            <ul class="aula-objetivos-list">
+                                {% for objetivo in aula.objetivos %}
+                                <li>{{ objetivo }}</li>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+
+        <!-- Botão Voltar -->
+        <div style="margin-top: 2rem;">
+            <a href="{% url 'dashboard' %}" class="btn-voltar">← Voltar ao Dashboard</a>
+        </div>
+    </main>
+
+    <script>
+        // Salvar posição de scroll antes do submit
+        document.querySelectorAll('form').forEach(form => {
+            form.addEventListener('submit', function(e) {
+                // Salvar posição atual do scroll
+                sessionStorage.setItem('scrollPosition', window.scrollY);
+            });
+        });
+
+        // Restaurar posição de scroll após o carregamento da página
+        window.addEventListener('load', function() {
+            const scrollPosition = sessionStorage.getItem('scrollPosition');
+            if (scrollPosition !== null) {
+                window.scrollTo(0, parseInt(scrollPosition));
+                sessionStorage.removeItem('scrollPosition');
+            }
+        });
+
+        // Animação suave ao marcar checkbox
+        document.querySelectorAll('.checkbox-custom').forEach(checkbox => {
+            checkbox.addEventListener('change', function() {
+                const aula = this.closest('.aula-item');
+                if (this.checked) {
+                    aula.style.transition = 'background 0.3s';
+                    aula.classList.add('concluida');
+                } else {
+                    aula.style.transition = 'background 0.3s';
+                    aula.classList.remove('concluida');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,66 +1,285 @@
 # 📚 EstudaAI
 
-O **EstudaAI** é uma aplicação web desenvolvida para ajudar estudantes no **planejamento de estudos**, através da **recomendação de trilhas de aprendizagem**. O sistema permite ao aluno escolher entre **trilhas pré-definidas** ou criar **trilhas personalizadas com o apoio de um agente LLM (IA)**.
+> **Sistema inteligente de planejamento de estudos com IA**
 
----
+O **EstudaAI** é uma aplicação web que ajuda estudantes a criar e acompanhar **trilhas de aprendizagem personalizadas**. Utilizando **Inteligência Artificial (Google Gemini)**, o sistema gera trilhas estruturadas baseadas nas necessidades específicas de cada estudante.
 
-## 🚀 Projeto GitHub – Fluxo de Branches
+## ✨ Funcionalidades
 
-👉 **Cada aluno deve criar uma branch própria para cada nova funcionalidade (feature branch).**
+- **Geração de trilhas com IA** - Trilhas personalizadas via Google Gemini
+- **Trilhas pré-definidas** - Conteúdo curado por especialistas
+- **Acompanhamento de progresso** - Visualização do desenvolvimento
+- **Sistema de usuários** - Perfis acadêmicos personalizados
+- **Categorização por áreas** - Organização por domínios de conhecimento
+- **Interface responsiva** - Funciona em desktop e mobile
 
-### Exemplo de criação de branch:
+## 🚀 Quick Start
+
+**Quer testar rapidamente?** Siga o [**Guia de 5 minutos**](QUICKSTART.md)
+
 ```bash
-git checkout -b feature/criacao-de-trilhas
+git clone https://github.com/Nilton-Canto/EstudaAI.git
+cd EstudaAI
+python3 -m venv venv && source venv/bin/activate
+pip install -r requirements.txt
+cd config && cp .env.example .env
+# Configure GEMINI_API_KEY no .env
+python manage.py migrate && python manage.py runserver
 ```
 
----
+## 📋 Índice
 
-## 🔄 Fluxo de Trabalho (Pull Request Workflow)
+- [Instalação Completa](#️-instalação-completa)
+- [Arquitetura](#️-arquitetura)
+- [Contribuição](#-contribuição)
+- [Workflow Git](#-workflow-git)
+- [Testes e CI/CD](#-testes-e-cicd)
+- [Diagramas UML](#-diagramas-uml)
+- [Segurança](#-segurança)
 
-1. ✅ **Criar a branch de feature** (exemplo: `feature/nome-da-feature`)
-2. ✅ **Realizar commits frequentes e com mensagens claras**
-3. ✅ **Enviar (push) sua branch para o GitHub**
-4. ✅ **Abrir um Pull Request (PR)**
-5. ✅ **Designar pelo menos 1 colega como revisor**
+## 🛠️ Instalação Completa
 
-### 🎯 O que o revisor deve fazer:
-- 👀 **Ler o código no GitHub**
-- 💬 **Fazer comentários linha a linha (inline comments)**
-- 🛠️ **Sugerir melhorias, correções ou ajustes**
-- ✅ **Aprovar o PR após validação**
+### Pré-requisitos
+- **Python 3.11+**
+- **Git**
+- **Chave API Google Gemini** ([obter aqui](https://makersuite.google.com/app/apikey))
 
-Após a aprovação ✅, o autor do PR realiza o **merge** para a branch principal (`main`).
-
----
-## 🔄  Regras:
-
-- ✅ Ninguém faz merge direto na main.
-- ✅ Pull Requests para a main só podem vir da develop.
-- ✅ Pull Requests para a develop só podem vir de feature branches (ex: feature/*).
-- ✅ Proibido fazer PR de main → develop.
-- ✅ Proibido fazer PR de develop → feature.
-
----
-
-## 📝 Boas Práticas de Commit
-
-- 🔁 **Commits pequenos e frequentes**
-- ✏️ **Mensagens de commit claras e objetivas**
-- ⚠️ **Antes de abrir o PR, sempre execute:**
+### 1. Clone do Repositório
 ```bash
-git pull origin main
+git clone https://github.com/Nilton-Canto/EstudaAI.git
+cd EstudaAI
 ```
-👉 Para garantir que sua branch está atualizada e evitar conflitos.
+
+### 2. Ambiente Virtual
+```bash
+# Linux/Mac
+python3 -m venv venv
+source venv/bin/activate
+
+# Windows PowerShell
+python -m venv venv
+.\venv\Scripts\Activate.ps1
+```
+
+### 3. Dependências
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Configuração
+```bash
+cd config
+cp .env.example .env
+```
+
+**Configure o arquivo `.env`:**
+```env
+# Segurança
+SECRET_KEY=sua-chave-secreta-django
+DEBUG=True
+ALLOWED_HOSTS=localhost,127.0.0.1
+
+# Google Gemini IA
+GEMINI_API_KEY=sua-chave-gemini-aqui
+GEMINI_MODEL=gemini-2.0-flash
+
+# CORS
+CORS_ALLOW_ALL_ORIGINS=True
+```
+
+### 5. Banco de Dados
+```bash
+python manage.py migrate
+```
+
+### 6. Superusuário (Opcional)
+```bash
+python manage.py createsuperuser
+```
+
+### 7. Executar
+```bash
+python manage.py runserver
+```
+
+**🎉 Acesse:** http://127.0.0.1:8000/
+
+## 🏗️ Arquitetura
+
+### Estrutura do Projeto
+```
+EstudaAI/
+├── config/                 # Configurações Django
+│   ├── api/               # API e integração IA
+│   ├── usuarios/          # Sistema de usuários
+│   ├── config/            # Settings Django
+│   └── manage.py
+├── docs/                  # Documentação
+│   ├── diagramas/         # UML e diagramas
+│   └── casos-de-uso/      # Especificações
+├── requirements.txt       # Dependências Python
+└── README.md
+```
+
+### Tecnologias
+- **Backend**: Django 5.2 + Django REST Framework
+- **IA**: Google Gemini API
+- **Banco**: SQLite (dev) / PostgreSQL (prod)
+- **Frontend**: HTML, CSS, JavaScript
+- **CI/CD**: GitHub Actions
+- **Testes**: pytest + coverage
+
+## 🤝 Contribuição
+
+**Quer contribuir?** Leia o [**Guia de Contribuição**](CONTRIBUTING.md)
+
+### Fluxo Rápido
+```bash
+# 1. Fork e clone seu fork
+git clone https://github.com/SEU-USUARIO/EstudaAI.git
+
+# 2. Criar branch feature
+git checkout -b feature/sua-funcionalidade
+
+# 3. Desenvolver e testar
+./run_ci_checks.sh
+
+# 4. Commit e push
+git commit -m "feat: adiciona nova funcionalidade"
+git push origin feature/sua-funcionalidade
+
+# 5. Abrir Pull Request para develop
+```
+
+## 🔄 Workflow Git
+
+### Branches
+- **`main`** - Produção (apenas via develop)
+- **`develop`** - Desenvolvimento (apenas via features)
+- **`feature/*`** - Novas funcionalidades
+
+### Regras
+- ✅ PRs para `main` só de `develop`
+- ✅ PRs para `develop` só de `feature/*`
+- ✅ Pelo menos 1 revisor por PR
+- ✅ CI deve passar (green)
+
+### Commits
+```bash
+feat(api): adiciona endpoint de trilhas
+fix(auth): corrige validação de login
+docs(readme): atualiza documentação
+style: aplica formatação black/isort
+test(users): adiciona testes unitários
+```
+
+## 🧪 Testes e CI/CD
+
+### Executar Testes Localmente
+```bash
+# Script automatizado
+./run_ci_checks.sh
+
+# Comandos individuais
+black config/                              # Formatação
+isort config/                              # Imports
+flake8 config/ --config=setup.cfg          # Linting
+bandit -r config/ --configfile .bandit     # Segurança
+cd config && pytest --cov=. -v             # Testes
+```
+
+### Pipeline CI/CD
+**Triggers:** Push/PR para `main` e `develop`
+
+- **Tests**: pytest com 70% cobertura mínima
+- **Lint**: Black, isort, Flake8
+- **Security**: Bandit para vulnerabilidades
+
+### Cobertura de Testes
+```bash
+cd config
+pytest --cov=. --cov-report=html
+python -m http.server 8000 --directory htmlcov
+# Acesse: http://localhost:8000
+```
+
+## 📊 Diagramas UML
+
+Documentação visual completa em [`docs/diagramas/`](docs/diagramas/):
+
+- **Diagrama Conceitual** - Classes técnicas por domínios
+- **Modelo de Domínio** - Conceitos de negócio
+- **Casos de Uso** - Funcionalidades do sistema
+
+**Visualizar:** https://www.plantuml.com/plantuml/uml/
+
+## 🔐 Segurança
+
+### Verificações Ativas
+- **Bandit** - Análise estática de segurança
+- **Safety** - Vulnerabilidades em dependências
+- **Secrets** - Sem credenciais hardcoded
+
+### Boas Práticas
+- Use `.env` para configurações sensíveis
+- Nunca commite `.env` (já no `.gitignore`)
+- Mantenha dependências atualizadas
+- Use GitHub Secrets para CI/CD
+
+## 🐛 Troubleshooting
+
+### Problemas Comuns
+
+**"No module named django"**
+```bash
+pip install -r requirements.txt
+```
+
+**"Database error"**
+```bash
+cd config && python manage.py migrate
+```
+
+**"GEMINI_API_KEY not found"**
+- Verifique se `.env` existe em `config/`
+- Confirme se a chave está correta
+
+**CI falha mas local funciona**
+```bash
+# Simule o CI localmente
+./run_ci_checks.sh
+```
+
+### Logs e Debug
+```bash
+# Logs do Django
+tail -f config/logs/django.log
+
+# Debug mode
+# No .env: DEBUG=True
+```
+
+## 📚 Recursos
+
+### Documentação
+- [Django Docs](https://docs.djangoproject.com/)
+- [Google Gemini API](https://ai.google.dev/)
+- [pytest Docs](https://docs.pytest.org/)
+
+### Ferramentas
+- [Black](https://black.readthedocs.io/) - Formatação
+- [isort](https://pycqa.github.io/isort/) - Imports
+- [Flake8](https://flake8.pycqa.org/) - Linting
+- [Bandit](https://bandit.readthedocs.io/) - Segurança
+
+## 📄 Licença
+
+Este projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para detalhes.
+
+## 👥 Equipe
+
+Desenvolvido com ❤️ pela equipe EstudaAI
 
 ---
 
-## 👀 Checklist para Revisores (Code Review)
-
-Antes de aprovar um PR, verifique:
-
-1. ✅ **Nome de variáveis** é adequado e expressivo.
-2. ✅ **Clareza e legibilidade** do código.
-3. ✅ **Divisão de responsabilidades** bem definida (nenhuma função fazendo "tudo").
-4. ✅ **Cumprimento dos requisitos da issue relacionada**.
-5. ✅ **Presença de testes**, se aplicável.
-6. ✅ Só aprova PR se "base branch" correta (ex: feature/ para develop ou develop para main)
+**⭐ Se este projeto te ajudou, considere dar uma estrela!**

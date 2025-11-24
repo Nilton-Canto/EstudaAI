@@ -1,0 +1,107 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EstudaAI - Minhas Trilhas</title>
+  <link rel="stylesheet" href="{% static 'usuarios/minhastrilhas-style.css' %}">
+</head>
+<body class="bg">
+  <header class="navbar">
+    <nav>
+      <a href="#" class="logo">EstudaAI</a>
+      <ul class="menu">
+        <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+        <li><a href="#" class="active">Minhas Trilhas</a></li>
+        <li><a href="{% url 'criar_trilha' %}">Criar Trilha</a></li>
+      </ul>
+      <div class="user">
+        <span>Olá, <strong>{{ user.nome|default:user.username }}</strong></span>
+        {% if user.is_staff %}
+        <a href="{% url 'admin_dashboard' %}" style="margin-left: 1rem; padding: 0.5rem 1rem; background: rgba(255,255,255,0.2); border-radius: 0.5rem; text-decoration: none; color: white;">Admin</a>
+        {% endif %}
+        <a href="{% url 'logout' %}" style="margin-left: 0.5rem; padding: 0.5rem 1rem; background: rgba(239,68,68,0.9); border-radius: 0.5rem; text-decoration: none; color: white;">Sair</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <h2>Minhas Trilhas</h2>
+    
+    {% if messages %}
+      {% for message in messages %}
+      <div style="background: #d1fae5; color: #065f46; border: 1px solid #10b981; padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;">
+        {{ message }}
+      </div>
+      {% endfor %}
+    {% endif %}
+
+    <!-- Todas as Trilhas -->
+    {% if trilhas %}
+    <div>
+      {% for trilha in trilhas %}
+      <div class="card" style="margin-bottom: 1rem;">
+        <div style="display: flex; justify-content: space-between; align-items: start;">
+          <div style="flex: 1;">
+            <h4 style="color: #1f2937; margin-bottom: 0.5rem;">
+              {% if trilha.solicitacao_original and trilha.solicitacao_original != "Criado pelo admin" and trilha.solicitacao_original != "Criação manual" %}
+              🤖 
+              {% else %}
+              📚 
+              {% endif %}
+              {{ trilha.titulo }}
+              {% if not trilha.ativa %}
+              <span style="background: #fee2e2; color: #991b1b; padding: 0.25rem 0.5rem; border-radius: 0.25rem; font-size: 0.75rem; margin-left: 0.5rem;">Inativa</span>
+              {% endif %}
+            </h4>
+            {% if trilha.descricao %}
+            <p style="color: #6b7280; margin-bottom: 0.5rem;">{{ trilha.descricao }}</p>
+            {% endif %}
+            {% if trilha.area %}
+            <p style="color: #9ca3af; font-size: 0.875rem;">
+              Área: {{ trilha.area.nome }}
+            </p>
+            {% endif %}
+            <p style="color: #9ca3af; font-size: 0.875rem;">
+              Criada em: {{ trilha.data_criacao|date:"d/m/Y H:i" }}
+            </p>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <a 
+              href="{% url 'ver_trilha' trilha.id %}"
+              style="background: #4f46e5; color: white; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; cursor: pointer; text-decoration: none; display: inline-block;"
+            >
+               Ver Detalhes
+            </a>
+            <form method="POST" action="{% url 'excluir_trilha' trilha.id %}" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja excluir esta trilha?');">
+              {% csrf_token %}
+              <button 
+                type="submit"
+                style="background: #ef4444; color: white; padding: 0.5rem 1rem; border: none; border-radius: 0.5rem; cursor: pointer;"
+              >
+                🗑️ Excluir
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+    {% endif %}
+
+    <!-- Caso não tenha trilhas -->
+    {% if not trilhas %}
+    <div class="card">
+      <p style="text-align: center; color: #6b7280;">
+        Você ainda não criou nenhuma trilha. <a href="{% url 'criar_trilha' %}" style="color: #4f46e5; font-weight: 600;">Criar minha primeira trilha</a>
+      </p>
+    </div>
+    {% endif %}
+  </main>
+
+  <script>
+    // Script removido - agora usa links diretos
+  </script>
+</body>
+</html>

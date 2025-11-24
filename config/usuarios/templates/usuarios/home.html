@@ -1,0 +1,199 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EstudaAI - Sistema de Recomendação de Trilhas de Aprendizagem</title>
+    <link rel="stylesheet" href="{% static 'usuarios/home-style.css' %}">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-content">
+            <div class="logo">
+                <h1>EstudaAI</h1>
+            </div>
+            <nav class="nav-buttons">
+                <a href="{% url 'login' %}" class="btn-secondary">Login</a>
+                <a href="{% url 'signup' %}" class="btn-primary">Cadastre-se</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h2 class="hero-title">EstudaAI</h2>
+                <p class="hero-subtitle">Seu Parceiro Inteligente nos Estudos</p>
+                <p class="hero-description">
+                    Planeje seus estudos de forma eficiente com trilhas de aprendizagem 
+                    personalizadas e o poder da inteligência artificial.
+                </p>
+                <a href="{% url 'signup' %}" class="btn-hero">Começar Agora</a>
+            </div>
+            <div class="hero-icon">
+                <div class="icon-circle">
+                    <span class="icon-text">🎓</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Como Funciona -->
+    <section class="how-it-works">
+        <div class="container">
+            <h2 class="section-title">Como Funciona</h2>
+            <p class="section-subtitle">Comece sua jornada de aprendizado em 3 passos simples</p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <div class="step-icon">📝</div>
+                    <h3 class="step-title">Crie sua Conta</h3>
+                    <p class="step-description">
+                        Cadastre-se gratuitamente e tenha acesso a todas as funcionalidades da plataforma.
+                    </p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <div class="step-icon">🎯</div>
+                    <h3 class="step-title">Escolha ou Crie Trilhas</h3>
+                    <p class="step-description">
+                        Selecione trilhas pré-definidas ou crie trilhas personalizadas com ajuda da IA.
+                    </p>
+                </div>
+                
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <div class="step-icon">📊</div>
+                    <h3 class="step-title">Acompanhe seu Progresso</h3>
+                    <p class="step-description">
+                        Marque etapas concluídas e visualize sua evolução em tempo real.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recursos Principais -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Recursos Principais</h2>
+            <p class="section-subtitle">Tudo que você precisa para otimizar seus estudos</p>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3 class="feature-title">Trilhas Pré-definidas</h3>
+                    <p class="feature-description">
+                        Acesse trilhas de aprendizagem curadas por especialistas em diversas áreas do conhecimento.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">Trilhas Personalizadas com IA</h3>
+                    <p class="feature-description">
+                        Crie trilhas sob medida com o auxílio de inteligência artificial baseada em suas necessidades.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3 class="feature-title">Acompanhamento de Progresso</h3>
+                    <p class="feature-description">
+                        Visualize seu progresso em tempo real e mantenha-se motivado com métricas claras.
+                    </p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3 class="feature-title">Chat com IA</h3>
+                    <p class="feature-description">
+                        Tire dúvidas e receba orientações personalizadas através do nosso assistente inteligente.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Por que usar o EstudaAI -->
+    <section class="benefits">
+        <div class="container">
+            <h2 class="section-title">Por que usar o EstudaAI?</h2>
+            <p class="section-subtitle">Transforme a forma como você estuda</p>
+            
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <div class="benefit-icon">✨</div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Planejamento Facilitado</h3>
+                        <p class="benefit-description">
+                            Organize seus estudos de forma estruturada e alcance seus objetivos com mais eficiência.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎨</div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Personalização Inteligente</h3>
+                        <p class="benefit-description">
+                            Trilhas adaptadas ao seu ritmo, nível de conhecimento e objetivos específicos.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🚀</div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Suporte Contínuo</h3>
+                        <p class="benefit-description">
+                            Conte com a ajuda da IA para esclarecer dúvidas e manter a motivação sempre alta.
+                        </p>
+                    </div>
+                </div>
+                
+                <div class="benefit-item">
+                    <div class="benefit-icon">🎓</div>
+                    <div class="benefit-content">
+                        <h3 class="benefit-title">Conteúdo de Qualidade</h3>
+                        <p class="benefit-description">
+                            Trilhas desenvolvidas e validadas por especialistas nas áreas de conhecimento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action Final -->
+    <section class="cta">
+        <div class="container cta-content">
+            <h2 class="cta-title">Pronto para começar?</h2>
+            <p class="cta-description">
+                Junte-se a outros estudantes que já estão transformando seus estudos com o EstudaAI.
+            </p>
+            <div class="cta-buttons">
+                <a href="{% url 'signup' %}" class="btn-cta-primary">Criar Conta Gratuita</a>
+                <a href="{% url 'login' %}" class="btn-cta-secondary">Já tenho conta</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-content">
+            <p class="footer-text">
+                &copy; 2025 EstudaAI - Sistema de Recomendação de Trilhas de Aprendizagem
+            </p>
+            <p class="footer-subtext">
+                Desenvolvido com dedicação para transformar a educação
+            </p>
+        </div>
+    </footer>
+</body>
+</html>

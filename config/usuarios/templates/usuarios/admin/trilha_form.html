@@ -1,0 +1,562 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% if trilha %}Editar{% else %}Nova{% endif %} Trilha - EstudaAI Admin</title>
+    <link rel="stylesheet" href="{% static 'usuarios/admin-style.css' %}">
+    <style>
+        .alert {
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+        }
+        
+        .alert.success {
+            background-color: #d1fae5;
+            color: #065f46;
+            border: 1px solid #10b981;
+        }
+        
+        .alert.error {
+            background-color: #fee2e2;
+            color: #991b1b;
+            border: 1px solid #ef4444;
+        }
+        
+        .ai-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            margin-bottom: 2rem;
+        }
+        
+        .ai-section h3 {
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .ai-input-group {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .ai-input {
+            flex: 1;
+            padding: 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-size: 1rem;
+        }
+        
+        .btn-ai {
+            background: white;
+            color: #667eea;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            white-space: nowrap;
+        }
+        
+        .btn-ai:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        
+        .btn-ai:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+        
+        .ai-loading {
+            display: none;
+            text-align: center;
+            margin-top: 1rem;
+        }
+        
+        .ai-spinner {
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            margin: 10px auto;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+        }
+        
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.02);
+            }
+        }
+        
+        .ai-result {
+            display: none;
+            background: rgba(255,255,255,0.2);
+            padding: 1rem;
+            border-radius: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .ai-result pre {
+            background: white;
+            color: #333;
+            padding: 1rem;
+            border-radius: 0.5rem;
+            overflow-x: auto;
+            max-height: 300px;
+        }
+        
+        .btn-use-ai {
+            background: #10b981;
+            color: white;
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            margin-top: 0.5rem;
+        }
+        
+        .btn-use-ai:hover {
+            background: #059669;
+        }
+    </style>
+</head>
+<body>
+    <header class="admin-navbar">
+        <nav class="admin-nav-container">
+            <a href="{% url 'admin_dashboard' %}" class="admin-logo">EstudaAI Admin</a>
+            <ul class="admin-menu">
+                <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'admin_usuarios_list' %}">Usuários</a></li>
+                <li><a href="{% url 'admin_areas_list' %}">Áreas</a></li>
+                <li><a href="{% url 'admin_trilhas_list' %}" class="active">Trilhas</a></li>
+            </ul>
+            <div class="admin-user-info">
+                <span class="admin-badge">ADMIN</span>
+                <span>{{ user.username }}</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">{% if trilha %}Editar Trilha{% else %}Nova Trilha{% endif %}</h1>
+            <p class="admin-subtitle">Use IA para gerar trilhas personalizadas</p>
+        </div>
+
+        <!-- Seção de IA -->
+        {% if not trilha %}
+        <div class="ai-section">
+            <h3>🤖 Assistente IA - Gerar Trilha Automaticamente</h3>
+            <p style="opacity: 0.9; margin-bottom: 1rem;">
+                Descreva o que você deseja aprender e a IA criará uma trilha personalizada completa!
+            </p>
+            
+            <div class="ai-input-group">
+                <input 
+                    type="text" 
+                    id="ai-prompt" 
+                    class="ai-input" 
+                    placeholder="Ex: Quero aprender Python para análise de dados..."
+                    value=""
+                >
+                <button type="button" class="btn-ai" onclick="gerarTrilhaIA()">
+                    Gerar com IA
+                </button>
+            </div>
+            
+            <div class="ai-loading" id="ai-loading">
+                <div class="ai-spinner"></div>
+                <p>Gerando trilha personalizada com Gemini AI...</p>
+            </div>
+            
+            <div class="ai-result" id="ai-result">
+                <h4 style="margin-bottom: 0.5rem;">Trilha Gerada:</h4>
+                <pre id="ai-content"></pre>
+                <button type="button" class="btn-use-ai" onclick="usarTrilhaIA()">
+                    Usar esta trilha
+                </button>
+            </div>
+        </div>
+        {% endif %}
+
+        {% if messages %}
+        {% for message in messages %}
+        <div class="alert {% if message.tags %}{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+        {% endfor %}
+        {% endif %}
+
+        <div class="admin-card">
+            <form method="POST" id="trilha-form">
+                {% csrf_token %}
+                
+                <div class="form-grid">
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label class="form-label" for="id_titulo">Título da Trilha *</label>
+                        <input 
+                            type="text" 
+                            name="titulo" 
+                            id="id_titulo" 
+                            class="form-input" 
+                            value="{% if trilha %}{{ trilha.titulo }}{% endif %}" 
+                            required
+                        >
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="id_usuario">Usuário *</label>
+                        <select name="usuario" id="id_usuario" class="form-select" required>
+                            <option value="">Selecione um usuário</option>
+                            {% for usuario in usuarios %}
+                            <option value="{{ usuario.id }}" 
+                                {% if trilha and trilha.usuario_id == usuario.id %}selected{% endif %}>
+                                {{ usuario.nome }} ({{ usuario.email }})
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label" for="id_area">Área (opcional)</label>
+                        <select name="area" id="id_area" class="form-select">
+                            <option value="">Nenhuma área</option>
+                            {% for area in areas %}
+                            <option value="{{ area.id }}" 
+                                {% if trilha and trilha.area_id == area.id %}selected{% endif %}>
+                                {{ area.icone }} {{ area.nome }}
+                            </option>
+                            {% endfor %}
+                        </select>
+                    </div>
+
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label class="form-label" for="id_descricao">Descrição</label>
+                        <textarea 
+                            name="descricao" 
+                            id="id_descricao" 
+                            class="form-textarea" 
+                            rows="3"
+                        >{% if trilha %}{{ trilha.descricao }}{% endif %}</textarea>
+                        <small style="color: #6b7280;">
+                            Descrição opcional da trilha (será preenchida automaticamente pela IA)
+                        </small>
+                    </div>
+
+                    <div class="form-group" style="grid-column: 1 / -1;">
+                        <label class="form-label" for="id_conteudo">Conteúdo da Trilha (JSON) *</label>
+                        <textarea 
+                            name="conteudo" 
+                            id="id_conteudo" 
+                            class="form-textarea" 
+                            style="min-height: 300px; font-family: 'Courier New', monospace;"
+                            required
+                        >{% if trilha %}{% load static %}{{ trilha.conteudo_json|default:"{}"|escapejs }}{% endif %}</textarea>
+                        <small style="color: #6b7280;">
+                            O conteúdo deve estar em formato JSON válido. Use a IA acima para gerar automaticamente.
+                        </small>
+                    </div>
+
+                    <script>
+                    {% if trilha and trilha.conteudo_json %}
+                    // Formatar JSON no textarea ao carregar a página
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const textarea = document.getElementById('id_conteudo');
+                        try {
+                            const obj = {{ trilha.conteudo_json|safe }};
+                            textarea.value = JSON.stringify(obj, null, 2);
+                        } catch(e) {
+                            console.error('Erro ao formatar JSON:', e);
+                        }
+                    });
+                    {% endif %}
+                    </script>
+
+                    <div class="form-group">
+                        <label class="form-label">
+                            <input 
+                                type="checkbox" 
+                                name="ativa" 
+                                {% if trilha %}
+                                    {% if trilha.ativa %}checked{% endif %}
+                                {% else %}
+                                    checked
+                                {% endif %}
+                            >
+                            Trilha Ativa
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-actions">
+                    <button type="submit" class="btn-success">Salvar Trilha</button>
+                    <a href="{% url 'admin_trilhas_list' %}" class="btn-secondary">Cancelar</a>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <script>
+        function getCookie(name) {
+            let cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                const cookies = document.cookie.split(';');
+                for (let i = 0; i < cookies.length; i++) {
+                    const cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+        
+        const csrftoken = getCookie('csrftoken');
+        let trilhaGerada = null;
+        
+        async function gerarTrilhaIA() {
+            const prompt = document.getElementById('ai-prompt').value;
+            
+            if (!prompt.trim()) {
+                alert('Por favor, descreva o que você deseja aprender');
+                return;
+            }
+            
+            // Mostrar loading
+            document.getElementById('ai-loading').style.display = 'block';
+            document.getElementById('ai-result').style.display = 'none';
+            document.querySelector('.btn-ai').disabled = true;
+            
+            try {
+                const response = await fetch('/api/gemini/trilha/', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'X-CSRFToken': csrftoken
+                    },
+                    body: JSON.stringify({ 
+                        solicitacao: prompt,
+                        user_id: document.getElementById('id_usuario').value || null
+                    })
+                });
+                
+                const data = await response.json();
+                
+                // Esconder loading
+                document.getElementById('ai-loading').style.display = 'none';
+                document.querySelector('.btn-ai').disabled = false;
+                
+                if (response.ok) {
+                    trilhaGerada = data;
+                    console.log('Resposta da API:', data);
+                    
+                    // Mostrar resposta formatada
+                    document.getElementById('ai-content').textContent = JSON.stringify(data, null, 2);
+                    document.getElementById('ai-result').style.display = 'block';
+                    
+                    // Scroll suave para o resultado
+                    document.getElementById('ai-result').scrollIntoView({ 
+                        behavior: 'smooth',
+                        block: 'nearest'
+                    });
+                } else {
+                    alert('Erro ao gerar trilha: ' + (data.error || 'Erro desconhecido'));
+                }
+            } catch (error) {
+                document.getElementById('ai-loading').style.display = 'none';
+                document.querySelector('.btn-ai').disabled = false;
+                alert('Erro ao conectar com a API: ' + error.message);
+            }
+        }
+        
+        function usarTrilhaIA() {
+            if (!trilhaGerada) {
+                alert('Nenhuma trilha foi gerada ainda!');
+                return;
+            }
+            
+            console.log('Dados completos recebidos:', trilhaGerada);
+            
+            // A API retorna: { trilha: { titulo, descricao, modulos... }, solicitacao, status }
+            const dadosTrilha = trilhaGerada.trilha || trilhaGerada;
+            console.log('Dados da trilha:', dadosTrilha);
+            
+            // Preencher TÍTULO
+            const tituloInput = document.getElementById('id_titulo');
+            if (dadosTrilha.titulo) {
+                tituloInput.value = dadosTrilha.titulo;
+                console.log('✅ Título preenchido:', dadosTrilha.titulo);
+            } else {
+                console.warn('⚠️ Título não encontrado na resposta');
+                // Tentar extrair de solicitação
+                if (trilhaGerada.solicitacao) {
+                    tituloInput.value = 'Trilha: ' + trilhaGerada.solicitacao.substring(0, 100);
+                }
+            }
+            
+            // Preencher CONTEÚDO (JSON completo da trilha)
+            const conteudoTextarea = document.getElementById('id_conteudo');
+            const conteudoJSON = JSON.stringify(dadosTrilha, null, 2);
+            conteudoTextarea.value = conteudoJSON;
+            console.log('✅ Conteúdo preenchido (', conteudoJSON.length, 'caracteres)');
+            
+            // Preencher DESCRIÇÃO (se o campo existir no form)
+            const descricaoTextarea = document.getElementById('id_descricao');
+            if (descricaoTextarea && dadosTrilha.descricao) {
+                descricaoTextarea.value = dadosTrilha.descricao;
+                console.log('✅ Descrição preenchida');
+            }
+            
+            // Scroll suave para o formulário
+            document.querySelector('.admin-card').scrollIntoView({ 
+                behavior: 'smooth',
+                block: 'start'
+            });
+            
+            // Feedback visual mais forte
+            tituloInput.style.backgroundColor = '#d1fae5';
+            tituloInput.style.transition = 'background-color 0.3s';
+            conteudoTextarea.style.backgroundColor = '#d1fae5';
+            conteudoTextarea.style.transition = 'background-color 0.3s';
+            
+            if (descricaoTextarea) {
+                descricaoTextarea.style.backgroundColor = '#d1fae5';
+                descricaoTextarea.style.transition = 'background-color 0.3s';
+            }
+            
+            // Focar no campo de usuário (que precisa ser selecionado)
+            setTimeout(() => {
+                const usuarioSelect = document.getElementById('id_usuario');
+                if (usuarioSelect && !usuarioSelect.value) {
+                    usuarioSelect.focus();
+                    usuarioSelect.style.border = '2px solid #f59e0b';
+                    usuarioSelect.style.animation = 'pulse 0.5s';
+                }
+            }, 300);
+            
+            // Remover highlight após 3 segundos
+            setTimeout(() => {
+                tituloInput.style.backgroundColor = '';
+                conteudoTextarea.style.backgroundColor = '';
+                if (descricaoTextarea) descricaoTextarea.style.backgroundColor = '';
+            }, 3000);
+            
+            // Mostrar mensagem de sucesso
+            const successMsg = document.createElement('div');
+            successMsg.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #10b981;
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 9999;
+                font-weight: 600;
+                animation: slideIn 0.3s ease-out;
+            `;
+            successMsg.innerHTML = `
+                Trilha aplicada ao formulário!<br>
+                <small style="opacity: 0.9;">Não esqueça de selecionar o usuário</small>
+            `;
+            document.body.appendChild(successMsg);
+            
+            setTimeout(() => {
+                successMsg.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => successMsg.remove(), 300);
+            }, 4000);
+        }
+            
+            // Feedback visual mais forte
+            tituloInput.style.backgroundColor = '#d1fae5';
+            tituloInput.style.transition = 'background-color 0.3s';
+            conteudoTextarea.style.backgroundColor = '#d1fae5';
+            conteudoTextarea.style.transition = 'background-color 0.3s';
+            
+            // Focar no primeiro campo
+            setTimeout(() => {
+                tituloInput.focus();
+            }, 300);
+            
+            // Remover highlight após 3 segundos
+            setTimeout(() => {
+                tituloInput.style.backgroundColor = '';
+                conteudoTextarea.style.backgroundColor = '';
+            }, 3000);
+            
+            // Mostrar mensagem de sucesso
+            const successMsg = document.createElement('div');
+            successMsg.style.cssText = `
+                position: fixed;
+                top: 20px;
+                right: 20px;
+                background: #10b981;
+                color: white;
+                padding: 1rem 2rem;
+                border-radius: 0.5rem;
+                box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+                z-index: 9999;
+                font-weight: 600;
+                animation: slideIn 0.3s ease-out;
+            `;
+            successMsg.textContent = 'Trilha aplicada ao formulário!';
+            document.body.appendChild(successMsg);
+            
+            setTimeout(() => {
+                successMsg.style.animation = 'slideOut 0.3s ease-out';
+                setTimeout(() => successMsg.remove(), 300);
+            }, 3000);
+    
+        
+        // Permitir Enter para gerar
+        document.getElementById('ai-prompt')?.addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') {
+                gerarTrilhaIA();
+            }
+        });
+    </script>
+</body>
+</html>

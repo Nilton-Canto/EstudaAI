@@ -1,0 +1,139 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerenciar Usuários - EstudaAI Admin</title>
+    <link rel="stylesheet" href="{% static 'usuarios/admin-style.css' %}">
+</head>
+<body>
+    <!-- Navbar Admin -->
+    <header class="admin-navbar">
+        <nav class="admin-nav-container">
+            <a href="{% url 'admin_dashboard' %}" class="admin-logo">EstudaAI Admin</a>
+            <ul class="admin-menu">
+                <li><a href="{% url 'admin_dashboard' %}">Dashboard</a></li>
+                <li><a href="{% url 'admin_usuarios_list' %}" class="active">Usuários</a></li>
+                <li><a href="{% url 'admin_areas_list' %}">Áreas</a></li>
+                <li><a href="{% url 'admin_trilhas_list' %}">Trilhas</a></li>
+            </ul>
+            <div class="admin-user-info">
+                <span class="admin-badge">ADMIN</span>
+                <span>{{ user.username }}</span>
+            </div>
+        </nav>
+    </header>
+
+    <main class="admin-container">
+        <div class="admin-header">
+            <h1 class="admin-title">Gerenciar Usuários</h1>
+            <p class="admin-subtitle">Adicione, edite ou remova usuários do sistema</p>
+        </div>
+
+        {% if messages %}
+            {% for message in messages %}
+            <div class="alert {{ message.tags }}">{{ message }}</div>
+            {% endfor %}
+        {% endif %}
+
+        <div class="admin-card">
+            <div class="card-header">
+                <h2 class="card-title">Lista de Usuários ({{ page_obj.paginator.count }})</h2>
+                <a href="{% url 'admin_usuario_create' %}" class="btn-primary">➕ Novo Usuário</a>
+            </div>
+
+            <!-- Barra de Pesquisa -->
+            <form method="GET" class="search-bar">
+                <input 
+                    type="text" 
+                    name="q" 
+                    class="search-input" 
+                    placeholder="Buscar por nome, email ou universidade..."
+                    value="{{ request.GET.q }}"
+                >
+                <select name="filtro" class="filter-select">
+                    <option value="">Todos</option>
+                    <option value="ativos" {% if request.GET.filtro == 'ativos' %}selected{% endif %}>Ativos</option>
+                    <option value="inativos" {% if request.GET.filtro == 'inativos' %}selected{% endif %}>Inativos</option>
+                    <option value="staff" {% if request.GET.filtro == 'staff' %}selected{% endif %}>Administradores</option>
+                </select>
+                <button type="submit" class="btn-primary">🔍 Buscar</button>
+            </form>
+
+            <div class="table-container">
+                <table class="admin-table">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Nome</th>
+                            <th>Email</th>
+                            <th>Universidade</th>
+                            <th>Curso</th>
+                            <th>Status</th>
+                            <th>Data Cadastro</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for usuario in page_obj %}
+                        <tr>
+                            <td>{{ usuario.id }}</td>
+                            <td>{{ usuario.nome }}</td>
+                            <td>{{ usuario.email }}</td>
+                            <td>{{ usuario.universidade }}</td>
+                            <td>{{ usuario.curso }}</td>
+                            <td>
+                                {% if usuario.is_active %}
+                                <span class="badge success">Ativo</span>
+                                {% else %}
+                                <span class="badge danger">Inativo</span>
+                                {% endif %}
+                                {% if usuario.is_staff %}
+                                <span class="badge warning">Admin</span>
+                                {% endif %}
+                            </td>
+                            <td>{{ usuario.date_joined|date:"d/m/Y" }}</td>
+                            <td class="table-actions">
+                                <a href="{% url 'admin_usuario_edit' usuario.id %}" class="btn-secondary">✏️ Editar</a>
+                                <form method="POST" action="{% url 'admin_usuario_delete' usuario.id %}" style="display: inline;" onsubmit="return confirm('Tem certeza que deseja excluir este usuário?');">
+                                    {% csrf_token %}
+                                    <button type="submit" class="btn-danger">🗑️ Excluir</button>
+                                </form>
+                            </td>
+                        </tr>
+                        {% empty %}
+                        <tr>
+                            <td colspan="8">
+                                <div class="empty-state">
+                                    <div class="empty-state-icon">👤</div>
+                                    <div class="empty-state-text">Nenhum usuário encontrado</div>
+                                    <p>Adicione o primeiro usuário ao sistema</p>
+                                </div>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Paginação -->
+            {% if page_obj.has_other_pages %}
+            <div class="pagination">
+                {% if page_obj.has_previous %}
+                <a href="?page=1{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.filtro %}&filtro={{ request.GET.filtro }}{% endif %}">« Primeira</a>
+                <a href="?page={{ page_obj.previous_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.filtro %}&filtro={{ request.GET.filtro }}{% endif %}">‹ Anterior</a>
+                {% endif %}
+                
+                <span class="active">Página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+                
+                {% if page_obj.has_next %}
+                <a href="?page={{ page_obj.next_page_number }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.filtro %}&filtro={{ request.GET.filtro }}{% endif %}">Próxima ›</a>
+                <a href="?page={{ page_obj.paginator.num_pages }}{% if request.GET.q %}&q={{ request.GET.q }}{% endif %}{% if request.GET.filtro %}&filtro={{ request.GET.filtro }}{% endif %}">Última »</a>
+                {% endif %}
+            </div>
+            {% endif %}
+        </div>
+    </main>
+</body>
+</html>

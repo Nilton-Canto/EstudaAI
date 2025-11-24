@@ -1,0 +1,266 @@
+[
+  {
+    "area_nome": "Desenvolvimento Web",
+    "titulo": "Fundamentos de Desenvolvimento Web Full Stack",
+    "descricao": "Aprenda a criar aplicações web completas do zero, dominando frontend e backend",
+    "conteudo": {
+      "modulos": [
+        {
+          "titulo": "HTML e CSS Fundamentais",
+          "descricao": "Estruture e estilize páginas web",
+          "aulas": [
+            {
+              "titulo": "HTML5 Semântico",
+              "descricao": "Tags, atributos e estrutura HTML moderna. Aprenda a criar documentos bem estruturados e acessíveis.",
+              "duracao": "120 min",
+              "tipo": "Teórico",
+              "dificuldade": "Fácil",
+              "objetivos": [
+                "Compreender a estrutura básica de um documento HTML5",
+                "Utilizar tags semânticas corretamente",
+                "Criar formulários e elementos interativos"
+              ],
+              "recursos": [
+                {"tipo": "video", "nome": "HTML5 Crash Course - Traversy Media"},
+                {"tipo": "artigo", "nome": "MDN Web Docs - HTML Basics"},
+                {"tipo": "exercicio", "nome": "Crie uma página de portfólio pessoal"}
+              ]
+            },
+            {
+              "titulo": "CSS3 Moderno",
+              "descricao": "Flexbox, Grid e design responsivo. Domine as técnicas modernas de layout e estilização.",
+              "duracao": "180 min",
+              "tipo": "Teórico",
+              "dificuldade": "Médio",
+              "objetivos": [
+                "Dominar Flexbox para layouts flexíveis",
+                "Utilizar CSS Grid para layouts complexos",
+                "Criar designs responsivos com media queries"
+              ],
+              "recursos": [
+                {"tipo": "video", "nome": "CSS Grid & Flexbox - Wes Bos"},
+                {"tipo": "artigo", "nome": "Complete Guide to Flexbox - CSS Tricks"},
+                {"tipo": "exercicio", "nome": "Layout responsivo para blog"}
+              ]
+            },
+            {
+              "titulo": "Projeto Prático HTML/CSS",
+              "descricao": "Construa uma landing page responsiva completa aplicando HTML5 e CSS3.",
+              "duracao": "240 min",
+              "tipo": "Projeto",
+              "dificuldade": "Médio",
+              "objetivos": [
+                "Aplicar conhecimentos de HTML5 e CSS3",
+                "Criar um design profissional e responsivo",
+                "Publicar o projeto online"
+              ],
+              "recursos": [
+                {"tipo": "projeto", "nome": "Landing Page para Startup"},
+                {"tipo": "artigo", "nome": "Guia de Deploy - GitHub Pages"},
+                {"tipo": "exercicio", "nome": "Otimização de performance"}
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "JavaScript Essencial",
+          "descricao": "Domine a linguagem da web",
+          "aulas": [
+            {"titulo": "Fundamentos JS", "descricao": "Variáveis, funções e estruturas de controle", "tipo": "video", "duracao": "3h"},
+            {"titulo": "DOM Manipulation", "descricao": "Adicione interatividade às suas páginas", "tipo": "video", "duracao": "2h"},
+            {"titulo": "ES6+ Features", "descricao": "Arrow functions, promises e async/await", "tipo": "video", "duracao": "2h"}
+          ]
+        },
+        {
+          "titulo": "Backend com Node.js",
+          "descricao": "Construa APIs e servidores",
+          "aulas": [
+            {"titulo": "Node.js Basics", "descricao": "NPM, módulos e Express framework", "tipo": "video", "duracao": "3h"},
+            {"titulo": "REST APIs", "descricao": "Rotas, controllers e middlewares", "tipo": "video", "duracao": "4h"},
+            {"titulo": "Banco de Dados", "descricao": "MongoDB e PostgreSQL essenciais", "tipo": "video", "duracao": "3h"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "area_nome": "Ciência de Dados",
+    "titulo": "Introdução à Ciência de Dados com Python",
+    "descricao": "Domine análise de dados, visualização e fundamentos de machine learning",
+    "conteudo": {
+      "modulos": [
+        {
+          "titulo": "Python para Dados",
+          "descricao": "Ferramentas essenciais: NumPy e Pandas",
+          "aulas": [
+            {"titulo": "NumPy Básico", "descricao": "Arrays e operações vetorizadas para computação eficiente", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Pandas Fundamentals", "descricao": "DataFrames e manipulação avançada de dados", "tipo": "video", "duracao": "3h"},
+            {"titulo": "Limpeza de Dados", "descricao": "Tratamento de missing values e outliers", "tipo": "exercicio", "duracao": "2h"}
+          ]
+        },
+        {
+          "titulo": "Visualização de Dados",
+          "descricao": "Gráficos e dashboards",
+          "aulas": [
+            {"titulo": "Matplotlib Basics", "descricao": "Gráficos de linha, barra e dispersão", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Seaborn Avançado", "descricao": "Visualizações estatísticas profissionais", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Plotly Interativo", "descricao": "Crie gráficos interativos e dashboards", "tipo": "projeto", "duracao": "3h"}
+          ]
+        },
+        {
+          "titulo": "Estatística Aplicada",
+          "descricao": "Fundamentos para análise de dados",
+          "aulas": [
+            {"titulo": "Estatística Descritiva", "descricao": "Média, mediana, moda e desvio padrão", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Probabilidade", "descricao": "Distribuições e testes de hipótese", "tipo": "video", "duracao": "3h"},
+            {"titulo": "Correlação e Regressão", "descricao": "Analise relações entre variáveis", "tipo": "exercicio", "duracao": "2h"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "area_nome": "Inteligência Artificial",
+    "titulo": "Machine Learning do Zero ao Avançado",
+    "descricao": "Aprenda algoritmos de ML, deep learning e implemente projetos reais",
+    "conteudo": {
+      "modulos": [
+        {
+          "titulo": "Fundamentos de Machine Learning",
+          "descricao": "Conceitos e algoritmos clássicos",
+          "aulas": [
+            {"titulo": "Introdução ao ML", "descricao": "Tipos de aprendizado (supervisionado, não-supervisionado) e aplicações reais", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Regressão Linear", "descricao": "Seu primeiro modelo de ML para prever valores numéricos", "tipo": "video", "duracao": "3h"},
+            {"titulo": "Árvores de Decisão", "descricao": "Modelos de classificação e regressão", "tipo": "exercicio", "duracao": "2h"}
+          ]
+        },
+        {
+          "titulo": "Deep Learning",
+          "descricao": "Redes neurais e frameworks modernos",
+          "aulas": [
+            {"titulo": "Redes Neurais", "descricao": "Perceptron, ativação e backpropagation", "tipo": "video", "duracao": "3h"},
+            {"titulo": "TensorFlow/Keras", "descricao": "Framework líder para deep learning", "tipo": "video", "duracao": "3h"},
+            {"titulo": "CNNs e Visão Computacional", "descricao": "Classificação e detecção de imagens", "tipo": "projeto", "duracao": "4h"}
+          ]
+        },
+        {
+          "titulo": "NLP - Processamento de Linguagem Natural",
+          "descricao": "Trabalhe com texto e linguagem",
+          "aulas": [
+            {"titulo": "Tokenização e Embeddings", "descricao": "Represente texto como vetores numéricos", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Sentiment Analysis", "descricao": "Analise emoções e opiniões em textos", "tipo": "exercicio", "duracao": "2h"},
+            {"titulo": "Transformers", "descricao": "BERT, GPT e arquiteturas modernas de NLP", "tipo": "video", "duracao": "3h"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "area_nome": "Soft Skills",
+    "titulo": "Desenvolvimento de Habilidades Profissionais",
+    "descricao": "Fortaleça suas soft skills para se destacar no mercado de trabalho",
+    "conteudo": {
+      "modulos": [
+        {
+          "titulo": "Comunicação Efetiva",
+          "descricao": "Aprenda a se comunicar com clareza",
+          "aulas": [
+            {"titulo": "Comunicação Verbal", "descricao": "Técnicas de apresentação e oratória profissional", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Comunicação Escrita", "descricao": "E-mails, relatórios e documentos profissionais", "tipo": "artigo", "duracao": "1h"},
+            {"titulo": "Escuta Ativa", "descricao": "Técnicas de escuta empática e feedback construtivo", "tipo": "video", "duracao": "1h 30min"}
+          ]
+        },
+        {
+          "titulo": "Trabalho em Equipe",
+          "descricao": "Colabore de forma produtiva",
+          "aulas": [
+            {"titulo": "Dinâmicas de Grupo", "descricao": "Entenda papéis e responsabilidades em equipes", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Resolução de Conflitos", "descricao": "Técnicas de mediação e busca de consenso", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Colaboração Remota", "descricao": "Ferramentas e boas práticas para trabalho híbrido", "tipo": "artigo", "duracao": "1h"}
+          ]
+        },
+        {
+          "titulo": "Gestão de Tempo",
+          "descricao": "Organize sua rotina e prioridades",
+          "aulas": [
+            {"titulo": "Matriz de Eisenhower", "descricao": "Priorize tarefas por urgência e importância", "tipo": "video", "duracao": "1h 30min"},
+            {"titulo": "Técnica Pomodoro", "descricao": "Aumente foco e produtividade com blocos de tempo", "tipo": "exercicio", "duracao": "1h"},
+            {"titulo": "GTD - Getting Things Done", "descricao": "Sistema completo de organização pessoal", "tipo": "artigo", "duracao": "2h"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "area_nome": "Segurança da Informação",
+    "titulo": "Fundamentos de Segurança Cibernética",
+    "descricao": "Proteja sistemas e dados contra ameaças digitais",
+    "conteudo": {
+      "modulos": [
+        {
+          "titulo": "Princípios de Segurança",
+          "descricao": "Conceitos fundamentais de infosec",
+          "aulas": [
+            {"titulo": "CIA Triad", "descricao": "Confidencialidade, Integridade e Disponibilidade", "tipo": "video", "duracao": "1h 30min"},
+            {"titulo": "Tipos de Ameaças", "descricao": "Malware, phishing e engenharia social", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Gestão de Riscos", "descricao": "Identificação, análise e mitigação de riscos", "tipo": "artigo", "duracao": "2h"}
+          ]
+        },
+        {
+          "titulo": "Segurança de Redes",
+          "descricao": "Proteja infraestrutura e comunicações",
+          "aulas": [
+            {"titulo": "Firewalls e IDS", "descricao": "Sistemas de detecção e prevenção de intrusões", "tipo": "video", "duracao": "3h"},
+            {"titulo": "VPN e Criptografia", "descricao": "Comunicação segura e protocolos de criptografia", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Análise de Tráfego", "descricao": "Wireshark e técnicas de monitoramento", "tipo": "exercicio", "duracao": "2h 30min"}
+          ]
+        },
+        {
+          "titulo": "Ethical Hacking",
+          "descricao": "Testes de penetração éticos",
+          "aulas": [
+            {"titulo": "Reconhecimento", "descricao": "Técnicas de footprinting e scanning", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Exploração de Vulnerabilidades", "descricao": "OWASP Top 10 e técnicas de exploração", "tipo": "exercicio", "duracao": "3h"},
+            {"titulo": "Relatórios de Segurança", "descricao": "Documentação profissional e recomendações", "tipo": "projeto", "duracao": "2h"}
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "area_nome": "DevOps e Cloud",
+    "titulo": "DevOps e Cloud Computing Essentials",
+    "descricao": "Automatize deploys e gerencie infraestrutura na nuvem",
+    "conteudo": {
+      "modulos": [
+        {
+          "titulo": "Fundamentos DevOps",
+          "descricao": "Cultura e práticas DevOps",
+          "aulas": [
+            {"titulo": "Introdução ao DevOps", "descricao": "Cultura, ferramentas e benefícios da transformação DevOps", "tipo": "video", "duracao": "2h"},
+            {"titulo": "Git e Controle de Versão", "descricao": "Workflows, branches e boas práticas Git", "tipo": "video", "duracao": "2h 30min"},
+            {"titulo": "CI/CD Básico", "descricao": "Integração e entrega contínuas", "tipo": "exercicio", "duracao": "3h"}
+          ]
+        },
+        {
+          "titulo": "Containers e Orquestração",
+          "descricao": "Docker e Kubernetes",
+          "aulas": [
+            {"titulo": "Docker Fundamentals", "descricao": "Images, containers, volumes e networks", "tipo": "video", "duracao": "3h"},
+            {"titulo": "Docker Compose", "descricao": "Aplicações multi-container", "tipo": "exercicio", "duracao": "2h"},
+            {"titulo": "Kubernetes Básico", "descricao": "Pods, services e deployments", "tipo": "video", "duracao": "4h"}
+          ]
+        },
+        {
+          "titulo": "Cloud Computing",
+          "descricao": "AWS, Azure e GCP",
+          "aulas": [
+            {"titulo": "Fundamentos de Cloud", "descricao": "IaaS, PaaS, SaaS e modelos de nuvem", "tipo": "video", "duracao": "2h"},
+            {"titulo": "AWS Core Services", "descricao": "EC2, S3, RDS e serviços essenciais", "tipo": "video", "duracao": "3h"},
+            {"titulo": "Infraestrutura como Código", "descricao": "Terraform e CloudFormation", "tipo": "projeto", "duracao": "4h"}
+          ]
+        }
+      ]
+    }
+  }
+]
