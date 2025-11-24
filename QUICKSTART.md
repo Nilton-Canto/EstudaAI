@@ -2,13 +2,13 @@
 
 Guia rápido para rodar o projeto em 5 minutos.
 
-## 🎯 Pré-requisitos
+## Pré-requisitos
 
 - Python 3.11+
 - Git
 - Chave API do Google Gemini ([obter aqui](https://makersuite.google.com/app/apikey))
-
-## 🚀 Instalação Rápida
+﻿﻿
+## Instalação Rápida
 
 ### 1. Clone e Entre no Diretório
 ```bash
@@ -87,7 +87,7 @@ python manage.py migrate
 - Verifique se o arquivo `.env` existe
 - Confirme se a chave está correta
 
-## 📱 Funcionalidades Principais
+## Funcionalidades Principais
 
 - **Login/Cadastro**: Sistema de autenticação
 - **Trilhas IA**: Geração automática com Gemini
@@ -96,6 +96,6 @@ python manage.py migrate
 
 ## 🆘 Precisa de Ajuda?
 
-- 📖 [Documentação Completa](README.md)
-- 🤝 [Guia de Contribuição](CONTRIBUTING.md)
-- 🐛 [Reportar Bug](https://github.com/Nilton-Canto/EstudaAI/issues)
+- [Documentação Completa](README.md)
+- [Guia de Contribuição](CONTRIBUTING.md)
+- [Reportar Bug](https://github.com/Nilton-Canto/EstudaAI/issues)
